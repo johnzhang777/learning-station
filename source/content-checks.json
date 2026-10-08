@@ -1,0 +1,15 @@
+{
+  "sourceRevision": 36,
+  "weeks": 21,
+  "days": 147,
+  "words": 525,
+  "examples": 1050,
+  "monthlyCounts": {
+    "9": 90,
+    "10": 110,
+    "11": 105,
+    "12": 115,
+    "1": 105
+  },
+  "contentChecks": "passed: schedule, unique words, two examples, all weekly and monthly references"
+}

@@ -1,0 +1,10 @@
+source/feishu-snapshot.json
+source/audio-boundaries/
+source/batch-audio/
+source/audio-batch-manifest.json
+source/audio-batches.json
+source/*-test.json
+*.tar.gz
+node_modules/
+.sites-runtime/
+screenshots/

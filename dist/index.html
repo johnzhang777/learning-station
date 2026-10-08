@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#23695d">
+  <meta name="description" content="配合纸质英语手册，自己听单词、听例句。英美双口音，每天五个词。">
+  <title>听听学堂 · 每天五个词</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到学习内容</a>
+  <header class="site-header">
+    <a class="brand" href="#/home" aria-label="听听学堂首页">
+      <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 21v-3a13 13 0 0 1 26 0v3"/><rect x="5" y="19" width="7" height="12" rx="3"/><rect x="28" y="19" width="7" height="12" rx="3"/><path d="M16 20h8v12l-4-2-4 2z"/></svg></span>
+      <span>听听学堂<small>听一听，慢慢会。</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="全站导航"><a href="#/home" data-nav="home">首页</a><a href="#/library" data-nav="library">学习资料</a><a href="#/settings" data-nav="settings">设置</a></nav>
+    <button class="header-search icon-button" data-action="search" aria-label="查找单词"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+  </header>
+  <main id="main" tabindex="-1"><div class="loading"><span class="spinner"></span><p>正在打开学习手册…</p></div></main>
+  <footer class="site-footer">每天五个词，给自己一点时间。<span>听听学堂 · 2026秋—2027冬</span></footer>
+  <nav class="mobile-nav" aria-label="全站导航"><a href="#/home" data-nav="home"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11h-6v-7H9v7H3z"/></svg>首页</a><a href="#/library" data-nav="library"><svg viewBox="0 0 24 24"><path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3zM12 6v15"/></svg>学习资料</a><a href="#/settings" data-nav="settings"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg>设置</a></nav>
+  <audio id="lesson-audio" preload="metadata" hidden></audio>
+  <section id="player-dock" class="player-dock" aria-label="音频播放器" hidden>
+    <div class="dock-indicator" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="dock-copy"><strong id="player-title"></strong><span id="player-status" role="status" aria-live="polite"></span><div class="track"><div id="player-progress"></div></div></div>
+    <button id="player-toggle" class="icon-button" data-action="pause" aria-label="暂停播放"></button>
+    <button class="icon-button" data-action="stop" aria-label="停止播放"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></button>
+  </section>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

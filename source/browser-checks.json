@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-08",
+  "browser": "Chromium in Codex in-app browser",
+  "passed": [
+    "Day 32 word card, UK and US buttons, both examples",
+    "US example 2 loads and plays",
+    "15-segment follow-along queue advances from word to examples and following word cards",
+    "Pause and stop controls",
+    "Next word and practice mark; practice list points to original card",
+    "Refresh persists last day and word position",
+    "Chinese library search yields one corresponding word",
+    "Weekly review contains 25 words",
+    "Chinese recall mode conceals 25 words and reveals one on tap",
+    "October monthly review contains 110 words",
+    "Day 117 jump shows January 1, 2027",
+    "320px layout: document client and scroll widths both 305px after scrollbar",
+    "390px layout: document client and scroll widths both 375px",
+    "1280px desktop layout shows left day navigation and right word card"
+  ],
+  "limits": [
+    "Viewport simulation, not a test on the child's physical phone or home network",
+    "Structural audio/text checks and decoding are complete; no claim of human listening review of all synthesized pronunciation"
+  ]
+}
