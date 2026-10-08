@@ -14,10 +14,14 @@
 - `scripts/parse_source.py`：从本地飞书资料快照解析内容，并校验词条、日期与周月复习引用。
 - `scripts/generate_audio.py`：在线生成英美语音批次，使用词性上下文处理 close、record、can 等词。需要对应运行依赖和用户对发送英文文本的授权。
 - `scripts/finish_audio.py`：解码全部批次，根据词边界截取成独立单词和完整例句文件。
-- `source/`：数量与映射检查报告。原始快照、语音边界和批次原音频保留在本机，排除于 Git 和公开站点之外。
+- `source/`：数量与映射检查报告，以及本机保存的原资料快照。语音边界、批次原音频与生成依赖已经清理；部署只使用 `dist/` 中的成品音频。
 - `.openai/hosting.json`：固定 Sites 项目身份，后续修改须复用原项目。
 
 静态预览：`python -m http.server 8766 --directory dist`。网页无需应用服务器、麦克风或运行时语音合成服务。部署时仅发布 `dist/`。
+
+其他托管平台的步骤见 `部署指南.md`。本项目没有构建步骤；`dist/app.js` 和 `dist/styles.css` 本身就是可编辑的前端源码。根目录 `.openai/`、`.git/`、`scripts/`、`source/` 和 `screenshots/` 均不上传到其他静态托管平台。通用 ZIP 包直接以 `index.html` 为根入口。
+
+生成脚本仅用于以后更新内容，不是部署依赖。若以后要重新生成语音，需重新安装 `edge-tts` 和 `imageio-ffmpeg` 到工作区的 `tmp/audio_deps`，再运行生成及切分脚本。
 
 新增资料时在资料入口增加对应模块，保留既有词卡编号、Day 链接和学习记录键。更新原资料时先比较内容版本，再更新数据及发生变化的音频。
 

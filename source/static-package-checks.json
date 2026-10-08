@@ -1,0 +1,10 @@
+{
+  "files": 3160,
+  "audioFiles": 3150,
+  "uncompressedBytes": 32310814,
+  "zipBytes": 31027380,
+  "sha256": "38850dce4c28377436df4f4d22c5e47c1e231391be992b0c625520517c763448",
+  "entry": "index.html",
+  "archive": "C:\\Users\\JohnZhang\\Documents\\ChatGPT\\\u5b66\u4e60\u8d44\u6599\\output\\learning-station-static.zip",
+  "integrity": "passed: ZIP CRC and every file SHA-256"
+}

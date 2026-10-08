@@ -9,6 +9,8 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parents[1]
 WORKSPACE = SITE.parents[1]
 raw_path = WORKSPACE / 'tmp/english-source.json'
+if not raw_path.exists():
+    raw_path = SITE / 'source/feishu-snapshot.json'
 envelope = json.loads(raw_path.read_text(encoding='utf-8-sig'))
 assert envelope['ok'], envelope.get('error')
 doc = envelope['data']['document']
@@ -104,7 +106,9 @@ for e in data['entries']:
     assert all(e[k] for k in ['word','meaning','ipaUS','ipaUK'])
     assert all(all(ex[k] for k in ['en','zh','scene']) for ex in e['examples'])
 (SITE/'source').mkdir(exist_ok=True)
-shutil.copyfile(raw_path,SITE/'source/feishu-snapshot.json')
+snapshot_path = SITE / 'source/feishu-snapshot.json'
+if raw_path.resolve() != snapshot_path.resolve():
+    shutil.copyfile(raw_path, snapshot_path)
 (SITE/'dist/data.json').write_text(json.dumps(data,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 report={'sourceRevision':doc['revision_id'],'weeks':21,'days':147,'words':525,'examples':1050,
         'monthlyCounts':{str(m['month']):len(m['entryIds']) for m in data['monthlyReviews']},
