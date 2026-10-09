@@ -1,4 +1,6 @@
 import { ProgressSync } from './progress-sync.js';
+// Temporary public listening mode. Records stay on this device until account login returns.
+const LOCAL_MODE = true;
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -28,8 +30,8 @@ let toastTimer;
 let account = null, recordSync = null, syncMessage = '正在读取云端记录…';
 let authGeneration = 0;
 function persist(){
-  try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{toast('浏览器无法保存本机记录，请等待云端同步完成。');}
-  if(recordSync && account){
+  try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{toast(LOCAL_MODE?'浏览器无法保存记录，请在设置中导出备份。':'浏览器无法保存本机记录，请等待云端同步完成。');}
+  if(recordSync && (LOCAL_MODE || account)){
     const known=new Set([...Object.keys(recordSync.fields).filter(id=>id!=='position'),...Object.keys(state.status)]);
     for(const id of known)recordSync.change(id,state.status[id]||null);
     recordSync.change('position',{lastDay:state.lastDay,lastIndex:state.lastIndex});
@@ -167,7 +169,7 @@ function practice(){
   const ids=data.entries.filter(e=>state.status[e.id]==='practice').map(e=>e.id);currentView={type:'practice',entryIds:ids};
   return `${backLink('学习资料','#/library')}${pageTop('再练词','想听多少遍都可以，每次会一点。',`${ids.length}个词`)}${moduleNav('practice')}${ids.length?`<div class="practice-summary"><span>这些是你选的“还想练”。</span><button class="text-link" data-action="review-audio">${I('play')}顺序听一遍</button></div><div class="review-grid">${ids.map(id=>reviewCard(entries.get(id))).join('')}</div><p class="quiet-note">会读了？打开词卡，给它标一下“会读了”，它就会从这里移出。</p>`:`<section class="empty"><span class="empty-icon">🌱</span><h2>这里等着你想再练的词</h2><p>学习时点“还想练”或小星星，就能把单词放到这里。</p><a class="btn primary" href="${lessonHash(safeDay(),state.lastIndex)}">继续学五个词${I('arrow')}</a></section>`}`;
 }
-function settings(){currentView={type:'settings'};return `${pageTop('按你喜欢的方式听','声音和速度记在本机；学习记录会同步到你的账号。')}<section class="panel account-panel"><div><strong>当前账号：${esc(account.username)}</strong><p id="sync-status" role="status" aria-live="polite">${esc(syncMessage)}</p></div><div class="export-row"><button class="btn secondary" data-action="sync-now">立即同步</button><button class="btn secondary" data-action="logout">退出登录</button></div></section><div class="settings-grid"><section class="panel settings-list"><div class="field"><label for="set-accent">常用口音<small>单词和两句例句都有英式、美式。</small></label><select id="set-accent"><option value="uk" ${state.accent==='uk'?'selected':''}>英式 UK</option><option value="us" ${state.accent==='us'?'selected':''}>美式 US</option></select></div><div class="field"><label for="set-rate">播放速度<small>慢速听清楚，正常速度练流畅。</small></label><select id="set-rate"><option value="1" ${Number(state.rate)===1?'selected':''}>正常</option><option value="0.8" ${Number(state.rate)===.8?'selected':''}>慢速</option></select></div><div class="field"><label for="set-gap">留多久跟读<small>“听一组”和连续播放之间的停顿。</small></label><select id="set-gap">${[2,3,5,8].map(n=>`<option value="${n}" ${Number(state.gap)===n?'selected':''}>${n} 秒</option>`).join('')}</select></div><div class="field"><div><label>我的学习记录</label><small>会读了 ${Object.values(state.status).filter(s=>s==='learned').length} 词 · 再练 ${Object.values(state.status).filter(s=>s==='practice').length} 词<br>登录同一账号即可在其他设备查看。网络中断时先保存在本机，联网后继续同步。</small><div class="export-row"><button class="btn secondary" data-action="export">保存记录</button><label class="btn secondary" for="import-records" style="cursor:pointer">恢复记录</label><input id="import-records" type="file" accept="application/json,.json" hidden></div></div></div></section><aside class="panel about-panel"><h3>给家长的小提示</h3><p>网页与纸质手册按 Day、日期和词序对应。首页会继续上次的位置，不强制追赶日历。</p><p>音源：Microsoft 在线合成语音，英式 Sonia / 美式 Aria。正常音频保留完整句的语调；慢速用于辅助听清。不需要麦克风，不录制孩子声音。</p><p>单词与例句来自配套手册。“会读了”是孩子自评标记，不是自动评分。</p><div class="install-note"><strong>像小应用一样打开</strong><br>把这个网页加入浏览器书签。iPhone 可在 Safari 的分享菜单中选择“添加到主屏幕”；安卓在支持的浏览器菜单中添加到桌面。外部聊天中的链接，可以选择用系统浏览器打开。</div><button class="btn secondary wide" data-action="copy-link" style="margin-top:18px">复制学习站链接${I('arrow')}</button></aside></div>`;}
+function settings(){currentView={type:'settings'};return `${pageTop('按你喜欢的方式听',LOCAL_MODE?'声音、速度和学习记录保存在这台设备上。':'声音和速度记在本机；学习记录会同步到你的账号。')}<section class="panel account-panel"><div><strong>${LOCAL_MODE?'本机学习模式':'当前账号：'+esc(account.username)}</strong><p id="sync-status" role="status" aria-live="polite">${esc(syncMessage)}</p></div>${LOCAL_MODE?'':'<div class="export-row"><button class="btn secondary" data-action="sync-now">立即同步</button><button class="btn secondary" data-action="logout">退出登录</button></div>'}</section><div class="settings-grid"><section class="panel settings-list"><div class="field"><label for="set-accent">常用口音<small>单词和两句例句都有英式、美式。</small></label><select id="set-accent"><option value="uk" ${state.accent==='uk'?'selected':''}>英式 UK</option><option value="us" ${state.accent==='us'?'selected':''}>美式 US</option></select></div><div class="field"><label for="set-rate">播放速度<small>慢速听清楚，正常速度练流畅。</small></label><select id="set-rate"><option value="1" ${Number(state.rate)===1?'selected':''}>正常</option><option value="0.8" ${Number(state.rate)===.8?'selected':''}>慢速</option></select></div><div class="field"><label for="set-gap">留多久跟读<small>“听一组”和连续播放之间的停顿。</small></label><select id="set-gap">${[2,3,5,8].map(n=>`<option value="${n}" ${Number(state.gap)===n?'selected':''}>${n} 秒</option>`).join('')}</select></div><div class="field"><div><label>我的学习记录</label><small>会读了 ${Object.values(state.status).filter(s=>s==='learned').length} 词 · 再练 ${Object.values(state.status).filter(s=>s==='practice').length} 词<br>${LOCAL_MODE?'刷新后记录仍保留。跨设备暂用“保存记录”和“恢复记录”；云端同步恢复后会继续同步本机记录。':'登录同一账号即可在其他设备查看。网络中断时先保存在本机，联网后继续同步。'}</small><div class="export-row"><button class="btn secondary" data-action="export">保存记录</button><label class="btn secondary" for="import-records" style="cursor:pointer">恢复记录</label><input id="import-records" type="file" accept="application/json,.json" hidden></div></div></div></section><aside class="panel about-panel"><h3>给家长的小提示</h3><p>网页与纸质手册按 Day、日期和词序对应。首页会继续上次的位置，不强制追赶日历。</p><p>音源：Microsoft 在线合成语音，英式 Sonia / 美式 Aria。正常音频保留完整句的语调；慢速用于辅助听清。不需要麦克风，不录制孩子声音。</p><p>单词与例句来自配套手册。“会读了”是孩子自评标记，不是自动评分。</p><div class="install-note"><strong>像小应用一样打开</strong><br>把这个网页加入浏览器书签。iPhone 可在 Safari 的分享菜单中选择“添加到主屏幕”；安卓在支持的浏览器菜单中添加到桌面。外部聊天中的链接，可以选择用系统浏览器打开。</div><button class="btn secondary wide" data-action="copy-link" style="margin-top:18px">复制学习站链接${I('arrow')}</button></aside></div>`;}
 function syncLessonToItem(item){
   if(currentView.type!=='lesson')return;
   const e=entries.get(item.entry);if(e?.day!==currentView.day)return;
@@ -175,7 +177,7 @@ function syncLessonToItem(item){
   if(idx!==currentView.index){history.replaceState(null,'',lessonHash(d,idx));renderRoute({stop:false,scroll:false});}
 }
 function renderRoute({stop=true,scroll=true}={}){
-  if(!data)return;if(!account){showLogin();return;}if(stop)player.stop();
+  if(!data)return;if(!LOCAL_MODE&&!account){showLogin();return;}if(stop)player.stop();
   const path=(location.hash.slice(1)||'/home').split('/').filter(Boolean),page=path[0];
   let html,nav='library';
   if(page==='home'){html=home();nav='home';}
@@ -197,7 +199,7 @@ function setAccent(a){if(!['uk','us'].includes(a))return;player.stop();state.acc
 function setStatus(id,status){if(!entries.has(id)||!['learned','practice'].includes(status))return;if(state.status[id]===status)delete state.status[id];else state.status[id]=status;persist();renderRoute({stop:false,scroll:false});toast(state.status[id]==='learned'?'会读了，给自己一个小勾。':state.status[id]==='practice'?'放进再练词，下次再听。':'已取消这个标记。');}
 function one(id,part='word',accent){if(accent&&accent!==state.accent)setAccent(accent);player.run([{entry:id,part}],entries.get(id).word);}
 document.addEventListener('click',event=>{
-  const button=event.target.closest('[data-action]');if(!button||!data||!account)return;
+  const button=event.target.closest('[data-action]');if(!button||!data||(!LOCAL_MODE&&!account))return;
   const a=button.dataset.action,id=button.dataset.entry;
   if(a==='logout'){logout();}
   else if(a==='sync-now'){recordSync?.flush().then(()=>recordSync?.pull()).then(()=>{if(account)renderRoute({stop:false,scroll:false});});}
@@ -272,6 +274,7 @@ function showLogin(message=''){
   });
 }
 async function api(url,options={}){
+  if(LOCAL_MODE)throw Error('本机学习模式暂未启用云端服务。');
   const response=await fetch(url,{...options,credentials:'same-origin',cache:'no-store',headers:{[options.method?'Content-Type':'Accept']:'application/json',...(account&&options.method?{'X-CSRF-Token':account.csrf}:{}),...options.headers}});
   let result;try{result=await response.json();}catch{throw Error('登录服务未启动，请联系家长完成部署。');}
   if(!response.ok){
@@ -295,7 +298,19 @@ async function signedIn(user){
   if(generation!==authGeneration||!account)return;
   reviewWeek=safeDay().week;renderRoute();
 }
+async function startLocalRecords(){
+  recordSync?.stop();
+  recordSync=new ProgressSync({localOnly:true,api,apply:fields=>{
+    const status={};for(const [id,f]of Object.entries(fields))if(entries.has(id)&&['learned','practice'].includes(f.value))status[id]=f.value;
+    state.status=status;
+    const position=fields.position?.value;if(days.get(position?.lastDay)?.kind==='learn'){state.lastDay=position.lastDay;state.lastIndex=Math.max(0,Math.min(4,Number(position.lastIndex)||0));}
+    try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{toast('浏览器无法保存记录，请在设置中导出备份。');}
+  },notify:updateSyncMessage});
+  await recordSync.start(structuredClone(state));
+  setAuthChrome(true);reviewWeek=safeDay().week;renderRoute();
+}
 async function restoreSession(){
+  if(LOCAL_MODE)return startLocalRecords();
   try{await signedIn(await api('/api/session'));}
   catch(e){showLogin(e.status===401?'':e.message);}
 }

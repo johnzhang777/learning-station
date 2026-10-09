@@ -33,7 +33,7 @@ function assertPrivateResponse(response) {
   assert.equal(response.headers.get('set-cookie'), null);
 }
 function unreadableRequest(authorization, method = 'POST') {
-  return { method, headers: new Headers(authorization === null ? {} : { Authorization: authorization }), get body() { throw Error('Credentials must not be read'); } };
+  return { method, headers: new Headers(authorization === null ? {} : { Authorization: authorization }), get body() { throw Error('Credentials must not be read'); }, get json() { throw Error('Credentials must not be parsed'); } };
 }
 
 test('Node verifier uses the independent PBKDF2 verifier and only returns a boolean', async () => {
@@ -93,25 +93,33 @@ test('malformed JSON and non-object bodies do not reach PBKDF2', async () => {
   assert.equal(calls, 0);
 });
 
-test('body size limits count bytes and cancel overflowing streams', async () => {
-  const requests = [request({ raw: ' '.repeat(1025) }), request({ raw: JSON.stringify({ note: '词'.repeat(400) }) }), request({ length: '1025' })];
-  for (const input of requests) {
-    const { result: res } = await quiet(() => handleVerification(input, env));
+test('decoded JSON size limits count UTF-8 bytes and reject declared oversized bodies before parsing', async () => {
+  let calls = 0;
+  const derivePassword = () => { calls++; return Buffer.from(env.ACCOUNT_PASSWORD_HASH, 'hex'); };
+  const multibyte = { username: env.ACCOUNT_USERNAME, password, note: '词'.repeat(400) };
+  assert.ok(JSON.stringify(multibyte).length < 1024);
+  assert.ok(Buffer.byteLength(JSON.stringify(multibyte), 'utf8') > 1024);
+  for (const data of [{ username: env.ACCOUNT_USERNAME, password, note: 'x'.repeat(1025) }, multibyte]) {
+    const { result: res } = await quiet(() => handleVerification(request({ data }), env, { derivePassword }));
     assert.equal(res.status, 503);
     assert.equal((await res.json()).code, 'NODE_PASSWORD_REQUEST');
   }
-  let reads = 0, cancelled = false, calls = 0;
-  const input = request();
-  Object.defineProperty(input, 'body', { value: { getReader: () => ({
-    async read() { reads++; return { done: false, value: new Uint8Array(600) }; },
-    async cancel() { cancelled = true; },
-    releaseLock() {}
-  }) } });
-  const { result: res } = await quiet(() => handleVerification(input, env, { derivePassword: () => { calls++; return Buffer.alloc(32); } }));
+  let reads = 0;
+  const input = request({ length: '1025' });
+  Object.defineProperty(input, 'json', { value: async () => { reads++; throw Error('An oversized body must not be parsed'); } });
+  const { result: res } = await quiet(() => handleVerification(input, env, { derivePassword }));
   assert.equal(res.status, 503);
-  assert.equal(reads, 2);
-  assert.equal(cancelled, true);
+  assert.equal((await res.json()).code, 'NODE_PASSWORD_REQUEST');
+  assert.equal(reads, 0);
   assert.equal(calls, 0);
+
+  const boundary = { username: env.ACCOUNT_USERNAME, password, note: '' };
+  boundary.note = 'x'.repeat(1024 - Buffer.byteLength(JSON.stringify(boundary), 'utf8'));
+  assert.equal(Buffer.byteLength(JSON.stringify(boundary), 'utf8'), 1024);
+  const accepted = await handleVerification(request({ data: boundary }), env, { derivePassword });
+  assert.equal(accepted.status, 200);
+  assert.deepEqual(await accepted.json(), { valid: true });
+  assert.equal(calls, 1);
 });
 
 test('invalid credential field lengths and types return false without PBKDF2', async () => {
