@@ -5,7 +5,11 @@ const core = await readFile(new URL('../server/learning-api.js', import.meta.url
 const wrapper = (await readFile(new URL('../edge-functions/api/[[route]].js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
 await mkdir(new URL('../dist/edge-functions/api/', import.meta.url), { recursive: true });
 await writeFile(new URL('../dist/edge-functions/api/[[route]].js', import.meta.url), core + '\n' + wrapper);
+const verifier = await readFile(new URL('../server/node-password-verifier.js', import.meta.url), 'utf8');
+const verifierWrapper = (await readFile(new URL('../cloud-functions/internal/verify-password.js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
+await mkdir(new URL('../dist/cloud-functions/internal/', import.meta.url), { recursive: true });
+await writeFile(new URL('../dist/cloud-functions/internal/verify-password.js', import.meta.url), verifier + '\n' + verifierWrapper);
 await writeFile(new URL('../dist/package.json', import.meta.url), JSON.stringify({ private: true, type: 'module' }, null, 2) + '\n');
-const { headers, caches } = JSON.parse(await readFile(new URL('../edgeone.json', import.meta.url), 'utf8'));
-await writeFile(new URL('../dist/edgeone.json', import.meta.url), JSON.stringify({ headers, caches }, null, 2) + '\n');
-console.log('EdgeOne frontend and Edge Functions prepared; secrets are runtime environment variables.');
+const { headers, caches, cloudFunctions } = JSON.parse(await readFile(new URL('../edgeone.json', import.meta.url), 'utf8'));
+await writeFile(new URL('../dist/edgeone.json', import.meta.url), JSON.stringify({ headers, caches, cloudFunctions }, null, 2) + '\n');
+console.log('EdgeOne frontend, Edge Functions and Node password verifier prepared; secrets are runtime environment variables.');

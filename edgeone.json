@@ -2,9 +2,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "nodeVersion": "22.11.0",
+  "cloudFunctions": { "mainlandRegions": ["ap-guangzhou"], "nodejs": { "maxDuration": 10 } },
   "headers": [
     { "source": "/api/*", "headers": [{ "key": "Cache-Control", "value": "private, no-store" }] },
+    { "source": "/internal/*", "headers": [{ "key": "Cache-Control", "value": "private, no-store" }] },
     { "source": "/*", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "X-Frame-Options", "value": "DENY" }] }
   ],
-  "caches": [{ "source": "/api/*", "cacheTtl": 0 }]
+  "caches": [{ "source": "/api/*", "cacheTtl": 0 }, { "source": "/internal/*", "cacheTtl": 0 }]
 }

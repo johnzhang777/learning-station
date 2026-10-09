@@ -2,7 +2,8 @@ import http from 'node:http';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { handle } from '../server/learning-api.js';
+import { handle, verifyWithNode } from '../server/learning-api.js';
+import { handleVerification } from '../server/node-password-verifier.js';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const port = Number(process.argv[2]) || 8767;
 const env = JSON.parse(await readFile(path.join(root, '.private/account.json'), 'utf8'));
@@ -17,15 +18,18 @@ const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, `http://${req.headers.host || `127.0.0.1:${port}`}`);
-    if (url.pathname.startsWith('/api/')) {
+    if (url.pathname.startsWith('/api/') || url.pathname === '/internal/verify-password') {
       const chunks = []; for await (const c of req) chunks.push(c);
       const request = new Request(url, { method: req.method, headers: req.headers, ...(chunks.length ? { body: Buffer.concat(chunks) } : {}) });
       Object.defineProperty(request, 'eo', { value: { clientIp: req.socket.remoteAddress } });
-      const result = await handle(request, env, kv); res.writeHead(result.status, Object.fromEntries(result.headers)); res.end(Buffer.from(await result.arrayBuffer())); return;
+      const result = url.pathname === '/internal/verify-password'
+        ? await handleVerification(request, env)
+        : await handle(request, env, kv, { verifyPassword: input => verifyWithNode(request, env, input) });
+      res.writeHead(result.status, Object.fromEntries(result.headers)); res.end(Buffer.from(await result.arrayBuffer())); return;
     }
     const relative = decodeURIComponent(url.pathname === '/' ? 'index.html' : url.pathname.slice(1));
     const file = path.resolve(root, 'dist', relative);
-    if (!file.startsWith(path.join(root, 'dist') + path.sep) || relative.startsWith('edge-functions/') || relative === 'package.json') { res.writeHead(404); res.end(); return; }
+    if (!file.startsWith(path.join(root, 'dist') + path.sep) || relative.startsWith('edge-functions/') || relative.startsWith('cloud-functions/') || relative === 'package.json') { res.writeHead(404); res.end(); return; }
     const bytes = await readFile(file); res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache' }); res.end(bytes);
   } catch { res.writeHead(404); res.end(); }
 }).listen(port, '127.0.0.1', () => console.log(`Learning station: http://127.0.0.1:${port} (persistent local KV emulator)`));

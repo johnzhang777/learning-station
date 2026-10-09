@@ -1,4 +1,4 @@
-"""Package EdgeOne frontend and Edge Functions without local secrets."""
+"""Package EdgeOne frontend, Edge and Node Functions without local secrets."""
 import hashlib
 import json
 import zipfile
@@ -10,6 +10,7 @@ DIST = SITE / 'dist'
 ARCHIVE = SITE.parent / 'learning-station-edgeone.zip'
 subprocess.run(['node', str(SITE / 'scripts/build.mjs')], cwd=SITE, check=True)
 assert (DIST / 'edge-functions/api/[[route]].js').is_file()
+assert (DIST / 'cloud-functions/internal/verify-password.js').is_file()
 data = json.loads((DIST / 'data.json').read_text(encoding='utf-8'))
 audio = json.loads((DIST / 'audio-manifest.json').read_text(encoding='utf-8'))
 assert set(audio['entries']) == {e['id'] for e in data['entries']}
@@ -28,6 +29,7 @@ with zipfile.ZipFile(ARCHIVE) as package:
     assert package.testzip() is None
     assert 'index.html' in package.namelist()
     assert 'edge-functions/api/[[route]].js' in package.namelist()
+    assert 'cloud-functions/internal/verify-password.js' in package.namelist()
     assert not any('.private' in n or n.endswith('.env') for n in package.namelist())
     assert len(package.namelist()) == len(paths)
     assert sum(n.endswith('.mp3') for n in package.namelist()) == 3150

@@ -7,7 +7,7 @@ const noCache = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Cont
 const json = (body, status = 200, headers = {}) => new Response(JSON.stringify(body), { status, headers: { ...noCache, ...headers } });
 const publicFailure = Symbol('publicFailure');
 const fail = (message, status) => { throw Object.assign(new Error(message), { status, [publicFailure]: true }); };
-const diagnosticCodes = new Set(['CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE', 'CRYPTO_PASSWORD_EXPORT', 'CRYPTO_SESSION_IMPORT', 'CRYPTO_SESSION_SIGN', 'CRYPTO_DIGEST', 'SESSION_RANDOM', 'LOGIN_RATE_READ', 'LOGIN_RATE_WRITE', 'LOGIN_RATE_PARSE', 'PROGRESS_LIST', 'PROGRESS_READ', 'PROGRESS_PARSE', 'PROGRESS_WRITE']);
+const diagnosticCodes = new Set(['CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE', 'CRYPTO_PASSWORD_EXPORT', 'PASSWORD_SERVICE_FETCH', 'PASSWORD_SERVICE_RESPONSE', 'PASSWORD_SERVICE_VERIFY', 'CRYPTO_SESSION_IMPORT', 'CRYPTO_SESSION_SIGN', 'CRYPTO_DIGEST', 'SESSION_RANDOM', 'LOGIN_RATE_READ', 'LOGIN_RATE_WRITE', 'LOGIN_RATE_PARSE', 'PROGRESS_LIST', 'PROGRESS_READ', 'PROGRESS_PARSE', 'PROGRESS_WRITE']);
 const errorKinds = new Set(['Error', 'TypeError', 'RangeError', 'SyntaxError', 'NotSupportedError', 'OperationError', 'DataError', 'InvalidAccessError', 'InvalidStateError', 'QuotaExceededError', 'SecurityError', 'AbortError']);
 const errorReasons = new Set(['RUNTIME_ERROR', 'ITERATION_LIMIT', 'UNSUPPORTED_ALGORITHM']);
 function cryptoFailureReason(code, error) {
@@ -30,6 +30,7 @@ const unhex = s => Uint8Array.from(s.match(/../g), b => parseInt(b, 16));
 function constantEqual(a, b) { let diff = a.length ^ b.length; for (let i = 0; i < Math.max(a.length, b.length); i++) diff |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0); return diff === 0; }
 async function digest(text) { return hex(await cloudOperation('CRYPTO_DIGEST', () => crypto.subtle.digest('SHA-256', encoder.encode(text)))); }
 export async function passwordHash(password, salt) {
+  // Used by local account setup; production login uses the Node verifier below.
   // Use explicit algorithm objects and raw buffers across edge runtimes.
   const raw = encoder.encode(password).buffer;
   const params = { name: 'PBKDF2', salt: unhex(salt).buffer, iterations: ITERATIONS, hash: { name: 'SHA-256' } };
@@ -48,6 +49,25 @@ export async function passwordHash(password, salt) {
     if (!bytes || bytes.byteLength !== 32) throw Error('Invalid derived length');
     return hex(bytes);
   });
+}
+export async function verifyWithNode(request, env, input, { fetch: transport = globalThis.fetch } = {}) {
+  // A dedicated server credential does not expose the cookie-signing secret.
+  const token = await digest('learning-station:password-verifier:v1\n' + env.SESSION_SECRET);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 10000);
+  try {
+    const response = await cloudOperation('PASSWORD_SERVICE_FETCH', () => transport(new URL('/internal/verify-password', request.url).href, {
+      method: 'POST', redirect: 'error', cache: 'no-store', signal: controller.signal,
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: 'Bearer ' + token },
+      body: JSON.stringify({ username: input.username, password: input.password })
+    }));
+    return await cloudOperation('PASSWORD_SERVICE_RESPONSE', async () => {
+      if (response.status !== 200 || !(response.headers.get('content-type') || '').startsWith('application/json')) throw Error('Invalid verifier response');
+      const result = await response.json();
+      if (typeof result?.valid !== 'boolean') throw Error('Invalid verifier result');
+      return result.valid;
+    });
+  } finally { clearTimeout(timer); }
 }
 function config(env, kv) {
   if (!/^[a-z]{2,40}$/.test(env.ACCOUNT_USERNAME || '') || !/^[a-f0-9]{32}$/.test(env.ACCOUNT_PASSWORD_SALT || '') || !/^[a-f0-9]{64}$/.test(env.ACCOUNT_PASSWORD_HASH || '') || !/^[a-f0-9]{64}$/.test(env.SESSION_SECRET || '') || !kv?.get || !kv?.put || !kv?.list) fail('登录服务尚未完成配置，请联系家长。', 503);
@@ -147,7 +167,7 @@ async function load(kv) {
   }
   return { fields, writers };
 }
-export async function handle(request, env, kv, { now = Date.now(), clientIp } = {}) {
+export async function handle(request, env, kv, { now = Date.now(), clientIp, verifyPassword } = {}) {
   try {
     config(env, kv);
     if (!local(request) && new URL(request.url).protocol !== 'https:') fail('请使用 HTTPS 打开学习站。', 400);
@@ -165,8 +185,14 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp } = 
       if (!rate || rate.until <= now) rate = { count: 0, until: now + 600000 };
       if (rate.count >= 8) return json({ error: '尝试次数较多，请十分钟后再试。' }, 429, { 'Retry-After': String(Math.ceil((rate.until - now) / 1000)) });
       if (typeof input.username !== 'string' || typeof input.password !== 'string' || input.username.length > 40 || input.password.length > 128) fail('姓名拼音或验证码不正确。', 401);
-      const hash = await passwordHash(input.password, env.ACCOUNT_PASSWORD_SALT);
-      const valid = constantEqual(input.username.trim().toLowerCase(), env.ACCOUNT_USERNAME) && constantEqual(hash, env.ACCOUNT_PASSWORD_HASH);
+      let valid;
+      if (verifyPassword) {
+        valid = await verifyPassword({ username: input.username, password: input.password });
+        if (typeof valid !== 'boolean') await cloudOperation('PASSWORD_SERVICE_VERIFY', () => { throw Error('Invalid verification result'); });
+      } else {
+        const hash = await passwordHash(input.password, env.ACCOUNT_PASSWORD_SALT);
+        valid = constantEqual(input.username.trim().toLowerCase(), env.ACCOUNT_USERNAME) && constantEqual(hash, env.ACCOUNT_PASSWORD_HASH);
+      }
       rate.count = valid ? 0 : rate.count + 1; await cloudOperation('LOGIN_RATE_WRITE', () => kv.put(rateKey, JSON.stringify(rate)));
       if (!valid) fail('姓名拼音或验证码不正确。', 401);
       const token = await issue(env, now); const s = JSON.parse(atob(token.split('.')[0]));
