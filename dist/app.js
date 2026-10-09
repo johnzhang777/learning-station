@@ -27,7 +27,7 @@ const defaults = {accent:'uk',rate:1,gap:3,lastDay:1,lastIndex:0,status:{}};
 let state;
 try { state = {...defaults, ...JSON.parse(localStorage.getItem(STORAGE) || '{}')}; } catch { state = {...defaults}; }
 if(!['uk','us'].includes(state.accent)) state.accent = 'uk';
-if(![1,.8].includes(Number(state.rate))) state.rate = 1;
+state.rate = normalizePlaybackRate(state.rate);
 if(![2,3,5,8].includes(Number(state.gap))) state.gap = 3;
 if(!state.status || typeof state.status !== 'object' || Array.isArray(state.status)) state.status = {};
 let data, audioMap, entries, days, wordBack = '#/english', currentView = {};
@@ -35,8 +35,11 @@ let reviewType = 'week', reviewWeek = 1, reviewMonth = 0, hideEnglish = false, r
 let toastTimer;
 let account = null, recordSync = null, syncMessage = '正在读取云端记录…';
 let authGeneration = 0;
-function persist(){
+function saveDeviceState(){
   try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{toast(LOCAL_MODE?'浏览器无法保存记录，请在设置中导出备份。':'浏览器无法保存本机记录，请等待云端同步完成。');}
+}
+function persist(){
+  saveDeviceState();
   if(recordSync && (LOCAL_MODE || account)){
     const known=new Set([...Object.keys(recordSync.fields).filter(id=>id!=='position'),...Object.keys(state.status)]);
     for(const id of known)recordSync.change(id,state.status[id]||null);
@@ -54,6 +57,25 @@ function moduleNav(active){return `<nav class="module-nav" aria-label="英语资
 function backLink(text,hash){return `<a class="back-link" href="${esc(hash)}">${I('left')}${esc(text)}</a>`;}
 function pageTop(title,description,badge=''){return `<div class="page-top"><div><h1>${esc(title)}</h1>${description?`<p>${esc(description)}</p>`:''}</div>${badge?`<span class="pill">${esc(badge)}</span>`:''}</div>`;}
 function lessonHash(d,index=0){return `#/day/${d.id}/${index}`;}
+
+function normalizePlaybackRate(value){
+  const rate = typeof value === 'number' || typeof value === 'string' ? Number(value) : NaN;
+  return Number.isFinite(rate) && rate >= .5 && rate <= 1.5 ? Math.round(rate * 20) / 20 : 1;
+}
+const playbackRateText = (rate = state.rate) => `${rate.toFixed(2)} 倍`;
+function playbackSpeedControl(id){
+  return `<div class="playback-speed" role="group" aria-label="播放速度"><div class="playback-speed-heading"><label for="${id}">播放速度</label><output for="${id}" data-rate-value aria-live="off">${playbackRateText()}</output></div><input id="${id}" data-rate-slider type="range" min="0.5" max="1.5" step="0.05" value="${state.rate}" aria-valuetext="${playbackRateText()}" aria-describedby="${id}-hint"><div class="speed-limits" aria-hidden="true"><span>0.5 倍 · 慢</span><span>1.5 倍 · 快</span></div><div class="speed-presets" role="group" aria-label="常用倍速">${[.6,.8,1].map(rate=>`<button type="button" data-action="rate" data-rate="${rate}" class="${state.rate===rate?'selected':''}" aria-pressed="${state.rate===rate}">${rate.toFixed(1)} 倍</button>`).join('')}</div><small id="${id}-hint">向左慢一点，向右快一点。会记住这台设备的选择。</small></div>`;
+}
+function setPlaybackRate(value){
+  state.rate = normalizePlaybackRate(value);
+  if(player){player.audio.playbackRate=state.rate;player.audio.preservesPitch=true;player.updateDock();}
+  // Speed is a device preference. Update controls in place so dragging keeps
+  // focus, the current audio position, expanded examples and the playback queue.
+  $$('[data-rate-slider]').forEach(el=>{el.value=String(state.rate);el.setAttribute('aria-valuetext',playbackRateText());});
+  $$('[data-rate-value]').forEach(el=>el.textContent=playbackRateText());
+  $$('[data-action="rate"]').forEach(button=>{const active=Number(button.dataset.rate)===state.rate;button.classList.toggle('selected',active);button.setAttribute('aria-pressed',String(active));});
+  saveDeviceState();
+}
 
 class ClipPlayer {
   constructor(){
@@ -125,7 +147,7 @@ class ClipPlayer {
     const dock=$('#player-dock'),e=entries.get(this.current.entry),part=this.current.part;
     dock.hidden=false;document.body.classList.add('has-player');dock.className='player-dock '+this.phase;
     $('#player-title').textContent=part==='word'?e.word:e.examples[part==='ex1'?0:1].en;
-    let label=`${accentName(state.accent)} · ${part==='word'?'单词':part==='ex1'?'例句①':'例句②'}`;
+    let label=`${accentName(state.accent)} · ${part==='word'?'单词':part==='ex1'?'例句①':'例句②'} · ${playbackRateText()}`;
     if(this.phase==='loading')label+=' · 正在加载';
     if(this.phase==='paused')label+=' · 已暂停';
     if(this.phase==='gap')label=`轮到你读啦 · ${state.gap}秒后继续`;
@@ -162,7 +184,7 @@ function lesson(d,index,back){
   index=Math.max(0,Math.min(d.entryIds.length-1,Number(index)||0));
   const e=entries.get(d.entryIds[index]),w=data.weeks[d.week-1];
   currentView={type:'lesson',day:d.id,index,entry:e.id};state.lastDay=d.id;state.lastIndex=index;persist();
-  return `${backLink(back?'返回刚才的列表':'周次 / 日期',back||'#/english')}${pageTop(w.theme,`第${d.week}周 · Day ${d.id} · ${d.date.slice(0,4)}年${dateLabel(d.date)} ${weekdayName(d.weekday)}`)}<div class="lesson-layout"><aside class="lesson-side"><p>这一天的五个词</p><nav class="word-tabs" aria-label="这一天的单词">${d.entryIds.map((id,n)=>{const word=entries.get(id);return `<a class="word-tab ${n===index?'selected':''}" href="${lessonHash(d,n)}" ${n===index?'aria-current="page"':''}><span class="tab-number">${n+1}</span><span class="tab-word">${esc(word.word)}</span>${state.status[id]==='learned'?`<small>${I('check')}</small>`:''}</a>`;}).join('')}</nav><p class="day-note">先听一遍，再跟着读。<br>例句①学会了，再试例句②。<br>不用一下子背完。</p><button class="btn secondary wide" style="margin-top:17px;font-size:12px" data-action="day-audio" data-day="${d.id}">${I('headphones')}听这天的5个词</button><button class="btn secondary wide" style="margin-top:9px;font-size:12px" data-action="day-full" data-day="${d.id}">${I("play")}连听词和例句</button></aside><div class="lesson-main"><div class="lesson-meta"><span>看单词，听声音，再跟读。</span><span class="lesson-counter">第 ${index+1} / 5 个</span></div><article class="word-card"><div class="word-title-row"><div><h2 class="word-heading">${esc(e.word)}</h2><p class="word-meaning"><span class="pos">${esc(posName(e.pos))}</span>${esc(e.meaning)}</p></div><button class="star-button ${state.status[e.id]==='practice'?'selected':''}" data-action="status" data-entry="${e.id}" data-status="practice" aria-pressed="${state.status[e.id]==='practice'}" aria-label="${state.status[e.id]==='practice'?'移出再练词':'加入再练词'}">${I('star')}</button></div><div class="pronunciation-grid soundtarget" data-sound-entry="${e.id}" data-sound-part="word">${['uk','us'].map(a=>`<button class="pronunciation ${state.accent===a?'active':''}" data-action="play" data-entry="${e.id}" data-part="word" data-accent="${a}" aria-label="听${accentName(a)}单词读音"><span><small>${accentName(a)} · ${a==='uk'?'UK':'US'}</small><span class="ipa">${esc(a==='uk'?e.ipaUK:e.ipaUS)}</span></span><span class="speaker">${I('speaker')}</span></button>`).join('')}</div>${exampleHtml(e,0)}<details id="example-two" class="second-example"><summary>${I('down')}例句② · 再换一个场景</summary>${exampleHtml(e,1)}</details><div class="practice-controls"><button class="btn primary" data-action="group" data-entry="${e.id}">${I('headphones')}听一组并跟读</button><div class="speed-control" aria-label="播放速度">${[1,.8].map(r=>`<button data-action="rate" data-rate="${r}" class="${Number(state.rate)===r?'selected':''}" aria-pressed="${Number(state.rate)===r}">${r===1?'正常':'慢速'}</button>`).join('')}</div></div><div class="accent-row"><span>这次跟读：</span>${['uk','us'].map(a=>`<button data-action="accent" data-accent="${a}" class="${state.accent===a?'selected':''}" aria-pressed="${state.accent===a}">${accentName(a)}</button>`).join('')}<span>留 ${state.gap} 秒跟读</span></div></article><div class="status-buttons"><button class="status-button learned ${state.status[e.id]==='learned'?'selected':''}" data-action="status" data-entry="${e.id}" data-status="learned" aria-pressed="${state.status[e.id]==='learned'}">${I('check')}会读了</button><button class="status-button practice ${state.status[e.id]==='practice'?'selected':''}" data-action="status" data-entry="${e.id}" data-status="practice" aria-pressed="${state.status[e.id]==='practice'}">${I('repeat')}还想练</button></div><div class="lesson-pagination"><button class="btn" data-action="previous" ${index===0?'disabled':''}>${I('left')}上一个</button>${index===4?`<button class="btn" data-action="next-day" data-day="${d.id}">学完这天，选下一天${I('arrow')}</button>`:`<button class="btn" data-action="next">下一个${I('arrow')}</button>`}</div><p class="tip">“会读了”是你给自己的标记。听过一次，也可以再练一练。</p></div></div>`;
+  return `${backLink(back?'返回刚才的列表':'周次 / 日期',back||'#/english')}${pageTop(w.theme,`第${d.week}周 · Day ${d.id} · ${d.date.slice(0,4)}年${dateLabel(d.date)} ${weekdayName(d.weekday)}`)}<div class="lesson-layout"><aside class="lesson-side"><p>这一天的五个词</p><nav class="word-tabs" aria-label="这一天的单词">${d.entryIds.map((id,n)=>{const word=entries.get(id);return `<a class="word-tab ${n===index?'selected':''}" href="${lessonHash(d,n)}" ${n===index?'aria-current="page"':''}><span class="tab-number">${n+1}</span><span class="tab-word">${esc(word.word)}</span>${state.status[id]==='learned'?`<small>${I('check')}</small>`:''}</a>`;}).join('')}</nav><p class="day-note">先听一遍，再跟着读。<br>例句①学会了，再试例句②。<br>不用一下子背完。</p><button class="btn secondary wide" style="margin-top:17px;font-size:12px" data-action="day-audio" data-day="${d.id}">${I('headphones')}听这天的5个词</button><button class="btn secondary wide" style="margin-top:9px;font-size:12px" data-action="day-full" data-day="${d.id}">${I("play")}连听词和例句</button></aside><div class="lesson-main"><div class="lesson-meta"><span>看单词，听声音，再跟读。</span><span class="lesson-counter">第 ${index+1} / 5 个</span></div><article class="word-card"><div class="word-title-row"><div><h2 class="word-heading">${esc(e.word)}</h2><p class="word-meaning"><span class="pos">${esc(posName(e.pos))}</span>${esc(e.meaning)}</p></div><button class="star-button ${state.status[e.id]==='practice'?'selected':''}" data-action="status" data-entry="${e.id}" data-status="practice" aria-pressed="${state.status[e.id]==='practice'}" aria-label="${state.status[e.id]==='practice'?'移出再练词':'加入再练词'}">${I('star')}</button></div><div class="pronunciation-grid soundtarget" data-sound-entry="${e.id}" data-sound-part="word">${['uk','us'].map(a=>`<button class="pronunciation ${state.accent===a?'active':''}" data-action="play" data-entry="${e.id}" data-part="word" data-accent="${a}" aria-label="听${accentName(a)}单词读音"><span><small>${accentName(a)} · ${a==='uk'?'UK':'US'}</small><span class="ipa">${esc(a==='uk'?e.ipaUK:e.ipaUS)}</span></span><span class="speaker">${I('speaker')}</span></button>`).join('')}</div>${exampleHtml(e,0)}<details id="example-two" class="second-example"><summary>${I('down')}例句② · 再换一个场景</summary>${exampleHtml(e,1)}</details><div class="practice-controls"><button class="btn primary" data-action="group" data-entry="${e.id}">${I('headphones')}听一组并跟读</button></div>${playbackSpeedControl('lesson-rate')}<div class="accent-row"><span>这次跟读：</span>${['uk','us'].map(a=>`<button data-action="accent" data-accent="${a}" class="${state.accent===a?'selected':''}" aria-pressed="${state.accent===a}">${accentName(a)}</button>`).join('')}<span>留 ${state.gap} 秒跟读</span></div></article><div class="status-buttons"><button class="status-button learned ${state.status[e.id]==='learned'?'selected':''}" data-action="status" data-entry="${e.id}" data-status="learned" aria-pressed="${state.status[e.id]==='learned'}">${I('check')}会读了</button><button class="status-button practice ${state.status[e.id]==='practice'?'selected':''}" data-action="status" data-entry="${e.id}" data-status="practice" aria-pressed="${state.status[e.id]==='practice'}">${I('repeat')}还想练</button></div><div class="lesson-pagination"><button class="btn" data-action="previous" ${index===0?'disabled':''}>${I('left')}上一个</button>${index===4?`<button class="btn" data-action="next-day" data-day="${d.id}">学完这天，选下一天${I('arrow')}</button>`:`<button class="btn" data-action="next">下一个${I('arrow')}</button>`}</div><p class="tip">“会读了”是你给自己的标记。听过一次，也可以再练一练。</p></div></div>`;
 }
 function reviewCard(e){const concealed=hideEnglish&&!revealed.has(e.id);return `<article class="review-card" data-entry="${e.id}"><p class="review-zh">${esc(e.meaning)}</p>${concealed?`<button class="reveal-button" data-action="reveal" data-entry="${e.id}">点开核对英文</button>`:`<p class="review-en soundtarget" data-sound-entry="${e.id}" data-sound-part="word">${esc(e.word)}</p>`}<div class="review-card-bottom"><button class="text-link" data-action="open-word" data-entry="${e.id}">看例句${I('arrow')}</button><button class="icon-button" data-action="${concealed?'reveal-play':'play'}" data-entry="${e.id}" data-part="word" aria-label="${concealed?'核对并听':`听${accentName(state.accent)}`} ${esc(e.word)}">${I('speaker')}</button></div></article>`;}
 function review(){
@@ -175,7 +197,7 @@ function practice(){
   const ids=data.entries.filter(e=>state.status[e.id]==='practice').map(e=>e.id);currentView={type:'practice',entryIds:ids};
   return `${backLink('学习资料','#/library')}${pageTop('再练词','想听多少遍都可以，每次会一点。',`${ids.length}个词`)}${moduleNav('practice')}${ids.length?`<div class="practice-summary"><span>这些是你选的“还想练”。</span><button class="text-link" data-action="review-audio">${I('play')}顺序听一遍</button></div><div class="review-grid">${ids.map(id=>reviewCard(entries.get(id))).join('')}</div><p class="quiet-note">会读了？打开词卡，给它标一下“会读了”，它就会从这里移出。</p>`:`<section class="empty"><span class="empty-icon">🌱</span><h2>这里等着你想再练的词</h2><p>学习时点“还想练”或小星星，就能把单词放到这里。</p><a class="btn primary" href="${lessonHash(safeDay(),state.lastIndex)}">继续学五个词${I('arrow')}</a></section>`}`;
 }
-function settings(){currentView={type:'settings'};return `${pageTop('按你喜欢的方式听',LOCAL_MODE?'声音、速度和学习记录保存在这台设备上。':'声音和速度记在本机；学习记录会同步到你的账号。')}<section class="panel account-panel"><div><strong>${LOCAL_MODE?'本机学习模式':'当前账号：'+esc(account.username)}</strong><p id="sync-status" role="status" aria-live="polite">${esc(syncMessage)}</p></div>${LOCAL_MODE?`<div class="export-row"><a class="btn secondary" href="${esc(learningModeUrl())}">账号登录</a></div>`:'<div class="export-row"><button class="btn secondary" data-action="sync-now">立即同步</button><button class="btn secondary" data-action="logout">退出登录</button></div>'}</section><div class="settings-grid"><section class="panel settings-list"><div class="field"><label for="set-accent">常用口音<small>单词和两句例句都有英式、美式。</small></label><select id="set-accent"><option value="uk" ${state.accent==='uk'?'selected':''}>英式 UK</option><option value="us" ${state.accent==='us'?'selected':''}>美式 US</option></select></div><div class="field"><label for="set-rate">播放速度<small>慢速听清楚，正常速度练流畅。</small></label><select id="set-rate"><option value="1" ${Number(state.rate)===1?'selected':''}>正常</option><option value="0.8" ${Number(state.rate)===.8?'selected':''}>慢速</option></select></div><div class="field"><label for="set-gap">留多久跟读<small>“听一组”和连续播放之间的停顿。</small></label><select id="set-gap">${[2,3,5,8].map(n=>`<option value="${n}" ${Number(state.gap)===n?'selected':''}>${n} 秒</option>`).join('')}</select></div><div class="field"><div><label>我的学习记录</label><small>会读了 ${Object.values(state.status).filter(s=>s==='learned').length} 词 · 再练 ${Object.values(state.status).filter(s=>s==='practice').length} 词<br>${LOCAL_MODE?'刷新后记录仍保留。登录账号后可同步本机记录；免登录时跨设备可用“保存记录”和“恢复记录”。':'登录同一账号即可在其他设备查看。网络中断时先保存在本机，联网后继续同步。'}</small><div class="export-row"><button class="btn secondary" data-action="export">保存记录</button><label class="btn secondary" for="import-records" style="cursor:pointer">恢复记录</label><input id="import-records" type="file" accept="application/json,.json" hidden></div></div></div></section><aside class="panel about-panel"><h3>给家长的小提示</h3><p>网页与纸质手册按 Day、日期和词序对应。首页会继续上次的位置，不强制追赶日历。</p><p>音源：Microsoft 在线合成语音，英式 Sonia / 美式 Aria。正常音频保留完整句的语调；慢速用于辅助听清。不需要麦克风，不录制孩子声音。</p><p>单词与例句来自配套手册。“会读了”是孩子自评标记，不是自动评分。</p><div class="install-note"><strong>像小应用一样打开</strong><br>把这个网页加入浏览器书签。iPhone 可在 Safari 的分享菜单中选择“添加到主屏幕”；安卓在支持的浏览器菜单中添加到桌面。外部聊天中的链接，可以选择用系统浏览器打开。</div><button class="btn secondary wide" data-action="copy-link" style="margin-top:18px">复制学习站链接${I('arrow')}</button></aside></div>`;}
+function settings(){currentView={type:'settings'};return `${pageTop('按你喜欢的方式听',LOCAL_MODE?'声音、速度和学习记录保存在这台设备上。':'声音和速度记在本机；学习记录会同步到你的账号。')}<section class="panel account-panel"><div><strong>${LOCAL_MODE?'本机学习模式':'当前账号：'+esc(account.username)}</strong><p id="sync-status" role="status" aria-live="polite">${esc(syncMessage)}</p></div>${LOCAL_MODE?`<div class="export-row"><a class="btn secondary" href="${esc(learningModeUrl())}">账号登录</a></div>`:'<div class="export-row"><button class="btn secondary" data-action="sync-now">立即同步</button><button class="btn secondary" data-action="logout">退出登录</button></div>'}</section><div class="settings-grid"><section class="panel settings-list"><div class="field"><label for="set-accent">常用口音<small>单词和两句例句都有英式、美式。</small></label><select id="set-accent"><option value="uk" ${state.accent==='uk'?'selected':''}>英式 UK</option><option value="us" ${state.accent==='us'?'selected':''}>美式 US</option></select></div><div class="field speed-setting">${playbackSpeedControl('set-rate')}</div><div class="field"><label for="set-gap">留多久跟读<small>“听一组”和连续播放之间的停顿。</small></label><select id="set-gap">${[2,3,5,8].map(n=>`<option value="${n}" ${Number(state.gap)===n?'selected':''}>${n} 秒</option>`).join('')}</select></div><div class="field"><div><label>我的学习记录</label><small>会读了 ${Object.values(state.status).filter(s=>s==='learned').length} 词 · 再练 ${Object.values(state.status).filter(s=>s==='practice').length} 词<br>${LOCAL_MODE?'刷新后记录仍保留。登录账号后可同步本机记录；免登录时跨设备可用“保存记录”和“恢复记录”。':'登录同一账号即可在其他设备查看。网络中断时先保存在本机，联网后继续同步。'}</small><div class="export-row"><button class="btn secondary" data-action="export">保存记录</button><label class="btn secondary" for="import-records" style="cursor:pointer">恢复记录</label><input id="import-records" type="file" accept="application/json,.json" hidden></div></div></div></section><aside class="panel about-panel"><h3>给家长的小提示</h3><p>网页与纸质手册按 Day、日期和词序对应。首页会继续上次的位置，不强制追赶日历。</p><p>音源：Microsoft 在线合成语音，英式 Sonia / 美式 Aria。正常音频保留完整句的语调；慢速用于辅助听清。不需要麦克风，不录制孩子声音。</p><p>单词与例句来自配套手册。“会读了”是孩子自评标记，不是自动评分。</p><div class="install-note"><strong>像小应用一样打开</strong><br>把这个网页加入浏览器书签。iPhone 可在 Safari 的分享菜单中选择“添加到主屏幕”；安卓在支持的浏览器菜单中添加到桌面。外部聊天中的链接，可以选择用系统浏览器打开。</div><button class="btn secondary wide" data-action="copy-link" style="margin-top:18px">复制学习站链接${I('arrow')}</button></aside></div>`;}
 function syncLessonToItem(item){
   if(currentView.type!=='lesson')return;
   const e=entries.get(item.entry);if(e?.day!==currentView.day)return;
@@ -218,7 +240,7 @@ document.addEventListener('click',event=>{
   else if(a==='pause')player.toggle();
   else if(a==='stop')player.stop();
   else if(a==='accent')setAccent(button.dataset.accent);
-  else if(a==='rate'){state.rate=Number(button.dataset.rate);player.audio.playbackRate=state.rate;persist();renderRoute({stop:false,scroll:false});}
+  else if(a==='rate')setPlaybackRate(button.dataset.rate);
   else if(a==='status')setStatus(id,button.dataset.status);
   else if(a==='previous'||a==='next'){const d=days.get(currentView.day);routeTo(lessonHash(d,currentView.index+(a==='next'?1:-1)));}
   else if(a==='next-day'){const n=Number(button.dataset.day)+1;if(days.has(n))routeTo(lessonHash(days.get(n)));else routeTo('#/review');}
@@ -233,7 +255,10 @@ document.addEventListener('click',event=>{
     if(!navigator.clipboard)toast('请在浏览器菜单中收藏这个网页。');
   }
 });
-document.addEventListener('input',event=>{if(event.target.id==='word-search')searchResults(event.target.value);});
+document.addEventListener('input',event=>{
+  if(event.target.id==='word-search')searchResults(event.target.value);
+  else if(event.target.matches('[data-rate-slider]') && data && (LOCAL_MODE || account))setPlaybackRate(event.target.value);
+});
 document.addEventListener('submit',event=>{if(event.target.id==='day-jump'){event.preventDefault();const n=Number($('#jump-number').value);if(days.has(n))routeTo(lessonHash(days.get(n)));else toast('请输入 Day 1 到 Day 147。');}});
 document.addEventListener('change',async event=>{
   const el=event.target;
@@ -241,7 +266,7 @@ document.addEventListener('change',async event=>{
   else if(el.id==='review-month'){reviewMonth=Number(el.value);revealed.clear();renderRoute();}
   else if(el.id==='hide-english'){hideEnglish=el.checked;revealed.clear();renderRoute();}
   else if(el.id==='set-accent')setAccent(el.value);
-  else if(el.id==='set-rate'){state.rate=Number(el.value);player.audio.playbackRate=state.rate;persist();}
+  else if(el.matches('[data-rate-slider]') && data && (LOCAL_MODE || account))setPlaybackRate(el.value);
   else if(el.id==='set-gap'){state.gap=Number(el.value);persist();}
   else if(el.id==='import-records'&&el.files[0]){
     try{
