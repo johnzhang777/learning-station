@@ -30,40 +30,16 @@ function derivePassword(password, salt) {
 
 async function readInput(request) {
   if ((request.headers.get('content-type') || '').split(';')[0].trim().toLowerCase() !== 'application/json' || Number(request.headers.get('content-length')) > LIMIT) failure('NODE_PASSWORD_REQUEST');
-  const reader = request.body?.getReader();
-  if (!reader) failure('NODE_PASSWORD_REQUEST');
-  let size = 0;
-  const chunks = [];
+  // Cloud Functions provides request.json(); its body need not be a Web stream.
+  // Only an authenticated server caller reaches this parser. The Edge caller
+  // also bounds the original input before forwarding the credential fields.
+  let input;
   try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      let bytes;
-      if (typeof value === 'string') bytes = encoder.encode(value);
-      else if (value instanceof ArrayBuffer) bytes = new Uint8Array(value);
-      else if (ArrayBuffer.isView(value)) bytes = new Uint8Array(value.buffer, value.byteOffset, value.byteLength);
-      else failure('NODE_PASSWORD_REQUEST');
-      size += bytes.byteLength;
-      if (size > LIMIT) {
-        await reader.cancel();
-        failure('NODE_PASSWORD_REQUEST');
-      }
-      chunks.push(bytes);
-    }
+    input = await request.json();
+    if (encoder.encode(JSON.stringify(input)).byteLength > LIMIT) failure('NODE_PASSWORD_REQUEST');
   } catch {
     failure('NODE_PASSWORD_REQUEST');
-  } finally {
-    reader.releaseLock?.();
   }
-  const data = new Uint8Array(size);
-  let offset = 0;
-  for (const chunk of chunks) {
-    data.set(chunk, offset);
-    offset += chunk.byteLength;
-  }
-  let input;
-  try { input = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(data)); }
-  catch { failure('NODE_PASSWORD_REQUEST'); }
   if (!input || typeof input !== 'object' || Array.isArray(input)) failure('NODE_PASSWORD_REQUEST');
   return input;
 }
