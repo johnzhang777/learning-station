@@ -167,14 +167,16 @@ async function load(kv) {
   }
   return { fields, writers };
 }
-export async function handle(request, env, kv, { now = Date.now(), clientIp, verifyPassword } = {}) {
+export async function handle(request, env, kv, { now = Date.now(), clientIp, verifyPassword, allowLegacyLogin = true } = {}) {
   try {
     config(env, kv);
     if (!local(request) && new URL(request.url).protocol !== 'https:') fail('请使用 HTTPS 打开学习站。', 400);
     const route = new URL(request.url).pathname.replace(/\/$/, '');
     if (request.method === 'POST') sameOrigin(request);
-    if (route === '/api/login' && request.method === 'POST') {
+    if (route === '/api/login' && request.method === 'POST' && !allowLegacyLogin) fail('登录页面已更新，请刷新后再试。', 410);
+    if (['/api/login', '/api/login-ticket'].includes(route) && request.method === 'POST') {
       const input = await body(request, 1024);
+      if (!input || typeof input !== 'object' || Array.isArray(input)) fail('请求格式无效。', 400);
       // eo.clientIp is supplied by EdgeOne; no spoofable X-Forwarded-For trust.
       const ip = clientIp || request.eo?.clientIp;
       // If the runtime does not expose a trusted client IP, keep a shared account
@@ -185,6 +187,15 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp, ver
       if (!rate || rate.until <= now) rate = { count: 0, until: now + 600000 };
       if (rate.count >= 8) return json({ error: '尝试次数较多，请十分钟后再试。' }, 429, { 'Retry-After': String(Math.ceil((rate.until - now) / 1000)) });
       if (typeof input.username !== 'string' || typeof input.password !== 'string' || input.username.length > 40 || input.password.length > 128) fail('姓名拼音或验证码不正确。', 401);
+      if (route === '/api/login-ticket') {
+        // Count before issuing a credential-bound ticket: clients cannot omit
+        // a failed-password report to bypass the existing KV rate limit.
+        rate.count++; await cloudOperation('LOGIN_RATE_WRITE', () => kv.put(rateKey, JSON.stringify(rate)));
+        const nonce = await cloudOperation('SESSION_RANDOM', () => hex(crypto.getRandomValues(new Uint8Array(16))));
+        const payload = btoa(JSON.stringify({ nonce, exp: Math.floor(now / 1000) + 60 }));
+        const value = 'learning-station:login-ticket:v1\n' + payload + '\n' + JSON.stringify([input.username.trim().toLowerCase(), input.password]);
+        return json({ ticket: payload + '.' + await sign(value, env.SESSION_SECRET) });
+      }
       let valid;
       if (verifyPassword) {
         valid = await verifyPassword({ username: input.username, password: input.password });
@@ -195,6 +206,20 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp, ver
       }
       rate.count = valid ? 0 : rate.count + 1; await cloudOperation('LOGIN_RATE_WRITE', () => kv.put(rateKey, JSON.stringify(rate)));
       if (!valid) fail('姓名拼音或验证码不正确。', 401);
+      const token = await issue(env, now); const s = JSON.parse(atob(token.split('.')[0]));
+      return json({ username: s.sub, csrf: s.nonce, expiresAt: s.exp * 1000 }, 200, { 'Set-Cookie': cookie(request, token) });
+    }
+    if (route === '/api/login-complete' && request.method === 'POST') {
+      const input = await body(request, 1024);
+      const proof = input?.proof;
+      if (typeof proof !== 'string' || proof.length > 512) fail('登录确认已失效，请重新登录。', 401);
+      const parts = proof.split('.');
+      if (parts.length !== 2 || !/^[a-f0-9]{64}$/.test(parts[1]) || !constantEqual(parts[1], await sign('learning-station:login-proof:v1\n' + parts[0], env.SESSION_SECRET))) fail('登录确认已失效，请重新登录。', 401);
+      let verified; try { verified = JSON.parse(atob(parts[0])); } catch { fail('登录确认已失效，请重新登录。', 401); }
+      if (verified?.sub !== env.ACCOUNT_USERNAME || !uuid.test(verified?.nonce) || !Number.isSafeInteger(verified?.exp) || verified.exp <= Math.floor(now / 1000) || verified.exp > Math.floor(now / 1000) + 65) fail('登录确认已失效，请重新登录。', 401);
+      const ip = clientIp || request.eo?.clientIp;
+      const rateKey = ip ? 'login_rate_' + (await digest(ip)).slice(0, 32) : 'login_rate_account';
+      await cloudOperation('LOGIN_RATE_WRITE', () => kv.put(rateKey, JSON.stringify({ count: 0, until: now + 600000 })));
       const token = await issue(env, now); const s = JSON.parse(atob(token.split('.')[0]));
       return json({ username: s.sub, csrf: s.nonce, expiresAt: s.exp * 1000 }, 200, { 'Set-Cookie': cookie(request, token) });
     }

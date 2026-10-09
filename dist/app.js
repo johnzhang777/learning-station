@@ -1,6 +1,7 @@
 import { ProgressSync } from './progress-sync.js';
-// Temporary public listening mode. Records stay on this device until account login returns.
-const LOCAL_MODE = true;
+// Keep public listening available while the repaired account flow is verified.
+// ?login=1 opens the real, protected login flow without changing the default.
+const LOCAL_MODE = new URL(location.href).searchParams.get('login') !== '1';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -267,7 +268,9 @@ function showLogin(message=''){
     const username=$('#login-name').value.trim().toLowerCase(),password=$('#login-code').value;
     $('#login-error').textContent='';
     try{
-      const user=await api('/api/login',{method:'POST',body:JSON.stringify({username,password})});
+      const {ticket}=await api('/api/login-ticket',{method:'POST',body:JSON.stringify({username,password})});
+      const {proof}=await api('/auth/login',{method:'POST',body:JSON.stringify({username,password,ticket})});
+      const user=await api('/api/login-complete',{method:'POST',body:JSON.stringify({proof})});
       $('#login-code').value='';try{localStorage.setItem('listening-username',username);}catch{}
       await signedIn(user);
     }catch(e){$('#login-error').textContent=e.message;$('#login-code').value='';button.disabled=false;button.innerHTML=`登录并继续学习${I('arrow')}`;}
