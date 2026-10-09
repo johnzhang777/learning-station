@@ -1,8 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { pbkdf2Sync } from 'node:crypto';
 import { handle, passwordHash, mergeFields } from '../server/learning-api.js';
 
-const env = { ACCOUNT_USERNAME: 'testchild', ACCOUNT_PASSWORD_SALT: 'ab'.repeat(16), ACCOUNT_PASSWORD_HASH: await passwordHash('test-pass-729', 'ab'.repeat(16)), SESSION_SECRET: 'cd'.repeat(32) };
+// Compute expected password verifiers independently of the code under test.
+const expectedPasswordHash = (password, salt) => pbkdf2Sync(password, Buffer.from(salt, 'hex'), 120000, 32, 'sha256').toString('hex');
+const env = { ACCOUNT_USERNAME: 'testchild', ACCOUNT_PASSWORD_SALT: 'ab'.repeat(16), ACCOUNT_PASSWORD_HASH: expectedPasswordHash('test-pass-729', 'ab'.repeat(16)), SESSION_SECRET: 'cd'.repeat(32) };
 const actorA = 'a'.repeat(32), actorB = 'b'.repeat(32);
 class KV {
   data = new Map();
@@ -165,6 +168,7 @@ async function captureDiagnostics(run, overrides) {
 }
 async function assertDiagnostic(result, code, kind, reason = 'RUNTIME_ERROR') {
   assert.equal(result.response.status, 503);
+  assert.equal(result.response.headers.get('set-cookie'), null);
   const payload = await result.response.json();
   assert.deepEqual(payload, { error: `云端暂时无法连接，请稍后重试。（诊断码：${code}）`, code, kind, reason });
   assert.equal(result.logs.length, 1);
@@ -178,14 +182,158 @@ async function assertDiagnostic(result, code, kind, reason = 'RUNTIME_ERROR') {
   return publicOutput;
 }
 
-test('PBKDF2 import and derive failures expose fixed diagnostics without sensitive exception text', async () => {
-  for (const [method, code] of [['importKey', 'CRYPTO_PASSWORD_IMPORT'], ['deriveBits', 'CRYPTO_PASSWORD_DERIVE']]) {
+test('PBKDF2 password hashes match independent Node crypto verifiers', async () => {
+  for (const [password, salt] of [
+    ['test-pass-729', 'ab'.repeat(16)],
+    ['different-test-password', '00'.repeat(16)],
+    ['\u6d4b\u8bd5-password-\u00e9', '0123456789abcdef'.repeat(2)]
+  ]) {
+    assert.equal(await passwordHash(password, salt), expectedPasswordHash(password, salt));
+  }
+});
+
+function assertCanonicalDerivation(algorithm) {
+  assert.equal(algorithm.name, 'PBKDF2');
+  assert.deepEqual(algorithm.hash, { name: 'SHA-256' });
+  assert.equal(algorithm.salt instanceof ArrayBuffer, true);
+  assert.equal(algorithm.salt.byteLength, 16);
+  assert.equal(algorithm.iterations, 120000);
+}
+
+test('PBKDF2 accepts strict runtime algorithm dictionaries and raw ArrayBuffers', async () => {
+  const subtle = globalThis.crypto.subtle;
+  let imports = 0, derives = 0;
+  const result = await captureDiagnostics(() => passwordHash('test-pass-729', env.ACCOUNT_PASSWORD_SALT), {
+    importKey: async (format, keyData, algorithm, extractable, usages) => {
+      if ((typeof algorithm === 'string' ? algorithm : algorithm.name) === 'PBKDF2') {
+        imports++;
+        // Model a runtime which does not accept typed-array key data.
+        assert.equal(keyData instanceof ArrayBuffer, true);
+        assert.equal(format, 'raw');
+        assert.equal(extractable, false);
+        assert.deepEqual(usages, ['deriveBits']);
+      }
+      return subtle.importKey(format, keyData, algorithm, extractable, usages);
+    },
+    deriveBits: async (algorithm, key, length) => {
+      derives++;
+      // Model a runtime which rejects string hash names or typed-array salt.
+      assertCanonicalDerivation(algorithm);
+      assert.equal(length, 256);
+      return subtle.deriveBits(algorithm, key, length);
+    }
+  });
+  assert.equal(result.response, env.ACCOUNT_PASSWORD_HASH);
+  assert.deepEqual(result.logs, []);
+  assert.equal(imports, 1);
+  assert.equal(derives, 1);
+});
+
+test('deriveKey fallback preserves existing verifier, login, refresh and cross-device progress', async () => {
+  const subtle = globalThis.crypto.subtle;
+  const importedUsages = [];
+  let bitsAttempts = 0, keyDerivations = 0, exports = 0;
+  const result = await captureDiagnostics(async () => {
+    assert.equal(await passwordHash('test-pass-729', env.ACCOUNT_PASSWORD_SALT), env.ACCOUNT_PASSWORD_HASH);
+    const kv = new KV(), firstDevice = await login(kv);
+    assert.match(firstDevice.res.headers.get('set-cookie'), /HttpOnly; SameSite=Strict; Max-Age=2592000; Secure/);
+    const refreshed = await handle(request('/api/session', firstDevice), env, kv);
+    assert.equal(refreshed.status, 200);
+    assert.equal((await refreshed.json()).username, 'testchild');
+    const fields = { w001: { value: 'learned', clock: 1, actor: actorA } };
+    const saved = await handle(request('/api/progress', {
+      ...firstDevice, method: 'POST', data: { writer: actorA, sequence: 1, fields }
+    }), env, kv);
+    assert.equal(saved.status, 200);
+    const secondDevice = await login(kv);
+    const synchronized = await handle(request('/api/progress', secondDevice), env, kv);
+    assert.equal(synchronized.status, 200);
+    assert.deepEqual((await synchronized.json()).fields, fields);
+    const wrongPassword = await handle(request('/api/login', {
+      method: 'POST', data: { username: 'testchild', password: 'incorrect' }
+    }), env, kv);
+    assert.equal(wrongPassword.status, 401);
+    assert.equal(wrongPassword.headers.get('set-cookie'), null);
+    return saved;
+  }, {
+    importKey: async (format, keyData, algorithm, extractable, usages) => {
+      if ((typeof algorithm === 'string' ? algorithm : algorithm.name) === 'PBKDF2') {
+        assert.equal(keyData instanceof ArrayBuffer, true);
+        importedUsages.push(usages);
+      }
+      return subtle.importKey(format, keyData, algorithm, extractable, usages);
+    },
+    deriveBits: async () => {
+      bitsAttempts++;
+      throw new DOMException(sensitiveFailure, 'OperationError');
+    },
+    deriveKey: async (algorithm, key, derivedAlgorithm, extractable, usages) => {
+      keyDerivations++;
+      assertCanonicalDerivation(algorithm);
+      assert.deepEqual(key.usages, ['deriveKey']);
+      assert.equal(derivedAlgorithm.name, 'HMAC');
+      assert.equal(typeof derivedAlgorithm.hash === 'string' ? derivedAlgorithm.hash : derivedAlgorithm.hash.name, 'SHA-256');
+      assert.equal(derivedAlgorithm.length, 256);
+      assert.equal(extractable, true);
+      assert.deepEqual(usages, ['sign']);
+      return subtle.deriveKey(algorithm, key, derivedAlgorithm, extractable, usages);
+    },
+    exportKey: async (format, key) => {
+      exports++;
+      assert.equal(format, 'raw');
+      assert.equal(key.extractable, true);
+      return subtle.exportKey(format, key);
+    }
+  });
+  assert.equal(result.response.status, 200);
+  assert.deepEqual(result.logs, []);
+  assert.equal(bitsAttempts, 4);
+  assert.equal(keyDerivations, 4);
+  assert.equal(exports, 4);
+  assert.deepEqual(importedUsages, Array.from({ length: 4 }, () => [['deriveBits'], ['deriveKey']]).flat());
+});
+
+test('invalid PBKDF2 output lengths never issue a cookie or write to KV', async () => {
+  const outputs = [31, 33, 64].flatMap(length => [new ArrayBuffer(length), paddedView(new Uint8Array(length), DataView)]);
+  outputs.push(null, { byteLength: 32 });
+  for (const output of outputs) {
+    const kv = new KV();
+    let writes = 0;
+    kv.put = async () => { writes++; };
+    const result = await captureDiagnostics(() => handle(request('/api/login', {
+      method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
+    }), env, kv), { deriveBits: async () => output });
+    await assertDiagnostic(result, 'CRYPTO_PASSWORD_DERIVE', 'Error');
+    assert.equal(writes, 0);
+    assert.equal(kv.data.size, 0);
+  }
+});
+
+test('fallback key export failure exposes only a fixed diagnostic and issues no session', async () => {
+  const kv = new KV();
+  let writes = 0;
+  kv.put = async () => { writes++; };
+  const result = await captureDiagnostics(() => handle(request('/api/login', {
+    method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
+  }), env, kv), {
+    deriveBits: async () => { throw new DOMException(sensitiveFailure, 'OperationError'); },
+    exportKey: async () => { throw new DOMException(sensitiveFailure, 'OperationError'); }
+  });
+  await assertDiagnostic(result, 'CRYPTO_PASSWORD_EXPORT', 'OperationError');
+  assert.equal(writes, 0);
+  assert.equal(kv.data.size, 0);
+});
+
+test('PBKDF2 import and both derivation failures expose fixed diagnostics without sensitive exception text', async () => {
+  const failure = async () => { throw new DOMException(sensitiveFailure, 'OperationError'); };
+  for (const [overrides, code] of [
+    [{ importKey: failure }, 'CRYPTO_PASSWORD_IMPORT'],
+    [{ deriveBits: failure, deriveKey: failure }, 'CRYPTO_PASSWORD_DERIVE']
+  ]) {
     const originalCrypto = globalThis.crypto, originalError = console.error;
     const result = await captureDiagnostics(() => handle(request('/api/login', {
       method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
-    }), env, new KV()), {
-      [method]: async () => { throw new DOMException(sensitiveFailure, 'OperationError'); }
-    });
+    }), env, new KV()), overrides);
     assert.equal(globalThis.crypto, originalCrypto);
     assert.equal(console.error, originalError);
     await assertDiagnostic(result, code, 'OperationError');
@@ -200,7 +348,8 @@ test('PBKDF2 iteration ceiling is classified without disclosing raw message or i
     const result = await captureDiagnostics(() => handle(request('/api/login', {
       method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
     }), env, new KV()), {
-      deriveBits: async () => { throw new DOMException(`${message} ${sensitiveFailure}`, 'OperationError'); }
+      deriveBits: async () => { throw new DOMException(`${message} ${sensitiveFailure}`, 'OperationError'); },
+      deriveKey: async () => { throw new DOMException(`${message} ${sensitiveFailure}`, 'OperationError'); }
     });
     const publicOutput = await assertDiagnostic(result, 'CRYPTO_PASSWORD_DERIVE', 'OperationError', 'ITERATION_LIMIT');
     assert.equal(publicOutput.includes('100000'), false);
