@@ -2,8 +2,9 @@ import http from 'node:http';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { handle, verifyWithNode } from '../server/learning-api.js';
+import { handle } from '../server/learning-api.js';
 import { handleVerification } from '../server/node-password-verifier.js';
+import { handleLogin } from '../server/node-login.js';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const port = Number(process.argv[2]) || 8767;
 const env = JSON.parse(await readFile(path.join(root, '.private/account.json'), 'utf8'));
@@ -18,13 +19,14 @@ const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, `http://${req.headers.host || `127.0.0.1:${port}`}`);
-    if (url.pathname.startsWith('/api/') || url.pathname === '/internal/verify-password') {
+    if (url.pathname.startsWith('/api/') || url.pathname === '/internal/verify-password' || url.pathname === '/auth/login') {
       const chunks = []; for await (const c of req) chunks.push(c);
       const request = new Request(url, { method: req.method, headers: req.headers, ...(chunks.length ? { body: Buffer.concat(chunks) } : {}) });
       Object.defineProperty(request, 'eo', { value: { clientIp: req.socket.remoteAddress } });
       const result = url.pathname === '/internal/verify-password'
         ? await handleVerification(request, env)
-        : await handle(request, env, kv, { verifyPassword: input => verifyWithNode(request, env, input) });
+        : url.pathname === '/auth/login' ? await handleLogin(request, env)
+        : await handle(request, env, kv, { allowLegacyLogin: false });
       res.writeHead(result.status, Object.fromEntries(result.headers)); res.end(Buffer.from(await result.arrayBuffer())); return;
     }
     const relative = decodeURIComponent(url.pathname === '/' ? 'index.html' : url.pathname.slice(1));

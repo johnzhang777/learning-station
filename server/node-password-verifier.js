@@ -44,6 +44,19 @@ async function readInput(request) {
   return input;
 }
 
+export async function verifyCredentials(input, env, { derivePassword: derive = derivePassword } = {}) {
+  if (!/^[a-z]{2,40}$/.test(env?.ACCOUNT_USERNAME || '') || !/^[a-f0-9]{32}$/.test(env.ACCOUNT_PASSWORD_SALT || '') || !/^[a-f0-9]{64}$/.test(env.ACCOUNT_PASSWORD_HASH || '')) failure('NODE_PASSWORD_CONFIG');
+  if (typeof input?.username !== 'string' || typeof input.password !== 'string' || input.username.length > 40 || input.password.length > 128) return false;
+  let bytes;
+  try { bytes = await derive(input.password, env.ACCOUNT_PASSWORD_SALT); }
+  catch { failure('NODE_PASSWORD_DERIVE'); }
+  if (!ArrayBuffer.isView(bytes) || bytes.byteLength !== 32) failure('NODE_PASSWORD_DERIVE');
+  const actual = Buffer.from(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const userMatches = equal(Buffer.from(input.username.trim().toLowerCase(), 'utf8'), Buffer.from(env.ACCOUNT_USERNAME, 'utf8'));
+  const hashMatches = equal(actual, Buffer.from(env.ACCOUNT_PASSWORD_HASH, 'hex'));
+  return userMatches && hashMatches;
+}
+
 export async function handleVerification(request, env, { derivePassword: derive = derivePassword } = {}) {
   try {
     // Authenticate the server caller before reading credentials or doing PBKDF2.
@@ -55,15 +68,7 @@ export async function handleVerification(request, env, { derivePassword: derive 
     if (!/^[a-z]{2,40}$/.test(env.ACCOUNT_USERNAME || '') || !/^[a-f0-9]{32}$/.test(env.ACCOUNT_PASSWORD_SALT || '') || !/^[a-f0-9]{64}$/.test(env.ACCOUNT_PASSWORD_HASH || '')) failure('NODE_PASSWORD_CONFIG');
 
     const input = await readInput(request);
-    if (typeof input.username !== 'string' || typeof input.password !== 'string' || input.username.length > 40 || input.password.length > 128) return json({ valid: false });
-    let bytes;
-    try { bytes = await derive(input.password, env.ACCOUNT_PASSWORD_SALT); }
-    catch { failure('NODE_PASSWORD_DERIVE'); }
-    if (!ArrayBuffer.isView(bytes) || bytes.byteLength !== 32) failure('NODE_PASSWORD_DERIVE');
-    const actual = Buffer.from(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-    const userMatches = equal(Buffer.from(input.username.trim().toLowerCase(), 'utf8'), Buffer.from(env.ACCOUNT_USERNAME, 'utf8'));
-    const hashMatches = equal(actual, Buffer.from(env.ACCOUNT_PASSWORD_HASH, 'hex'));
-    return json({ valid: userMatches && hashMatches });
+    return json({ valid: await verifyCredentials(input, env, { derivePassword: derive }) });
   } catch (error) {
     const code = codes.has(error?.code) ? error.code : 'NODE_PASSWORD_INTERNAL';
     // Never include native errors, inputs, tokens, verifier values or secrets.
