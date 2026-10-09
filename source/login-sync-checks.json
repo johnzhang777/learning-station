@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-09",
+  "platformTarget": "Tencent Cloud EdgeOne Pages Edge Functions + KV",
+  "automatedTests": { "passed": 8, "failed": 0 },
+  "browserChecks": {
+    "viewport": "390 x 844",
+    "fixedAccountLogin": "passed",
+    "refreshKeepsSessionAndProgress": "passed",
+    "twoIndependentOriginsShareServerRecords": "passed: 127.0.0.1 and localhost with isolated cookies/localStorage",
+    "learningPositionRestoredOnSecondOrigin": "passed",
+    "bidirectionalLearnedAndPracticeMerge": "passed",
+    "logoutAndRefreshRequireLogin": "passed",
+    "horizontalOverflow": false
+  },
+  "storageUsedForValidation": "persistent local file KV emulator using production handler",
+  "productionKVConfigured": false,
+  "productionRuntimeValidated": false,
+  "secrets": "account salt/hash and session key are in ignored .private; plaintext password is not saved or bundled"
+}

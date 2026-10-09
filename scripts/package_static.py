@@ -1,12 +1,15 @@
-"""Create a hosting-independent ZIP, with index.html at its root."""
+"""Package EdgeOne frontend and Edge Functions without local secrets."""
 import hashlib
 import json
 import zipfile
+import subprocess
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parents[1]
 DIST = SITE / 'dist'
-ARCHIVE = SITE.parent / 'learning-station-static.zip'
+ARCHIVE = SITE.parent / 'learning-station-edgeone.zip'
+subprocess.run(['node', str(SITE / 'scripts/build.mjs')], cwd=SITE, check=True)
+assert (DIST / 'edge-functions/api/[[route]].js').is_file()
 data = json.loads((DIST / 'data.json').read_text(encoding='utf-8'))
 audio = json.loads((DIST / 'audio-manifest.json').read_text(encoding='utf-8'))
 assert set(audio['entries']) == {e['id'] for e in data['entries']}
@@ -24,6 +27,8 @@ with zipfile.ZipFile(ARCHIVE, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as pac
 with zipfile.ZipFile(ARCHIVE) as package:
     assert package.testzip() is None
     assert 'index.html' in package.namelist()
+    assert 'edge-functions/api/[[route]].js' in package.namelist()
+    assert not any('.private' in n or n.endswith('.env') for n in package.namelist())
     assert len(package.namelist()) == len(paths)
     assert sum(n.endswith('.mp3') for n in package.namelist()) == 3150
     for p in paths:

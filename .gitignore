@@ -8,3 +8,12 @@ source/*-test.json
 node_modules/
 .sites-runtime/
 screenshots/
+
+.private/
+.env*
+!.env.example
+dist/edge-functions/
+dist/package.json
+dist/edgeone.json
+.edgeone/
+.edgeone.cache/
