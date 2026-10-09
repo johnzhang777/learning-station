@@ -21,11 +21,21 @@ function validateLoginConfig(env) {
   if (!/^[a-z]{2,40}$/.test(env?.ACCOUNT_USERNAME || '') || !/^[a-f0-9]{32}$/.test(env.ACCOUNT_PASSWORD_SALT || '') || !/^[a-f0-9]{64}$/.test(env.ACCOUNT_PASSWORD_HASH || '') || !/^[a-f0-9]{64}$/.test(env.SESSION_SECRET || '')) loginFailure('NODE_LOGIN_CONFIG');
 }
 
-function loginOrigin(request) {
-  const url = new URL(request.url);
+function loginRequestSource(request) {
+  if (!request.headers.get('origin') || request.headers.get('origin') === 'null' || request.headers.get('sec-fetch-site') === 'cross-site') loginReject('请求来源无效。', 403);
+}
+
+function loginOrigin(request, signedOrigin) {
+  // Cloud Functions can expose an internal HTTP request URL behind the HTTPS
+  // proxy. Only the authenticated Edge ticket supplies the public origin;
+  // neither the internal URL nor client-supplied forwarding headers is trusted.
+  let url;
+  try { url = new URL(signedOrigin); }
+  catch { loginReject('请求来源无效。', 403); }
+  if (url.origin !== signedOrigin) loginReject('请求来源无效。', 403);
   const local = url.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname);
   if (!local && url.protocol !== 'https:') loginReject('请使用 HTTPS 打开学习站。', 400);
-  if (request.headers.get('origin') !== url.origin || request.headers.get('sec-fetch-site') === 'cross-site') loginReject('请求来源无效。', 403);
+  if (request.headers.get('origin') !== signedOrigin) loginReject('请求来源无效。', 403);
 }
 
 async function readLoginInput(request) {
@@ -55,7 +65,7 @@ function checkLoginTicket(ticket, input, env, now) {
   try { payload = JSON.parse(bytes.toString('utf8')); }
   catch { invalid(); }
   const nowSeconds = Math.floor(now / 1000);
-  if (!payload || typeof payload !== 'object' || Array.isArray(payload) || Object.keys(payload).length !== 2 || !loginUuid.test(payload.nonce) || !Number.isSafeInteger(payload.exp) || payload.exp <= nowSeconds || payload.exp > nowSeconds + 65) invalid();
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload) || Object.keys(payload).length !== 3 || typeof payload.origin !== 'string' || !loginUuid.test(payload.nonce) || !Number.isSafeInteger(payload.exp) || payload.exp <= nowSeconds || payload.exp > nowSeconds + 65) invalid();
   // Bind a rate-limited ticket to exactly one password attempt. Replaying it
   // cannot turn one reserved attempt into many different password guesses.
   const signed = 'learning-station:login-ticket:v1\n' + parts[0] + '\n' + JSON.stringify([input.username, input.password]);
@@ -67,10 +77,11 @@ function checkLoginTicket(ticket, input, env, now) {
 export async function handleLogin(request, env, { now = Date.now(), verifyCredentials: verify = verifyCredentials } = {}) {
   try {
     if (request.method !== 'POST' || new URL(request.url).pathname !== '/auth/login') return loginJson({ error: '接口不存在。' }, 404);
-    loginOrigin(request);
+    loginRequestSource(request);
     validateLoginConfig(env);
     const input = await readLoginInput(request);
     const ticket = checkLoginTicket(input.ticket, input, env, now);
+    loginOrigin(request, ticket.origin);
     let valid;
     try { valid = await verify({ username: input.username, password: input.password }, env); }
     catch { loginFailure('NODE_LOGIN_PASSWORD'); }

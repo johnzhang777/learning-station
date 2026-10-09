@@ -16,7 +16,7 @@ const env = {
 };
 const hmac = value => createHmac('sha256', Buffer.from(env.SESSION_SECRET, 'hex')).update(value, 'utf8').digest('hex');
 function ticket(username = env.ACCOUNT_USERNAME, suppliedPassword = password, payload = { nonce, exp: Math.floor(now / 1000) + 60 }, domain = 'learning-station:login-ticket:v1\n') {
-  const encoded = Buffer.from(JSON.stringify(payload)).toString('base64');
+  const encoded = Buffer.from(JSON.stringify({ origin: 'https://learn.example', ...payload })).toString('base64');
   return encoded + '.' + hmac(domain + encoded + '\n' + JSON.stringify([username.trim().toLowerCase(), suppliedPassword]));
 }
 function request({ data = { username: env.ACCOUNT_USERNAME, password, ticket: ticket() }, raw, method = 'POST', url = 'https://learn.example/auth/login', origin = new URL(url).origin, type = 'application/json', length, site } = {}) {
@@ -80,7 +80,9 @@ test('missing, expired, overlong and malformed tickets are rejected before verif
     ticket(undefined, undefined, { nonce, exp: now / 1000 + 66 }),
     ticket(undefined, undefined, { nonce: 'bad', exp: now / 1000 + 60 }),
     ticket(undefined, undefined, { nonce, exp: now / 1000 + 60, additional: true }),
-    ticket(undefined, undefined, { nonce, exp: String(now / 1000 + 60) })
+    ticket(undefined, undefined, { nonce, exp: String(now / 1000 + 60) }),
+    ticket(undefined, undefined, { nonce, exp: now / 1000 + 60, origin: undefined }),
+    ticket(undefined, undefined, { nonce, exp: now / 1000 + 60, origin: null })
   ]) {
     const res = await handleLogin(request({ data: { username: env.ACCOUNT_USERNAME, password, ticket: suppliedTicket } }), env, { now, verifyCredentials: verify });
     assert.equal(res.status, 403);
@@ -100,24 +102,61 @@ test('wrong credentials with a genuine rate-limited ticket return 401 without a 
   }
 });
 
-test('Node login enforces same-origin and HTTPS before reading credentials', async () => {
+test('Node login rejects missing or cross-site sources before reading and compares the authenticated public origin before PBKDF2', async () => {
   let reads = 0;
   let calculations = 0;
-  for (const [options, status] of [[{ origin: null }, 403], [{ origin: 'https://other.example' }, 403], [{ site: 'cross-site' }, 403], [{ url: 'http://learn.example/auth/login' }, 400]]) {
+  for (const options of [{ origin: null }, { origin: 'null' }, { site: 'cross-site' }]) {
     const req = request(options);
     Object.defineProperty(req, 'json', { value: async () => { reads++; throw Error('Do not read'); } });
     const res = await handleLogin(req, env, { now, verifyCredentials: () => { calculations++; return true; } });
-    assert.equal(res.status, status);
+    assert.equal(res.status, 403);
   }
   assert.equal(reads, 0);
+  const verify = () => { calculations++; return true; };
+  for (const origin of ['https://other.example', 'http://learn.example']) {
+    assert.equal((await handleLogin(request({ origin }), env, { now, verifyCredentials: verify })).status, 403);
+  }
+  const insecure = request({
+    url: 'http://internal-service/auth/login', origin: 'http://learn.example',
+    data: { username: env.ACCOUNT_USERNAME, password, ticket: ticket(undefined, undefined, { nonce, exp: now / 1000 + 60, origin: 'http://learn.example' }) }
+  });
+  insecure.headers.set('X-Forwarded-Proto', 'https');
+  insecure.headers.set('X-Forwarded-Host', 'learn.example');
+  assert.equal((await handleLogin(insecure, env, { now, verifyCredentials: verify })).status, 400);
   assert.equal(calculations, 0);
-  const local = await handleLogin(request({ url: 'http://localhost:8767/auth/login' }), env, { now, verifyCredentials: () => true });
+  const local = await handleLogin(request({ url: 'http://localhost:8767/auth/login', data: { username: env.ACCOUNT_USERNAME, password, ticket: ticket(undefined, undefined, { nonce, exp: now / 1000 + 60, origin: 'http://localhost:8767' }) } }), env, { now, verifyCredentials: verify });
   assert.equal(local.status, 200);
+  assert.equal(calculations, 1);
+});
+
+test('a signed HTTPS public origin permits an internal HTTP Cloud URL without trusting forwarding headers', async () => {
+  const req = request({ url: 'http://internal-service/auth/login', origin: 'https://learn.example' });
+  req.headers.set('X-Forwarded-Proto', 'http');
+  req.headers.set('X-Forwarded-Host', 'other.example');
+  const response = await handleLogin(req, env, { now });
+  assert.equal(response.status, 200);
+  assert.equal(typeof (await response.json()).proof, 'string');
+  privateResponse(response);
+});
+
+test('tampered or noncanonical signed origins cannot authorize password verification', async () => {
+  let calls = 0;
+  const verify = () => { calls++; return true; };
+  const [value, signature] = ticket().split('.');
+  const changed = JSON.parse(Buffer.from(value, 'base64').toString('utf8'));
+  changed.origin = 'https://other.example';
+  const tampered = Buffer.from(JSON.stringify(changed)).toString('base64') + '.' + signature;
+  assert.equal((await handleLogin(request({ origin: changed.origin, data: { username: env.ACCOUNT_USERNAME, password, ticket: tampered } }), env, { now, verifyCredentials: verify })).status, 403);
+  for (const origin of ['', 'not-a-url', 'https://learn.example/', 'https://learn.example/path', 'https://user@learn.example', 'https://learn.example?query=1']) {
+    const res = await handleLogin(request({ data: { username: env.ACCOUNT_USERNAME, password, ticket: ticket(undefined, undefined, { nonce, exp: now / 1000 + 60, origin }) } }), env, { now, verifyCredentials: verify });
+    assert.equal(res.status, 403);
+  }
+  assert.equal(calls, 0);
 });
 
 test('documented request.json() parsing supports Cloud requests without Web streams', async () => {
   const req = {
-    method: 'POST', url: 'https://learn.example/auth/login',
+    method: 'POST', url: 'http://internal-service/auth/login',
     headers: new Headers({ Origin: 'https://learn.example', 'Content-Type': 'application/json' }),
     get body() { throw Error('No Web stream is available'); },
     json: async () => ({ username: env.ACCOUNT_USERNAME, password, ticket: ticket() })

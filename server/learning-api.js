@@ -192,7 +192,7 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp, ver
         // a failed-password report to bypass the existing KV rate limit.
         rate.count++; await cloudOperation('LOGIN_RATE_WRITE', () => kv.put(rateKey, JSON.stringify(rate)));
         const nonce = await cloudOperation('SESSION_RANDOM', () => hex(crypto.getRandomValues(new Uint8Array(16))));
-        const payload = btoa(JSON.stringify({ nonce, exp: Math.floor(now / 1000) + 60 }));
+        const payload = btoa(JSON.stringify({ nonce, exp: Math.floor(now / 1000) + 60, origin: new URL(request.url).origin }));
         const value = 'learning-station:login-ticket:v1\n' + payload + '\n' + JSON.stringify([input.username.trim().toLowerCase(), input.password]);
         return json({ ticket: payload + '.' + await sign(value, env.SESSION_SECRET) });
       }
