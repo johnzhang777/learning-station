@@ -21,6 +21,64 @@ async function login(kv, now) {
   const res = await handle(request('/api/login', { method: 'POST', data: { username: 'testchild', password: 'test-pass-729' } }), env, kv, now ? { now } : {});
   assert.equal(res.status, 200); return { cookie: res.headers.get('set-cookie').split(';')[0], csrf: (await res.json()).csrf, res };
 }
+
+// EdgeOne readers can return string, ArrayBuffer, or any ArrayBufferView.
+function streamedRequest(route, chunks, options = {}) {
+  const r = request(route, { ...options, method: 'POST' });
+  let index = 0, cancelled = false;
+  Object.defineProperty(r, 'body', { value: { getReader: () => ({
+    async read() { return index < chunks.length ? { done: false, value: chunks[index++] } : { done: true }; },
+    async cancel() { cancelled = true; }
+  }) } });
+  return { request: r, wasCancelled: () => cancelled };
+}
+const encode = text => new TextEncoder().encode(text);
+function paddedView(bytes, View) {
+  const padded = new Uint8Array(bytes.byteLength + 7);
+  padded.fill(0xff); padded.set(bytes, 3);
+  return new View(padded.buffer, 3, bytes.byteLength);
+}
+
+test('EdgeOne stream chunk types support login, session refresh and persisted progress', async () => {
+  const formats = {
+    ArrayBuffer: text => [...encode(text)].map(byte => Uint8Array.of(byte).buffer),
+    'offset Uint8Array': text => [paddedView(encode(text), Uint8Array)],
+    DataView: text => [paddedView(encode(text), DataView)],
+    string: text => [text.slice(0, 10), text.slice(10)],
+    mixed: text => [text.slice(0, 10), encode(text.slice(10, 20)).buffer, paddedView(encode(text.slice(20)), DataView)]
+  };
+  for (const [name, chunks] of Object.entries(formats)) {
+    const kv = new KV();
+    const input = streamedRequest('/api/login', chunks(JSON.stringify({ username: 'testchild', password: 'test-pass-729', note: '例句😊' })));
+    const res = await handle(input.request, env, kv);
+    assert.equal(res.status, 200, name);
+    const auth = { cookie: res.headers.get('set-cookie').split(';')[0], csrf: (await res.json()).csrf };
+    assert.equal((await handle(request('/api/session', auth), env, kv)).status, 200, name);
+    const fields = { w001: { value: 'learned', clock: 1, actor: actorA } };
+    const progress = streamedRequest('/api/progress', chunks(JSON.stringify({ writer: actorA, sequence: 1, fields })), auth);
+    assert.equal((await handle(progress.request, env, kv)).status, 200, name);
+    assert.deepEqual((await (await handle(request('/api/progress', auth), env, kv)).json()).fields, fields, name);
+  }
+});
+
+test('stream parsing rejects malformed JSON and unsupported chunks', async () => {
+  for (const chunks of [[encode('{').buffer], ['{'], [42]]) {
+    const input = streamedRequest('/api/login', chunks);
+    const res = await handle(input.request, env, new KV());
+    assert.equal(res.status, 400);
+    assert.equal((await res.json()).error, '请求格式无效。');
+  }
+});
+
+test('stream size limit counts UTF-8 bytes and cancels oversized bodies', async () => {
+  for (const chunks of [[new ArrayBuffer(1025)], ['中'.repeat(342)], [new ArrayBuffer(600), paddedView(new Uint8Array(425), DataView)]]) {
+    const input = streamedRequest('/api/login', chunks);
+    const kv = new KV(), res = await handle(input.request, env, kv);
+    assert.equal(res.status, 413);
+    assert.equal(input.wasCancelled(), true);
+    assert.equal(kv.data.size, 0);
+  }
+});
 test('auth rejects wrong password; secure cookie survives refresh, expires, rejects tampering', async () => {
   const kv = new KV();
   assert.equal((await handle(request('/api/login', { method: 'POST', data: { username: 'testchild', password: 'wrong-pass' } }), env, kv)).status, 401);
