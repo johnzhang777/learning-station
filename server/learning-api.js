@@ -5,14 +5,33 @@ const ITERATIONS = 120000;
 const uuid = /^[a-f0-9]{32}$/;
 const noCache = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'private, no-store', 'Vary': 'Cookie', 'X-Content-Type-Options': 'nosniff' };
 const json = (body, status = 200, headers = {}) => new Response(JSON.stringify(body), { status, headers: { ...noCache, ...headers } });
-const fail = (message, status) => { throw Object.assign(new Error(message), { status }); };
+const publicFailure = Symbol('publicFailure');
+const fail = (message, status) => { throw Object.assign(new Error(message), { status, [publicFailure]: true }); };
+const diagnosticCodes = new Set(['CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE', 'CRYPTO_SESSION_IMPORT', 'CRYPTO_SESSION_SIGN', 'CRYPTO_DIGEST', 'SESSION_RANDOM', 'LOGIN_RATE_READ', 'LOGIN_RATE_WRITE', 'LOGIN_RATE_PARSE', 'PROGRESS_LIST', 'PROGRESS_READ', 'PROGRESS_PARSE', 'PROGRESS_WRITE']);
+const errorKinds = new Set(['Error', 'TypeError', 'RangeError', 'SyntaxError', 'NotSupportedError', 'OperationError', 'DataError', 'InvalidAccessError', 'InvalidStateError', 'QuotaExceededError', 'SecurityError', 'AbortError']);
+const errorReasons = new Set(['RUNTIME_ERROR', 'ITERATION_LIMIT', 'UNSUPPORTED_ALGORITHM']);
+function cryptoFailureReason(code, error) {
+  if (!['CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE'].includes(code)) return 'RUNTIME_ERROR';
+  // Classify a native error without returning its message, inputs or numbers.
+  const message = typeof error?.message === 'string' ? error.message : '';
+  if (/iteration/i.test(message) && /limit|max|<=|too (?:large|high|many)|above|greater than|exceed|at most/i.test(message)) return 'ITERATION_LIMIT';
+  if (/not supported|unsupported|unrecognized|not recognized/i.test(message)) return 'UNSUPPORTED_ALGORITHM';
+  return 'RUNTIME_ERROR';
+}
+async function cloudOperation(code, action) {
+  try { return await action(); }
+  catch (error) {
+    // Vendor exceptions can include keys or credentials: keep fixed labels only.
+    throw Object.assign(new Error('Cloud operation failed'), { diagnosticCode: code, kind: errorKinds.has(error?.name) ? error.name : 'Error', reason: cryptoFailureReason(code, error) });
+  }
+}
 const hex = bytes => Array.from(new Uint8Array(bytes), b => b.toString(16).padStart(2, '0')).join('');
 const unhex = s => Uint8Array.from(s.match(/../g), b => parseInt(b, 16));
 function constantEqual(a, b) { let diff = a.length ^ b.length; for (let i = 0; i < Math.max(a.length, b.length); i++) diff |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0); return diff === 0; }
-async function digest(text) { return hex(await crypto.subtle.digest('SHA-256', encoder.encode(text))); }
+async function digest(text) { return hex(await cloudOperation('CRYPTO_DIGEST', () => crypto.subtle.digest('SHA-256', encoder.encode(text)))); }
 export async function passwordHash(password, salt) {
-  const key = await crypto.subtle.importKey('raw', encoder.encode(password), 'PBKDF2', false, ['deriveBits']);
-  return hex(await crypto.subtle.deriveBits({ name: 'PBKDF2', salt: unhex(salt), iterations: ITERATIONS, hash: 'SHA-256' }, key, 256));
+  const key = await cloudOperation('CRYPTO_PASSWORD_IMPORT', () => crypto.subtle.importKey('raw', encoder.encode(password), 'PBKDF2', false, ['deriveBits']));
+  return hex(await cloudOperation('CRYPTO_PASSWORD_DERIVE', () => crypto.subtle.deriveBits({ name: 'PBKDF2', salt: unhex(salt), iterations: ITERATIONS, hash: 'SHA-256' }, key, 256)));
 }
 function config(env, kv) {
   if (!/^[a-z]{2,40}$/.test(env.ACCOUNT_USERNAME || '') || !/^[a-f0-9]{32}$/.test(env.ACCOUNT_PASSWORD_SALT || '') || !/^[a-f0-9]{64}$/.test(env.ACCOUNT_PASSWORD_HASH || '') || !/^[a-f0-9]{64}$/.test(env.SESSION_SECRET || '') || !kv?.get || !kv?.put || !kv?.list) fail('登录服务尚未完成配置，请联系家长。', 503);
@@ -21,11 +40,12 @@ function local(request) { const u = new URL(request.url); return u.protocol === 
 function cookieName(request) { return local(request) ? 'learning_session' : '__Host-learning_session'; }
 function cookie(request, value, age = AGE) { return `${cookieName(request)}=${value}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${age}${local(request) ? '' : '; Secure'}`; }
 async function sign(value, secret) {
-  const key = await crypto.subtle.importKey('raw', unhex(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
-  return hex(await crypto.subtle.sign('HMAC', key, encoder.encode(value)));
+  const key = await cloudOperation('CRYPTO_SESSION_IMPORT', () => crypto.subtle.importKey('raw', unhex(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']));
+  return hex(await cloudOperation('CRYPTO_SESSION_SIGN', () => crypto.subtle.sign('HMAC', key, encoder.encode(value))));
 }
 async function issue(env, now) {
-  const payload = btoa(JSON.stringify({ sub: env.ACCOUNT_USERNAME, exp: Math.floor(now / 1000) + AGE, nonce: hex(crypto.getRandomValues(new Uint8Array(16))) }));
+  const nonce = await cloudOperation('SESSION_RANDOM', () => hex(crypto.getRandomValues(new Uint8Array(16))));
+  const payload = btoa(JSON.stringify({ sub: env.ACCOUNT_USERNAME, exp: Math.floor(now / 1000) + AGE, nonce }));
   return `${payload}.${await sign(payload, env.SESSION_SECRET)}`;
 }
 async function session(request, env, now) {
@@ -87,7 +107,7 @@ async function load(kv) {
   // List metadata, then fetch only the newest checkpoint of each writer.
   const writers = new Map(); let cursor;
   do {
-    const page = await kv.list({ prefix: 'progress_v2_', limit: 256, ...(cursor ? { cursor } : {}) });
+    const page = await cloudOperation('PROGRESS_LIST', () => kv.list({ prefix: 'progress_v2_', limit: 256, ...(cursor ? { cursor } : {}) }));
     for (const { key } of page.keys) {
       const match = /^progress_v2_([a-f0-9]{32})_(\d{16})$/.exec(key); if (!match) continue;
       const list = writers.get(match[1]) || []; list.push(key); writers.set(match[1], list);
@@ -102,8 +122,8 @@ async function load(kv) {
   for (let i = 0; i < lists.length; i += 8) {
     const docs = await Promise.all(lists.slice(i, i + 8).map(async keys => {
       for (const key of keys.sort().reverse()) {
-        const raw = await kv.get(key); if (!raw) continue;
-        return validateFields(JSON.parse(raw).fields);
+        const raw = await cloudOperation('PROGRESS_READ', () => kv.get(key)); if (!raw) continue;
+        return validateFields((await cloudOperation('PROGRESS_PARSE', () => JSON.parse(raw))).fields);
       }
       return {};
     }));
@@ -124,13 +144,14 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp } = 
       // If the runtime does not expose a trusted client IP, keep a shared account
       // limit instead of silently disabling it. Never trust arbitrary headers.
       const rateKey = ip ? 'login_rate_' + (await digest(ip)).slice(0, 32) : 'login_rate_account';
-      let rate = JSON.parse(await kv.get(rateKey) || 'null');
+      const rawRate = await cloudOperation('LOGIN_RATE_READ', () => kv.get(rateKey));
+      let rate = await cloudOperation('LOGIN_RATE_PARSE', () => JSON.parse(rawRate || 'null'));
       if (!rate || rate.until <= now) rate = { count: 0, until: now + 600000 };
       if (rate.count >= 8) return json({ error: '尝试次数较多，请十分钟后再试。' }, 429, { 'Retry-After': String(Math.ceil((rate.until - now) / 1000)) });
       if (typeof input.username !== 'string' || typeof input.password !== 'string' || input.username.length > 40 || input.password.length > 128) fail('姓名拼音或验证码不正确。', 401);
       const hash = await passwordHash(input.password, env.ACCOUNT_PASSWORD_SALT);
       const valid = constantEqual(input.username.trim().toLowerCase(), env.ACCOUNT_USERNAME) && constantEqual(hash, env.ACCOUNT_PASSWORD_HASH);
-      rate.count = valid ? 0 : rate.count + 1; await kv.put(rateKey, JSON.stringify(rate));
+      rate.count = valid ? 0 : rate.count + 1; await cloudOperation('LOGIN_RATE_WRITE', () => kv.put(rateKey, JSON.stringify(rate)));
       if (!valid) fail('姓名拼音或验证码不正确。', 401);
       const token = await issue(env, now); const s = JSON.parse(atob(token.split('.')[0]));
       return json({ username: s.sub, csrf: s.nonce, expiresAt: s.exp * 1000 }, 200, { 'Set-Cookie': cookie(request, token) });
@@ -150,14 +171,19 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp } = 
       const key = `progress_v2_${input.writer}_${String(input.sequence).padStart(16, '0')}`;
       const doc = { fields, savedAt: now };
       // Await persistence before acknowledging. Retried writes reuse the same key.
-      const existing = await kv.get(key);
-      if (existing && JSON.stringify(JSON.parse(existing).fields) !== JSON.stringify(fields)) fail('记录版本重复，请刷新页面。', 409);
-      await kv.put(key, JSON.stringify(doc));
+      const existing = await cloudOperation('PROGRESS_READ', () => kv.get(key));
+      if (existing && JSON.stringify((await cloudOperation('PROGRESS_PARSE', () => JSON.parse(existing))).fields) !== JSON.stringify(fields)) fail('记录版本重复，请刷新页面。', 409);
+      await cloudOperation('PROGRESS_WRITE', () => kv.put(key, JSON.stringify(doc)));
       return json({ ok: true, sequence: input.sequence, savedAt: now });
     }
     return json({ error: '接口不存在。' }, 404);
   } catch (e) {
-    // Never include credentials, cookies, request bodies or KV values in errors.
-    return json({ error: e.status ? e.message : '云端暂时无法连接，请稍后重试。' }, e.status || 503);
+    if (e?.[publicFailure]) return json({ error: e.message }, e.status);
+    const code = diagnosticCodes.has(e?.diagnosticCode) ? e.diagnosticCode : 'INTERNAL';
+    const kind = errorKinds.has(e?.kind || e?.name) ? (e.kind || e.name) : 'Error';
+    const reason = errorReasons.has(e?.reason) ? e.reason : 'RUNTIME_ERROR';
+    // Never log raw errors, credentials, cookies, request bodies or KV values.
+    console.error(JSON.stringify({ event: 'learning_api_failure', code, kind, reason }));
+    return json({ error: `云端暂时无法连接，请稍后重试。（诊断码：${code}）`, code, kind, reason }, 503);
   }
 }
