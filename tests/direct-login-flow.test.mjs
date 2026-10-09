@@ -39,7 +39,7 @@ function edge(request, kv, context = {}) {
 }
 function signature(message) { return createHmac('sha256', Buffer.from(env.SESSION_SECRET, 'hex')).update(message, 'utf8').digest('hex'); }
 function independentlySignedTicket(input, payload = { nonce: '65'.repeat(16), exp: Math.floor(now / 1000) + 60 }) {
-  const value = Buffer.from(JSON.stringify(payload), 'utf8').toString('base64');
+  const value = Buffer.from(JSON.stringify({ origin, ...payload }), 'utf8').toString('base64');
   return value + '.' + signature(ticketDomain + value + '\n' + JSON.stringify([input.username.trim().toLowerCase(), input.password]));
 }
 function independentlySignedProof(payload) {
@@ -103,12 +103,18 @@ async function getTicket(kv, input = { username: env.ACCOUNT_USERNAME, password 
   assert.equal(token.signature, signature(ticketDomain + token.value + '\n' + JSON.stringify([input.username.trim().toLowerCase(), input.password])));
   assert.match(token.payload.nonce, /^[a-f0-9]{32}$/);
   assert.equal(token.payload.exp, Math.floor((context.now ?? now) / 1000) + 60);
+  assert.equal(token.payload.origin, origin);
   noSecrets(result);
   return result.ticket;
 }
 async function login(kv, input = { username: env.ACCOUNT_USERNAME, password }, context = {}) {
   const ticket = await getTicket(kv, input, context);
-  const verified = await handleLogin(post('/auth/login', { ...input, ticket }), env, { now: context.now ?? now });
+  // Reproduce the platform's internal HTTP URL behind the public HTTPS proxy.
+  const cloudRequest = new Request('http://internal-service/auth/login', {
+    method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...input, ticket })
+  });
+  const verified = await handleLogin(cloudRequest, env, { now: context.now ?? now });
   assert.equal(verified.status, 200, JSON.stringify(await verified.clone().json()));
   assert.equal(verified.headers.get('set-cookie'), null, 'Node may attest a login, but only Edge creates a session');
   assert.equal(verified.headers.get('cache-control'), 'private, no-store');

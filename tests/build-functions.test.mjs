@@ -71,7 +71,12 @@ test('actual standalone deployment bundles complete browser-direct login without
     assert.deepEqual(Object.keys(ticketData), ['ticket']);
     const ticket = tokenParts(ticketData.ticket);
     assert.equal(ticket.signature, sign('learning-station:login-ticket:v1\n' + ticket.value + '\n' + JSON.stringify([input.username, input.password])));
-    const verified = await node.default({ request: request('/auth/login', { method: 'POST', data: { ...input, ticket: ticketData.ticket } }) });
+    assert.equal(ticket.payload.origin, origin);
+    const cloudRequest = new Request('http://internal-service/auth/login', {
+      method: 'POST', headers: { Origin: origin, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...input, ticket: ticketData.ticket })
+    });
+    const verified = await node.default({ request: cloudRequest });
     assert.equal(verified.status, 200, JSON.stringify(await verified.clone().json()));
     assert.equal(verified.headers.get('set-cookie'), null);
     const proofData = await verified.json();
