@@ -45,7 +45,19 @@ async function body(request, limit) {
   if (Number(request.headers.get('content-length')) > limit) fail('请求过大。', 413);
   const reader = request.body?.getReader(); if (!reader) fail('请求内容为空。', 400);
   let size = 0, chunks = [];
-  while (true) { const { done, value } = await reader.read(); if (done) break; size += value.length; if (size > limit) { await reader.cancel(); fail('请求过大。', 413); } chunks.push(value); }
+  while (true) {
+    const { done, value } = await reader.read(); if (done) break;
+    // EdgeOne streams also return raw ArrayBuffers, views, and strings.
+    // Normalize before counting bytes; ArrayBuffer and DataView have no length.
+    let chunk;
+    if (typeof value === 'string') chunk = encoder.encode(value);
+    else if (value instanceof ArrayBuffer) chunk = new Uint8Array(value);
+    else if (ArrayBuffer.isView(value)) chunk = new Uint8Array(value.buffer, value.byteOffset, value.byteLength);
+    else { await reader.cancel(); fail('请求格式无效。', 400); }
+    size += chunk.byteLength;
+    if (size > limit) { await reader.cancel(); fail('请求过大。', 413); }
+    chunks.push(chunk);
+  }
   const bytes = new Uint8Array(size); let offset = 0; for (const c of chunks) { bytes.set(c, offset); offset += c.length; }
   try { return JSON.parse(new TextDecoder().decode(bytes)); } catch { fail('请求格式无效。', 400); }
 }
