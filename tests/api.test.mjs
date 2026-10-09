@@ -136,3 +136,119 @@ test('login attempts are throttled for EdgeOne supplied client IP', async () => 
   for (let i = 0; i < 8; i++) assert.equal((await handle(request('/api/login', { method: 'POST', data: { username: 'testchild', password: 'incorrect' }, ip: '192.0.2.1' }), env, kv)).status, 401);
   assert.equal((await handle(request('/api/login', { method: 'POST', data: { username: 'testchild', password: 'incorrect' }, ip: '192.0.2.1' }), env, kv)).status, 429);
 });
+
+// Diagnostics describe only the failed operation and exception type. Runtime
+// exceptions may include inputs, so their messages must never reach users/logs.
+const sensitiveFailure = 'raw-password-do-not-log session-secret-do-not-log private-kv-value-do-not-log';
+async function captureDiagnostics(run, overrides) {
+  const cryptoDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'crypto');
+  const originalCrypto = globalThis.crypto, originalError = console.error, logs = [];
+  try {
+    console.error = (...args) => logs.push(args);
+    if (overrides) {
+      const subtle = new Proxy(originalCrypto.subtle, {
+        get(target, property) {
+          const value = overrides[property] || Reflect.get(target, property, target);
+          return typeof value === 'function' ? value.bind(target) : value;
+        }
+      });
+      Object.defineProperty(globalThis, 'crypto', { configurable: true, value: {
+        subtle, getRandomValues: originalCrypto.getRandomValues.bind(originalCrypto)
+      } });
+    }
+    return { response: await run(), logs };
+  } finally {
+    if (cryptoDescriptor) Object.defineProperty(globalThis, 'crypto', cryptoDescriptor);
+    else delete globalThis.crypto;
+    console.error = originalError;
+  }
+}
+async function assertDiagnostic(result, code, kind, reason = 'RUNTIME_ERROR') {
+  assert.equal(result.response.status, 503);
+  const payload = await result.response.json();
+  assert.deepEqual(payload, { error: `云端暂时无法连接，请稍后重试。（诊断码：${code}）`, code, kind, reason });
+  assert.equal(result.logs.length, 1);
+  assert.equal(result.logs[0].length, 1);
+  assert.equal(typeof result.logs[0][0], 'string');
+  assert.deepEqual(JSON.parse(result.logs[0][0]), { event: 'learning_api_failure', code, kind, reason });
+  const publicOutput = JSON.stringify({ payload, logs: result.logs });
+  for (const secret of sensitiveFailure.split(' ')) assert.equal(publicOutput.includes(secret), false);
+  for (const secret of Object.values(env)) assert.equal(publicOutput.includes(secret), false);
+  assert.equal(publicOutput.includes('test-pass-729'), false);
+  return publicOutput;
+}
+
+test('PBKDF2 import and derive failures expose fixed diagnostics without sensitive exception text', async () => {
+  for (const [method, code] of [['importKey', 'CRYPTO_PASSWORD_IMPORT'], ['deriveBits', 'CRYPTO_PASSWORD_DERIVE']]) {
+    const originalCrypto = globalThis.crypto, originalError = console.error;
+    const result = await captureDiagnostics(() => handle(request('/api/login', {
+      method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
+    }), env, new KV()), {
+      [method]: async () => { throw new DOMException(sensitiveFailure, 'OperationError'); }
+    });
+    assert.equal(globalThis.crypto, originalCrypto);
+    assert.equal(console.error, originalError);
+    await assertDiagnostic(result, code, 'OperationError');
+  }
+});
+
+test('PBKDF2 iteration ceiling is classified without disclosing raw message or iteration counts', async () => {
+  for (const message of [
+    'PBKDF2 requires an iteration count <= 100000 (requested 120000).',
+    'PBKDF2 iteration counts above 100000 are not supported (requested 120000).'
+  ]) {
+    const result = await captureDiagnostics(() => handle(request('/api/login', {
+      method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
+    }), env, new KV()), {
+      deriveBits: async () => { throw new DOMException(`${message} ${sensitiveFailure}`, 'OperationError'); }
+    });
+    const publicOutput = await assertDiagnostic(result, 'CRYPTO_PASSWORD_DERIVE', 'OperationError', 'ITERATION_LIMIT');
+    assert.equal(publicOutput.includes('100000'), false);
+    assert.equal(publicOutput.includes('120000'), false);
+    assert.equal(publicOutput.includes(message), false);
+  }
+});
+
+test('PBKDF2 unsupported algorithm is classified without disclosing raw message', async () => {
+  const result = await captureDiagnostics(() => handle(request('/api/login', {
+    method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
+  }), env, new KV()), {
+    importKey: async () => { throw new DOMException(`Unrecognized algorithm ${sensitiveFailure}`, 'NotSupportedError'); }
+  });
+  const publicOutput = await assertDiagnostic(result, 'CRYPTO_PASSWORD_IMPORT', 'NotSupportedError', 'UNSUPPORTED_ALGORITHM');
+  assert.equal(publicOutput.includes('Unrecognized algorithm'), false);
+});
+
+test('login rate writes expose only the storage operation diagnostic', async () => {
+  for (const status of [undefined, 401, 503]) {
+    const kv = new KV();
+    // Vendor errors sometimes have HTTP status fields. They are not trusted
+    // public failures and must not disclose the vendor's raw error message.
+    kv.put = async () => { throw Object.assign(Error(sensitiveFailure), { status }); };
+    const result = await captureDiagnostics(() => handle(request('/api/login', {
+      method: 'POST', data: { username: 'testchild', password: 'test-pass-729' }
+    }), env, kv));
+    await assertDiagnostic(result, 'LOGIN_RATE_WRITE', 'Error');
+    assert.equal(result.response.headers.get('set-cookie'), null);
+  }
+});
+
+test('progress listing failures expose only the storage operation diagnostic', async () => {
+  const kv = new KV(), auth = await login(kv);
+  kv.list = async () => { throw Error(sensitiveFailure); };
+  const result = await captureDiagnostics(() => handle(request('/api/progress', auth), env, kv));
+  await assertDiagnostic(result, 'PROGRESS_LIST', 'Error');
+});
+
+test('expected authentication and configuration errors do not emit diagnostics', async () => {
+  const wrongPassword = await captureDiagnostics(() => handle(request('/api/login', {
+    method: 'POST', data: { username: 'testchild', password: 'incorrect' }
+  }), env, new KV()));
+  assert.equal(wrongPassword.response.status, 401);
+  assert.deepEqual(await wrongPassword.response.json(), { error: '姓名拼音或验证码不正确。' });
+  assert.deepEqual(wrongPassword.logs, []);
+  const unconfigured = await captureDiagnostics(() => handle(request('/api/session'), {}, new KV()));
+  assert.equal(unconfigured.response.status, 503);
+  assert.deepEqual(await unconfigured.response.json(), { error: '登录服务尚未完成配置，请联系家长。' });
+  assert.deepEqual(unconfigured.logs, []);
+});
