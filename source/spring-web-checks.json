@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-07",
+  "automatedTests": {
+    "passed": 81,
+    "failed": 0,
+    "command": "npm test",
+    "build": "passed"
+  },
+  "content": {
+    "acquisitionDays": 88,
+    "dailyMix": {
+      "textbook": 3,
+      "extension": 2
+    },
+    "learningSlots": 440,
+    "uniqueSpringWords": 325,
+    "stories": 12,
+    "springLogicalAudioClips": 2270,
+    "allSiteMp3Files": 4534
+  },
+  "browser": {
+    "environment": "localhost, independent synthetic account and file-backed test KV",
+    "desktop": "two course entrances, PDFs and course navigation checked",
+    "mobileCssWidths": [
+      305,
+      375
+    ],
+    "horizontalOverflow": false,
+    "wordAndExampleAudio": "UK/US playback and 0.80x checked",
+    "storyAudio": "UK/US full passage and per-sentence queue checked",
+    "progress": "different autumn/spring resume positions and word marks survive navigation and reload",
+    "feedback": "single-tap toast, five-tap entry, login, text sending, history, verified developer reply and learner readback checked",
+    "attachments": "PDF/image uploaded through real HTTP API, byte-exact downloads verified, image rendering and protected links checked",
+    "filePickerLimit": "Chrome extension does not allow local file-URL uploads in this session; frontend File selection/limits/chunk upload separately covered by automated tests"
+  },
+  "production": "Not exercised. Feature branch must be merged and deployed by the existing EdgeOne pipeline."
+}

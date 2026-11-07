@@ -1,3 +1,4 @@
+import { handleFeedback } from './feedback-api.js';
 // Web-standard APIs only: runs in EdgeOne Edge Functions, not Node Functions.
 const encoder = new TextEncoder();
 const AGE = 30 * 24 * 3600;
@@ -7,7 +8,7 @@ const noCache = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Cont
 const json = (body, status = 200, headers = {}) => new Response(JSON.stringify(body), { status, headers: { ...noCache, ...headers } });
 const publicFailure = Symbol('publicFailure');
 const fail = (message, status) => { throw Object.assign(new Error(message), { status, [publicFailure]: true }); };
-const diagnosticCodes = new Set(['CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE', 'CRYPTO_PASSWORD_EXPORT', 'PASSWORD_SERVICE_FETCH', 'PASSWORD_SERVICE_RESPONSE', 'PASSWORD_SERVICE_VERIFY', 'CRYPTO_SESSION_IMPORT', 'CRYPTO_SESSION_SIGN', 'CRYPTO_DIGEST', 'SESSION_RANDOM', 'LOGIN_RATE_READ', 'LOGIN_RATE_WRITE', 'LOGIN_RATE_PARSE', 'PROGRESS_LIST', 'PROGRESS_READ', 'PROGRESS_PARSE', 'PROGRESS_WRITE']);
+const diagnosticCodes = new Set(['FEEDBACK_READ', 'FEEDBACK_WRITE', 'FEEDBACK_PARSE', 'FEEDBACK_LIST', 'CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE', 'CRYPTO_PASSWORD_EXPORT', 'PASSWORD_SERVICE_FETCH', 'PASSWORD_SERVICE_RESPONSE', 'PASSWORD_SERVICE_VERIFY', 'CRYPTO_SESSION_IMPORT', 'CRYPTO_SESSION_SIGN', 'CRYPTO_DIGEST', 'SESSION_RANDOM', 'LOGIN_RATE_READ', 'LOGIN_RATE_WRITE', 'LOGIN_RATE_PARSE', 'PROGRESS_LIST', 'PROGRESS_READ', 'PROGRESS_PARSE', 'PROGRESS_WRITE']);
 const errorKinds = new Set(['Error', 'TypeError', 'RangeError', 'SyntaxError', 'NotSupportedError', 'OperationError', 'DataError', 'InvalidAccessError', 'InvalidStateError', 'QuotaExceededError', 'SecurityError', 'AbortError']);
 const errorReasons = new Set(['RUNTIME_ERROR', 'ITERATION_LIMIT', 'UNSUPPORTED_ALGORITHM']);
 function cryptoFailureReason(code, error) {
@@ -118,14 +119,14 @@ async function body(request, limit) {
   try { return JSON.parse(new TextDecoder().decode(bytes)); } catch { fail('请求格式无效。', 400); }
 }
 export function validateFields(fields) {
-  if (!fields || typeof fields !== 'object' || Array.isArray(fields) || Object.keys(fields).length > 526) fail('学习记录格式无效。', 400);
+  if (!fields || typeof fields !== 'object' || Array.isArray(fields) || Object.keys(fields).length > 852) fail('学习记录格式无效。', 400);
   const clean = {};
   for (const [name, field] of Object.entries(fields)) {
     if (!field || !Number.isSafeInteger(field.clock) || field.clock < 1 || field.clock > 1e12 || !uuid.test(field.actor)) fail('学习记录版本无效。', 400);
-    if (name === 'position') {
-      if (!field.value || !Number.isInteger(field.value.lastDay) || field.value.lastDay < 1 || field.value.lastDay > 147 || !Number.isInteger(field.value.lastIndex) || field.value.lastIndex < 0 || field.value.lastIndex > 4) fail('学习位置无效。', 400);
+    if (name === 'position' || name === 'springPosition') {
+      if (!field.value || !Number.isInteger(field.value.lastDay) || field.value.lastDay < 1 || field.value.lastDay > (name === 'position' ? 147 : 153) || !Number.isInteger(field.value.lastIndex) || field.value.lastIndex < 0 || field.value.lastIndex > (name === 'position' ? 4 : 14)) fail('学习位置无效。', 400);
       clean[name] = { value: { lastDay: field.value.lastDay, lastIndex: field.value.lastIndex }, clock: field.clock, actor: field.actor };
-    } else if (/^w\d{3}$/.test(name) && Number(name.slice(1)) >= 1 && Number(name.slice(1)) <= 525 && ['learned', 'practice', null].includes(field.value)) {
+    } else if (/^[ws]\d{3}$/.test(name) && Number(name.slice(1)) >= 1 && Number(name.slice(1)) <= (name[0] === 'w' ? 525 : 325) && ['learned', 'practice', null].includes(field.value)) {
       clean[name] = { value: field.value, clock: field.clock, actor: field.actor };
     } else fail('学习标记无效。', 400);
   }
@@ -223,6 +224,7 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp, ver
       const token = await issue(env, now); const s = JSON.parse(atob(token.split('.')[0]));
       return json({ username: s.sub, csrf: s.nonce, expiresAt: s.exp * 1000 }, 200, { 'Set-Cookie': cookie(request, token) });
     }
+    if (route.startsWith('/api/feedback/')) return await handleFeedback(request, env, kv, { now, clientIp, session, json, fail, body, sign, digest, constantEqual, local, cloudOperation });
     const s = await session(request, env, now);
     if (route === '/api/session' && request.method === 'GET') return json({ username: s.sub, csrf: s.nonce, expiresAt: s.exp * 1000 });
     if (request.method === 'POST' && !constantEqual(request.headers.get('x-csrf-token') || '', s.nonce)) fail('请刷新页面后再试。', 403);
@@ -232,7 +234,7 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp, ver
       return json({ fields, savedAt: now, consistencyDelaySeconds: 60 });
     }
     if (route === '/api/progress' && request.method === 'POST') {
-      const input = await body(request, 100000);
+      const input = await body(request, 200000);
       if (!uuid.test(input.writer) || !Number.isSafeInteger(input.sequence) || input.sequence < 1 || input.sequence > 1e15) fail('设备记录格式无效。', 400);
       const fields = validateFields(input.fields);
       const key = `progress_v2_${input.writer}_${String(input.sequence).padStart(16, '0')}`;

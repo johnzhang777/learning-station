@@ -15,7 +15,7 @@ export class ProgressSync {
       const saved = JSON.parse(storage.getItem(RECORD_KEY) || 'null');
       if (saved?.fields && typeof saved.fields === 'object') {
         for (const [name, f] of Object.entries(saved.fields)) {
-          if (/^(w\d{3}|position)$/.test(name) && Number.isSafeInteger(f?.clock) && f.clock > 0 && /^[a-f0-9]{32}$/.test(f.actor)) this.fields[name] = f;
+          if (/^(w\d{3}|s\d{3}|position|springPosition)$/.test(name) && Number.isSafeInteger(f?.clock) && f.clock > 0 && /^[a-f0-9]{32}$/.test(f.actor)) this.fields[name] = f;
         }
         this.pending = saved.pending;
       }
@@ -37,8 +37,10 @@ export class ProgressSync {
   schedule(delay = 1000) { if(this.localOnly)return; clearTimeout(this.timer); this.timer = setTimeout(() => this.flush(), delay); }
   async start(legacy) {
     if (!Object.keys(this.fields).length && legacy) {
-      for (const [id, value] of Object.entries(legacy.status || {})) if (/^w\d{3}$/.test(id) && ['learned', 'practice'].includes(value)) this.change(id, value, false);
-      if (legacy.lastDay !== 1 || legacy.lastIndex !== 0) this.change('position', { lastDay: legacy.lastDay, lastIndex: legacy.lastIndex }, false);
+      for (const [id, value] of Object.entries(legacy.status || {})) if (/^[ws]\d{3}$/.test(id) && ['learned', 'practice'].includes(value)) this.change(id, value, false);
+      const autumn=legacy.positions?.['english-2026']||(legacy.courseId==='english-2027-spring'?{lastDay:1,lastIndex:0}:{lastDay:legacy.lastDay,lastIndex:legacy.lastIndex});
+      if(autumn.lastDay!==1||autumn.lastIndex!==0)this.change('position',autumn,false);
+      const spring=legacy.positions?.['english-2027-spring'];if(spring)this.change('springPosition',spring,false);
     }
     if(this.localOnly){
       this.cache();this.apply(this.fields);this.notify('记录保存在这台设备 · 云端同步暂未启用');return;
@@ -63,7 +65,7 @@ export class ProgressSync {
     this.uploading = true; const sent = this.pending;
     this.notify('正在保存到云端…');
     try {
-      // Keepalive has a browser-wide ~64 KiB limit; the bounded 526-field record
+      // Keepalive has a browser-wide ~64 KiB limit; the bounded two-collection record
       // can exceed it, so pagehide relies on the already persisted queue instead.
       const payload = JSON.stringify(sent);
       await this.api('/api/progress', { method: 'POST', body: payload, keepalive: keepalive && new TextEncoder().encode(payload).length < 60000 });
