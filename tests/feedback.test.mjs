@@ -60,6 +60,37 @@ test('feedback requires a server identity, same origin and independent CSRF; all
   const session=await (await call(kv,'/session',user)).json();assert.equal(session.role,'user');assert.equal(session.canManage,false);
 });
 
+test('empty native KV lists may omit keys or return null keys for threads and replies',async()=>{
+  for(const emptyPage of [{complete:true,cursor:null,keys:null},{complete:true,cursor:null}]){
+    const kv=new KV(),user=await auth(kv),list=kv.list.bind(kv);
+    kv.list=async options=>{const page=await list(options);return page.keys.length?page:emptyPage;};
+    const response=await call(kv,'/threads',user);
+    assert.equal(response.status,200,JSON.stringify(await response.clone().json()));
+    assert.deepEqual(await response.json(),{threads:[],cursor:null});
+    const {thread}=await newThread(kv,user);
+    const history=await call(kv,'/threads',user);assert.equal(history.status,200);
+    const first=(await history.json()).threads[0];assert.equal(first.id,thread.id);assert.equal(first.hasReply,false);
+    const detail=await call(kv,'/threads/'+thread.id,user);assert.equal(detail.status,200);
+    const value=await detail.json();assert.deepEqual(value.replies,[]);assert.equal(value.cursor,null);
+  }
+});
+
+test('invalid KV list responses fail with a storage diagnostic instead of hiding history',async()=>{
+  const kv=new KV(),user=await auth(kv),errors=[],original=console.error;
+  console.error=value=>errors.push(value);
+  try{
+    for(const page of [null,{complete:true,keys:{}},{complete:'false',keys:[]},{complete:false,cursor:null,keys:null},{complete:false,cursor:'same',keys:[]},{complete:true,keys:[{key:123}]}]){
+      kv.list=async()=>page;
+      const response=await call(kv,'/threads?cursor=same',user);assert.equal(response.status,503);
+      const value=await response.json();assert.equal(value.code,'FEEDBACK_LIST');assert.equal(value.kind,'TypeError');
+    }
+    assert.ok(errors.every(value=>JSON.parse(value).code==='FEEDBACK_LIST'));
+  }finally{console.error=original;}
+  // Even an empty intermediate page must retain its continuation cursor.
+  kv.list=async()=>({complete:false,cursor:'next',keys:null});
+  const response=await call(kv,'/threads',user);assert.deepEqual(await response.json(),{threads:[],cursor:'next'});
+});
+
 test('text history survives a new login and pagination; client roles never grant developer privileges',async()=>{
   const kv=new KV(),user=await auth(kv);
   const first=await newThread(kv,user,'<script>用户文本</script>\n第二行');

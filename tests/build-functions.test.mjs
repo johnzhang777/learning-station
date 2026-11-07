@@ -110,6 +110,11 @@ test('actual standalone deployment bundles complete browser-direct login without
     const synced = await edgeRequest('/api/progress', second);
     assert.equal(synced.status, 200);
     assert.deepEqual((await synced.json()).fields, fields);
+    const list=kv.list.bind(kv);
+    kv.list=async options=>{const page=await list(options);return page.keys.length?page:{complete:true,cursor:null,keys:null};};
+    const emptyFeedback=await edgeRequest('/api/feedback/threads',first);
+    assert.equal(emptyFeedback.status,200);
+    assert.deepEqual(await emptyFeedback.json(),{threads:[],cursor:null});
     const threadId='t'+String(9999999999999-Date.now()).padStart(13,'0')+'e'.repeat(32);
     const feedback=await edgeRequest('/api/feedback/threads',{...first,method:'POST',data:{id:threadId,text:'部署产物留言测试',attachments:[]}});
     assert.equal(feedback.status,201);
