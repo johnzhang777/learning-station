@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
-import { AUTUMN,SPRING,courseForPath,validWordId,positionField,audioEntries } from '../dist/courses.js';
+import { AUTUMN,SPRING,COURSE_INFO,courseForPath,validWordId,positionField,audioEntries } from '../dist/courses.js';
 import { createFeedbackGate,FeedbackBoard } from '../dist/feedback.js';
 import { ProgressSync } from '../dist/progress-sync.js';
 import { validateFields,handle } from '../server/learning-api.js';
@@ -59,7 +59,9 @@ test('both accents cover every word, example, full story and sentence with exist
   assert.equal(count,2270);
   for(const file of files)assert.ok((await stat(new URL('../dist/'+file,import.meta.url))).size>1000,file);
   assert.equal(audioEntries(data).length,160);
-  for(const file of ['student.pdf','parent.pdf'])assert.ok((await stat(new URL('../dist/materials/grade4-spring/'+file,import.meta.url))).size>100000);
+  for(const course of COURSE_INFO)for(const material of course.materials){
+    const bytes=await readFile(new URL('../dist/'+material.href,import.meta.url));assert.ok(bytes.length>100000);assert.equal(bytes.subarray(0,5).toString(),'%PDF-');
+  }
 });
 
 test('legacy links retain autumn semantics while spring links and global navigation preserve selected course',()=>{
