@@ -110,6 +110,17 @@ test('actual standalone deployment bundles complete browser-direct login without
     const synced = await edgeRequest('/api/progress', second);
     assert.equal(synced.status, 200);
     assert.deepEqual((await synced.json()).fields, fields);
+    const threadId='t'+String(9999999999999-Date.now()).padStart(13,'0')+'e'.repeat(32);
+    const feedback=await edgeRequest('/api/feedback/threads',{...first,method:'POST',data:{id:threadId,text:'部署产物留言测试',attachments:[]}});
+    assert.equal(feedback.status,201);
+    const code=sign('learning-station:feedback-admin-access:v1\n');
+    const manager=await edgeRequest('/api/feedback/admin-login',{method:'POST',data:{code}});
+    assert.equal(manager.status,200);
+    const developer={cookie:manager.headers.get('set-cookie').split(';')[0],csrf:(await manager.json()).csrf};
+    const reply=await edgeRequest('/api/feedback/threads/'+threadId+'/replies',{...developer,method:'POST',data:{id:'r'+threadId.slice(1),text:'部署产物开发者回复',attachments:[]}});
+    assert.equal(reply.status,201);
+    const history=await edgeRequest('/api/feedback/threads/'+threadId,second);
+    assert.equal((await history.json()).replies[0].role,'developer');
     const legacy = await edgeRequest('/api/login', { method: 'POST', data: { username: env.ACCOUNT_USERNAME, password } });
     assert.equal(legacy.status, 410, 'deployed Edge wrapper must explicitly disable its legacy password path');
     assert.equal(legacy.headers.get('set-cookie'), null);

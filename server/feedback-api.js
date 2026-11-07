@@ -1,0 +1,202 @@
+﻿// Durable feedback uses the existing private KV binding. UI gestures never grant reply privileges.
+const FB_ADMIN_AGE = 3600;
+const FB_CHUNK = 192 * 1024;
+const FB_MAX_FILE = 5 * 1024 * 1024;
+const FB_MAX_TOTAL = 10 * 1024 * 1024;
+const FB_UPLOAD_AGE = 24 * 3600 * 1000;
+const FB_UUID = /^[a-f0-9]{32}$/;
+const FB_THREAD = /^t\d{13}[a-f0-9]{32}$/;
+const FB_REPLY = /^r\d{13}[a-f0-9]{32}$/;
+const FB_TYPES = new Set(['application/pdf', 'image/png', 'image/jpeg', 'image/webp', 'image/gif']);
+const FB_ADMIN_DOMAIN = 'learning-station:feedback-admin-access:v1\n';
+const FB_COOKIE_DOMAIN = 'learning-station:feedback-admin-session:v1\n';
+function fbCookieName(request, ctx) { return ctx.local(request) ? 'feedback_admin' : '__Host-feedback_admin'; }
+function fbCookie(request, value, ctx, age = FB_ADMIN_AGE) { return `${fbCookieName(request, ctx)}=${value}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${age}${ctx.local(request) ? '' : '; Secure'}`; }
+async function fbAdmin(request, env, ctx) {
+  const name = fbCookieName(request, ctx);
+  const token = (request.headers.get('cookie') || '').split(';').map(x => x.trim()).find(x => x.startsWith(name + '='))?.slice(name.length + 1);
+  if (!token || token.length > 1024) return null;
+  const [value, signature, extra] = token.split('.');
+  if (extra || !/^[a-f0-9]{64}$/.test(signature || '') || !ctx.constantEqual(signature, await ctx.sign(FB_COOKIE_DOMAIN + value, env.SESSION_SECRET))) return null;
+  let payload; try { payload = JSON.parse(atob(value)); } catch { return null; }
+  if (payload.sub !== 'developer' || !FB_UUID.test(payload.nonce) || !Number.isSafeInteger(payload.exp) || payload.exp <= Math.floor(ctx.now / 1000) || payload.exp > Math.floor(ctx.now / 1000) + FB_ADMIN_AGE + 60) return null;
+  return { owner: 'developer', role: 'developer', csrf: payload.nonce, expiresAt: payload.exp * 1000 };
+}
+async function fbIdentity(request, env, ctx, guest = false) {
+  const admin = await fbAdmin(request, env, ctx); if (admin) return admin;
+  try { const s = await ctx.session(request, env, ctx.now); return { owner: s.sub, role: 'user', csrf: s.nonce, expiresAt: s.exp * 1000 }; }
+  catch (error) { if (guest && error?.status === 401) return { role: 'guest', csrf: null }; throw error; }
+}
+async function fbJSON(request, limit, ctx) {
+  if ((request.headers.get('content-type') || '').split(';')[0].trim().toLowerCase() !== 'application/json') ctx.fail('请求格式无效。', 415);
+  const value = await ctx.body(request, limit);
+  if (!value || typeof value !== 'object' || Array.isArray(value)) ctx.fail('留言格式无效。', 400);
+  return value;
+}
+async function fbGet(kv, key, ctx) {
+  const raw = await ctx.cloudOperation('FEEDBACK_READ', () => kv.get(key));
+  if (!raw) return null;
+  return ctx.cloudOperation('FEEDBACK_PARSE', () => JSON.parse(raw));
+}
+const fbPut = (kv, key, value, ctx) => ctx.cloudOperation('FEEDBACK_WRITE', () => kv.put(key, JSON.stringify(value)));
+async function fbList(kv, prefix, cursor, limit, ctx) {
+  if (cursor && (typeof cursor !== 'string' || cursor.length > 1024)) ctx.fail('分页位置无效。', 400);
+  const page = await ctx.cloudOperation('FEEDBACK_LIST', () => kv.list({ prefix, limit, ...(cursor ? { cursor } : {}) }));
+  if (!Array.isArray(page?.keys) || typeof page.complete !== 'boolean' || (!page.complete && (!page.cursor || page.cursor === cursor))) throw Error('Invalid feedback pagination');
+  return page;
+}
+async function fbRate(kv, owner, ctx, max = 80) {
+  const key = 'feedback_rate_' + (await ctx.digest(owner)).slice(0, 32);
+  let rate = await fbGet(kv, key, ctx);
+  if (!rate || rate.until <= ctx.now) rate = { count: 0, until: ctx.now + 3600000 };
+  if (rate.count >= max) ctx.fail('发送较频繁，请稍后再试。', 429);
+  rate.count++; await fbPut(kv, key, rate, ctx);
+}
+function fbSafeName(name, ctx) {
+  if (typeof name !== 'string' || !name.trim() || name.length > 200) ctx.fail('附件名称无效。', 400);
+  const cleaned = name.normalize('NFC').replace(/[\u0000-\u001f\u007f/\\]/g, '').trim();
+  if (!cleaned) ctx.fail('附件名称无效。', 400); return cleaned;
+}
+function fbDecode(text, ctx) {
+  if (typeof text !== 'string' || !text || text.length > Math.ceil(FB_CHUNK / 3) * 4 || text.length % 4 || !/^[A-Za-z0-9+/]*={0,2}$/.test(text)) ctx.fail('附件分片格式无效。', 400);
+  let raw; try { raw = atob(text); } catch { ctx.fail('附件分片格式无效。', 400); }
+  const bytes = new Uint8Array(raw.length); for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i); return bytes;
+}
+function fbMagic(bytes, type) {
+  const ascii = (start, n) => String.fromCharCode(...bytes.slice(start, start + n));
+  if (type === 'application/pdf') return ascii(0, 5) === '%PDF-';
+  if (type === 'image/png') return [137,80,78,71,13,10,26,10].every((b,i) => bytes[i] === b);
+  if (type === 'image/jpeg') return bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255;
+  if (type === 'image/gif') return ['GIF87a','GIF89a'].includes(ascii(0, 6));
+  return type === 'image/webp' && ascii(0, 4) === 'RIFF' && ascii(8, 4) === 'WEBP';
+}
+function fbText(input, ctx) {
+  if (typeof input.text !== 'string' || input.text.length > 5000) ctx.fail('留言最多5000字。', 400);
+  if (!Array.isArray(input.attachments) || input.attachments.length > 3 || new Set(input.attachments).size !== input.attachments.length || input.attachments.some(id => !FB_UUID.test(id))) ctx.fail('每次最多添加3个附件。', 400);
+  const text = input.text.trim(); if (!text && !input.attachments.length) ctx.fail('请填写文字或添加附件。', 400); return text;
+}
+async function fbThread(kv, id, identity, ctx) {
+  if (!FB_THREAD.test(id || '')) ctx.fail('留言不存在。', 404);
+  const thread = await fbGet(kv, 'feedback_thread_' + id, ctx);
+  if (!thread || (identity.role !== 'developer' && thread.owner !== identity.owner)) ctx.fail('留言不存在。', 404);
+  return thread;
+}
+function fbPublicMessage(message) {
+  return { id: message.id, ...(message.threadId ? { threadId: message.threadId } : {}), text: message.text, createdAt: message.createdAt,
+    role: message.role, attachments: message.attachments.map(({ id, name, type, size }) => ({ id, name, type, size })) };
+}
+async function fbAttachments(ids, threadId, identity, kv, ctx) {
+  const metas = []; let total = 0;
+  for (const id of ids) {
+    const meta = await fbGet(kv, 'feedback_upload_' + id, ctx);
+    if (!meta || meta.owner !== identity.owner || meta.role !== identity.role || (!meta.threadId && meta.createdAt + FB_UPLOAD_AGE < ctx.now)) ctx.fail('附件已失效，请重新选择。', 400);
+    if (meta.threadId && meta.threadId !== threadId) ctx.fail('附件已用于其他留言，请重新选择。', 409);
+    for (let start = 0; start < meta.chunks; start += 8) {
+      const chunks = await Promise.all(Array.from({ length: Math.min(8, meta.chunks - start) }, (_, i) => fbGet(kv, `feedback_chunk_${id}_${String(start+i).padStart(3,'0')}`, ctx)));
+      if (chunks.some(x => !x || typeof x.data !== 'string')) ctx.fail('附件尚未传完，请重试。', 409);
+    }
+    total += meta.size; metas.push(meta);
+  }
+  if (total > FB_MAX_TOTAL) ctx.fail('附件总大小最多10MB。', 413);
+  for (const meta of metas) if (!meta.threadId) { meta.threadId = threadId; await fbPut(kv, 'feedback_upload_' + meta.id, meta, ctx); }
+  return metas.map(({ id, name, type, size }) => ({ id, name, type, size }));
+}
+export async function handleFeedback(request, env, kv, ctx) {
+  const url = new URL(request.url), route = url.pathname.replace(/\/$/, '');
+  if (route === '/api/feedback/admin-login' && request.method === 'POST') {
+    const input = await fbJSON(request, 512, ctx);
+    const owner = 'admin-login:' + (ctx.clientIp || request.eo?.clientIp || 'account');
+    await fbRate(kv, owner, ctx, 8);
+    const expected = await ctx.sign(FB_ADMIN_DOMAIN, env.SESSION_SECRET);
+    if (typeof input.code !== 'string' || !/^[a-f0-9]{64}$/.test(input.code) || !ctx.constantEqual(input.code, expected)) ctx.fail('管理码不正确，请重试。', 401);
+    const nonce = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => b.toString(16).padStart(2,'0')).join('');
+    const value = btoa(JSON.stringify({ sub:'developer', nonce, exp:Math.floor(ctx.now/1000)+FB_ADMIN_AGE }));
+    const token = value + '.' + await ctx.sign(FB_COOKIE_DOMAIN + value, env.SESSION_SECRET);
+    return ctx.json({ role:'developer', canManage:true, canPost:true, csrf:nonce, expiresAt:(Math.floor(ctx.now/1000)+FB_ADMIN_AGE)*1000 },200,{'Set-Cookie':fbCookie(request,token,ctx)});
+  }
+  const identity = await fbIdentity(request, env, ctx, route === '/api/feedback/session' && request.method === 'GET');
+  if (route === '/api/feedback/session' && request.method === 'GET') return ctx.json({ role:identity.role, account:identity.role==='user'?identity.owner:null, canManage:identity.role==='developer', canPost:identity.role!=='guest', csrf:identity.csrf, expiresAt:identity.expiresAt });
+  if (request.method === 'POST' && !ctx.constantEqual(request.headers.get('x-csrf-token') || '', identity.csrf || '')) ctx.fail('请刷新留言页后再试。',403);
+  if (route === '/api/feedback/admin-logout' && request.method === 'POST') return ctx.json({ok:true},200,{'Set-Cookie':fbCookie(request,'',ctx,0)});
+  if (route === '/api/feedback/uploads' && request.method === 'POST') {
+    const input = await fbJSON(request, 1024, ctx), name = fbSafeName(input.name, ctx);
+    if (!FB_UUID.test(input.id || '') || !FB_TYPES.has(input.type) || !Number.isSafeInteger(input.size) || input.size < 1 || input.size > FB_MAX_FILE) ctx.fail('附件仅支持PDF或常见图片，每个最多5MB。',400);
+    const key = 'feedback_upload_' + input.id, existing = await fbGet(kv,key,ctx);
+    if (existing) {
+      if (existing.owner !== identity.owner || existing.role !== identity.role || existing.name !== name || existing.size !== input.size || existing.type !== input.type || existing.createdAt+FB_UPLOAD_AGE<ctx.now) ctx.fail('附件编号已失效，请重新选择。',409);
+      return ctx.json({id:existing.id,chunkSize:FB_CHUNK,chunks:existing.chunks});
+    }
+    await fbRate(kv,'upload:'+identity.owner,ctx,120);
+    const meta={id:input.id,name,size:input.size,type:input.type,owner:identity.owner,role:identity.role,createdAt:ctx.now,chunks:Math.ceil(input.size/FB_CHUNK)};
+    await fbPut(kv,key,meta,ctx);return ctx.json({id:meta.id,chunkSize:FB_CHUNK,chunks:meta.chunks},201);
+  }
+  let match = /^\/api\/feedback\/uploads\/([a-f0-9]{32})\/chunks\/(\d{1,3})$/.exec(route);
+  if (match && request.method === 'POST') {
+    const id=match[1],index=Number(match[2]),meta=await fbGet(kv,'feedback_upload_'+id,ctx);
+    if (!meta || meta.owner!==identity.owner || meta.role!==identity.role || meta.threadId || meta.createdAt+FB_UPLOAD_AGE<ctx.now) ctx.fail('附件已失效，请重新选择。',409);
+    if(index>=meta.chunks)ctx.fail('附件分片编号无效。',400);
+    const input=await fbJSON(request,270000,ctx), bytes=fbDecode(input.data,ctx);
+    const expected=index===meta.chunks-1?meta.size-index*FB_CHUNK:FB_CHUNK;
+    if(bytes.length!==expected || (index===0&&!fbMagic(bytes,meta.type)))ctx.fail('附件内容与文件类型不符。',400);
+    const key=`feedback_chunk_${id}_${String(index).padStart(3,'0')}`,old=await fbGet(kv,key,ctx);
+    if(old&&old.data!==input.data)ctx.fail('附件分片已变化，请重新选择。',409);
+    if(!old)await fbPut(kv,key,{data:input.data},ctx);return ctx.json({ok:true,index});
+  }
+  if (route === '/api/feedback/threads' && request.method === 'POST') {
+    const input=await fbJSON(request,24000,ctx),text=fbText(input,ctx);
+    if(!FB_THREAD.test(input.id||''))ctx.fail('留言编号无效。',400);
+    const key='feedback_thread_'+input.id,existing=await fbGet(kv,key,ctx);
+    if(existing){if(existing.owner!==identity.owner||existing.role!==identity.role||existing.text!==text||JSON.stringify(existing.attachments.map(a=>a.id))!==JSON.stringify(input.attachments))ctx.fail('留言编号已使用，请重新发送。',409);return ctx.json({thread:fbPublicMessage(existing)});}
+    await fbRate(kv,'post:'+identity.owner,ctx);
+    const attachments=await fbAttachments(input.attachments,input.id,identity,kv,ctx);
+    const thread={id:input.id,owner:identity.owner,role:identity.role,text,attachments,createdAt:ctx.now};
+    await fbPut(kv,key,thread,ctx);return ctx.json({thread:fbPublicMessage(thread)},201);
+  }
+  if (route === '/api/feedback/threads' && request.method === 'GET') {
+    const page=await fbList(kv,'feedback_thread_',url.searchParams.get('cursor'),20,ctx),items=[];
+    for(let i=0;i<page.keys.length;i+=8){
+      const docs=await Promise.all(page.keys.slice(i,i+8).map(x=>fbGet(kv,x.key,ctx)));
+      for(const thread of docs){if(!thread||(identity.role!=='developer'&&thread.owner!==identity.owner))continue;
+        const replies=await fbList(kv,'feedback_reply_'+thread.id+'_',null,1,ctx);
+        items.push({...fbPublicMessage(thread),hasReply:replies.keys.length>0});}
+    }
+    items.sort((a,b)=>b.createdAt-a.createdAt||a.id.localeCompare(b.id));return ctx.json({threads:items,cursor:page.complete?null:page.cursor});
+  }
+  match=/^\/api\/feedback\/threads\/(t\d{13}[a-f0-9]{32})(?:\/(replies))?$/.exec(route);
+  if(match){
+    const thread=await fbThread(kv,match[1],identity,ctx);
+    if(!match[2]&&request.method==='GET'){
+      const page=await fbList(kv,'feedback_reply_'+thread.id+'_',url.searchParams.get('cursor'),30,ctx);
+      const replies=[];for(let i=0;i<page.keys.length;i+=8)replies.push(...await Promise.all(page.keys.slice(i,i+8).map(x=>fbGet(kv,x.key,ctx))));
+      return ctx.json({thread:fbPublicMessage(thread),replies:replies.filter(Boolean).map(fbPublicMessage).sort((a,b)=>a.createdAt-b.createdAt||a.id.localeCompare(b.id)),cursor:page.complete?null:page.cursor});
+    }
+    if(match[2]&&request.method==='POST'){
+      const input=await fbJSON(request,24000,ctx),text=fbText(input,ctx);
+      if(!FB_REPLY.test(input.id||''))ctx.fail('回复编号无效。',400);
+      const key='feedback_reply_'+thread.id+'_'+input.id,existing=await fbGet(kv,key,ctx);
+      if(existing){if(existing.owner!==identity.owner||existing.role!==identity.role||existing.text!==text||JSON.stringify(existing.attachments.map(a=>a.id))!==JSON.stringify(input.attachments))ctx.fail('回复编号已使用，请重新发送。',409);return ctx.json({reply:fbPublicMessage(existing)});}
+      await fbRate(kv,'reply:'+identity.owner,ctx);
+      const attachments=await fbAttachments(input.attachments,thread.id,identity,kv,ctx);
+      const reply={id:input.id,threadId:thread.id,owner:identity.owner,role:identity.role,text,attachments,createdAt:ctx.now};
+      await fbPut(kv,key,reply,ctx);return ctx.json({reply:fbPublicMessage(reply)},201);
+    }
+  }
+  match=/^\/api\/feedback\/attachments\/([a-f0-9]{32})$/.exec(route);
+  if(match&&request.method==='GET'){
+    const meta=await fbGet(kv,'feedback_upload_'+match[1],ctx);
+    if(!meta?.threadId)ctx.fail('附件不存在。',404);
+    await fbThread(kv,meta.threadId,identity,ctx);
+    const bytes=new Uint8Array(meta.size);let offset=0;
+    for(let start=0;start<meta.chunks;start+=8){
+      const chunks=await Promise.all(Array.from({length:Math.min(8,meta.chunks-start)},(_,i)=>fbGet(kv,`feedback_chunk_${meta.id}_${String(start+i).padStart(3,'0')}`,ctx)));
+      for(const chunk of chunks){
+        if(!chunk)ctx.fail('附件正在同步，请稍后重试。',503);
+        const piece=fbDecode(chunk.data,ctx);if(offset+piece.length>bytes.length)throw Error('Corrupt feedback attachment');bytes.set(piece,offset);offset+=piece.length;
+      }
+    }
+    if(offset!==meta.size||!fbMagic(bytes,meta.type))throw Error('Corrupt feedback attachment');
+    const filename=encodeURIComponent(meta.name).replace(/[!'()*]/g,c=>'%'+c.charCodeAt(0).toString(16).toUpperCase());
+    return new Response(bytes,{headers:{'Content-Type':meta.type,'Content-Length':String(bytes.length),'Cache-Control':'private, no-store','Vary':'Cookie','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'none'; sandbox",'Content-Disposition':`${meta.type==='application/pdf'?'attachment':'inline'}; filename*=UTF-8''${filename}`}});
+  }
+  return ctx.json({error:'留言接口不存在。'},404);
+}

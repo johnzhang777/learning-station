@@ -12,16 +12,23 @@ subprocess.run(['node', str(SITE / 'scripts/build.mjs')], cwd=SITE, check=True)
 assert (DIST / 'edge-functions/api/[[route]].js').is_file()
 assert (DIST / 'cloud-functions/internal/verify-password.js').is_file()
 assert (DIST / 'cloud-functions/auth/login.js').is_file()
-data = json.loads((DIST / 'data.json').read_text(encoding='utf-8'))
-audio = json.loads((DIST / 'audio-manifest.json').read_text(encoding='utf-8'))
-assert set(audio['entries']) == {e['id'] for e in data['entries']}
-for e in data['entries']:
-    for accent in ['uk', 'us']:
-        parts = audio['entries'][e['id']][accent]
-        assert set(parts) == {'word', 'ex1', 'ex2'}
-        for clip in parts.values():
-            target = (DIST / clip['src']).resolve()
-            assert target.is_relative_to(DIST.resolve()) and target.is_file()
+audio_paths = set()
+for data_file, audio_file in [('data.json', 'audio-manifest.json'), ('spring-data.json', 'spring-audio-manifest.json')]:
+    data = json.loads((DIST / data_file).read_text(encoding='utf-8'))
+    audio = json.loads((DIST / audio_file).read_text(encoding='utf-8'))
+    expected = {e['id']: {'word', 'ex1', 'ex2'} for e in data['entries']}
+    for story in data.get('stories', []):
+        expected[story['id']] = {'passage'}
+        expected.update({sentence['id']: {'sentence'} for sentence in story['sentences']})
+    assert set(audio['entries']) == set(expected)
+    for entry_id, expected_parts in expected.items():
+        for accent in ['uk', 'us']:
+            parts = audio['entries'][entry_id][accent]
+            assert set(parts) == expected_parts
+            for clip in parts.values():
+                target = (DIST / clip['src']).resolve()
+                assert target.is_relative_to(DIST.resolve()) and target.is_file()
+                audio_paths.add(clip['src'])
 paths = sorted(p for p in DIST.rglob('*') if p.is_file())
 with zipfile.ZipFile(ARCHIVE, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as package:
     for p in paths:
@@ -34,10 +41,10 @@ with zipfile.ZipFile(ARCHIVE) as package:
     assert 'cloud-functions/auth/login.js' in package.namelist()
     assert not any('.private' in n or n.endswith('.env') for n in package.namelist())
     assert len(package.namelist()) == len(paths)
-    assert sum(n.endswith('.mp3') for n in package.namelist()) == 3150
+    assert {n for n in package.namelist() if n.endswith('.mp3')} == audio_paths
     for p in paths:
         assert hashlib.sha256(package.read(p.relative_to(DIST).as_posix())).digest() == hashlib.sha256(p.read_bytes()).digest()
-report = {'files': len(paths), 'audioFiles': 3150, 'uncompressedBytes': sum(p.stat().st_size for p in paths),
+report = {'files': len(paths), 'audioFiles': len(audio_paths), 'uncompressedBytes': sum(p.stat().st_size for p in paths),
           'zipBytes': ARCHIVE.stat().st_size, 'sha256': hashlib.sha256(ARCHIVE.read_bytes()).hexdigest(),
           'entry': 'index.html', 'archive': str(ARCHIVE), 'integrity': 'passed: ZIP CRC and every file SHA-256'}
 (SITE / 'source/static-package-checks.json').write_text(json.dumps(report, indent=2), encoding='utf-8')

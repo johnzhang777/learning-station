@@ -1,0 +1,28 @@
+{
+  "sourceSha256": "e81be7c4398998afdef1e1beda0c196d70db0cd8a5f988bd70f950317cbefe5f",
+  "days": 153,
+  "weeks": 22,
+  "learningDays": 88,
+  "slots": 440,
+  "uniqueWords": 325,
+  "uniqueCore": 149,
+  "uniqueExtension": 176,
+  "dailyMix": {
+    "core": 3,
+    "extension": 2
+  },
+  "stories": 12,
+  "sentences": 148,
+  "julyStoryFrequency": [
+    2,
+    3,
+    2,
+    3,
+    2
+  ],
+  "contentChecks": "passed",
+  "limits": [
+    "2027春季新印本尚未核实；对应当前公开PEP四下。",
+    "飞书参考页未读取成功，短文按已确认频率新编。"
+  ]
+}
