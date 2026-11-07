@@ -41,9 +41,15 @@ async function fbGet(kv, key, ctx) {
 const fbPut = (kv, key, value, ctx) => ctx.cloudOperation('FEEDBACK_WRITE', () => kv.put(key, JSON.stringify(value)));
 async function fbList(kv, prefix, cursor, limit, ctx) {
   if (cursor && (typeof cursor !== 'string' || cursor.length > 1024)) ctx.fail('分页位置无效。', 400);
-  const page = await ctx.cloudOperation('FEEDBACK_LIST', () => kv.list({ prefix, limit, ...(cursor ? { cursor } : {}) }));
-  if (!Array.isArray(page?.keys) || typeof page.complete !== 'boolean' || (!page.complete && (!page.cursor || page.cursor === cursor))) throw Error('Invalid feedback pagination');
-  return page;
+  return ctx.cloudOperation('FEEDBACK_LIST', async () => {
+    const page = await kv.list({ prefix, limit, ...(cursor ? { cursor } : {}) });
+    // Native empty lists can serialize their empty keys collection as null or
+    // omit it. Keep pagination validation: an unfinished page must advance.
+    const keys = page?.keys ?? [];
+    if (!page || !Array.isArray(keys) || typeof page.complete !== 'boolean' || keys.some(item => !item || typeof item.key !== 'string') ||
+        (!page.complete && (typeof page.cursor !== 'string' || !page.cursor || page.cursor === cursor))) throw TypeError('Invalid feedback pagination');
+    return { keys, complete:page.complete, cursor:page.complete ? null : page.cursor };
+  });
 }
 async function fbRate(kv, owner, ctx, max = 80) {
   const key = 'feedback_rate_' + (await ctx.digest(owner)).slice(0, 32);
