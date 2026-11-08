@@ -1,10 +1,10 @@
 {
-  "files": 3164,
-  "audioFiles": 3150,
-  "uncompressedBytes": 32334692,
-  "zipBytes": 31036650,
-  "sha256": "66b4e37e321f4a53cd98c8c7211bdf0b40e9d31652065b1ecd4d4f2705274756",
+  "files": 8303,
+  "audioFiles": 8264,
+  "uncompressedBytes": 124133246,
+  "zipBytes": 116668335,
+  "sha256": "d65dd11744c270b9076d085c4e661f08fc4e0173ac0016480d2ead767eba06ef",
   "entry": "index.html",
-  "archive": "D:\\Learning\\learning-station-edgeone.zip",
+  "archive": "D:\\Codex\\2026-11-08\\grade5-english-2027-2028\\work\\learning-station-edgeone.zip",
   "integrity": "passed: ZIP CRC and every file SHA-256"
 }

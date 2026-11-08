@@ -1,0 +1,336 @@
+# autumn|会递纸的机器人|A Robot for Our Team|robot,team,player,clever,project,centre,agree,both,finish,wonderful
+EN Our team has a science project for the school show. We want to make a robot that can hand out paper. Ben is a football player, and he has a clever idea. He puts a small basket in the centre of the robot. I want a blue basket, but he wants a green one.
+EN We discuss the colours and agree to use both. We finish the robot on Friday. It moves slowly, but it can carry ten sheets of paper. Our teacher smiles and says that our teamwork is wonderful. We feel proud of our little helper.
+ZH 我们小组为学校展示准备一个科学项目。我们想做一个会发纸的机器人。本是一名足球队员，他有一个聪明的点子：在机器人中央放一个小篮子。我想要蓝篮子，他却想要绿篮子。
+ZH 我们讨论颜色，决定两种都用。我们星期五完成了机器人。它移动得慢，却能搬十张纸。老师笑着说我们的合作真棒。我们为这个小帮手感到骄傲。
+Q What can the robot carry?|机器人能搬什么？|It can carry ten sheets of paper.
+Q Where does Ben put the basket?|本把篮子放在哪儿？|In the centre of the robot.
+Q How do the children solve the colour problem?|孩子们怎样解决颜色分歧？|They discuss it and agree to use both colours.
+C We ___ to use both colours. (agree / forget)|agree
+C Our science ___ is a robot. (project / river)|project
+O 介绍你想与同伴合作制作的东西，说出你们怎样分工。
+M We want to make a paper town. I draw the map, and my partner makes the houses.
+R make a plan|discuss the basket|finish the robot
+G teamwork|团队合作
+
+# autumn|海报上的小意外|A Better Poster|worried,wrong,afraid,parent,laugh,move,front,easy,smile,accept
+EN I am worried about our class poster. I put the wrong date at the front, and the paint is already dry. I am afraid to tell my partner. At home, I ask a parent for help. Dad does not laugh at my mistake. He asks me to think of a simple way to cover the date.
+EN The next morning, I show my partner a paper flower. We move it over the wrong date and write the new date on it. The change is easy. My partner accepts my apology with a smile. Now our poster has a lovely flower, too.
+ZH 我很担心班级海报。我在显眼的位置写错了日期，颜料已经干了。我不敢告诉同伴。回家后我请家长帮忙。爸爸没有嘲笑我的错误，而是让我想一种简单的方法盖住日期。
+ZH 第二天早上，我给同伴看一朵纸花。我们把它移到错误日期上，再在纸花上写正确日期。修改很容易。同伴微笑着接受了我的道歉。现在海报上还多了一朵漂亮的花。
+Q Why is the child worried?|孩子为什么担心？|The date on the class poster is wrong.
+Q Does Dad laugh at the mistake?|爸爸嘲笑这个错误了吗？|No, he does not.
+Q How do the children change the date?|孩子们怎样修改日期？|They cover it with a paper flower and write the new date on it.
+C I feel ___ about the wrong date. (worried / hungry)|worried
+C The change is ___. (easy / heavy)|easy
+O 说一次做错事后可以怎样道歉、怎样改正。
+M I can say sorry to my partner. Then we can find a way to fix the mistake together.
+R a wrong date|Dad's question|a paper flower
+
+# autumn|留一点玩的时间|Time for Work and Play|Monday,Wednesday,Friday,subject,usually,sometimes,weekend,start,schedule,activity
+EN On Monday, our teacher asks us to make a schedule. I write every subject and every club activity on my page. My plan looks full. I usually start my homework after dinner, but sometimes I am too tired to read. My teacher asks where my play time is.
+EN I look at the page again. On Wednesday, I can play ping-pong before dinner. On Friday, I can draw with my sister. At the weekend, I can visit a grandparent. I do not need a club every afternoon. My new schedule has time for work, play and a good night's sleep.
+ZH 星期一，老师让我们做日程表。我把每门学科和每项社团活动都写在纸上。计划看起来满满的。我通常晚饭后开始写作业，可有时累得读不了书。老师问我的玩耍时间在哪里。
+ZH 我重新看日程表。星期三可以晚饭前打乒乓球。星期五可以和姐姐画画。周末可以探望一位祖辈。我不需要每天下午都参加社团。新日程给学习、玩耍和睡好觉都留了时间。
+Q What does the teacher ask the children to make?|老师让孩子们做什么？|A schedule.
+Q What can the child do on Wednesday?|孩子星期三可以做什么？|Play ping-pong before dinner.
+Q Why does the child change the plan?|孩子为什么修改计划？|The first plan has too little time for play and rest.
+C I usually ___ homework after dinner. (start / recycle)|start
+C Drawing is an ___. (activity / island)|activity
+O 用两个星期词介绍你的学习、玩耍安排。
+M I read on Tuesday. On Thursday, I play outside after my homework.
+R a full schedule|find play time|a better plan
+
+# autumn|图书馆的小演出|Music and Stories|piano,guitar,violin,poem,poet,concert,polite,instrument,perform,clap
+EN Our class will perform at the library on Saturday. It is a small concert with music and stories. Mei plays the piano, and Tom brings his guitar. I do not play an instrument, so I choose a short poem by a local poet. We practise together after school.
+EN At the concert, a violin player is nervous. We give her a quiet smile and wait. Then her music fills the room. The visitors are polite and listen carefully. They clap when each part is over. I learn that a good audience can help every performer feel brave. We all enjoy the afternoon.
+ZH 星期六我们班要在图书馆表演。这是一场有音乐和故事的小音乐会。梅弹钢琴，汤姆带吉他。我不会演奏乐器，就选了一位当地诗人的短诗。我们放学后一起练习。
+ZH 演出时，一位小提琴手很紧张。我们安静地微笑，等她准备好。随后琴声充满房间。来访者很有礼貌，认真聆听，每一部分结束后才鼓掌。我明白了，好的观众能帮助表演者更勇敢。大家都度过了愉快的下午。
+Q What does the child choose to read?|孩子选了什么来朗读？|A short poem by a local poet.
+Q How do the children help the nervous player?|孩子们怎样帮助紧张的演奏者？|They give her a quiet smile and wait.
+Q When do the visitors clap?|来访者什么时候鼓掌？|When each part is over.
+C Tom plays the ___. (guitar / river)|guitar
+C We ___ at the library. (perform / borrow)|perform
+O 说一说当观众时怎样支持表演者。
+M I can listen quietly and wait patiently. I clap after the performance.
+R prepare together|help a nervous player|listen and clap
+G audience|观众
+G performer|表演者
+
+# autumn|关掉手机的晚上|An Evening Without a Phone|phone,show,should,habit,rest,free,enough,awake,asleep,energy
+EN It is eight in the evening. Dad wants to watch one more show on his phone. I want to play one more game. Mum asks if we have enough free time to rest before bed. We both look at the clock. We should change this evening habit.
+EN Dad puts his phone away, and I close my game. We read a funny story together. Soon my little brother is asleep on the sofa. I am still awake, but I feel calm. The next morning, we have more energy. We decide that a quiet story is a good way to end our day.
+ZH 晚上八点，爸爸还想用手机再看一个节目，我还想再玩一局游戏。妈妈问，睡觉前我们有没有足够的空闲时间休息。我们都看了看钟。这个晚间习惯应该改一改。
+ZH 爸爸收起手机，我关掉游戏。我们一起读一个有趣的故事。弟弟很快就在沙发上睡着了。我还醒着，但感到很平静。第二天早上，我们更有精神。我们决定用安静地读故事来结束一天。
+Q What does Dad want to do at first?|爸爸起初想做什么？|Watch one more show on his phone.
+Q What does the family do instead?|一家人后来做了什么？|They read a funny story together.
+Q How do they feel the next morning?|他们第二天早上感觉怎样？|They have more energy.
+C We need time to ___. (rest / shout)|rest
+C My brother is ___ on the sofa. (asleep / wrong)|asleep
+O 介绍一个你想保留或改变的晚间习惯。
+M I want to read before bed. I can put my tablet away and choose a short story.
+R one more show|put devices away|a quiet story
+
+# autumn|健康角的提醒|Our Healthy Habits Corner|brush,tooth,twice,exercise,check,take care of,less,hour,breath,breathe
+EN Our class makes a healthy habits corner. I draw a big tooth and write that I brush my teeth twice a day. Mei adds a picture about exercise. Tom writes a reminder to take care of our eyes. We check every sentence with our teacher.
+EN During a break, we practise taking a slow breath. We breathe in and out quietly, then stretch our arms. We also plan to spend less time sitting in one place. At home, I read for half an hour, then help set the table. Our corner is not just a poster. It reminds us to try small habits every day.
+ZH 我们班做了一个健康习惯角。我画一颗大牙齿，写上我每天刷牙两次。梅添了一张关于运动的图。汤姆写下爱护眼睛的提醒。我们和老师一起检查每句话。
+ZH 课间，我们练习慢慢呼吸，安静地吸气、呼气，再伸展双臂。我们也打算少些长时间坐着。回家后我读半小时书，再帮忙摆餐桌。健康角不只是一张海报，它提醒我们每天尝试小小的好习惯。
+Q How often does the child brush their teeth?|孩子多久刷一次牙？|Twice a day.
+Q Who checks the sentences with the class?|谁和全班一起检查句子？|Their teacher.
+Q What does the child do after reading at home?|孩子在家读完书后做什么？|Help set the table.
+C I ___ my teeth twice a day. (brush / skate)|brush
+C We spend ___ time sitting. (less / both)|less
+O 介绍两个你能坚持的小习惯。
+M I brush my teeth twice a day. I also take a break after reading.
+R make the corner|practise small habits|try them at home
+
+# autumn|种子到汤碗|From Seed to Soup|seed,stem,root,pull,recipe,ingredient,porridge,flavour,little,world
+EN Grandma shows me a carrot seed. It is much smaller than I expect. In our science book, we can see the stem above the soil and the root below it. A few months later, we visit a farm and help pull some carrots from the ground. What an interesting world plants have!
+EN At home, Grandma finds a simple soup recipe. A carrot is our first ingredient. We add a little water and some other vegetables. The soup has a sweet flavour. We eat it with porridge. I tell my brother that our meal begins with tiny seeds and a lot of patient care.
+ZH 奶奶给我看一粒胡萝卜种子，比我想的还小。科学书里能看到土上面的茎和土下面的根。几个月后，我们去农场，帮忙从地里拔胡萝卜。植物的世界真有趣！
+ZH 回家后，奶奶找了一个简单的汤食谱。胡萝卜是第一样食材。我们加一点水和其他蔬菜。汤有甜甜的味道，我们配着粥吃。我告诉弟弟，这顿饭从小种子和许多耐心的照料开始。
+Q Which part of the carrot is below the soil?|胡萝卜的哪一部分在土下面？|The root.
+Q What do they make at home?|他们回家后做什么？|Vegetable soup.
+Q What does the meal begin with?|这顿饭从什么开始？|Tiny seeds and patient care.
+C The ___ is below the soil. (root / phone)|root
+C We follow a soup ___. (recipe / captain)|recipe
+O 选一种你吃过的植物食物，介绍它从哪里来。
+M A carrot grows in the soil. We can use it to make soup.
+R see a seed|pull carrots|cook and share
+
+# autumn|每个人都能选|Lunch for Everyone|hungry,beef,dumpling,tea,hamburger,coconut,ice cream,sandwich,round,different
+EN Our class is hungry after the farm visit. The small cafe has beef noodles, vegetable dumplings and sandwiches. There is also a hamburger on the menu. We look at the choices before ordering. Our teacher asks us to think about what each person wants.
+EN Mei chooses a sandwich. Ben wants dumplings, and I choose noodles. Dad, who joins our trip, has tea. My brother wants coconut water and an ice cream, but first he chooses his lunch. We sit around a round table and talk about the morning. Different choices can make one happy meal. We do not all need the same food.
+ZH 参观农场后，我们班都饿了。小餐馆有牛肉面、素饺子和三明治，菜单上还有汉堡。点餐前我们先看有哪些选择。老师让我们想想每个人想吃什么。
+ZH 梅选三明治，本想吃饺子，我选面条。参加这次出游的爸爸喝茶。弟弟想喝椰子水、吃冰激凌，不过他先选午饭。我们围坐圆桌旁，聊上午的见闻。不同选择也能组成一顿愉快的饭，不必人人吃一样的食物。
+Q What does Ben choose?|本选了什么？|Dumplings.
+Q What does Dad drink?|爸爸喝什么？|Tea.
+Q Do all the people choose the same food?|大家选了同样的食物吗？|No, they make different choices.
+C A ___ can have bread and cheese. (sandwich / valley)|sandwich
+C We look at the ___ before ordering. (menu / roof)|menu
+O 用两句话介绍你和家人会怎样点午餐。
+M I would like vegetable noodles. My sister would like a sandwich.
+R read the menu|make different choices|share a happy meal
+G ordering|点餐
+
+# autumn|改变徒步计划|A Different Nature Trip|go hiking,river,waterfall,forest,mountain,heavy,wind,fog,raincoat,shelter
+EN We plan to go hiking near the river on Saturday. Our guide wants to show us a waterfall and a forest path below the mountain. Before we leave, Dad checks the weather. There may be heavy rain, strong wind and fog in the afternoon. We put a raincoat in each bag, but the guide suggests a different plan.
+EN We visit the nature centre instead. From its windows, we can see the river safely. We draw the forest and learn about animals that need shelter. The hike can wait for a fine day. A changed plan can still give us a wonderful trip.
+ZH 星期六我们打算到河边徒步。向导想带我们看瀑布和山脚下的森林步道。出发前爸爸查看天气：下午可能有大雨、大风和雾。我们每个包里都装了雨衣，但向导建议换个计划。
+ZH 我们改去自然中心，可以从窗内安全地看河流。我们画森林，了解需要庇护处的动物。徒步可以等到晴天再去。改变计划，仍然能有一次精彩的出游。
+Q Why do they change the plan?|他们为什么改变计划？|The weather may be bad in the afternoon.
+Q Where do they go instead?|他们改去哪里？|The nature centre.
+Q What do they learn about there?|他们在那里了解什么？|Animals that need shelter.
+C Dad checks the ___ before leaving. (weather / biscuit)|weather
+C We can go hiking on a ___ day. (fine / wrong)|fine
+O 说说下雨时，你可以怎样调整一次户外计划。
+M If it rains, we can visit a museum instead. We can go hiking another day.
+R check the weather|change the plan|enjoy the centre
+G hike|徒步活动
+
+# autumn|窗边的风景画|A View from the Hotel|hotel,lake,view,sunrise,sunset,round,close,know,before,bring
+EN Our hotel has a window beside a small table. From it, we can see a lake and a round island. I bring my sketchbook because I want to draw the view. Before sunrise, the sky is pale pink. Dad and I sit quietly and watch the colours change.
+EN In the afternoon, dark clouds arrive, so we close the window. I know we cannot see the sunset today. Instead, I use my morning drawing to make a postcard for Grandma. I add the lake, the island and the pink sky. One small window gives me a whole page of happy memories.
+ZH 酒店有一扇靠着小桌子的窗户。从窗里能看到湖和圆圆的小岛。我带了速写本，想画这里的风景。日出前天空是淡粉色，我和爸爸安静地坐着，看颜色变化。
+ZH 下午来了乌云，我们关上窗。我知道今天看不到日落了，就用早上的画给奶奶做明信片，画上湖、小岛和粉红色天空。一扇小窗，给了我满满一页快乐回忆。
+Q What can they see from the window?|他们从窗里能看见什么？|A lake and a round island.
+Q Why do they close the window?|他们为什么关窗？|Dark clouds arrive.
+Q Who is the postcard for?|明信片送给谁？|Grandma.
+C I draw the ___ from the window. (view / ankle)|view
+C The sun comes up at ___. (sunrise / dusk)|sunrise
+O 介绍你想画下来的一处风景。
+M I want to draw the park near my home. It has a pond and many trees.
+R watch the sunrise|clouds arrive|make a postcard
+G sketchbook|速写本
+G pale|浅色的
+
+# autumn|聚会中的两份工作|Two Jobs at the Party|both,project,finish,show,phone,free,perform,smile,team,everything
+EN Our class has a party before the holiday. I want to perform a song, but I also promise to help with the story show. Both jobs need time. At first, I try to do everything alone. I look worried, and I nearly forget to finish the poster for our project.
+EN My team notices my problem. One friend can paint, and another can play music. We share the work and put our phones away. Soon I have free time to practise my song. At the party, our story show goes well. We smile at each other. Sharing work helps everyone enjoy the day.
+ZH 假期前我们班举办聚会。我想唱歌，也答应帮忙准备故事表演，两份工作都要花时间。起初我想一个人包办一切，结果很担心，还差点忘了完成项目海报。
+ZH 同伴发现了我的问题。一个朋友会画画，另一个会演奏音乐。我们分工，收起手机。很快我就有空练歌了。聚会时故事表演很顺利，我们相视微笑。分担工作，让每个人都能享受这一天。
+Q What two jobs does the child want to do?|孩子想做哪两件事？|Perform a song and help with the story show.
+Q How does the team help?|小组怎样帮忙？|They share the work.
+Q Why can the child practise the song later?|孩子后来为什么能练歌？|The friends help, so the child has free time.
+C We ___ the work. (share / smoke)|share
+C I have ___ time to practise. (free / icy)|free
+O 说一个适合分工完成的任务，以及你想负责的部分。
+M We can make a class book together. I want to draw the pictures.
+R too many jobs|share the work|enjoy the party
+
+# autumn|给未来的自己|A Letter to Next Term|yours,young,clever,different,way,habit,usually,weekend,ask,decision
+EN Dear next-term me, you are still young, and there is much to learn. You do not need to be the clever one in every game. Everyone has different skills. The best way to learn is to ask, listen and try. Remember the robot project and the flower on the poster.
+EN Keep one good habit from this term. You usually read before bed now, so keep doing that. At the weekend, leave time for family and play. Choose one small goal, not ten big ones. Make a kind decision when a friend needs help. I hope you will enjoy learning. Yours, this-term me.
+ZH 亲爱的下学期的我：你还小，还有很多东西要学。你不需要在每场游戏里都最聪明。每个人有不同的本领。学习的好方法是提问、聆听和尝试。记住机器人项目和海报上的纸花。
+ZH 保留这个学期的一个好习惯。你现在通常睡前阅读，就继续吧。周末给家人和玩耍留时间。选一个小目标，而不是十个大目标。朋友需要帮助时，作一个友善的决定。希望你享受学习。此致，本学期的我。
+Q Does the letter ask for ten big goals?|信中要求定十个大目标吗？|No, it asks for one small goal.
+Q Which habit should the child keep?|孩子应该保留哪个习惯？|Reading before bed.
+Q What should there be time for at the weekend?|周末应该给什么留时间？|Family and play.
+C Choose one small ___. (goal / flood)|goal
+C Everyone has ___ skills. (different / frozen)|different
+O 给下学期的自己说两句话：一个习惯，一个小目标。
+M Keep reading every day. My small goal is to tell one English story to my family.
+R remember this term|keep a habit|choose a small goal
+
+# spring|借书小任务|Our Library Task|must,borrow,return,write,line,wait,shout,obey,public,careful
+EN Our class has a task at the public library. We must borrow one book, read it and write a short note about it. At the door, we stand in line and wait. A sign asks us not to shout. We obey the rule because other people are reading inside.
+EN I choose a book about birds. My friend wants the same book, so we make a careful plan. I will return it next Tuesday, and then she can borrow it. We write the date on our calendars. A library works well when everyone takes care of its books and thinks about other readers.
+ZH 我们班在公共图书馆有一项任务：借一本书，阅读后写简短读书笔记。门口我们排队等候。标志提醒不要大喊。我们遵守规定，因为里面还有其他人在读书。
+ZH 我选了一本关于鸟的书，朋友也想借，于是我们仔细计划：我下周二归还，她再借。我们把日期写在日历上。人人爱惜书本、为其他读者着想，图书馆才能顺畅运作。
+Q What is the class task?|班级任务是什么？|Borrow a book, read it and write a short note.
+Q Why should people not shout?|为什么不应该大喊？|Other people are reading inside.
+Q When will the child return the bird book?|孩子什么时候归还鸟类图书？|Next Tuesday.
+C We ___ the library rules. (obey / decorate)|obey
+C Please ___ the book on Tuesday. (return / scare)|return
+O 说两条你会遵守的图书馆规则。
+M I will speak quietly. I will return my books on time.
+R borrow a book|share a plan|think of other readers
+
+# spring|相机的闪光灯|The Camera Flash|museum,visitor,inside,guard,flash,touch,allow,press,warning,booklet
+EN We are inside a museum with our teacher. Each visitor gets a small booklet. A guard shows us a warning: no flash and no touching. I put my camera away, but my friend wants a photo of an ancient cup. She does not know that her flash is on.
+EN Before she can press the button, I point to the sign. We ask the guard what the museum will allow. He explains that we can take a photo without flash. My friend turns it off and thanks him. She also apologises for not checking first. The cup stays safe, and we have a good visit.
+ZH 我们跟老师在博物馆参观，每位参观者都拿到一本小册子。门卫给我们看警告：禁止闪光灯和触摸。我收起相机，朋友却想给一个古杯拍照。她不知道闪光灯还开着。
+ZH 她按按钮前，我指给她看标志。我们问门卫馆内允许怎样拍照。他解释，可以不用闪光灯拍。朋友关掉闪光灯，向他道谢，也为没有先检查而道歉。古杯安然无恙，我们也愉快地完成参观。
+Q What do the signs say?|标志说了什么？|No flash and no touching.
+Q Who explains the photo rule?|谁解释了拍照规定？|The guard.
+Q Can they take a photo without flash?|他们可以不用闪光灯拍照吗？|Yes, they can.
+C We must not ___ the ancient cup. (touch / print)|touch
+C Check the camera before you ___ the button. (press / skate)|press
+O 如果不明白参观规定，你可以怎样询问？
+M Excuse me. May I take a photo here? Thank you for explaining the rule.
+R read a warning|ask the guard|turn off the flash
+G ancient|古代的
+G apologise|道歉
+
+# spring|新朋友的便条|A Note for a New Friend|city,live,street,along,cinema,between,behind,left,lost,note
+EN A new friend comes to live in our city. Her family is staying on Green Street. I write a note to help her find the library. She should walk along the street, pass the cinema and turn left. The library is between the bank and a little cafe.
+EN Behind the library, there is a garden where we can meet. I add a small map to the note. My friend says that clear directions help her feel less lost. On Saturday, we meet in the garden and read together. Later, she draws a map of her old hometown for me. Now we both know a new place.
+ZH 一位新朋友搬到我们城市，她家暂住在格林街。我写便条，帮她找图书馆：沿街走，经过电影院，再向左转。图书馆在银行和小咖啡馆之间。
+ZH 图书馆后有花园，我们可以在那里见面。我在便条上加了一张小地图。朋友说，清楚的指路让她不那么迷茫。星期六我们在花园见面，一起读书。后来她为我画了老家地图。现在，我们都了解了一个新地方。
+Q Where is the library?|图书馆在哪里？|Between the bank and the cafe.
+Q What is behind the library?|图书馆后面有什么？|A garden.
+Q What does the new friend draw later?|新朋友后来画了什么？|A map of her old hometown.
+C Turn ___ after the cinema. (left / inside)|left
+C I add a map to my ___. (note / shell)|note
+O 用两三个地点词介绍从你家去一个地方的路线。
+M Walk along our street. Turn left at the shop. The park is beside the library.
+R write directions|add a map|share two places
+
+# spring|感谢社区帮手|Thank You, Helpers|volunteer,recycle,litter,teach,direct,traffic,artist,scientist,engineer,gardener
+EN Our class wants to thank the people who help our community. A volunteer helps us recycle paper and pick up litter. A gardener shows us how to plant flowers. An engineer explains the new bridge, and an artist helps us draw it. There are many kinds of useful work.
+EN On the way home, we see an officer direct the traffic. Our teacher asks what we can do to help, too. We decide to make thank-you cards and keep our streets clean. Next week, a scientist will visit our school to teach us about water. We have many people to learn from.
+ZH 我们班想感谢帮助社区的人。志愿者帮我们回收纸张、捡垃圾。园丁教我们种花。工程师讲解新桥，画家帮我们把桥画下来。有用的工作有很多种。
+ZH 回家途中，我们看到警察指挥交通。老师问，我们也能帮些什么忙。我们决定做感谢卡，并保持街道干净。下周还有一位科学家来校教我们水的知识。能向这么多人学习，真好。
+Q Who shows the children how to plant flowers?|谁教孩子们种花？|A gardener.
+Q What do they decide to make?|他们决定做什么？|Thank-you cards.
+Q What will the scientist teach them about?|科学家将教他们什么？|Water.
+C We put paper aside to ___. (recycle / shout)|recycle
+C The officer helps ___ traffic. (direct / borrow)|direct
+O 介绍一位社区工作者，并说说你能怎样表达感谢。
+M The gardener takes care of our park. I can thank her and keep the park clean.
+R meet the helpers|notice their work|say thank you
+
+# spring|有故事的日历|A Calendar with Stories|January,February,March,April,May,June,July,August,September,October,November,December
+EN I make a calendar with Grandma. In January and February, we draw winter clothes. In March and April, we add flowers and rain. May has a picture of our family picnic. June has a card for Children's Day. Every page tells us something about our life.
+EN July and August have our holiday plans. September shows the first day of school. October has a red flag. November has brown leaves, and December has a warm bowl of soup. Grandma asks which page I like best. I cannot choose just one. Each month has a different story, and we can add new memories next year.
+ZH 我和奶奶做日历。一月和二月画冬衣，三月和四月添花和雨。五月画家庭野餐，六月放一张儿童节卡片。每页都记着我们的生活。
+ZH 七月、八月写假期计划，九月画开学第一天，十月画红旗，十一月画棕色树叶，十二月画一碗热汤。奶奶问我最喜欢哪页。我选不出唯一的一页，因为每个月都有不同的故事，明年还可以添新回忆。
+Q What do they draw for March and April?|他们为三月和四月画什么？|Flowers and rain.
+Q Which months have holiday plans?|哪两个月写了假期计划？|July and August.
+Q Can the child choose just one favourite page?|孩子能选出唯一最喜欢的一页吗？|No, each month has a different story.
+C ___ comes after June. (July / January)|July
+C ___ is the last month. (December / April)|December
+O 选两个月份，各说一件你想做的事。
+M In March, I want to plant a tree. In July, I want to visit my grandparents.
+R draw the early months|add school and holiday plans|keep new memories
+
+# spring|家乡的节日小册子|Our Festival Booklet|festival,celebrate,holiday,party,Labour Day,Dragon Boat Festival,National Day,hometown,tradition,lantern
+EN Our class makes a festival booklet about our hometown. One page is about Labour Day. We draw people doing useful work. Another page is about the Dragon Boat Festival. My grandparent tells me about a local race and the tradition of sharing rice dumplings. I write down her story.
+EN We also add a National Day page with a family holiday picture. For the class party, we decorate the room with paper lanterns. We celebrate our finished work by reading the booklet together. A festival is more than a date on a calendar. It can help us learn family stories and care about the people around us.
+ZH 我们班做一本家乡节日小册子。一页介绍劳动节，画人们做有用的工作；另一页介绍端午节。我的一位祖辈讲述当地比赛和分享粽子的传统，我把故事记下来。
+ZH 我们还添了国庆节一页，画家庭假日。为了班级聚会，我们用纸灯笼装饰房间。大家一起读完成的小册子来庆祝。节日不只是日历上的日期，还能让我们了解家人的故事，关心身边的人。
+Q Who tells the child a festival story?|谁给孩子讲节日故事？|A grandparent.
+Q How do they decorate the room?|他们怎样装饰房间？|With paper lanterns.
+Q What can festivals help us learn?|节日能帮助我们了解什么？|Family stories and the people around us.
+C We ___ our finished work. (celebrate / delete)|celebrate
+C A ___ is a custom passed on through time. (tradition / suitcase)|tradition
+O 介绍你家过一个节日时喜欢做的两件事。
+M We make food together. Then we share stories with our grandparents.
+R listen to family|make the booklet|celebrate together
+G passed on|传下来的
+
+# spring|在地图上旅行|Travelling with a Map|country,India,Italy,Britain,Cairo,Hawaii,desert,pyramid,camel,painting
+EN It is raining, so we travel with a map instead of a suitcase. Dad finds India, and my sister finds Italy. I point to Britain and read about an old castle. Then we find Cairo in Egypt. A picture shows a pyramid and a camel near the desert.
+EN Our next stop is Hawaii. We look at a painting of an island and the ocean. Each place has a different landscape and story. We write the country or place name under each picture. Before lunch, we have made a little world gallery on the table. We can enjoy learning about places even when we stay at home.
+ZH 下雨了，我们带着地图而不是行李箱去“旅行”。爸爸找印度，姐姐找意大利。我指着不列颠，读一座古堡的介绍。接着我们找到埃及的开罗，图上有沙漠旁的金字塔和骆驼。
+ZH 下一站是夏威夷。我们看一幅海岛和海洋的画。每个地方都有不同的风景和故事，我们在图片下写国家或地名。午饭前，桌上就成了小小的世界画廊。待在家里，也能愉快地了解不同地方。
+Q Why do they travel with a map at home?|他们为什么在家用地图旅行？|It is raining.
+Q Where do they find Cairo?|他们在哪里找到开罗？|In Egypt.
+Q What do they make on the table?|他们在桌上做了什么？|A little world gallery of pictures and place names.
+C Cairo is in ___. (Egypt / Italy)|Egypt
+C A ___ can live in the desert. (camel / koala)|camel
+O 选一个你想了解的地方，说说想了解什么。
+M I want to learn about Italy. I want to see pictures of its old buildings.
+R open the map|read the pictures|make a world gallery
+G Egypt|埃及
+G castle|城堡
+G gallery|画廊
+
+# spring|我们共同的家园|Our Wild Neighbours|wild,grassland,kangaroo,koala,common,special,environment,litter,beach,island
+EN Our project compares wild animals from different places. A kangaroo can move across grassland on strong back legs. A koala spends much of its time in trees. We also read about birds that live on a beach and turtles that return to an island. Each animal has a special home.
+EN What do these animals have in common? They all need a healthy environment. Our teacher asks us to think about our own neighbours in nature. We can keep litter out of the river and watch birds quietly. We make a poster to protect these homes. Learning about faraway animals helps us care for the animals nearby, too.
+ZH 我们的课题比较不同地方的野生动物。袋鼠能靠强壮的后腿穿过草原，考拉大部分时间待在树上。我们还读了住在海滩的鸟和返回海岛的海龟。每种动物都有特别的家。
+ZH 它们有什么共同点？都需要健康的环境。老师让我们想想身边的自然邻居。我们可以不让垃圾进入河流，安静地观察鸟儿。我们做海报保护这些家园。了解远方动物，也能帮助我们关心附近的动物。
+Q Where does a koala spend much of its time?|考拉大部分时间在哪里？|In trees.
+Q What do all these animals need?|这些动物都需要什么？|A healthy environment.
+Q Name one thing the children can do nearby.|说一件孩子们在身边能做的事。|Keep litter out of the river, or watch birds quietly.
+C Animals need a healthy ___. (environment / password)|environment
+C A kangaroo has strong back ___. (legs / wings)|legs
+O 介绍一种身边的动物，说一件可以保护它家园的事。
+M Birds live near our park. We can keep the park clean and watch them quietly.
+R compare wild animals|find a common need|help nearby nature
+G turtle|海龟
+G faraway|遥远的
+
+# spring|去博物馆的三种办法|Three Ways to the Museum|on foot,bike,underground,early,traffic,route,distance,passenger,finally,health
+EN We want to reach the museum early. Dad suggests driving, but there is a lot of traffic. I look at the distance on the map. It is too far to go on foot. My sister suggests a bike ride, but Grandma will come with us. We need a route that works for everyone.
+EN Finally, we choose the underground. Each passenger has a seat on our train, and the station is near the museum. We walk the last short part together. Walking is good for our health, and this little walk is enough for Grandma today. A good travel choice thinks about every person, not just the fastest way.
+ZH 我们想早点到博物馆。爸爸建议开车，但路上车多。我查看地图上的距离：全程步行太远。姐姐提议骑自行车，可奶奶也同行。我们需要适合所有人的路线。
+ZH 最后我们选地铁。车上每位乘客都有座位，车站也离博物馆很近。最后一小段我们一起走。步行有益健康，对奶奶来说今天这样走一小段就够了。好的交通选择要考虑每个人，不只看哪种最快。
+Q Why do they not walk all the way?|他们为什么不全程步行？|The distance is too far.
+Q Which transport do they finally choose?|他们最后选什么交通方式？|The underground.
+Q Why is this plan suitable for Grandma?|这个计划为什么适合奶奶？|She can sit on the train and only walk a short distance.
+C We choose a ___ that works for everyone. (route / flavour)|route
+C Walking is good for our ___. (health / flash)|health
+O 为一家人选一种去公园的方式，并给出原因。
+M We can take the bus. The stop is near our home, and Grandma can sit down.
+R compare three ways|think about Grandma|choose the underground
+
+# spring|旅行计划要问清楚|Check the Travel Plan|internet,app,information,local,history,culture,hot pot,seafood,plan,confirm
+EN My cousin wants to visit our hometown. We use the internet with Mum to find information. A map app shows the station and the museum. I want to share local history and culture, so our plan includes a morning museum tour. My cousin also asks about hot pot and seafood.
+EN We look at a menu and choose food together. Mum reminds us to confirm the opening time and the booking. An old blog may have the wrong information. We check the museum's own website before we pack. Now our plan has a clear route, a meal and time to rest. Good planning begins with useful questions.
+ZH 表亲想来我们家乡。我们和妈妈一起上网找信息，地图应用显示车站和博物馆。我想分享当地历史文化，所以计划上午参观博物馆。表亲还问起火锅和海鲜。
+ZH 我们看菜单，一起选餐。妈妈提醒，要确认开放时间和预订；旧博客可能有错误信息。打包前我们查看博物馆自己的网站。现在计划里有清晰的路线、餐食和休息时间。好的计划从有用的问题开始。
+Q What do they plan for the morning?|他们计划上午做什么？|Take a museum tour.
+Q Why might an old blog be a problem?|旧博客为什么可能有问题？|It may have the wrong information.
+Q Where do they check the museum details?|他们在哪里核对博物馆信息？|On the museum's own website.
+C Please ___ the opening time. (confirm / scare)|confirm
+C The map ___ shows the station. (app / camel)|app
+O 给一次出游提出两个出发前应问清楚的问题。
+M What time does the museum open? Do we need to book tickets?
+R ask useful questions|check current information|prepare a clear plan
+
+# spring|一张明信片的旅程|A Postcard from Our Trip|postcard,stamp,envelope,souvenir,memory,experience,explore,tour,join,maybe
+EN At the end of our tour, I choose a postcard for my friend. It shows the hill we explore with our guide. I want to send a little souvenir, too, but the shop is closed. Maybe a story will be a better gift than another thing.
+EN I write about our train ride, the local food and a kind person who helps us. Dad buys a stamp. I do not need an envelope for the postcard, but I write the address carefully. This small card holds a happy memory and a new experience. Next time, I hope my friend can join us and make a story of her own.
+ZH 行程结束时，我给朋友选了一张明信片，上面是我们跟向导探索的小山。我还想寄一件小纪念品，但商店关门了。也许一个故事比再买一件东西更适合作礼物。
+ZH 我写火车旅程、当地美食和帮助我们的好心人。爸爸买邮票。明信片不需要信封，但地址要认真写。这张小卡装着快乐回忆和新体验。希望下次朋友能同行，拥有她自己的故事。
+Q What does the postcard show?|明信片上是什么？|The hill they explore with their guide.
+Q Why does the child not buy a souvenir?|孩子为什么没买纪念品？|The shop is closed.
+Q What does the child hope for next time?|孩子对下次出游有什么希望？|The friend can join them and make her own story.
+C Put a ___ on the postcard. (stamp / knee)|stamp
+C The trip gives me a happy ___. (memory / warning)|memory
+O 用三句话给朋友介绍一次真实或想象的出游。
+M We take a train to a small town. We visit a museum and try local food. I want to go there with you next time.
+R choose a postcard|write a travel story|invite a friend

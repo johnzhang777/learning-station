@@ -3,18 +3,24 @@ import hashlib
 import json
 import zipfile
 import subprocess
+import argparse
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parents[1]
 DIST = SITE / 'dist'
-ARCHIVE = SITE.parent / 'learning-station-edgeone.zip'
+parser = argparse.ArgumentParser()
+parser.add_argument('--output',type=Path,default=SITE.parent / 'learning-station-edgeone.zip')
+ARCHIVE = parser.parse_args().output
+ARCHIVE.parent.mkdir(parents=True,exist_ok=True)
 subprocess.run(['node', str(SITE / 'scripts/build.mjs')], cwd=SITE, check=True)
 assert (DIST / 'edge-functions/api/[[route]].js').is_file()
 assert (DIST / 'cloud-functions/internal/verify-password.js').is_file()
 assert (DIST / 'cloud-functions/auth/login.js').is_file()
 assert (DIST / 'cloud-functions/auth/feedback-login.js').is_file()
 audio_paths = set()
-for data_file, audio_file in [('data.json', 'audio-manifest.json'), ('spring-data.json', 'spring-audio-manifest.json')]:
+for data_file, audio_file in [('data.json', 'audio-manifest.json'), ('spring-data.json', 'spring-audio-manifest.json'),
+                              ('grade5-autumn-data.json', 'grade5-autumn-audio-manifest.json'),
+                              ('grade5-spring-data.json', 'grade5-spring-audio-manifest.json')]:
     data = json.loads((DIST / data_file).read_text(encoding='utf-8'))
     audio = json.loads((DIST / audio_file).read_text(encoding='utf-8'))
     expected = {e['id']: {'word', 'ex1', 'ex2'} for e in data['entries']}
