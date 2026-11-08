@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHmac, pbkdf2Sync, randomBytes } from 'node:crypto';
 import { handle } from '../server/learning-api.js';
+import {loginDeveloper,provisionDeveloper,developerPassword} from './helpers/developer.mjs';
 
 const origin='https://feedback.example', password='synthetic-feedback-729';
 const env={ACCOUNT_USERNAME:'testchild',ACCOUNT_PASSWORD_SALT:'ab'.repeat(16),ACCOUNT_PASSWORD_HASH:pbkdf2Sync(password,Buffer.from('ab'.repeat(16),'hex'),120000,32,'sha256').toString('hex'),SESSION_SECRET:'cd'.repeat(32)};
@@ -24,7 +25,8 @@ function request(route,{method='GET',data,cookie,csrf,source=origin,type='applic
 const call=(kv,route,options={},extra={})=>handle(request('/api/feedback'+route,options),env,kv,extra);
 const post=(kv,route,auth,data,extra)=>call(kv,route,{...auth,method:'POST',data},extra);
 async function auth(kv,developer=false,config=env) {
-  const response=developer?await post(kv,'/admin-login',{}, {code:adminCode}):await handle(request('/api/login',{method:'POST',data:{username:config.ACCOUNT_USERNAME,password}}),config,kv);
+  if(developer)return loginDeveloper({request:(path,options)=>handle(request(path,options),config,kv),env:config,kv,origin});
+  const response=await handle(request('/api/login',{method:'POST',data:{username:config.ACCOUNT_USERNAME,password}}),config,kv);
   assert.equal(response.status,200,JSON.stringify(await response.clone().json()));
   return {cookie:response.headers.get('set-cookie').split(';')[0],csrf:(await response.json()).csrf};
 }
@@ -116,9 +118,9 @@ test('developer login has a signed one-hour cookie; learning credentials cannot 
   assert.equal((await post(kv,'/admin-login',user,{code:env.SESSION_SECRET})).status,401);
   assert.equal((await call(kv,'/session',{cookie:user.cookie.replace('__Host-learning_session','__Host-feedback_admin')})).status,200);
   assert.equal((await (await call(kv,'/session',{cookie:user.cookie.replace('__Host-learning_session','__Host-feedback_admin')})).json()).role,'guest');
-  const now=Date.now(),response=await post(kv,'/admin-login',{}, {code:adminCode},{now});
+  const now=Date.now(),result=await loginDeveloper({request:(path,options)=>handle(request(path,options),env,kv,{now}),env,kv,origin,now}),response=result.res;
   assert.equal(response.status,200);assert.match(response.headers.get('set-cookie'),/HttpOnly; SameSite=Strict; Max-Age=3600; Secure/);
-  const developer={cookie:response.headers.get('set-cookie').split(';')[0],csrf:(await response.json()).csrf};
+  const developer=result;
   const session=await (await call(kv,'/session',developer,{now:now+30000})).json();assert.equal(session.canManage,true);
   assert.equal((await call(kv,'/threads',developer,{now:now+3601000})).status,401);
   assert.equal((await call(kv,'/threads',{cookie:developer.cookie+'x'})).status,401);
@@ -200,8 +202,9 @@ test('feedback write failures never acknowledge delivery and do not disclose raw
 
 test('invalid developer codes and excessive message posting are throttled',async()=>{
   const kv=new KV();
-  for(let i=0;i<8;i++)assert.equal((await post(kv,'/admin-login',{}, {code:'0'.repeat(64)})).status,401);
-  assert.equal((await post(kv,'/admin-login',{}, {code:adminCode})).status,429);
+  await provisionDeveloper(kv);
+  for(let i=0;i<8;i++)assert.equal((await post(kv,'/admin-login-ticket',{}, {password:'synthetic-wrong-pass'})).status,200);
+  assert.equal((await post(kv,'/admin-login-ticket',{}, {password:developerPassword})).status,429);
   const user=await auth(kv);
   for(let i=0;i<80;i++)await newThread(kv,user,'留言 '+i);
   assert.equal((await post(kv,'/threads',user,{id:id('t'),text:'too frequent',attachments:[]})).status,429);

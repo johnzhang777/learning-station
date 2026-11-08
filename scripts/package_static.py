@@ -12,6 +12,7 @@ subprocess.run(['node', str(SITE / 'scripts/build.mjs')], cwd=SITE, check=True)
 assert (DIST / 'edge-functions/api/[[route]].js').is_file()
 assert (DIST / 'cloud-functions/internal/verify-password.js').is_file()
 assert (DIST / 'cloud-functions/auth/login.js').is_file()
+assert (DIST / 'cloud-functions/auth/feedback-login.js').is_file()
 audio_paths = set()
 for data_file, audio_file in [('data.json', 'audio-manifest.json'), ('spring-data.json', 'spring-audio-manifest.json')]:
     data = json.loads((DIST / data_file).read_text(encoding='utf-8'))
@@ -39,6 +40,7 @@ with zipfile.ZipFile(ARCHIVE) as package:
     assert 'edge-functions/api/[[route]].js' in package.namelist()
     assert 'cloud-functions/internal/verify-password.js' in package.namelist()
     assert 'cloud-functions/auth/login.js' in package.namelist()
+    assert 'cloud-functions/auth/feedback-login.js' in package.namelist()
     assert not any('.private' in n or n.endswith('.env') for n in package.namelist())
     assert len(package.namelist()) == len(paths)
     assert {n for n in package.namelist() if n.endswith('.mp3')} == audio_paths

@@ -1,3 +1,4 @@
+import {handleCheckins} from './checkin-api.js';
 import { handleFeedback } from './feedback-api.js';
 // Web-standard APIs only: runs in EdgeOne Edge Functions, not Node Functions.
 const encoder = new TextEncoder();
@@ -8,7 +9,7 @@ const noCache = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Cont
 const json = (body, status = 200, headers = {}) => new Response(JSON.stringify(body), { status, headers: { ...noCache, ...headers } });
 const publicFailure = Symbol('publicFailure');
 const fail = (message, status) => { throw Object.assign(new Error(message), { status, [publicFailure]: true }); };
-const diagnosticCodes = new Set(['FEEDBACK_READ', 'FEEDBACK_WRITE', 'FEEDBACK_PARSE', 'FEEDBACK_LIST', 'CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE', 'CRYPTO_PASSWORD_EXPORT', 'PASSWORD_SERVICE_FETCH', 'PASSWORD_SERVICE_RESPONSE', 'PASSWORD_SERVICE_VERIFY', 'CRYPTO_SESSION_IMPORT', 'CRYPTO_SESSION_SIGN', 'CRYPTO_DIGEST', 'SESSION_RANDOM', 'LOGIN_RATE_READ', 'LOGIN_RATE_WRITE', 'LOGIN_RATE_PARSE', 'PROGRESS_LIST', 'PROGRESS_READ', 'PROGRESS_PARSE', 'PROGRESS_WRITE']);
+const diagnosticCodes = new Set(['CHECKIN_READ', 'CHECKIN_PARSE', 'CHECKIN_WRITE', 'CHECKIN_LIST', 'FEEDBACK_TICKET', 'FEEDBACK_READ', 'FEEDBACK_WRITE', 'FEEDBACK_PARSE', 'FEEDBACK_LIST', 'CRYPTO_PASSWORD_IMPORT', 'CRYPTO_PASSWORD_DERIVE', 'CRYPTO_PASSWORD_EXPORT', 'PASSWORD_SERVICE_FETCH', 'PASSWORD_SERVICE_RESPONSE', 'PASSWORD_SERVICE_VERIFY', 'CRYPTO_SESSION_IMPORT', 'CRYPTO_SESSION_SIGN', 'CRYPTO_DIGEST', 'SESSION_RANDOM', 'LOGIN_RATE_READ', 'LOGIN_RATE_WRITE', 'LOGIN_RATE_PARSE', 'PROGRESS_LIST', 'PROGRESS_READ', 'PROGRESS_PARSE', 'PROGRESS_WRITE']);
 const errorKinds = new Set(['Error', 'TypeError', 'RangeError', 'SyntaxError', 'NotSupportedError', 'OperationError', 'DataError', 'InvalidAccessError', 'InvalidStateError', 'QuotaExceededError', 'SecurityError', 'AbortError']);
 const errorReasons = new Set(['RUNTIME_ERROR', 'ITERATION_LIMIT', 'UNSUPPORTED_ALGORITHM']);
 function cryptoFailureReason(code, error) {
@@ -228,6 +229,7 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp, ver
     const s = await session(request, env, now);
     if (route === '/api/session' && request.method === 'GET') return json({ username: s.sub, csrf: s.nonce, expiresAt: s.exp * 1000 });
     if (request.method === 'POST' && !constantEqual(request.headers.get('x-csrf-token') || '', s.nonce)) fail('请刷新页面后再试。', 403);
+    if (route === '/api/checkins') return await handleCheckins(request,env,kv,{now,user:s,json,fail,body,digest,cloudOperation});
     if (route === '/api/logout' && request.method === 'POST') return json({ ok: true }, 200, { 'Set-Cookie': cookie(request, '', 0) });
     if (route === '/api/progress' && request.method === 'GET') {
       const { fields } = await load(kv);
