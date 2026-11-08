@@ -1,4 +1,5 @@
-import { AUTUMN, SPRING, COURSE_INFO, validWordId, courseForPath, positionField, audioEntries } from './courses.js';
+import {CheckinBoard} from './checkins.js';
+import { AUTUMN, SPRING, COURSE_INFO, COURSE_TITLE, validWordId, courseForPath, positionField, audioEntries } from './courses.js';
 import { FeedbackBoard, createFeedbackGate } from './feedback.js';
 import { ProgressSync } from './progress-sync.js';
 // Normal URLs use account login; ?local=1 keeps public listening available.
@@ -167,7 +168,7 @@ class ClipPlayer {
 let player;
 
 const feedbackGate=createFeedbackGate();
-let feedbackBoard=null;
+let feedbackBoard=null;let checkinBoard=null;
 let feedbackUnlocked=false;
 try{feedbackUnlocked=sessionStorage.getItem('listening-feedback-open')==='1';}catch{}
 const courseData=new Map();
@@ -191,8 +192,8 @@ function applyProgressFields(fields){
   for(const c of COURSE_INFO){const p=fields[positionField(c.id)]?.value;if(p)state.positions[c.id]={lastDay:p.lastDay,lastIndex:p.lastIndex};}
   syncPositionToState();saveDeviceState();
 }
-function courseCards(compact=false){return `<div class="course-choices ${compact?'compact':''}">${COURSE_INFO.map(c=>{const d=courseData.get(c.id);return `<article class="panel course-choice"><span class="pill">${c.label}</span><h2>${c.id===SPRING?'词汇积累与短文复习':'英语陪伴手册'}</h2><p>${c.period}<br>${c.id===SPRING?'每日3教材词＋2适龄拓展词，7月每周2-3篇短文。':'原21周手册，继续使用已有学习记录。'}</p><div class="collection-stats"><span><b>${d.entries.length}</b> 个不同词条</span><span><b>${d.entries.length*2}</b> 句例句</span>${d.stories?.length?`<span><b>${d.stories.length}</b> 篇短文</span>`:''}</div><a class="btn primary" href="#/${c.prefix}/english">打开${c.label}${I('arrow')}</a>${!compact?`<div class="material-downloads">${c.materials.map(m=>`<a href="${esc(m.href)}" target="_blank" rel="noopener">${esc(m.label)}</a>`).join('')}</div>`:''}</article>`;}).join('')}</div>`;}
-function home(){return legacyHome()+`<div class="section-heading"><div><h2>选择学期</h2><small>两份手册分别保存进度，声音和速度沿用你的选择。</small></div></div>`+courseCards(true);}
+function courseCards(compact=false){return `<div class="course-choices ${compact?'compact':''}">${COURSE_INFO.map(c=>{const d=courseData.get(c.id);return `<article class="panel course-choice"><span class="pill">${c.label}</span><h2>${COURSE_TITLE}</h2><p>${c.period}<br>${c.id===SPRING?'每日3教材词＋2适龄拓展词，7月每周2-3篇短文。':'原21周手册，继续使用已有学习记录。'}</p><div class="collection-stats"><span><b>${d.entries.length}</b> 个不同词条</span><span><b>${d.entries.length*2}</b> 句例句</span>${d.stories?.length?`<span><b>${d.stories.length}</b> 篇短文</span>`:''}</div><a class="btn primary" href="#/${c.prefix}/english">打开${c.label}${I('arrow')}</a>${!compact?`<div class="material-downloads">${c.materials.map(m=>`<a href="${esc(m.href)}" download="${esc(c.label+'_'+COURSE_TITLE+'_'+m.label+'.pdf')}" target="_blank" rel="noopener">${esc(m.label)}</a>`).join('')}</div>`:''}</article>`;}).join('')}</div>`;}
+function home(){return legacyHome()+`<section class="panel checkin-entry"><div><h2>学习签到</h2><p>记录每天的学习，也可以查看历史和补签。</p></div><a class="btn primary" href="#/checkins">签到与历史${I('arrow')}</a></section>`+`<div class="section-heading"><div><h2>选择学期</h2><small>两份手册分别保存进度，声音和速度沿用你的选择。</small></div></div>`+courseCards(true);}
 function library(){currentView={type:'library'};return pageTop('我的学习资料','选择对应的学期，听单词、听例句，也听短文。')+courseCards()+`<p class="quiet-note">所有音频均预先保存，英式与美式都能听。四下教材词会安排复现，440是学习词次，去重后为325个词条。</p>`;}
 function settings(){return legacySettings()+`<section class="panel feedback-entry-row"><div><strong>留言</strong><p>关于学习资料和使用体验。</p></div><button type="button" class="btn secondary" data-action="feedback-gate">留言</button></section>`;}
 function moduleNav(active){return `<nav class="module-nav" aria-label="英语资料导航"><a class="${active==='catalog'?'active':''}" href="${courseHref('english')}">周次 / 日期</a><a class="${active==='review'?'active':''}" href="${courseHref('review')}">周月复习</a><a class="${active==='practice'?'active':''}" href="${courseHref('practice')}">再练词 <span>${data.entries.filter(e=>state.status[e.id]==='practice').length||''}</span></a>${data.stories?`<a class="${active==='stories'?'active':''}" href="#/spring/stories">短文复习</a>`:''}</nav>`;}
@@ -265,6 +266,7 @@ function renderRoute({stop=true,scroll=true}={}){
   else if(page==='stories'&&data.stories)html=readings();
   else if(page==='story'&&data.stories)html=storyView(path[1]);
   else if(page==='settings'){html=settings();nav='settings';}
+  else if(page==='checkins'){nav='home';currentView={type:'checkins'};html='<div id="checkins-root"></div>';}
   else if(page==='feedback'){
     nav='settings';
     if(!feedbackUnlocked){html=settings();toast('该模块尚在开发');}
@@ -274,6 +276,7 @@ function renderRoute({stop=true,scroll=true}={}){
   else if(page==='word'&&validWordId(path[1])&&entries.has(path[1])){const entry=entries.get(path[1]),day=days.get(entry.day);html=lesson(day,day.entryIds.indexOf(entry.id),wordBack);}
   else html=`${pageTop('这页暂时找不到','回到目录，重新选择一个 Day 吧。')}<a class="btn primary" href="${courseHref('english')}">打开目录${I('arrow')}</a>`;
   $('#main').innerHTML=`<div class="page-enter">${courseLinks(html)}</div>`;
+  if(currentView.type==='checkins'){const owner=LOCAL_MODE?'local':account.username;if(!checkinBoard||checkinBoard.owner!==owner)checkinBoard=new CheckinBoard({localOnly:LOCAL_MODE,owner,api,toast});checkinBoard.mount($('#checkins-root'));}
   if(currentView.type==='feedback'){
     if(!feedbackBoard)feedbackBoard=new FeedbackBoard({toast,loginUrl:learningModeUrl()});
     feedbackBoard.mount($('#feedback-root'));

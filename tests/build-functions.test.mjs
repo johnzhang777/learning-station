@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { createHmac, pbkdf2Sync } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import {loginDeveloper} from './helpers/developer.mjs';
 
 class KV {
   data = new Map();
@@ -19,6 +20,7 @@ test('actual standalone deployment bundles complete browser-direct login without
   execFileSync(process.execPath, [fileURLToPath(new URL('../scripts/build.mjs', import.meta.url))], { cwd: root, stdio: 'pipe' });
   const edge = await import(new URL('../dist/edge-functions/api/[[route]].js', import.meta.url));
   const node = await import(new URL('../dist/cloud-functions/auth/login.js', import.meta.url));
+  const feedbackNode=await import(new URL('../dist/cloud-functions/auth/feedback-login.js',import.meta.url));
   assert.equal(typeof edge.onRequest, 'function');
   assert.equal(node.default, node.onRequest);
 
@@ -118,14 +120,15 @@ test('actual standalone deployment bundles complete browser-direct login without
     const threadId='t'+String(9999999999999-Date.now()).padStart(13,'0')+'e'.repeat(32);
     const feedback=await edgeRequest('/api/feedback/threads',{...first,method:'POST',data:{id:threadId,text:'部署产物留言测试',attachments:[]}});
     assert.equal(feedback.status,201);
-    const code=sign('learning-station:feedback-admin-access:v1\n');
-    const manager=await edgeRequest('/api/feedback/admin-login',{method:'POST',data:{code}});
-    assert.equal(manager.status,200);
-    const developer={cookie:manager.headers.get('set-cookie').split(';')[0],csrf:(await manager.json()).csrf};
+    const developer=await loginDeveloper({request:edgeRequest,env,kv,origin,native:request=>feedbackNode.default({request})});
     const reply=await edgeRequest('/api/feedback/threads/'+threadId+'/replies',{...developer,method:'POST',data:{id:'r'+threadId.slice(1),text:'部署产物开发者回复',attachments:[]}});
     assert.equal(reply.status,201);
     const history=await edgeRequest('/api/feedback/threads/'+threadId,second);
     assert.equal((await history.json()).replies[0].role,'developer');
+    const checkinHistory=await edgeRequest('/api/checkins',first);assert.equal(checkinHistory.status,200);
+    const attendance=await checkinHistory.json();assert.deepEqual(attendance.records,[]);
+    const attendanceSaved=await edgeRequest('/api/checkins',{...first,method:'POST',data:{date:attendance.today,id:'9'.repeat(32)}});assert.equal(attendanceSaved.status,200);assert.equal((await attendanceSaved.json()).record.kind,'normal');
+    assert.equal((await (await edgeRequest('/api/checkins',second)).json()).records.length,1);
     const legacy = await edgeRequest('/api/login', { method: 'POST', data: { username: env.ACCOUNT_USERNAME, password } });
     assert.equal(legacy.status, 410, 'deployed Edge wrapper must explicitly disable its legacy password path');
     assert.equal(legacy.headers.get('set-cookie'), null);

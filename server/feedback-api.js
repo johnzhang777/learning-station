@@ -8,22 +8,41 @@ const FB_UUID = /^[a-f0-9]{32}$/;
 const FB_THREAD = /^t\d{13}[a-f0-9]{32}$/;
 const FB_REPLY = /^r\d{13}[a-f0-9]{32}$/;
 const FB_TYPES = new Set(['application/pdf', 'image/png', 'image/jpeg', 'image/webp', 'image/gif']);
-const FB_ADMIN_DOMAIN = 'learning-station:feedback-admin-access:v1\n';
-const FB_COOKIE_DOMAIN = 'learning-station:feedback-admin-session:v1\n';
+const FB_COOKIE_DOMAIN = 'learning-station:feedback-admin-session:v2\n';
+const FB_CONFIG_DOMAIN = 'learning-station:feedback-password-config:v1\n';
+const FB_TICKET_DOMAIN = 'learning-station:feedback-password-ticket:v1\n';
+const FB_BIND_DOMAIN = 'learning-station:feedback-password-binding:v1\n';
+const FB_PROOF_DOMAIN = 'learning-station:feedback-password-proof:v1\n';
+const FB_CREDENTIAL_KEY = 'feedback_admin_password_v1';
+const FB_ITERATIONS = 600000;
+const fbHex = bytes => Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+const fbBytes = hex => Uint8Array.from(hex.match(/../g),pair=>parseInt(pair,16));
+const fbRandom = n => crypto.getRandomValues(new Uint8Array(n));
+function fbCredentialShape(value) {
+  return value && /^[a-f0-9]{64}$/.test(value.salt||'') && /^[a-f0-9]{64}$/.test(value.hash||'') &&
+    value.iterations===FB_ITERATIONS && FB_UUID.test(value.version||'') && Number.isSafeInteger(value.updatedAt) && value.updatedAt>0;
+}
+async function fbCredential(kv,ctx) {
+  const value=await fbGet(kv,FB_CREDENTIAL_KEY,ctx);
+  if(!fbCredentialShape(value))ctx.fail('开发者密码尚未配置，请联系管理员。',503);
+  return value;
+}
 function fbCookieName(request, ctx) { return ctx.local(request) ? 'feedback_admin' : '__Host-feedback_admin'; }
 function fbCookie(request, value, ctx, age = FB_ADMIN_AGE) { return `${fbCookieName(request, ctx)}=${value}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${age}${ctx.local(request) ? '' : '; Secure'}`; }
-async function fbAdmin(request, env, ctx) {
+async function fbAdmin(request, env, kv, ctx) {
   const name = fbCookieName(request, ctx);
   const token = (request.headers.get('cookie') || '').split(';').map(x => x.trim()).find(x => x.startsWith(name + '='))?.slice(name.length + 1);
   if (!token || token.length > 1024) return null;
   const [value, signature, extra] = token.split('.');
   if (extra || !/^[a-f0-9]{64}$/.test(signature || '') || !ctx.constantEqual(signature, await ctx.sign(FB_COOKIE_DOMAIN + value, env.SESSION_SECRET))) return null;
   let payload; try { payload = JSON.parse(atob(value)); } catch { return null; }
-  if (payload.sub !== 'developer' || !FB_UUID.test(payload.nonce) || !Number.isSafeInteger(payload.exp) || payload.exp <= Math.floor(ctx.now / 1000) || payload.exp > Math.floor(ctx.now / 1000) + FB_ADMIN_AGE + 60) return null;
+  if (payload.sub !== 'developer' || !FB_UUID.test(payload.nonce) || !FB_UUID.test(payload.version||'') || !Number.isSafeInteger(payload.exp) || payload.exp <= Math.floor(ctx.now / 1000) || payload.exp > Math.floor(ctx.now / 1000) + FB_ADMIN_AGE + 60) return null;
+  const credential=await fbCredential(kv,ctx);
+  if(!ctx.constantEqual(payload.version,credential.version))return null;
   return { owner: 'developer', role: 'developer', csrf: payload.nonce, expiresAt: payload.exp * 1000 };
 }
-async function fbIdentity(request, env, ctx, guest = false) {
-  const admin = await fbAdmin(request, env, ctx); if (admin) return admin;
+async function fbIdentity(request, env, kv, ctx, guest = false) {
+  const admin = await fbAdmin(request, env, kv, ctx); if (admin) return admin;
   try { const s = await ctx.session(request, env, ctx.now); return { owner: s.sub, role: 'user', csrf: s.nonce, expiresAt: s.exp * 1000 }; }
   catch (error) { if (guest && error?.status === 401) return { role: 'guest', csrf: null }; throw error; }
 }
@@ -109,18 +128,49 @@ async function fbAttachments(ids, threadId, identity, kv, ctx) {
 }
 export async function handleFeedback(request, env, kv, ctx) {
   const url = new URL(request.url), route = url.pathname.replace(/\/$/, '');
-  if (route === '/api/feedback/admin-login' && request.method === 'POST') {
-    const input = await fbJSON(request, 512, ctx);
+  if (route === '/api/feedback/admin-password' && request.method === 'POST') {
+    const input=await fbJSON(request,1024,ctx);
+    if(!fbCredentialShape(input)||Math.abs(input.updatedAt-ctx.now)>120000)ctx.fail('密码配置请求无效。',400);
+    const credential={salt:input.salt,hash:input.hash,iterations:input.iterations,version:input.version,updatedAt:input.updatedAt};
+    const signature=request.headers.get('x-feedback-config-signature')||'';
+    if(!/^[a-f0-9]{64}$/.test(signature)||!ctx.constantEqual(signature,await ctx.sign(FB_CONFIG_DOMAIN+JSON.stringify(credential),env.SESSION_SECRET)))ctx.fail('没有修改密码的权限。',403);
+    const old=await fbGet(kv,FB_CREDENTIAL_KEY,ctx);
+    if(old&&old.updatedAt>=credential.updatedAt){
+      if(JSON.stringify(old)===JSON.stringify(credential))return ctx.json({ok:true,version:old.version});
+      ctx.fail('密码配置版本已过期。',409);
+    }
+    await fbPut(kv,FB_CREDENTIAL_KEY,credential,ctx);return ctx.json({ok:true,version:credential.version});
+  }
+  if (route === '/api/feedback/admin-login-ticket' && request.method === 'POST') {
+    const input = await fbJSON(request, 1024, ctx);
     const owner = 'admin-login:' + (ctx.clientIp || request.eo?.clientIp || 'account');
     await fbRate(kv, owner, ctx, 8);
-    const expected = await ctx.sign(FB_ADMIN_DOMAIN, env.SESSION_SECRET);
-    if (typeof input.code !== 'string' || !/^[a-f0-9]{64}$/.test(input.code) || !ctx.constantEqual(input.code, expected)) ctx.fail('管理码不正确，请重试。', 401);
-    const nonce = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => b.toString(16).padStart(2,'0')).join('');
-    const value = btoa(JSON.stringify({ sub:'developer', nonce, exp:Math.floor(ctx.now/1000)+FB_ADMIN_AGE }));
+    if(typeof input.password!=='string'||!input.password||input.password.length>128)ctx.fail('开发者密码不正确。',401);
+    const credential=await fbCredential(kv,ctx),nonce=fbHex(fbRandom(16)),exp=Math.floor(ctx.now/1000)+60;
+    const payload={...credential,nonce,exp,origin:url.origin,binding:await ctx.sign(FB_BIND_DOMAIN+input.password,env.SESSION_SECRET)};
+    const encoder=new TextEncoder(),iv=fbRandom(12);
+    const ticket=await ctx.cloudOperation('FEEDBACK_TICKET',async()=>{
+      const key=await crypto.subtle.importKey('raw',fbBytes(await ctx.sign(FB_TICKET_DOMAIN,env.SESSION_SECRET)),{name:'AES-GCM'},false,['encrypt']);
+      const cipher=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:encoder.encode(FB_TICKET_DOMAIN),tagLength:128},key,encoder.encode(JSON.stringify(payload))));
+      const bytes=new Uint8Array(iv.length+cipher.length);bytes.set(iv);bytes.set(cipher,iv.length);
+      return btoa(String.fromCharCode(...bytes));
+    });
+    return ctx.json({ticket});
+  }
+  if (route === '/api/feedback/admin-login' && request.method === 'POST') {
+    const input=await fbJSON(request,2048,ctx),proof=input.proof;
+    if(typeof proof!=='string'||proof.length>1024)ctx.fail('开发者验证已失效，请重新输入密码。',401);
+    const [encoded,signature,extra]=proof.split('.');
+    if(extra||!/^[a-f0-9]{64}$/.test(signature||'')||!ctx.constantEqual(signature,await ctx.sign(FB_PROOF_DOMAIN+encoded,env.SESSION_SECRET)))ctx.fail('开发者验证已失效，请重新输入密码。',401);
+    let payload;try{payload=JSON.parse(atob(encoded));}catch{ctx.fail('开发者验证已失效，请重新输入密码。',401);}
+    const credential=await fbCredential(kv,ctx);
+    if(payload.sub!=='developer'||!FB_UUID.test(payload.nonce||'')||payload.version!==credential.version||payload.origin!==url.origin||!Number.isSafeInteger(payload.exp)||payload.exp<=Math.floor(ctx.now/1000)||payload.exp>Math.floor(ctx.now/1000)+65)ctx.fail('开发者验证已失效，请重新输入密码。',401);
+    const nonce=fbHex(fbRandom(16));
+    const value = btoa(JSON.stringify({ sub:'developer', nonce, version:credential.version,exp:Math.floor(ctx.now/1000)+FB_ADMIN_AGE }));
     const token = value + '.' + await ctx.sign(FB_COOKIE_DOMAIN + value, env.SESSION_SECRET);
     return ctx.json({ role:'developer', canManage:true, canPost:true, csrf:nonce, expiresAt:(Math.floor(ctx.now/1000)+FB_ADMIN_AGE)*1000 },200,{'Set-Cookie':fbCookie(request,token,ctx)});
   }
-  const identity = await fbIdentity(request, env, ctx, route === '/api/feedback/session' && request.method === 'GET');
+  const identity = await fbIdentity(request, env, kv, ctx, route === '/api/feedback/session' && request.method === 'GET');
   if (route === '/api/feedback/session' && request.method === 'GET') return ctx.json({ role:identity.role, account:identity.role==='user'?identity.owner:null, canManage:identity.role==='developer', canPost:identity.role!=='guest', csrf:identity.csrf, expiresAt:identity.expiresAt });
   if (request.method === 'POST' && !ctx.constantEqual(request.headers.get('x-csrf-token') || '', identity.csrf || '')) ctx.fail('请刷新留言页后再试。',403);
   if (route === '/api/feedback/admin-logout' && request.method === 'POST') return ctx.json({ok:true},200,{'Set-Cookie':fbCookie(request,'',ctx,0)});

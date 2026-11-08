@@ -1,13 +1,14 @@
 ﻿export const AUTUMN = 'english-2026';
 export const SPRING = 'english-2027-spring';
+export const COURSE_TITLE = '每日英语词汇';
 export const COURSE_INFO = [
   { id:AUTUMN, prefix:'autumn', label:'四年级上学期', period:'2026.09 - 2027.01', data:'data.json', audio:'audio-manifest.json', materials:[
-    {label:'大字陪读版 PDF',href:'materials/grade4-autumn/large-print.pdf'},
-    {label:'A4打印版 PDF',href:'materials/grade4-autumn/a4.pdf'}
+    {label:'A4打印版',href:'materials/grade4-autumn/a4.pdf'},
+    {label:'陪读版',href:'materials/grade4-autumn/companion.pdf'}
   ] },
   { id:SPRING, prefix:'spring', label:'四年级下学期', period:'2027.03 - 2027.07', data:'spring-data.json', audio:'spring-audio-manifest.json', materials:[
-    {label:'学生册 PDF',href:'materials/grade4-spring/student.pdf'},
-    {label:'家长译文与答案 PDF',href:'materials/grade4-spring/parent.pdf'}
+    {label:'A4打印版',href:'materials/grade4-spring/a4.pdf'},
+    {label:'陪读版',href:'materials/grade4-spring/companion.pdf'}
   ] }
 ];
 export function validWordId(id) { return /^(?:w\d{3}|s\d{3})$/.test(id) && Number(id.slice(1))>=1 && Number(id.slice(1))<=(id[0]==='w'?525:325); }

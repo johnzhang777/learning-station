@@ -2,10 +2,10 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 // Direct uploads need the function directory and package.json in the output.
 // Inline the server module so dist contains no private configuration or sources.
 const feedback = await readFile(new URL('../server/feedback-api.js', import.meta.url), 'utf8');
-const core = (await readFile(new URL('../server/learning-api.js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
+const core = (await readFile(new URL('../server/learning-api.js', import.meta.url), 'utf8')).replace(/^import .*;\s*/gm, '');
 const wrapper = (await readFile(new URL('../edge-functions/api/[[route]].js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
 await mkdir(new URL('../dist/edge-functions/api/', import.meta.url), { recursive: true });
-await writeFile(new URL('../dist/edge-functions/api/[[route]].js', import.meta.url), feedback + '\n' + core + '\n' + wrapper);
+await writeFile(new URL('../dist/edge-functions/api/[[route]].js', import.meta.url), feedback + '\n' + await readFile(new URL('../server/checkin-api.js',import.meta.url),'utf8') + '\n' + core + '\n' + wrapper);
 const verifier = await readFile(new URL('../server/node-password-verifier.js', import.meta.url), 'utf8');
 const verifierWrapper = (await readFile(new URL('../cloud-functions/internal/verify-password.js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
 await mkdir(new URL('../dist/cloud-functions/internal/', import.meta.url), { recursive: true });
@@ -16,6 +16,9 @@ const login = (await readFile(new URL('../server/node-login.js', import.meta.url
 const loginWrapper = (await readFile(new URL('../cloud-functions/auth/login.js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
 await mkdir(new URL('../dist/cloud-functions/auth/', import.meta.url), { recursive: true });
 await writeFile(new URL('../dist/cloud-functions/auth/login.js', import.meta.url), verifierImports + '\nconst __passwordVerifier = (() => {\n' + verifierBody + '\nreturn { verifyCredentials };\n})();\n' + login + '\n' + loginWrapper);
+const feedbackLogin=await readFile(new URL('../server/node-feedback-login.js',import.meta.url),'utf8');
+const feedbackLoginWrapper=(await readFile(new URL('../cloud-functions/auth/feedback-login.js',import.meta.url),'utf8')).replace(/^import .*;\s*/m,'');
+await writeFile(new URL('../dist/cloud-functions/auth/feedback-login.js',import.meta.url),feedbackLogin+'\n'+feedbackLoginWrapper);
 await writeFile(new URL('../dist/package.json', import.meta.url), JSON.stringify({ private: true, type: 'module' }, null, 2) + '\n');
 const { headers, caches, cloudFunctions } = JSON.parse(await readFile(new URL('../edgeone.json', import.meta.url), 'utf8'));
 await writeFile(new URL('../dist/edgeone.json', import.meta.url), JSON.stringify({ headers, caches, cloudFunctions }, null, 2) + '\n');
