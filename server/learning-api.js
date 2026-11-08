@@ -1,4 +1,5 @@
 import {handleCheckins} from './checkin-api.js';
+import {MAX_PROGRESS_FIELDS,validWordId,positionRule} from '../dist/course-schema.js';
 import { handleFeedback } from './feedback-api.js';
 // Web-standard APIs only: runs in EdgeOne Edge Functions, not Node Functions.
 const encoder = new TextEncoder();
@@ -120,14 +121,15 @@ async function body(request, limit) {
   try { return JSON.parse(new TextDecoder().decode(bytes)); } catch { fail('请求格式无效。', 400); }
 }
 export function validateFields(fields) {
-  if (!fields || typeof fields !== 'object' || Array.isArray(fields) || Object.keys(fields).length > 852) fail('学习记录格式无效。', 400);
+  if (!fields || typeof fields !== 'object' || Array.isArray(fields) || Object.keys(fields).length > MAX_PROGRESS_FIELDS) fail('学习记录格式无效。', 400);
   const clean = {};
   for (const [name, field] of Object.entries(fields)) {
     if (!field || !Number.isSafeInteger(field.clock) || field.clock < 1 || field.clock > 1e12 || !uuid.test(field.actor)) fail('学习记录版本无效。', 400);
-    if (name === 'position' || name === 'springPosition') {
-      if (!field.value || !Number.isInteger(field.value.lastDay) || field.value.lastDay < 1 || field.value.lastDay > (name === 'position' ? 147 : 153) || !Number.isInteger(field.value.lastIndex) || field.value.lastIndex < 0 || field.value.lastIndex > (name === 'position' ? 4 : 14)) fail('学习位置无效。', 400);
+    const rule=positionRule(name);
+    if (rule) {
+      if (!field.value || !Number.isInteger(field.value.lastDay) || field.value.lastDay < 1 || field.value.lastDay > rule.days || !Number.isInteger(field.value.lastIndex) || field.value.lastIndex < 0 || field.value.lastIndex > rule.index) fail('学习位置无效。', 400);
       clean[name] = { value: { lastDay: field.value.lastDay, lastIndex: field.value.lastIndex }, clock: field.clock, actor: field.actor };
-    } else if (/^[ws]\d{3}$/.test(name) && Number(name.slice(1)) >= 1 && Number(name.slice(1)) <= (name[0] === 'w' ? 525 : 325) && ['learned', 'practice', null].includes(field.value)) {
+    } else if (validWordId(name) && ['learned', 'practice', null].includes(field.value)) {
       clean[name] = { value: field.value, clock: field.clock, actor: field.actor };
     } else fail('学习标记无效。', 400);
   }
@@ -236,7 +238,7 @@ export async function handle(request, env, kv, { now = Date.now(), clientIp, ver
       return json({ fields, savedAt: now, consistencyDelaySeconds: 60 });
     }
     if (route === '/api/progress' && request.method === 'POST') {
-      const input = await body(request, 200000);
+      const input = await body(request, 300000);
       if (!uuid.test(input.writer) || !Number.isSafeInteger(input.sequence) || input.sequence < 1 || input.sequence > 1e15) fail('设备记录格式无效。', 400);
       const fields = validateFields(input.fields);
       const key = `progress_v2_${input.writer}_${String(input.sequence).padStart(16, '0')}`;

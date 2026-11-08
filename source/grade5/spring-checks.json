@@ -1,0 +1,26 @@
+{
+  "course": "english-2028-grade5-spring",
+  "start": "2028-02-15",
+  "end": "2028-07-31",
+  "reviewStart": "2028-07-01",
+  "coreCompletionDate": "2028-06-30",
+  "calendarDays": 168,
+  "calendarWeeks": 25,
+  "learningDays": 99,
+  "learningSlots": 495,
+  "coreSlots": 297,
+  "uniqueCore": 135,
+  "uniqueExtension": 198,
+  "distinctEntries": 333,
+  "reviewWeekdays": 21,
+  "stories": 11,
+  "storyFrequency": [
+    2,
+    3,
+    2,
+    3,
+    1
+  ],
+  "maxReviewWords": 16,
+  "dataSha256": "10ee71a8088f4d52c23a44cfb0712b57620102d5d3707dfed04c72718c4831f0"
+}

@@ -2,10 +2,11 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 // Direct uploads need the function directory and package.json in the output.
 // Inline the server module so dist contains no private configuration or sources.
 const feedback = await readFile(new URL('../server/feedback-api.js', import.meta.url), 'utf8');
+const courseSchema = await readFile(new URL('../dist/course-schema.js', import.meta.url), 'utf8');
 const core = (await readFile(new URL('../server/learning-api.js', import.meta.url), 'utf8')).replace(/^import .*;\s*/gm, '');
 const wrapper = (await readFile(new URL('../edge-functions/api/[[route]].js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
 await mkdir(new URL('../dist/edge-functions/api/', import.meta.url), { recursive: true });
-await writeFile(new URL('../dist/edge-functions/api/[[route]].js', import.meta.url), feedback + '\n' + await readFile(new URL('../server/checkin-api.js',import.meta.url),'utf8') + '\n' + core + '\n' + wrapper);
+await writeFile(new URL('../dist/edge-functions/api/[[route]].js', import.meta.url), courseSchema + '\n' + feedback + '\n' + await readFile(new URL('../server/checkin-api.js',import.meta.url),'utf8') + '\n' + core + '\n' + wrapper);
 const verifier = await readFile(new URL('../server/node-password-verifier.js', import.meta.url), 'utf8');
 const verifierWrapper = (await readFile(new URL('../cloud-functions/internal/verify-password.js', import.meta.url), 'utf8')).replace(/^import .*;\s*/m, '');
 await mkdir(new URL('../dist/cloud-functions/internal/', import.meta.url), { recursive: true });

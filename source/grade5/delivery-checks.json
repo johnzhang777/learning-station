@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "repository": "D:\\Learning\\learning-station",
+  "completedDate": "2026-11-09",
+  "courses": [
+    {
+      "term": "autumn",
+      "words": 272,
+      "examples": 544,
+      "stories": 12,
+      "studentPages": 158,
+      "companionPages": 82,
+      "pdfTextCoverage": "passed",
+      "ipaFontCoverage": "passed",
+      "visualReview": "all pages inspected in contact sheets; enlarged dense, vocabulary and reading pages",
+      "coreCompletionDate": "2027-12-15",
+      "reviewStart": "2027-12-16"
+    },
+    {
+      "term": "spring",
+      "words": 333,
+      "examples": 666,
+      "stories": 11,
+      "studentPages": 191,
+      "companionPages": 92,
+      "pdfTextCoverage": "passed",
+      "ipaFontCoverage": "passed",
+      "visualReview": "all pages inspected in contact sheets; enlarged dense, vocabulary and reading pages",
+      "coreCompletionDate": "2028-06-30",
+      "reviewStart": "2028-07-01"
+    }
+  ],
+  "tests": 103,
+  "browserChecks": [
+    "four course entries",
+    "new word audio played",
+    "full passage and sentence audio played",
+    "leap day navigation",
+    "mobile long-phrase wrapping",
+    "resume and learned mark after switching courses",
+    "zero console errors"
+  ],
+  "limits": [
+    "当前公开新版PEP为依据；2027-2028实际新印次尚未核实。",
+    "五下最后一个复习周仅7月31日，安排1篇；完整周保持2-3篇。"
+  ]
+}

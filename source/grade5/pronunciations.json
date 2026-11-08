@@ -1,0 +1,4874 @@
+{
+  "team": {
+    "us": "/tiːm/",
+    "uk": "/tiːm/",
+    "headword": "team",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/team",
+    "kind": "dictionary-entry"
+  },
+  "player": {
+    "us": "/ˈpleɪ.ɚ/",
+    "uk": "/ˈpleɪ.ər/",
+    "headword": "player",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/player",
+    "kind": "dictionary-entry"
+  },
+  "him": {
+    "us": "/hɪm/",
+    "uk": "/hɪm/",
+    "headword": "him",
+    "pos": "pronoun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/him",
+    "kind": "dictionary-entry"
+  },
+  "lovely": {
+    "us": "/ˈlʌv.li/",
+    "uk": "/ˈlʌv.li/",
+    "headword": "lovely",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lovely",
+    "kind": "dictionary-entry"
+  },
+  "clever": {
+    "us": "/ˈklev.ɚ/",
+    "uk": "/ˈklev.ər/",
+    "headword": "clever",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/clever",
+    "kind": "dictionary-entry"
+  },
+  "young": {
+    "us": "/jʌŋ/",
+    "uk": "/jʌŋ/",
+    "headword": "young",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/young",
+    "kind": "dictionary-entry"
+  },
+  "hard-working": {
+    "us": "/ˌhɑːrdˈwɝː.kɪŋ/",
+    "uk": "/ˌhɑːdˈwɜː.kɪŋ/",
+    "headword": "hard-working",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hard-working",
+    "kind": "dictionary-entry"
+  },
+  "science": {
+    "us": "/ˈsaɪ.əns/",
+    "uk": "/ˈsaɪ.əns/",
+    "headword": "science",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/science",
+    "kind": "dictionary-entry"
+  },
+  "robot": {
+    "us": "/ˈroʊ.bɑːt/",
+    "uk": "/ˈrəʊ.bɒt/",
+    "headword": "robot",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/robot",
+    "kind": "dictionary-entry"
+  },
+  "jump": {
+    "us": "/dʒʌmp/",
+    "uk": "/dʒʌmp/",
+    "headword": "jump",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/jump",
+    "kind": "dictionary-entry"
+  },
+  "rope": {
+    "us": "/roʊp/",
+    "uk": "/rəʊp/",
+    "headword": "rope",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rope",
+    "kind": "dictionary-entry"
+  },
+  "piano": {
+    "us": "/piˈæn.oʊ/",
+    "uk": "/piˈæn.əʊ/",
+    "headword": "piano",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/piano",
+    "kind": "dictionary-entry"
+  },
+  "chess": {
+    "us": "/tʃes/",
+    "uk": "/tʃes/",
+    "headword": "chess",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chess",
+    "kind": "dictionary-entry"
+  },
+  "front": {
+    "us": "/frʌnt/",
+    "uk": "/frʌnt/",
+    "headword": "front",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/front",
+    "kind": "dictionary-entry"
+  },
+  "easy": {
+    "us": "/ˈiː.zi/",
+    "uk": "/ˈiː.zi/",
+    "headword": "easy",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/easy",
+    "kind": "dictionary-entry"
+  },
+  "star": {
+    "us": "/stɑːr/",
+    "uk": "/stɑːr/",
+    "headword": "star",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/star",
+    "kind": "dictionary-entry"
+  },
+  "wonderful": {
+    "us": "/ˈwʌn.dɚ.fəl/",
+    "uk": "/ˈwʌn.də.fəl/",
+    "headword": "wonderful",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wonderful",
+    "kind": "dictionary-entry"
+  },
+  "Australia": {
+    "us": "/ɑːˈstreɪl.jə/",
+    "uk": "/ɒsˈtreɪ.li.ə/",
+    "headword": "Australia",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/australia",
+    "kind": "dictionary-entry"
+  },
+  "sad": {
+    "us": "/sæd/",
+    "uk": "/sæd/",
+    "headword": "sad",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sad",
+    "kind": "dictionary-entry"
+  },
+  "matter": {
+    "us": "/ˈmæt̬.ɚ/",
+    "uk": "/ˈmæt.ər/",
+    "headword": "matter",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/matter",
+    "kind": "dictionary-entry"
+  },
+  "project": {
+    "us": "/ˈprɑː.dʒekt/",
+    "uk": "/ˈprɒdʒ.ekt/",
+    "headword": "project",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/project",
+    "kind": "dictionary-entry"
+  },
+  "centre": {
+    "us": "/ˈsen.t̬ɚ/",
+    "uk": "/ˈsen.tər/",
+    "headword": "centre",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/centre",
+    "kind": "dictionary-entry"
+  },
+  "agree": {
+    "us": "/əˈɡriː/",
+    "uk": "/əˈɡriː/",
+    "headword": "agree",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/agree",
+    "kind": "dictionary-entry"
+  },
+  "finish": {
+    "us": "/ˈfɪn.ɪʃ/",
+    "uk": "/ˈfɪn.ɪʃ/",
+    "headword": "finish",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/finish",
+    "kind": "dictionary-entry"
+  },
+  "worried": {
+    "us": "/ˈwɝː.id/",
+    "uk": "/ˈwʌr.id/",
+    "headword": "worried",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/worried",
+    "kind": "dictionary-entry"
+  },
+  "both": {
+    "us": "/boʊθ/",
+    "uk": "/bəʊθ/",
+    "headword": "both",
+    "pos": "predeterminer",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/both",
+    "kind": "dictionary-entry"
+  },
+  "excited": {
+    "us": "/ɪkˈsaɪ.t̬ɪd/",
+    "uk": "/ɪkˈsaɪ.tɪd/",
+    "headword": "excited",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/excited",
+    "kind": "dictionary-entry"
+  },
+  "wrong": {
+    "us": "/rɑːŋ/",
+    "uk": "/rɒŋ/",
+    "headword": "wrong",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wrong",
+    "kind": "dictionary-entry"
+  },
+  "angry": {
+    "us": "/ˈæŋ.ɡri/",
+    "uk": "/ˈæŋ.ɡri/",
+    "headword": "angry",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/angry",
+    "kind": "dictionary-entry"
+  },
+  "afraid": {
+    "us": "/əˈfreɪd/",
+    "uk": "/əˈfreɪd/",
+    "headword": "afraid",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/afraid",
+    "kind": "dictionary-entry"
+  },
+  "parent": {
+    "us": "/ˈper.ənt/",
+    "uk": "/ˈpeə.rənt/",
+    "headword": "parent",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/parent",
+    "kind": "dictionary-entry"
+  },
+  "ask": {
+    "us": "/æsk/",
+    "uk": "/ɑːsk/",
+    "headword": "ask",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ask",
+    "kind": "dictionary-entry"
+  },
+  "laugh": {
+    "us": "/læf/",
+    "uk": "/lɑːf/",
+    "headword": "laugh",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/laugh",
+    "kind": "dictionary-entry"
+  },
+  "move": {
+    "us": "/muːv/",
+    "uk": "/muːv/",
+    "headword": "move",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/move",
+    "kind": "dictionary-entry"
+  },
+  "yours": {
+    "us": "/jʊrz/",
+    "uk": "/jɔːz/",
+    "headword": "yours",
+    "pos": "pronoun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/yours",
+    "kind": "dictionary-entry"
+  },
+  "Wednesday": {
+    "us": "/ˈwenz.deɪ/",
+    "uk": "/ˈwenz.deɪ/",
+    "headword": "Wednesday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wednesday",
+    "kind": "dictionary-entry"
+  },
+  "subject": {
+    "us": "/ˈsʌb.dʒekt/",
+    "uk": "/ˈsʌb.dʒekt/",
+    "headword": "subject",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/subject",
+    "kind": "dictionary-entry"
+  },
+  "Tuesday": {
+    "us": "/ˈtuːz.deɪ/",
+    "uk": "/ˈtjuːz.deɪ/",
+    "headword": "Tuesday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tuesday",
+    "kind": "dictionary-entry"
+  },
+  "Friday": {
+    "us": "/ˈfraɪ.deɪ/",
+    "uk": "/ˈfraɪ.deɪ/",
+    "headword": "Friday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/friday",
+    "kind": "dictionary-entry"
+  },
+  "because": {
+    "us": "/bɪˈkʌz/",
+    "uk": "/bɪˈkəz/",
+    "headword": "because",
+    "pos": "conjunction",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/because",
+    "kind": "dictionary-entry"
+  },
+  "Monday": {
+    "us": "/ˈmʌn.deɪ/",
+    "uk": "/ˈmʌn.deɪ/",
+    "headword": "Monday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/monday",
+    "kind": "dictionary-entry"
+  },
+  "Thursday": {
+    "us": "/ˈθɝːz.deɪ/",
+    "uk": "/ˈθɜːz.deɪ/",
+    "headword": "Thursday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/thursday",
+    "kind": "dictionary-entry"
+  },
+  "start": {
+    "us": "/stɑːrt/",
+    "uk": "/stɑːt/",
+    "headword": "start",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/start",
+    "kind": "dictionary-entry"
+  },
+  "usually": {
+    "us": "/ˈjuː.ʒu.ə.li/",
+    "uk": "/ˈjuː.ʒu.ə.li/",
+    "headword": "usually",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/usually",
+    "kind": "dictionary-entry"
+  },
+  "weekend": {
+    "us": "/ˈwiːk.end/",
+    "uk": "/ˌwiːkˈend/",
+    "headword": "weekend",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/weekend",
+    "kind": "dictionary-entry"
+  },
+  "sometimes": {
+    "us": "/ˈsʌm.taɪmz/",
+    "uk": "/ˈsʌm.taɪmz/",
+    "headword": "sometimes",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sometimes",
+    "kind": "dictionary-entry"
+  },
+  "Saturday": {
+    "us": "/ˈsæt̬.ɚ.deɪ/",
+    "uk": "/ˈsæt.ə.deɪ/",
+    "headword": "Saturday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/saturday",
+    "kind": "dictionary-entry"
+  },
+  "Sunday": {
+    "us": "/ˈsʌn.deɪ/",
+    "uk": "/ˈsʌn.deɪ/",
+    "headword": "Sunday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sunday",
+    "kind": "dictionary-entry"
+  },
+  "lesson": {
+    "us": "/ˈles.ən/",
+    "uk": "/ˈles.ən/",
+    "headword": "lesson",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lesson",
+    "kind": "dictionary-entry"
+  },
+  "evening": {
+    "us": "/ˈiːv.nɪŋ/",
+    "uk": "/ˈiːv.nɪŋ/",
+    "headword": "evening",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/evening",
+    "kind": "dictionary-entry"
+  },
+  "answer": {
+    "us": "/ˈæn.sɚ/",
+    "uk": "/ˈɑːn.sər/",
+    "headword": "answer",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/answer",
+    "kind": "dictionary-entry"
+  },
+  "ping-pong": {
+    "us": "/ˈpɪŋˌpɑːŋ/",
+    "uk": "/ˈpɪŋˌpɒŋ/",
+    "headword": "Ping-Pong",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ping-pong",
+    "kind": "dictionary-entry"
+  },
+  "night": {
+    "us": "/naɪt/",
+    "uk": "/naɪt/",
+    "headword": "night",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/night",
+    "kind": "dictionary-entry"
+  },
+  "visit": {
+    "us": "/ˈvɪz.ɪt/",
+    "uk": "/ˈvɪz.ɪt/",
+    "headword": "visit",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/visit",
+    "kind": "dictionary-entry"
+  },
+  "grandparent": {
+    "us": "/ˈɡræn.per.ənt/",
+    "uk": "/ˈɡræn.peə.rənt/",
+    "headword": "grandparent",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/grandparent",
+    "kind": "dictionary-entry"
+  },
+  "stay": {
+    "us": "/steɪ/",
+    "uk": "/steɪ/",
+    "headword": "stay",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stay",
+    "kind": "dictionary-entry"
+  },
+  "should": {
+    "us": "/ʃʊd/",
+    "uk": "/ʃʊd/",
+    "headword": "should",
+    "pos": "modal verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/should",
+    "kind": "dictionary-entry"
+  },
+  "flu": {
+    "us": "/fluː/",
+    "uk": "/fluː/",
+    "headword": "flu",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flu",
+    "kind": "dictionary-entry"
+  },
+  "else": {
+    "us": "/els/",
+    "uk": "/els/",
+    "headword": "else",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/else",
+    "kind": "dictionary-entry"
+  },
+  "exercise": {
+    "us": "/ˈek.sɚ.saɪz/",
+    "uk": "/ˈek.sə.saɪz/",
+    "headword": "exercise",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/exercise",
+    "kind": "dictionary-entry"
+  },
+  "enough": {
+    "us": "/əˈnʌf/",
+    "uk": "/ɪˈnʌf/",
+    "headword": "enough",
+    "pos": "determiner",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/enough",
+    "kind": "dictionary-entry"
+  },
+  "if": {
+    "us": "/ɪf/",
+    "uk": "/ɪf/",
+    "headword": "if",
+    "pos": "conjunction",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/if",
+    "kind": "dictionary-entry"
+  },
+  "habit": {
+    "us": "/ˈhæb.ɪt/",
+    "uk": "/ˈhæb.ɪt/",
+    "headword": "habit",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/habit",
+    "kind": "dictionary-entry"
+  },
+  "house": {
+    "us": "/haʊs/",
+    "uk": "/haʊs/",
+    "headword": "house",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/house",
+    "kind": "dictionary-entry"
+  },
+  "show": {
+    "us": "/ʃoʊ/",
+    "uk": "/ʃəʊ/",
+    "headword": "show",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/show",
+    "kind": "dictionary-entry"
+  },
+  "phone": {
+    "us": "/foʊn/",
+    "uk": "/fəʊn/",
+    "headword": "phone",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/phone",
+    "kind": "dictionary-entry"
+  },
+  "then": {
+    "us": "/ðen/",
+    "uk": "/ðen/",
+    "headword": "then",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/then",
+    "kind": "dictionary-entry"
+  },
+  "rest": {
+    "us": "/rest/",
+    "uk": "/rest/",
+    "headword": "rest",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rest",
+    "kind": "dictionary-entry"
+  },
+  "take care of": {
+    "us": "/teɪk/ /ker/ /əv/",
+    "uk": "/teɪk/ /keər/ /əv/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/take",
+      "https://dictionary.cambridge.org/dictionary/english/care",
+      "https://dictionary.cambridge.org/dictionary/english/of"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "check": {
+    "us": "/tʃek/",
+    "uk": "/tʃek/",
+    "headword": "check",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/check",
+    "kind": "dictionary-entry"
+  },
+  "less": {
+    "us": "/les/",
+    "uk": "/les/",
+    "headword": "less",
+    "pos": "determiner",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/less",
+    "kind": "dictionary-entry"
+  },
+  "brush": {
+    "us": "/brʌʃ/",
+    "uk": "/brʌʃ/",
+    "headword": "brush",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/brush",
+    "kind": "dictionary-entry"
+  },
+  "tooth": {
+    "us": "/tuːθ/",
+    "uk": "/tuːθ/",
+    "headword": "tooth",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tooth",
+    "kind": "dictionary-entry"
+  },
+  "twice": {
+    "us": "/twaɪs/",
+    "uk": "/twaɪs/",
+    "headword": "twice",
+    "pos": "predeterminer",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/twice",
+    "kind": "dictionary-entry",
+    "senseReference": "https://www.oxfordlearnersdictionaries.com/definition/english/twice",
+    "senseNote": "词性及例句用法另以牛津词典核对；此处音标对应同一读音。"
+  },
+  "hour": {
+    "us": "/aʊr/",
+    "uk": "/aʊər/",
+    "headword": "hour",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hour",
+    "kind": "dictionary-entry"
+  },
+  "free": {
+    "us": "/friː/",
+    "uk": "/friː/",
+    "headword": "free",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/free",
+    "kind": "dictionary-entry"
+  },
+  "hungry": {
+    "us": "/ˈhʌŋ.ɡri/",
+    "uk": "/ˈhʌŋ.ɡri/",
+    "headword": "hungry",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hungry",
+    "kind": "dictionary-entry"
+  },
+  "beef": {
+    "us": "/biːf/",
+    "uk": "/biːf/",
+    "headword": "beef",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/beef",
+    "kind": "dictionary-entry"
+  },
+  "ice cream": {
+    "us": "/ˈaɪs ˌkriːm/",
+    "uk": "/ˌaɪs ˈkriːm/",
+    "headword": "ice cream",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ice-cream",
+    "kind": "dictionary-entry"
+  },
+  "little": {
+    "us": "/ˈlɪt̬.əl/",
+    "uk": "/ˈlɪt.əl/",
+    "headword": "little",
+    "pos": "determiner",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/little",
+    "kind": "dictionary-entry"
+  },
+  "dumpling": {
+    "us": "/ˈdʌm.plɪŋ/",
+    "uk": "/ˈdʌm.plɪŋ/",
+    "headword": "dumpling",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dumpling",
+    "kind": "dictionary-entry"
+  },
+  "tea": {
+    "us": "/tiː/",
+    "uk": "/tiː/",
+    "headword": "tea",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tea",
+    "kind": "dictionary-entry"
+  },
+  "hamburger": {
+    "us": "/ˈhæmˌbɝː.ɡɚ/",
+    "uk": "/ˈhæmˌbɜː.ɡər/",
+    "headword": "hamburger",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hamburger",
+    "kind": "dictionary-entry"
+  },
+  "Mrs": {
+    "us": "/ˈmɪs.ɪz/",
+    "uk": "/ˈmɪs.ɪz/",
+    "headword": "Mrs",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mrs",
+    "kind": "dictionary-entry"
+  },
+  "coconut": {
+    "us": "/ˈkoʊ.kə.nʌt/",
+    "uk": "/ˈkəʊ.kə.nʌt/",
+    "headword": "coconut",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/coconut",
+    "kind": "dictionary-entry"
+  },
+  "interesting": {
+    "us": "/ˈɪn.trɪ.stɪŋ/",
+    "uk": "/ˈɪn.tres.tɪŋ/",
+    "headword": "interesting",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/interesting",
+    "kind": "dictionary-entry"
+  },
+  "seed": {
+    "us": "/siːd/",
+    "uk": "/siːd/",
+    "headword": "seed",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/seed",
+    "kind": "dictionary-entry"
+  },
+  "pull": {
+    "us": "/pʊl/",
+    "uk": "/pʊl/",
+    "headword": "pull",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pull",
+    "kind": "dictionary-entry"
+  },
+  "stem": {
+    "us": "/stem/",
+    "uk": "/stem/",
+    "headword": "stem",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stem",
+    "kind": "dictionary-entry"
+  },
+  "root": {
+    "us": "/ruːt/",
+    "uk": "/ruːt/",
+    "headword": "root",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/root",
+    "kind": "dictionary-entry"
+  },
+  "lotus": {
+    "us": "/ˈloʊ.t̬əs/",
+    "uk": "/ˈləʊ.təs/",
+    "headword": "lotus",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lotus",
+    "kind": "dictionary-entry"
+  },
+  "lake": {
+    "us": "/leɪk/",
+    "uk": "/leɪk/",
+    "headword": "lake",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lake",
+    "kind": "dictionary-entry"
+  },
+  "world": {
+    "us": "/wɝːld/",
+    "uk": "/wɜːld/",
+    "headword": "world",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/world",
+    "kind": "dictionary-entry"
+  },
+  "round": {
+    "us": "/raʊnd/",
+    "uk": "/raʊnd/",
+    "headword": "round",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/round",
+    "kind": "dictionary-entry"
+  },
+  "different": {
+    "us": "/ˈdɪf.ɚ.ənt/",
+    "uk": "/ˈdɪf.ər.ənt/",
+    "headword": "different",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/different",
+    "kind": "dictionary-entry"
+  },
+  "way": {
+    "us": "/weɪ/",
+    "uk": "/weɪ/",
+    "headword": "way",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/way",
+    "kind": "dictionary-entry"
+  },
+  "river": {
+    "us": "/ˈrɪv.ɚ/",
+    "uk": "/ˈrɪv.ər/",
+    "headword": "river",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/river",
+    "kind": "dictionary-entry"
+  },
+  "nature": {
+    "us": "/ˈneɪ.tʃɚ/",
+    "uk": "/ˈneɪ.tʃər/",
+    "headword": "nature",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/nature",
+    "kind": "dictionary-entry"
+  },
+  "waterfall": {
+    "us": "/ˈwɑː.t̬ɚ.fɑːl/",
+    "uk": "/ˈwɔː.tə.fɔːl/",
+    "headword": "waterfall",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/waterfall",
+    "kind": "dictionary-entry"
+  },
+  "forest": {
+    "us": "/ˈfɔːr.ɪst/",
+    "uk": "/ˈfɒr.ɪst/",
+    "headword": "forest",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/forest",
+    "kind": "dictionary-entry"
+  },
+  "famous": {
+    "us": "/ˈfeɪ.məs/",
+    "uk": "/ˈfeɪ.məs/",
+    "headword": "famous",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/famous",
+    "kind": "dictionary-entry"
+  },
+  "mountain": {
+    "us": "/ˈmaʊn.tən/",
+    "uk": "/ˈmaʊn.tɪn/",
+    "headword": "mountain",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mountain",
+    "kind": "dictionary-entry"
+  },
+  "wind": {
+    "us": "/wɪnd/",
+    "uk": "/wɪnd/",
+    "headword": "wind",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wind",
+    "kind": "dictionary-entry"
+  },
+  "trip": {
+    "us": "/trɪp/",
+    "uk": "/trɪp/",
+    "headword": "trip",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/trip",
+    "kind": "dictionary-entry"
+  },
+  "dangerous": {
+    "us": "/ˈdeɪn.dʒɚ.əs/",
+    "uk": "/ˈdeɪn.dʒər.əs/",
+    "headword": "dangerous",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dangerous",
+    "kind": "dictionary-entry"
+  },
+  "heavy": {
+    "us": "/ˈhev.i/",
+    "uk": "/ˈhev.i/",
+    "headword": "heavy",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/heavy",
+    "kind": "dictionary-entry"
+  },
+  "hotel": {
+    "us": "/hoʊˈtel/",
+    "uk": "/həʊˈtel/",
+    "headword": "hotel",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hotel",
+    "kind": "dictionary-entry"
+  },
+  "close": {
+    "us": "/kloʊz/",
+    "uk": "/kləʊz/",
+    "headword": "close",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/close",
+    "kind": "dictionary-entry"
+  },
+  "umbrella": {
+    "us": "/ʌmˈbrel.ə/",
+    "uk": "/ʌmˈbrel.ə/",
+    "headword": "umbrella",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/umbrella",
+    "kind": "dictionary-entry"
+  },
+  "raincoat": {
+    "us": "/ˈreɪŋ.koʊt/",
+    "uk": "/ˈreɪŋ.kəʊt/",
+    "headword": "raincoat",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/raincoat",
+    "kind": "dictionary-entry"
+  },
+  "worry": {
+    "us": "/ˈwɝː.i/",
+    "uk": "/ˈwʌr.i/",
+    "headword": "worry",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/worry",
+    "kind": "dictionary-entry"
+  },
+  "fine": {
+    "us": "/faɪn/",
+    "uk": "/faɪn/",
+    "headword": "fine",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fine",
+    "kind": "dictionary-entry"
+  },
+  "fog": {
+    "us": "/fɑːɡ/",
+    "uk": "/fɒɡ/",
+    "headword": "fog",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fog",
+    "kind": "dictionary-entry"
+  },
+  "flood": {
+    "us": "/flʌd/",
+    "uk": "/flʌd/",
+    "headword": "flood",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flood",
+    "kind": "dictionary-entry"
+  },
+  "fire": {
+    "us": "/faɪr/",
+    "uk": "/faɪər/",
+    "headword": "fire",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fire",
+    "kind": "dictionary-entry"
+  },
+  "know": {
+    "us": "/noʊ/",
+    "uk": "/nəʊ/",
+    "headword": "know",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/know",
+    "kind": "dictionary-entry"
+  },
+  "before": {
+    "us": "/bɪˈfɔːr/",
+    "uk": "/bɪˈfɔːr/",
+    "headword": "before",
+    "pos": "preposition",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/before",
+    "kind": "dictionary-entry"
+  },
+  "go hiking": {
+    "us": "/ɡoʊ/ /ˈhaɪ.kɪŋ/",
+    "uk": "/ɡəʊ/ /ˈhaɪ.kɪŋ/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/go",
+      "https://dictionary.cambridge.org/dictionary/english/hiking"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "bring": {
+    "us": "/brɪŋ/",
+    "uk": "/brɪŋ/",
+    "headword": "bring",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bring",
+    "kind": "dictionary-entry"
+  },
+  "everything": {
+    "us": "/ˈev.ri.θɪŋ/",
+    "uk": "/ˈev.ri.θɪŋ/",
+    "headword": "everything",
+    "pos": "pronoun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/everything",
+    "kind": "dictionary-entry"
+  },
+  "must": {
+    "us": "/mʌst/",
+    "uk": "/mʌst/",
+    "headword": "must",
+    "pos": "modal verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/must",
+    "kind": "dictionary-entry"
+  },
+  "sir": {
+    "us": "/sɝː/",
+    "uk": "/sɜːr/",
+    "headword": "sir",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sir",
+    "kind": "dictionary-entry"
+  },
+  "inside": {
+    "us": "/ɪnˈsaɪd/",
+    "uk": "/ɪnˈsaɪd/",
+    "headword": "inside",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/inside",
+    "kind": "dictionary-entry"
+  },
+  "scare": {
+    "us": "/sker/",
+    "uk": "/skeər/",
+    "headword": "scare",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scare",
+    "kind": "dictionary-entry"
+  },
+  "password": {
+    "us": "/ˈpæs.wɝːd/",
+    "uk": "/ˈpɑːs.wɜːd/",
+    "headword": "password",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/password",
+    "kind": "dictionary-entry"
+  },
+  "line": {
+    "us": "/laɪn/",
+    "uk": "/laɪn/",
+    "headword": "line",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/line",
+    "kind": "dictionary-entry"
+  },
+  "wait": {
+    "us": "/weɪt/",
+    "uk": "/weɪt/",
+    "headword": "wait",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wait",
+    "kind": "dictionary-entry"
+  },
+  "guard": {
+    "us": "/ɡɑːrd/",
+    "uk": "/ɡɑːd/",
+    "headword": "guard",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/guard",
+    "kind": "dictionary-entry"
+  },
+  "stand": {
+    "us": "/stænd/",
+    "uk": "/stænd/",
+    "headword": "stand",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stand",
+    "kind": "dictionary-entry"
+  },
+  "shout": {
+    "us": "/ʃaʊt/",
+    "uk": "/ʃaʊt/",
+    "headword": "shout",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shout",
+    "kind": "dictionary-entry"
+  },
+  "smoke": {
+    "us": "/smoʊk/",
+    "uk": "/sməʊk/",
+    "headword": "smoke",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/smoke",
+    "kind": "dictionary-entry"
+  },
+  "flash": {
+    "us": "/flæʃ/",
+    "uk": "/flæʃ/",
+    "headword": "flash",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flash",
+    "kind": "dictionary-entry"
+  },
+  "open": {
+    "us": "/ˈoʊ.pən/",
+    "uk": "/ˈəʊ.pən/",
+    "headword": "open",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/open",
+    "kind": "dictionary-entry"
+  },
+  "return": {
+    "us": "/rɪˈtɝːn/",
+    "uk": "/rɪˈtɜːn/",
+    "headword": "return",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/return",
+    "kind": "dictionary-entry"
+  },
+  "borrow": {
+    "us": "/ˈbɑːr.oʊ/",
+    "uk": "/ˈbɒr.əʊ/",
+    "headword": "borrow",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/borrow",
+    "kind": "dictionary-entry"
+  },
+  "write": {
+    "us": "/raɪt/",
+    "uk": "/raɪt/",
+    "headword": "write",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/write",
+    "kind": "dictionary-entry"
+  },
+  "along": {
+    "us": "/əˈlɑːŋ/",
+    "uk": "/əˈlɒŋ/",
+    "headword": "along",
+    "pos": "preposition",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/along",
+    "kind": "dictionary-entry"
+  },
+  "street": {
+    "us": "/striːt/",
+    "uk": "/striːt/",
+    "headword": "street",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/street",
+    "kind": "dictionary-entry"
+  },
+  "station": {
+    "us": "/ˈsteɪ.ʃən/",
+    "uk": "/ˈsteɪ.ʃən/",
+    "headword": "station",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/station",
+    "kind": "dictionary-entry"
+  },
+  "next": {
+    "us": "/nekst/",
+    "uk": "/nekst/",
+    "headword": "next",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/next",
+    "kind": "dictionary-entry"
+  },
+  "far": {
+    "us": "/fɑːr/",
+    "uk": "/fɑːr/",
+    "headword": "far",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/far",
+    "kind": "dictionary-entry"
+  },
+  "cinema": {
+    "us": "/ˈsɪn.ə.mə/",
+    "uk": "/ˈsɪn.ə.mɑː/",
+    "headword": "cinema",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cinema",
+    "kind": "dictionary-entry"
+  },
+  "between": {
+    "us": "/bɪˈtwiːn/",
+    "uk": "/bɪˈtwiːn/",
+    "headword": "between",
+    "pos": "preposition",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/between",
+    "kind": "dictionary-entry"
+  },
+  "city": {
+    "us": "/ˈsɪt̬.i/",
+    "uk": "/ˈsɪt.i/",
+    "headword": "city",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/city",
+    "kind": "dictionary-entry"
+  },
+  "behind": {
+    "us": "/bɪˈhaɪnd/",
+    "uk": "/bɪˈhaɪnd/",
+    "headword": "behind",
+    "pos": "preposition",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/behind",
+    "kind": "dictionary-entry"
+  },
+  "left": {
+    "us": "/left/",
+    "uk": "/left/",
+    "headword": "left",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/left",
+    "kind": "dictionary-entry"
+  },
+  "teach": {
+    "us": "/tiːtʃ/",
+    "uk": "/tiːtʃ/",
+    "headword": "teach",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/teach",
+    "kind": "dictionary-entry"
+  },
+  "litter": {
+    "us": "/ˈlɪt̬.ɚ/",
+    "uk": "/ˈlɪt.ər/",
+    "headword": "litter",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/litter",
+    "kind": "dictionary-entry"
+  },
+  "recycle": {
+    "us": "/ˌriːˈsaɪ.kəl/",
+    "uk": "/ˌriːˈsaɪ.kəl/",
+    "headword": "recycle",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/recycle",
+    "kind": "dictionary-entry"
+  },
+  "taxi": {
+    "us": "/ˈtæk.si/",
+    "uk": "/ˈtæk.si/",
+    "headword": "taxi",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/taxi",
+    "kind": "dictionary-entry"
+  },
+  "traffic": {
+    "us": "/ˈtræf.ɪk/",
+    "uk": "/ˈtræf.ɪk/",
+    "headword": "traffic",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/traffic",
+    "kind": "dictionary-entry"
+  },
+  "direct": {
+    "us": "/dɪˈrekt/",
+    "uk": "/daɪˈrekt/",
+    "headword": "direct",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/direct",
+    "kind": "dictionary-entry"
+  },
+  "artist": {
+    "us": "/ˈɑːr.t̬ɪst/",
+    "uk": "/ˈɑː.tɪst/",
+    "headword": "artist",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/artist",
+    "kind": "dictionary-entry"
+  },
+  "Ms": {
+    "us": "/məz/",
+    "uk": "/məz/",
+    "headword": "Ms",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ms",
+    "kind": "dictionary-entry"
+  },
+  "scientist": {
+    "us": "/ˈsaɪ.ən.tɪst/",
+    "uk": "/ˈsaɪ.ən.tɪst/",
+    "headword": "scientist",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scientist",
+    "kind": "dictionary-entry"
+  },
+  "volunteer": {
+    "us": "/ˌvɑː.lənˈtɪr/",
+    "uk": "/ˌvɒl.ənˈtɪər/",
+    "headword": "volunteer",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/volunteer",
+    "kind": "dictionary-entry"
+  },
+  "live": {
+    "us": "/lɪv/",
+    "uk": "/lɪv/",
+    "headword": "live",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/live",
+    "kind": "dictionary-entry"
+  },
+  "train": {
+    "us": "/treɪn/",
+    "uk": "/treɪn/",
+    "headword": "train",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/train",
+    "kind": "dictionary-entry"
+  },
+  "lost": {
+    "us": "/lɑːst/",
+    "uk": "/lɒst/",
+    "headword": "lost",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lost",
+    "kind": "dictionary-entry"
+  },
+  "sign": {
+    "us": "/saɪn/",
+    "uk": "/saɪn/",
+    "headword": "sign",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sign",
+    "kind": "dictionary-entry"
+  },
+  "note": {
+    "us": "/noʊt/",
+    "uk": "/nəʊt/",
+    "headword": "note",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/note",
+    "kind": "dictionary-entry"
+  },
+  "foreign": {
+    "us": "/ˈfɔːr.ən/",
+    "uk": "/ˈfɒr.ən/",
+    "headword": "foreign",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/foreign",
+    "kind": "dictionary-entry"
+  },
+  "visitor": {
+    "us": "/ˈvɪz.ɪ.t̬ɚ/",
+    "uk": "/ˈvɪz.ɪ.tər/",
+    "headword": "visitor",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/visitor",
+    "kind": "dictionary-entry"
+  },
+  "January": {
+    "us": "/ˈdʒæn.ju.er.i/",
+    "uk": "/ˈdʒæn.ju.ə.ri/",
+    "headword": "January",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/january",
+    "kind": "dictionary-entry"
+  },
+  "February": {
+    "us": "/ˈfeb.ruː.er.i/",
+    "uk": "/ˈfeb.ru.ər.i/",
+    "headword": "February",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/february",
+    "kind": "dictionary-entry"
+  },
+  "skate": {
+    "us": "/skeɪt/",
+    "uk": "/skeɪt/",
+    "headword": "skate",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/skate",
+    "kind": "dictionary-entry"
+  },
+  "holiday": {
+    "us": "/ˈhɑː.lə.deɪ/",
+    "uk": "/ˈhɒl.ə.deɪ/",
+    "headword": "holiday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/holiday",
+    "kind": "dictionary-entry"
+  },
+  "March": {
+    "us": "/mɑːrtʃ/",
+    "uk": "/mɑːtʃ/",
+    "headword": "March",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/march",
+    "kind": "dictionary-entry"
+  },
+  "April": {
+    "us": "/ˈeɪ.prəl/",
+    "uk": "/ˈeɪ.prəl/",
+    "headword": "April",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/april",
+    "kind": "dictionary-entry"
+  },
+  "May": {
+    "us": "/meɪ/",
+    "uk": "/meɪ/",
+    "headword": "may",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/may",
+    "kind": "dictionary-entry"
+  },
+  "June": {
+    "us": "/dʒuːn/",
+    "uk": "/dʒuːn/",
+    "headword": "June",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/june",
+    "kind": "dictionary-entry"
+  },
+  "party": {
+    "us": "/ˈpɑːr.t̬i/",
+    "uk": "/ˈpɑː.ti/",
+    "headword": "party",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/party",
+    "kind": "dictionary-entry"
+  },
+  "celebrate": {
+    "us": "/ˈsel.ə.breɪt/",
+    "uk": "/ˈsel.ə.breɪt/",
+    "headword": "celebrate",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/celebrate",
+    "kind": "dictionary-entry"
+  },
+  "December": {
+    "us": "/dɪˈsem.bɚ/",
+    "uk": "/dɪˈsem.bər/",
+    "headword": "December",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/december",
+    "kind": "dictionary-entry"
+  },
+  "Christmas": {
+    "us": "/ˈkrɪs.məs/",
+    "uk": "/ˈkrɪs.məs/",
+    "headword": "Christmas",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/christmas",
+    "kind": "dictionary-entry"
+  },
+  "turkey": {
+    "us": "/ˈtɝː.ki/",
+    "uk": "/ˈtɜː.ki/",
+    "headword": "turkey",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/turkey",
+    "kind": "dictionary-entry"
+  },
+  "July": {
+    "us": "/dʒʊˈlaɪ/",
+    "uk": "/dʒuˈlaɪ/",
+    "headword": "July",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/july",
+    "kind": "dictionary-entry"
+  },
+  "August": {
+    "us": "/ˈɑː.ɡəst/",
+    "uk": "/ˈɔː.ɡəst/",
+    "headword": "August",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/august",
+    "kind": "dictionary-entry"
+  },
+  "September": {
+    "us": "/sepˈtem.bɚ/",
+    "uk": "/sepˈtem.bər/",
+    "headword": "September",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/september",
+    "kind": "dictionary-entry"
+  },
+  "October": {
+    "us": "/ɑːkˈtoʊ.bɚ/",
+    "uk": "/ɒkˈtəʊ.bər/",
+    "headword": "October",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/october",
+    "kind": "dictionary-entry"
+  },
+  "November": {
+    "us": "/noʊˈvem.bɚ/",
+    "uk": "/nəʊˈvem.bər/",
+    "headword": "November",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/november",
+    "kind": "dictionary-entry"
+  },
+  "country": {
+    "us": "/ˈkʌn.tri/",
+    "uk": "/ˈkʌn.tri/",
+    "headword": "country",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/country",
+    "kind": "dictionary-entry"
+  },
+  "sit": {
+    "us": "/sɪt/",
+    "uk": "/sɪt/",
+    "headword": "sit",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sit",
+    "kind": "dictionary-entry"
+  },
+  "beside": {
+    "us": "/bɪˈsaɪd/",
+    "uk": "/bɪˈsaɪd/",
+    "headword": "beside",
+    "pos": "preposition",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/beside",
+    "kind": "dictionary-entry"
+  },
+  "west": {
+    "us": "/west/",
+    "uk": "/west/",
+    "headword": "west",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/west",
+    "kind": "dictionary-entry"
+  },
+  "cup": {
+    "us": "/kʌp/",
+    "uk": "/kʌp/",
+    "headword": "cup",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cup",
+    "kind": "dictionary-entry"
+  },
+  "sunshine": {
+    "us": "/ˈsʌn.ʃaɪn/",
+    "uk": "/ˈsʌn.ʃaɪn/",
+    "headword": "sunshine",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sunshine",
+    "kind": "dictionary-entry"
+  },
+  "catch": {
+    "us": "/kætʃ/",
+    "uk": "/kætʃ/",
+    "headword": "catch",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/catch",
+    "kind": "dictionary-entry"
+  },
+  "ago": {
+    "us": "/əˈɡoʊ/",
+    "uk": "/əˈɡəʊ/",
+    "headword": "ago",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ago",
+    "kind": "dictionary-entry"
+  },
+  "ice": {
+    "us": "/aɪs/",
+    "uk": "/aɪs/",
+    "headword": "ice",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ice",
+    "kind": "dictionary-entry"
+  },
+  "Labour Day": {
+    "us": "/ˈleɪ.bɚ ˌdeɪ/",
+    "uk": "/ˈleɪ.bə ˌdeɪ/",
+    "headword": "Labour Day",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/labour-day",
+    "kind": "dictionary-entry"
+  },
+  "Dragon Boat Festival": {
+    "us": "/ˈdræɡ.ən/ /boʊt/ /ˈfes.tə.vəl/",
+    "uk": "/ˈdræɡ.ən/ /bəʊt/ /ˈfes.tɪ.vəl/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/dragon",
+      "https://dictionary.cambridge.org/dictionary/english/boat",
+      "https://dictionary.cambridge.org/dictionary/english/festival"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "CPC Founding Day": {
+    "us": "/siː/ /piː/ /siː/ /ˈfaʊn.dɪŋ/ /deɪ/",
+    "uk": "/siː/ /piː/ /siː/ /ˈfaʊn.dɪŋ/ /deɪ/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/c",
+      "https://dictionary.cambridge.org/dictionary/english/p",
+      "https://dictionary.cambridge.org/dictionary/english/c",
+      "https://dictionary.cambridge.org/dictionary/english/founding",
+      "https://dictionary.cambridge.org/dictionary/english/day"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "PLA Day": {
+    "us": "/piː/ /el/ /eɪ/ /deɪ/",
+    "uk": "/piː/ /el/ /eɪ/ /deɪ/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/p",
+      "https://dictionary.cambridge.org/dictionary/english/l",
+      "https://dictionary.cambridge.org/dictionary/english/a",
+      "https://dictionary.cambridge.org/dictionary/english/day"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "National Day": {
+    "us": "/ˈnæʃ.ən.əl/ /deɪ/",
+    "uk": "/ˈnæʃ.ən.əl/ /deɪ/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/national",
+      "https://dictionary.cambridge.org/dictionary/english/day"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "hometown": {
+    "us": "/ˈhoʊm.taʊn/",
+    "uk": "/ˈhəʊm.taʊn/",
+    "headword": "hometown",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hometown",
+    "kind": "dictionary-entry"
+  },
+  "its": {
+    "us": "/ɪts/",
+    "uk": "/ɪts/",
+    "headword": "its",
+    "pos": "determiner",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/its",
+    "kind": "dictionary-entry"
+  },
+  "common": {
+    "us": "/ˈkɑː.mən/",
+    "uk": "/ˈkɒm.ən/",
+    "headword": "common",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/common",
+    "kind": "dictionary-entry"
+  },
+  "beach": {
+    "us": "/biːtʃ/",
+    "uk": "/biːtʃ/",
+    "headword": "beach",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/beach",
+    "kind": "dictionary-entry"
+  },
+  "desert": {
+    "us": "/ˈdez.ɚt/",
+    "uk": "/ˈdez.ət/",
+    "headword": "desert",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/desert",
+    "kind": "dictionary-entry"
+  },
+  "grassland": {
+    "us": "/ˈɡræs.lænd/",
+    "uk": "/ˈɡrɑːs.lænd/",
+    "headword": "grassland",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/grassland",
+    "kind": "dictionary-entry"
+  },
+  "special": {
+    "us": "/ˈspeʃ.əl/",
+    "uk": "/ˈspeʃ.əl/",
+    "headword": "special",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/special",
+    "kind": "dictionary-entry"
+  },
+  "wild": {
+    "us": "/waɪld/",
+    "uk": "/waɪld/",
+    "headword": "wild",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wild",
+    "kind": "dictionary-entry"
+  },
+  "kangaroo": {
+    "us": "/ˌkæŋ.ɡəˈruː/",
+    "uk": "/ˌkæŋ.ɡərˈuː/",
+    "headword": "kangaroo",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/kangaroo",
+    "kind": "dictionary-entry"
+  },
+  "koala": {
+    "us": "/koʊˈɑː.lə/",
+    "uk": "/kəʊˈɑː.lə/",
+    "headword": "koala",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/koala",
+    "kind": "dictionary-entry"
+  },
+  "wish": {
+    "us": "/wɪʃ/",
+    "uk": "/wɪʃ/",
+    "headword": "wish",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wish",
+    "kind": "dictionary-entry"
+  },
+  "could": {
+    "us": "/kʊd/",
+    "uk": "/kʊd/",
+    "headword": "could",
+    "pos": "modal verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/could",
+    "kind": "dictionary-entry"
+  },
+  "high": {
+    "us": "/haɪ/",
+    "uk": "/haɪ/",
+    "headword": "high",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/high",
+    "kind": "dictionary-entry"
+  },
+  "island": {
+    "us": "/ˈaɪ.lənd/",
+    "uk": "/ˈaɪ.lənd/",
+    "headword": "island",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/island",
+    "kind": "dictionary-entry"
+  },
+  "travel": {
+    "us": "/ˈtræv.əl/",
+    "uk": "/ˈtræv.əl/",
+    "headword": "travel",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/travel",
+    "kind": "dictionary-entry"
+  },
+  "feel like": {
+    "us": "/fiːl/ /laɪk/",
+    "uk": "/fiːl/ /laɪk/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/feel",
+      "https://dictionary.cambridge.org/dictionary/english/like"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "middle": {
+    "us": "/ˈmɪd.əl/",
+    "uk": "/ˈmɪd.əl/",
+    "headword": "middle",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/middle",
+    "kind": "dictionary-entry"
+  },
+  "painting": {
+    "us": "/ˈpeɪn.t̬ɪŋ/",
+    "uk": "/ˈpeɪn.tɪŋ/",
+    "headword": "painting",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/painting",
+    "kind": "dictionary-entry"
+  },
+  "pyramid": {
+    "us": "/ˈpɪr.ə.mɪd/",
+    "uk": "/ˈpɪr.ə.mɪd/",
+    "headword": "pyramid",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pyramid",
+    "kind": "dictionary-entry"
+  },
+  "ride": {
+    "us": "/raɪd/",
+    "uk": "/raɪd/",
+    "headword": "ride",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ride",
+    "kind": "dictionary-entry"
+  },
+  "camel": {
+    "us": "/ˈkæm.əl/",
+    "uk": "/ˈkæm.əl/",
+    "headword": "camel",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/camel",
+    "kind": "dictionary-entry"
+  },
+  "even": {
+    "us": "/ˈiː.vən/",
+    "uk": "/ˈiː.vən/",
+    "headword": "even",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/even",
+    "kind": "dictionary-entry"
+  },
+  "Confucius": {
+    "us": "/kənˈfjuː.ʃəs/",
+    "uk": "/kənˈfjuː.ʃəs/",
+    "headword": "Confucius",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/confucius",
+    "kind": "dictionary-entry"
+  },
+  "Beijing opera": {
+    "us": "/ˌbeɪˈdʒɪŋ/ /ˈɑː.pɚ.ə/",
+    "uk": "/ˌbeɪˈdʒɪŋ/ /ˈɒp.ər.ə/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/beijing",
+      "https://dictionary.cambridge.org/dictionary/english/opera"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "Mount Taishan": {
+    "us": "/maʊnt/ Taishan",
+    "uk": "/maʊnt/ Taishan",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/mount"
+    ],
+    "note": "分词音标；连读以音频为准；Taishan按汉语拼音读",
+    "kind": "checked-components"
+  },
+  "India": {
+    "us": "/ˈɪn.di.ə/",
+    "uk": "/ˈɪn.di.ə/",
+    "headword": "India",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/india",
+    "kind": "dictionary-entry"
+  },
+  "Italy": {
+    "us": "/ˈɪt̬.əl.i/",
+    "uk": "/ˈɪt.əl.i/",
+    "headword": "Italy",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/italy",
+    "kind": "dictionary-entry"
+  },
+  "Britain": {
+    "us": "/ˈbrɪt.ən/",
+    "uk": "/ˈbrɪt.ən/",
+    "headword": "Britain",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/britain",
+    "kind": "dictionary-entry"
+  },
+  "Cairo": {
+    "us": "/ˈkaɪ.roʊ/",
+    "uk": "/ˈkaɪ.rəʊ/",
+    "headword": "Cairo",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cairo",
+    "kind": "dictionary-entry"
+  },
+  "Hawaii": {
+    "us": "/həˈwaɪ.iː/",
+    "uk": "/həˈwaɪ.iː/",
+    "headword": "Hawaii",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hawaii",
+    "kind": "dictionary-entry"
+  },
+  "early": {
+    "us": "/ˈɝː.li/",
+    "uk": "/ˈɜː.li/",
+    "headword": "early",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/early",
+    "kind": "dictionary-entry",
+    "senseReference": "https://www.oxfordlearnersdictionaries.com/definition/english/early_2",
+    "senseNote": "词性及例句用法另以牛津词典核对；此处音标对应同一读音。"
+  },
+  "underground": {
+    "us": "/ˈʌn.dɚ.ɡraʊnd/",
+    "uk": "/ˈʌn.də.ɡraʊnd/",
+    "headword": "underground",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/underground",
+    "kind": "dictionary-entry"
+  },
+  "bike": {
+    "us": "/baɪk/",
+    "uk": "/baɪk/",
+    "headword": "bike",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bike",
+    "kind": "dictionary-entry"
+  },
+  "foot": {
+    "us": "/fʊt/",
+    "uk": "/fʊt/",
+    "headword": "foot",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/foot",
+    "kind": "dictionary-entry"
+  },
+  "on foot": {
+    "us": "/ɑːn/ /fʊt/",
+    "uk": "/ɒn/ /fʊt/",
+    "reference": [
+      "https://dictionary.cambridge.org/dictionary/english/on",
+      "https://dictionary.cambridge.org/dictionary/english/foot"
+    ],
+    "note": "分词音标；连读以音频为准",
+    "kind": "checked-components"
+  },
+  "plane": {
+    "us": "/pleɪn/",
+    "uk": "/pleɪn/",
+    "headword": "plane",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/plane",
+    "kind": "dictionary-entry"
+  },
+  "ship": {
+    "us": "/ʃɪp/",
+    "uk": "/ʃɪp/",
+    "headword": "ship",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ship",
+    "kind": "dictionary-entry"
+  },
+  "hurt": {
+    "us": "/hɝːt/",
+    "uk": "/hɜːt/",
+    "headword": "hurt",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hurt",
+    "kind": "dictionary-entry"
+  },
+  "environment": {
+    "us": "/ɪnˈvaɪ.rə.mənt/",
+    "uk": "/ɪnˈvaɪ.rə.mənt/",
+    "headword": "environment",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/environment",
+    "kind": "dictionary-entry"
+  },
+  "tip": {
+    "us": "/tɪp/",
+    "uk": "/tɪp/",
+    "headword": "tip",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tip",
+    "kind": "dictionary-entry"
+  },
+  "health": {
+    "us": "/helθ/",
+    "uk": "/helθ/",
+    "headword": "health",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/health",
+    "kind": "dictionary-entry"
+  },
+  "carry": {
+    "us": "/ˈker.i/",
+    "uk": "/ˈkær.i/",
+    "headword": "carry",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/carry",
+    "kind": "dictionary-entry"
+  },
+  "finally": {
+    "us": "/ˈfaɪ.nəl.i/",
+    "uk": "/ˈfaɪ.nəl.i/",
+    "headword": "finally",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/finally",
+    "kind": "dictionary-entry"
+  },
+  "suggest": {
+    "us": "/səˈdʒest/",
+    "uk": "/səˈdʒest/",
+    "headword": "suggest",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/suggest",
+    "kind": "dictionary-entry"
+  },
+  "everyday": {
+    "us": "/ˈev.ri.deɪ/",
+    "uk": "/ˈev.ri.deɪ/",
+    "headword": "everyday",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/everyday",
+    "kind": "dictionary-entry"
+  },
+  "internet": {
+    "us": "/ˈɪn.t̬ɚ.net/",
+    "uk": "/ˈɪn.tə.net/",
+    "headword": "internet",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/internet",
+    "kind": "dictionary-entry"
+  },
+  "seafood": {
+    "us": "/ˈsiː.fuːd/",
+    "uk": "/ˈsiː.fuːd/",
+    "headword": "seafood",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/seafood",
+    "kind": "dictionary-entry"
+  },
+  "maybe": {
+    "us": "/ˈmeɪ.bi/",
+    "uk": "/ˈmeɪ.bi/",
+    "headword": "maybe",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/maybe",
+    "kind": "dictionary-entry"
+  },
+  "join": {
+    "us": "/dʒɔɪn/",
+    "uk": "/dʒɔɪn/",
+    "headword": "join",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/join",
+    "kind": "dictionary-entry"
+  },
+  "hill": {
+    "us": "/hɪl/",
+    "uk": "/hɪl/",
+    "headword": "hill",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hill",
+    "kind": "dictionary-entry"
+  },
+  "explore": {
+    "us": "/ɪkˈsplɔːr/",
+    "uk": "/ɪkˈsplɔːr/",
+    "headword": "explore",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/explore",
+    "kind": "dictionary-entry"
+  },
+  "culture": {
+    "us": "/ˈkʌl.tʃɚ/",
+    "uk": "/ˈkʌl.tʃər/",
+    "headword": "culture",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/culture",
+    "kind": "dictionary-entry"
+  },
+  "hot pot": {
+    "us": "/ˈhɑːt.pɑːt/",
+    "uk": "/ˈhɒt.pɒt/",
+    "headword": "hotpot",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hot-pot",
+    "kind": "dictionary-entry"
+  },
+  "tour": {
+    "us": "/tʊr/",
+    "uk": "/tʊər/",
+    "headword": "tour",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tour",
+    "kind": "dictionary-entry"
+  },
+  "local": {
+    "us": "/ˈloʊ.kəl/",
+    "uk": "/ˈləʊ.kəl/",
+    "headword": "local",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/local",
+    "kind": "dictionary-entry"
+  },
+  "history": {
+    "us": "/ˈhɪs.t̬ɚ.i/",
+    "uk": "/ˈhɪs.tər.i/",
+    "headword": "history",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/history",
+    "kind": "dictionary-entry"
+  },
+  "plan": {
+    "us": "/plæn/",
+    "uk": "/plæn/",
+    "headword": "plan",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/plan",
+    "kind": "dictionary-entry"
+  },
+  "app": {
+    "us": "/æp/",
+    "uk": "/æp/",
+    "headword": "app",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/app",
+    "kind": "dictionary-entry"
+  },
+  "information": {
+    "us": "/ˌɪn.fɚˈmeɪ.ʃən/",
+    "uk": "/ˌɪn.fəˈmeɪ.ʃən/",
+    "headword": "information",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/information",
+    "kind": "dictionary-entry"
+  },
+  "blog": {
+    "us": "/blɑːɡ/",
+    "uk": "/blɒɡ/",
+    "headword": "blog",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/blog",
+    "kind": "dictionary-entry"
+  },
+  "skill": {
+    "us": "/skɪl/",
+    "uk": "/skɪl/",
+    "headword": "skill",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/skill",
+    "kind": "dictionary-entry"
+  },
+  "talent": {
+    "us": "/ˈtæl.ənt/",
+    "uk": "/ˈtæl.ənt/",
+    "headword": "talent",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/talent",
+    "kind": "dictionary-entry"
+  },
+  "ability": {
+    "us": "/əˈbɪl.ə.t̬i/",
+    "uk": "/əˈbɪl.ə.ti/",
+    "headword": "ability",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ability",
+    "kind": "dictionary-entry"
+  },
+  "member": {
+    "us": "/ˈmem.bɚ/",
+    "uk": "/ˈmem.bər/",
+    "headword": "member",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/member",
+    "kind": "dictionary-entry"
+  },
+  "coach": {
+    "us": "/koʊtʃ/",
+    "uk": "/kəʊtʃ/",
+    "headword": "coach",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/coach",
+    "kind": "dictionary-entry"
+  },
+  "captain": {
+    "us": "/ˈkæp.tən/",
+    "uk": "/ˈkæp.tɪn/",
+    "headword": "captain",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/captain",
+    "kind": "dictionary-entry"
+  },
+  "guitar": {
+    "us": "/ɡɪˈtɑːr/",
+    "uk": "/ɡɪˈtɑːr/",
+    "headword": "guitar",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/guitar",
+    "kind": "dictionary-entry"
+  },
+  "violin": {
+    "us": "/ˌvaɪ.əˈlɪn/",
+    "uk": "/ˌvaɪəˈlɪn/",
+    "headword": "violin",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/violin",
+    "kind": "dictionary-entry"
+  },
+  "flute": {
+    "us": "/fluːt/",
+    "uk": "/fluːt/",
+    "headword": "flute",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flute",
+    "kind": "dictionary-entry"
+  },
+  "drum": {
+    "us": "/drʌm/",
+    "uk": "/drʌm/",
+    "headword": "drum",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drum",
+    "kind": "dictionary-entry"
+  },
+  "keyboard": {
+    "us": "/ˈkiː.bɔːrd/",
+    "uk": "/ˈkiː.bɔːd/",
+    "headword": "keyboard",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/keyboard",
+    "kind": "dictionary-entry"
+  },
+  "clap": {
+    "us": "/klæp/",
+    "uk": "/klæp/",
+    "headword": "clap",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/clap",
+    "kind": "dictionary-entry"
+  },
+  "hop": {
+    "us": "/hɑːp/",
+    "uk": "/hɒp/",
+    "headword": "hop",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hop",
+    "kind": "dictionary-entry"
+  },
+  "perform": {
+    "us": "/pɚˈfɔːrm/",
+    "uk": "/pəˈfɔːm/",
+    "headword": "perform",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/perform",
+    "kind": "dictionary-entry"
+  },
+  "creative": {
+    "us": "/kriˈeɪ.t̬ɪv/",
+    "uk": "/kriˈeɪ.tɪv/",
+    "headword": "creative",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/creative",
+    "kind": "dictionary-entry"
+  },
+  "active": {
+    "us": "/ˈæk.tɪv/",
+    "uk": "/ˈæk.tɪv/",
+    "headword": "active",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/active",
+    "kind": "dictionary-entry"
+  },
+  "polite": {
+    "us": "/pəˈlaɪt/",
+    "uk": "/pəˈlaɪt/",
+    "headword": "polite",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/polite",
+    "kind": "dictionary-entry"
+  },
+  "smart": {
+    "us": "/smɑːrt/",
+    "uk": "/smɑːt/",
+    "headword": "smart",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/smart",
+    "kind": "dictionary-entry"
+  },
+  "gentle": {
+    "us": "/ˈdʒen.t̬əl/",
+    "uk": "/ˈdʒen.təl/",
+    "headword": "gentle",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gentle",
+    "kind": "dictionary-entry"
+  },
+  "neat": {
+    "us": "/niːt/",
+    "uk": "/niːt/",
+    "headword": "neat",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/neat",
+    "kind": "dictionary-entry"
+  },
+  "talented": {
+    "us": "/ˈtæl.ən.t̬ɪd/",
+    "uk": "/ˈtæl.ən.tɪd/",
+    "headword": "talented",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/talented",
+    "kind": "dictionary-entry"
+  },
+  "curious": {
+    "us": "/ˈkjʊr.i.əs/",
+    "uk": "/ˈkjʊə.ri.əs/",
+    "headword": "curious",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/curious",
+    "kind": "dictionary-entry"
+  },
+  "quick": {
+    "us": "/kwɪk/",
+    "uk": "/kwɪk/",
+    "headword": "quick",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/quick",
+    "kind": "dictionary-entry"
+  },
+  "slow": {
+    "us": "/sloʊ/",
+    "uk": "/sləʊ/",
+    "headword": "slow",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/slow",
+    "kind": "dictionary-entry"
+  },
+  "silly": {
+    "us": "/ˈsɪl.i/",
+    "uk": "/ˈsɪl.i/",
+    "headword": "silly",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/silly",
+    "kind": "dictionary-entry"
+  },
+  "serious": {
+    "us": "/ˈsɪr.i.əs/",
+    "uk": "/ˈsɪə.ri.əs/",
+    "headword": "serious",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/serious",
+    "kind": "dictionary-entry"
+  },
+  "smile": {
+    "us": "/smaɪl/",
+    "uk": "/smaɪl/",
+    "headword": "smile",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/smile",
+    "kind": "dictionary-entry"
+  },
+  "mood": {
+    "us": "/muːd/",
+    "uk": "/muːd/",
+    "headword": "mood",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mood",
+    "kind": "dictionary-entry"
+  },
+  "emotion": {
+    "us": "/ɪˈmoʊ.ʃən/",
+    "uk": "/ɪˈməʊ.ʃən/",
+    "headword": "emotion",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/emotion",
+    "kind": "dictionary-entry"
+  },
+  "upset": {
+    "us": "/ʌpˈset/",
+    "uk": "/ʌpˈset/",
+    "headword": "upset",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/upset",
+    "kind": "dictionary-entry"
+  },
+  "cheerful": {
+    "us": "/ˈtʃɪr.fəl/",
+    "uk": "/ˈtʃɪə.fəl/",
+    "headword": "cheerful",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cheerful",
+    "kind": "dictionary-entry"
+  },
+  "surprised": {
+    "us": "/sɚˈpraɪzd/",
+    "uk": "/səˈpraɪzd/",
+    "headword": "surprised",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/surprised",
+    "kind": "dictionary-entry"
+  },
+  "relieved": {
+    "us": "/rɪˈliːvd/",
+    "uk": "/rɪˈliːvd/",
+    "headword": "relieved",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/relieved",
+    "kind": "dictionary-entry"
+  },
+  "relief": {
+    "us": "/rɪˈliːf/",
+    "uk": "/rɪˈliːf/",
+    "headword": "relief",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/relief",
+    "kind": "dictionary-entry"
+  },
+  "disappointed": {
+    "us": "/ˌdɪs.əˈpɔɪn.t̬ɪd/",
+    "uk": "/ˌdɪs.əˈpɔɪn.tɪd/",
+    "headword": "disappointed",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/disappointed",
+    "kind": "dictionary-entry"
+  },
+  "bored": {
+    "us": "/bɔːrd/",
+    "uk": "/bɔːd/",
+    "headword": "bored",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bored",
+    "kind": "dictionary-entry"
+  },
+  "boring": {
+    "us": "/ˈbɔːr.ɪŋ/",
+    "uk": "/ˈbɔː.rɪŋ/",
+    "headword": "boring",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/boring",
+    "kind": "dictionary-entry"
+  },
+  "exciting": {
+    "us": "/ɪkˈsaɪ.t̬ɪŋ/",
+    "uk": "/ɪkˈsaɪ.tɪŋ/",
+    "headword": "exciting",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/exciting",
+    "kind": "dictionary-entry"
+  },
+  "glad": {
+    "us": "/ɡlæd/",
+    "uk": "/ɡlæd/",
+    "headword": "glad",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/glad",
+    "kind": "dictionary-entry"
+  },
+  "pleased": {
+    "us": "/pliːzd/",
+    "uk": "/pliːzd/",
+    "headword": "pleased",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pleased",
+    "kind": "dictionary-entry"
+  },
+  "hug": {
+    "us": "/hʌɡ/",
+    "uk": "/hʌɡ/",
+    "headword": "hug",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hug",
+    "kind": "dictionary-entry"
+  },
+  "comfort": {
+    "us": "/ˈkʌm.fɚt/",
+    "uk": "/ˈkʌm.fət/",
+    "headword": "comfort",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/comfort",
+    "kind": "dictionary-entry"
+  },
+  "support": {
+    "us": "/səˈpɔːrt/",
+    "uk": "/səˈpɔːt/",
+    "headword": "support",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/support",
+    "kind": "dictionary-entry"
+  },
+  "trust": {
+    "us": "/trʌst/",
+    "uk": "/trʌst/",
+    "headword": "trust",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/trust",
+    "kind": "dictionary-entry"
+  },
+  "apologise": {
+    "us": "/əˈpɑː.lə.dʒaɪz/",
+    "uk": "/əˈpɒl.ə.dʒaɪz/",
+    "headword": "apologize",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/apologise",
+    "kind": "dictionary-entry"
+  },
+  "accept": {
+    "us": "/əkˈsept/",
+    "uk": "/əkˈsept/",
+    "headword": "accept",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/accept",
+    "kind": "dictionary-entry"
+  },
+  "offer": {
+    "us": "/ˈɑː.fɚ/",
+    "uk": "/ˈɒf.ər/",
+    "headword": "offer",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/offer",
+    "kind": "dictionary-entry"
+  },
+  "discuss": {
+    "us": "/dɪˈskʌs/",
+    "uk": "/dɪˈskʌs/",
+    "headword": "discuss",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/discuss",
+    "kind": "dictionary-entry"
+  },
+  "solve": {
+    "us": "/sɑːlv/",
+    "uk": "/sɒlv/",
+    "headword": "solve",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/solve",
+    "kind": "dictionary-entry"
+  },
+  "problem": {
+    "us": "/ˈprɑː.bləm/",
+    "uk": "/ˈprɒb.ləm/",
+    "headword": "problem",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/problem",
+    "kind": "dictionary-entry"
+  },
+  "reason": {
+    "us": "/ˈriː.zən/",
+    "uk": "/ˈriː.zən/",
+    "headword": "reason",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/reason",
+    "kind": "dictionary-entry"
+  },
+  "decision": {
+    "us": "/dɪˈsɪʒ.ən/",
+    "uk": "/dɪˈsɪʒ.ən/",
+    "headword": "decision",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/decision",
+    "kind": "dictionary-entry"
+  },
+  "schedule": {
+    "us": "/ˈskedʒ.uːl/",
+    "uk": "/ˈʃedʒ.uːl/",
+    "headword": "schedule",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/schedule",
+    "kind": "dictionary-entry"
+  },
+  "activity": {
+    "us": "/ækˈtɪv.ə.t̬i/",
+    "uk": "/ækˈtɪv.ə.ti/",
+    "headword": "activity",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/activity",
+    "kind": "dictionary-entry"
+  },
+  "hobby": {
+    "us": "/ˈhɑː.bi/",
+    "uk": "/ˈhɒb.i/",
+    "headword": "hobby",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hobby",
+    "kind": "dictionary-entry"
+  },
+  "concert": {
+    "us": "/ˈkɑːn.sɚt/",
+    "uk": "/ˈkɒn.sət/",
+    "headword": "concert",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/concert",
+    "kind": "dictionary-entry"
+  },
+  "instrument": {
+    "us": "/ˈɪn.strə.mənt/",
+    "uk": "/ˈɪn.strə.mənt/",
+    "headword": "instrument",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/instrument",
+    "kind": "dictionary-entry"
+  },
+  "musician": {
+    "us": "/mjuːˈzɪʃ.ən/",
+    "uk": "/mjuːˈzɪʃ.ən/",
+    "headword": "musician",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/musician",
+    "kind": "dictionary-entry"
+  },
+  "drama": {
+    "us": "/ˈdrɑː.mə/",
+    "uk": "/ˈdrɑː.mə/",
+    "headword": "drama",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drama",
+    "kind": "dictionary-entry"
+  },
+  "poem": {
+    "us": "/ˈpoʊ.əm/",
+    "uk": "/ˈpəʊ.ɪm/",
+    "headword": "poem",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/poem",
+    "kind": "dictionary-entry"
+  },
+  "poetry": {
+    "us": "/ˈpoʊ.ə.tri/",
+    "uk": "/ˈpəʊ.ɪ.tri/",
+    "headword": "poetry",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/poetry",
+    "kind": "dictionary-entry"
+  },
+  "poet": {
+    "us": "/ˈpoʊ.ət/",
+    "uk": "/ˈpəʊ.ɪt/",
+    "headword": "poet",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/poet",
+    "kind": "dictionary-entry"
+  },
+  "novel": {
+    "us": "/ˈnɑː.vəl/",
+    "uk": "/ˈnɒv.əl/",
+    "headword": "novel",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/novel",
+    "kind": "dictionary-entry"
+  },
+  "magazine": {
+    "us": "/ˌmæɡ.əˈziːn/",
+    "uk": "/ˌmæɡ.əˈziːn/",
+    "headword": "magazine",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/magazine",
+    "kind": "dictionary-entry"
+  },
+  "diary": {
+    "us": "/ˈdaɪ.ə.ri/",
+    "uk": "/ˈdaɪə.ri/",
+    "headword": "diary",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/diary",
+    "kind": "dictionary-entry"
+  },
+  "geography": {
+    "us": "/dʒiˈɑː.ɡrə.fi/",
+    "uk": "/dʒiˈɒɡ.rə.fi/",
+    "headword": "geography",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/geography",
+    "kind": "dictionary-entry"
+  },
+  "computer": {
+    "us": "/kəmˈpjuː.t̬ɚ/",
+    "uk": "/kəmˈpjuː.tər/",
+    "headword": "computer",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/computer",
+    "kind": "dictionary-entry"
+  },
+  "tablet": {
+    "us": "/ˈtæb.lət/",
+    "uk": "/ˈtæb.lət/",
+    "headword": "tablet",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tablet",
+    "kind": "dictionary-entry"
+  },
+  "laptop": {
+    "us": "/ˈlæp.tɑːp/",
+    "uk": "/ˈlæp.tɒp/",
+    "headword": "laptop",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/laptop",
+    "kind": "dictionary-entry"
+  },
+  "online": {
+    "us": "/ˌɑːnˈlaɪn/",
+    "uk": "/ˌɒnˈlaɪn/",
+    "headword": "online",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/online",
+    "kind": "dictionary-entry"
+  },
+  "offline": {
+    "us": "/ˌɑːfˈlaɪn/",
+    "uk": "/ˌɒfˈlaɪn/",
+    "headword": "offline",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/offline",
+    "kind": "dictionary-entry",
+    "senseReference": "https://www.oxfordlearnersdictionaries.com/definition/english/offline_2",
+    "senseNote": "词性及例句用法另以牛津词典核对；此处音标对应同一读音。"
+  },
+  "website": {
+    "us": "/ˈweb.saɪt/",
+    "uk": "/ˈweb.saɪt/",
+    "headword": "website",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/website",
+    "kind": "dictionary-entry"
+  },
+  "email": {
+    "us": "/ˈiː.meɪl/",
+    "uk": "/ˈiː.meɪl/",
+    "headword": "email",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/email",
+    "kind": "dictionary-entry"
+  },
+  "message": {
+    "us": "/ˈmes.ɪdʒ/",
+    "uk": "/ˈmes.ɪdʒ/",
+    "headword": "message",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/message",
+    "kind": "dictionary-entry"
+  },
+  "reply": {
+    "us": "/rɪˈplaɪ/",
+    "uk": "/rɪˈplaɪ/",
+    "headword": "reply",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/reply",
+    "kind": "dictionary-entry"
+  },
+  "search": {
+    "us": "/sɝːtʃ/",
+    "uk": "/sɜːtʃ/",
+    "headword": "search",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/search",
+    "kind": "dictionary-entry"
+  },
+  "sneeze": {
+    "us": "/sniːz/",
+    "uk": "/sniːz/",
+    "headword": "sneeze",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sneeze",
+    "kind": "dictionary-entry"
+  },
+  "yawn": {
+    "us": "/jɑːn/",
+    "uk": "/jɔːn/",
+    "headword": "yawn",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/yawn",
+    "kind": "dictionary-entry"
+  },
+  "breath": {
+    "us": "/breθ/",
+    "uk": "/breθ/",
+    "headword": "breath",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/breath",
+    "kind": "dictionary-entry"
+  },
+  "breathe": {
+    "us": "/briːð/",
+    "uk": "/briːð/",
+    "headword": "breathe",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/breathe",
+    "kind": "dictionary-entry"
+  },
+  "heartbeat": {
+    "us": "/ˈhɑːrt.biːt/",
+    "uk": "/ˈhɑːt.biːt/",
+    "headword": "heartbeat",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/heartbeat",
+    "kind": "dictionary-entry"
+  },
+  "sore": {
+    "us": "/sɔːr/",
+    "uk": "/sɔːr/",
+    "headword": "sore",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sore",
+    "kind": "dictionary-entry"
+  },
+  "pain": {
+    "us": "/peɪn/",
+    "uk": "/peɪn/",
+    "headword": "pain",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pain",
+    "kind": "dictionary-entry"
+  },
+  "ache": {
+    "us": "/eɪk/",
+    "uk": "/eɪk/",
+    "headword": "ache",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ache",
+    "kind": "dictionary-entry"
+  },
+  "bandage": {
+    "us": "/ˈbæn.dɪdʒ/",
+    "uk": "/ˈbæn.dɪdʒ/",
+    "headword": "bandage",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bandage",
+    "kind": "dictionary-entry"
+  },
+  "plaster": {
+    "us": "/ˈplæs.tɚ/",
+    "uk": "/ˈplɑː.stər/",
+    "headword": "plaster",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/plaster",
+    "kind": "dictionary-entry"
+  },
+  "ankle": {
+    "us": "/ˈæŋ.kəl/",
+    "uk": "/ˈæŋ.kəl/",
+    "headword": "ankle",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ankle",
+    "kind": "dictionary-entry"
+  },
+  "elbow": {
+    "us": "/ˈel.boʊ/",
+    "uk": "/ˈel.bəʊ/",
+    "headword": "elbow",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/elbow",
+    "kind": "dictionary-entry"
+  },
+  "knee": {
+    "us": "/niː/",
+    "uk": "/niː/",
+    "headword": "knee",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/knee",
+    "kind": "dictionary-entry"
+  },
+  "shoulder": {
+    "us": "/ˈʃoʊl.dɚ/",
+    "uk": "/ˈʃəʊl.dər/",
+    "headword": "shoulder",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shoulder",
+    "kind": "dictionary-entry"
+  },
+  "neck": {
+    "us": "/nek/",
+    "uk": "/nek/",
+    "headword": "neck",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/neck",
+    "kind": "dictionary-entry"
+  },
+  "chin": {
+    "us": "/tʃɪn/",
+    "uk": "/tʃɪn/",
+    "headword": "chin",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chin",
+    "kind": "dictionary-entry"
+  },
+  "lip": {
+    "us": "/lɪp/",
+    "uk": "/lɪp/",
+    "headword": "lip",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lip",
+    "kind": "dictionary-entry"
+  },
+  "tongue": {
+    "us": "/tʌŋ/",
+    "uk": "/tʌŋ/",
+    "headword": "tongue",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tongue",
+    "kind": "dictionary-entry"
+  },
+  "thumb": {
+    "us": "/θʌm/",
+    "uk": "/θʌm/",
+    "headword": "thumb",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/thumb",
+    "kind": "dictionary-entry"
+  },
+  "wrist": {
+    "us": "/rɪst/",
+    "uk": "/rɪst/",
+    "headword": "wrist",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wrist",
+    "kind": "dictionary-entry"
+  },
+  "fitness": {
+    "us": "/ˈfɪt.nəs/",
+    "uk": "/ˈfɪt.nəs/",
+    "headword": "fitness",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fitness",
+    "kind": "dictionary-entry"
+  },
+  "energy": {
+    "us": "/ˈen.ɚ.dʒi/",
+    "uk": "/ˈen.ə.dʒi/",
+    "headword": "energy",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/energy",
+    "kind": "dictionary-entry"
+  },
+  "regular": {
+    "us": "/ˈreɡ.jə.lɚ/",
+    "uk": "/ˈreɡ.jə.lər/",
+    "headword": "regular",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/regular",
+    "kind": "dictionary-entry"
+  },
+  "awake": {
+    "us": "/əˈweɪk/",
+    "uk": "/əˈweɪk/",
+    "headword": "awake",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/awake",
+    "kind": "dictionary-entry"
+  },
+  "asleep": {
+    "us": "/əˈsliːp/",
+    "uk": "/əˈsliːp/",
+    "headword": "asleep",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/asleep",
+    "kind": "dictionary-entry"
+  },
+  "chew": {
+    "us": "/tʃuː/",
+    "uk": "/tʃuː/",
+    "headword": "chew",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chew",
+    "kind": "dictionary-entry"
+  },
+  "flavour": {
+    "us": "/ˈfleɪ.vɚ/",
+    "uk": "/ˈfleɪ.vər/",
+    "headword": "flavour",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flavour",
+    "kind": "dictionary-entry"
+  },
+  "recipe": {
+    "us": "/ˈres.ə.pi/",
+    "uk": "/ˈres.ɪ.pi/",
+    "headword": "recipe",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/recipe",
+    "kind": "dictionary-entry"
+  },
+  "ingredient": {
+    "us": "/ɪnˈɡriː.di.ənt/",
+    "uk": "/ɪnˈɡriː.di.ənt/",
+    "headword": "ingredient",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ingredient",
+    "kind": "dictionary-entry"
+  },
+  "porridge": {
+    "us": "/ˈpɔːr.ɪdʒ/",
+    "uk": "/ˈpɒr.ɪdʒ/",
+    "headword": "porridge",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/porridge",
+    "kind": "dictionary-entry"
+  },
+  "yoghurt": {
+    "us": "/ˈjoʊ.ɡɚt/",
+    "uk": "/ˈjɒɡ.ət/",
+    "headword": "yogurt",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/yoghurt",
+    "kind": "dictionary-entry"
+  },
+  "cereal": {
+    "us": "/ˈsɪr.i.əl/",
+    "uk": "/ˈsɪə.ri.əl/",
+    "headword": "cereal",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cereal",
+    "kind": "dictionary-entry"
+  },
+  "toast": {
+    "us": "/toʊst/",
+    "uk": "/təʊst/",
+    "headword": "toast",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/toast",
+    "kind": "dictionary-entry"
+  },
+  "jam": {
+    "us": "/dʒæm/",
+    "uk": "/dʒæm/",
+    "headword": "jam",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/jam",
+    "kind": "dictionary-entry"
+  },
+  "honey": {
+    "us": "/ˈhʌn.i/",
+    "uk": "/ˈhʌn.i/",
+    "headword": "honey",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/honey",
+    "kind": "dictionary-entry"
+  },
+  "sausage": {
+    "us": "/ˈsɑː.sɪdʒ/",
+    "uk": "/ˈsɒs.ɪdʒ/",
+    "headword": "sausage",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sausage",
+    "kind": "dictionary-entry"
+  },
+  "sandwich": {
+    "us": "/ˈsæn.wɪtʃ/",
+    "uk": "/ˈsæn.wɪdʒ/",
+    "headword": "sandwich",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sandwich",
+    "kind": "dictionary-entry"
+  },
+  "pancake": {
+    "us": "/ˈpæn.keɪk/",
+    "uk": "/ˈpæn.keɪk/",
+    "headword": "pancake",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pancake",
+    "kind": "dictionary-entry"
+  },
+  "biscuit": {
+    "us": "/ˈbɪs.kɪt/",
+    "uk": "/ˈbɪs.kɪt/",
+    "headword": "biscuit",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/biscuit",
+    "kind": "dictionary-entry"
+  },
+  "cookie": {
+    "us": "/ˈkʊk.i/",
+    "uk": "/ˈkʊk.i/",
+    "headword": "cookie",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cookie",
+    "kind": "dictionary-entry"
+  },
+  "cracker": {
+    "us": "/ˈkræk.ɚ/",
+    "uk": "/ˈkræk.ər/",
+    "headword": "cracker",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cracker",
+    "kind": "dictionary-entry"
+  },
+  "peanut": {
+    "us": "/ˈpiː.nʌt/",
+    "uk": "/ˈpiː.nʌt/",
+    "headword": "peanut",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/peanut",
+    "kind": "dictionary-entry"
+  },
+  "walnut": {
+    "us": "/ˈwɑːl.nʌt/",
+    "uk": "/ˈwɔːl.nʌt/",
+    "headword": "walnut",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/walnut",
+    "kind": "dictionary-entry"
+  },
+  "almond": {
+    "us": "/ˈɑːl.mənd/",
+    "uk": "/ˈɑː.mənd/",
+    "headword": "almond",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/almond",
+    "kind": "dictionary-entry"
+  },
+  "grape": {
+    "us": "/ɡreɪp/",
+    "uk": "/ɡreɪp/",
+    "headword": "grape",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/grape",
+    "kind": "dictionary-entry"
+  },
+  "orange": {
+    "us": "/ˈɔːr.ɪndʒ/",
+    "uk": "/ˈɒr.ɪndʒ/",
+    "headword": "orange",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/orange",
+    "kind": "dictionary-entry"
+  },
+  "banana": {
+    "us": "/bəˈnæn.ə/",
+    "uk": "/bəˈnɑː.nə/",
+    "headword": "banana",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/banana",
+    "kind": "dictionary-entry"
+  },
+  "lemon": {
+    "us": "/ˈlem.ən/",
+    "uk": "/ˈlem.ən/",
+    "headword": "lemon",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lemon",
+    "kind": "dictionary-entry"
+  },
+  "melon": {
+    "us": "/ˈmel.ən/",
+    "uk": "/ˈmel.ən/",
+    "headword": "melon",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/melon",
+    "kind": "dictionary-entry"
+  },
+  "strawberry": {
+    "us": "/ˈstrɑːˌber.i/",
+    "uk": "/ˈstrɔː.bər.i/",
+    "headword": "strawberry",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/strawberry",
+    "kind": "dictionary-entry"
+  },
+  "blueberry": {
+    "us": "/ˈbluːˌbər.i/",
+    "uk": "/ˈbluːˌbər.i/",
+    "headword": "blueberry",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/blueberry",
+    "kind": "dictionary-entry"
+  },
+  "stream": {
+    "us": "/striːm/",
+    "uk": "/striːm/",
+    "headword": "stream",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stream",
+    "kind": "dictionary-entry"
+  },
+  "valley": {
+    "us": "/ˈvæl.i/",
+    "uk": "/ˈvæl.i/",
+    "headword": "valley",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/valley",
+    "kind": "dictionary-entry"
+  },
+  "cliff": {
+    "us": "/klɪf/",
+    "uk": "/klɪf/",
+    "headword": "cliff",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cliff",
+    "kind": "dictionary-entry"
+  },
+  "cave": {
+    "us": "/keɪv/",
+    "uk": "/keɪv/",
+    "headword": "cave",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cave",
+    "kind": "dictionary-entry"
+  },
+  "rock": {
+    "us": "/rɑːk/",
+    "uk": "/rɒk/",
+    "headword": "rock",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rock",
+    "kind": "dictionary-entry"
+  },
+  "stone": {
+    "us": "/stoʊn/",
+    "uk": "/stəʊn/",
+    "headword": "stone",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stone",
+    "kind": "dictionary-entry"
+  },
+  "pebble": {
+    "us": "/ˈpeb.əl/",
+    "uk": "/ˈpeb.əl/",
+    "headword": "pebble",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pebble",
+    "kind": "dictionary-entry"
+  },
+  "pond": {
+    "us": "/pɑːnd/",
+    "uk": "/pɒnd/",
+    "headword": "pond",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pond",
+    "kind": "dictionary-entry"
+  },
+  "coast": {
+    "us": "/koʊst/",
+    "uk": "/kəʊst/",
+    "headword": "coast",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/coast",
+    "kind": "dictionary-entry"
+  },
+  "ocean": {
+    "us": "/ˈoʊ.ʃən/",
+    "uk": "/ˈəʊ.ʃən/",
+    "headword": "ocean",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ocean",
+    "kind": "dictionary-entry"
+  },
+  "field": {
+    "us": "/fiːld/",
+    "uk": "/fiːld/",
+    "headword": "field",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/field",
+    "kind": "dictionary-entry"
+  },
+  "meadow": {
+    "us": "/ˈmed.oʊ/",
+    "uk": "/ˈmed.əʊ/",
+    "headword": "meadow",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/meadow",
+    "kind": "dictionary-entry"
+  },
+  "wood": {
+    "us": "/wʊd/",
+    "uk": "/wʊd/",
+    "headword": "wood",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wood",
+    "kind": "dictionary-entry"
+  },
+  "log": {
+    "us": "/lɑːɡ/",
+    "uk": "/lɒɡ/",
+    "headword": "log",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/log",
+    "kind": "dictionary-entry"
+  },
+  "trail": {
+    "us": "/treɪl/",
+    "uk": "/treɪl/",
+    "headword": "trail",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/trail",
+    "kind": "dictionary-entry"
+  },
+  "view": {
+    "us": "/vjuː/",
+    "uk": "/vjuː/",
+    "headword": "view",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/view",
+    "kind": "dictionary-entry"
+  },
+  "scenery": {
+    "us": "/ˈsiː.nɚ.i/",
+    "uk": "/ˈsiː.nər.i/",
+    "headword": "scenery",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scenery",
+    "kind": "dictionary-entry"
+  },
+  "sunrise": {
+    "us": "/ˈsʌn.raɪz/",
+    "uk": "/ˈsʌn.raɪz/",
+    "headword": "sunrise",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sunrise",
+    "kind": "dictionary-entry"
+  },
+  "sunset": {
+    "us": "/ˈsʌn.set/",
+    "uk": "/ˈsʌn.set/",
+    "headword": "sunset",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sunset",
+    "kind": "dictionary-entry"
+  },
+  "dawn": {
+    "us": "/dɑːn/",
+    "uk": "/dɔːn/",
+    "headword": "dawn",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dawn",
+    "kind": "dictionary-entry"
+  },
+  "dusk": {
+    "us": "/dʌsk/",
+    "uk": "/dʌsk/",
+    "headword": "dusk",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dusk",
+    "kind": "dictionary-entry"
+  },
+  "mist": {
+    "us": "/mɪst/",
+    "uk": "/mɪst/",
+    "headword": "mist",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mist",
+    "kind": "dictionary-entry"
+  },
+  "breeze": {
+    "us": "/briːz/",
+    "uk": "/briːz/",
+    "headword": "breeze",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/breeze",
+    "kind": "dictionary-entry"
+  },
+  "shelter": {
+    "us": "/ˈʃel.t̬ɚ/",
+    "uk": "/ˈʃel.tər/",
+    "headword": "shelter",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shelter",
+    "kind": "dictionary-entry"
+  },
+  "obey": {
+    "us": "/oʊˈbeɪ/",
+    "uk": "/əʊˈbeɪ/",
+    "headword": "obey",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/obey",
+    "kind": "dictionary-entry"
+  },
+  "allow": {
+    "us": "/əˈlaʊ/",
+    "uk": "/əˈlaʊ/",
+    "headword": "allow",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/allow",
+    "kind": "dictionary-entry"
+  },
+  "refuse": {
+    "us": "/rɪˈfjuːz/",
+    "uk": "/rɪˈfjuːz/",
+    "headword": "refuse",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/refuse",
+    "kind": "dictionary-entry"
+  },
+  "enter": {
+    "us": "/ˈen.t̬ɚ/",
+    "uk": "/ˈen.tər/",
+    "headword": "enter",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/enter",
+    "kind": "dictionary-entry"
+  },
+  "leave": {
+    "us": "/liːv/",
+    "uk": "/liːv/",
+    "headword": "leave",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/leave",
+    "kind": "dictionary-entry"
+  },
+  "touch": {
+    "us": "/tʌtʃ/",
+    "uk": "/tʌtʃ/",
+    "headword": "touch",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/touch",
+    "kind": "dictionary-entry"
+  },
+  "push": {
+    "us": "/pʊʃ/",
+    "uk": "/pʊʃ/",
+    "headword": "push",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/push",
+    "kind": "dictionary-entry"
+  },
+  "lock": {
+    "us": "/lɑːk/",
+    "uk": "/lɒk/",
+    "headword": "lock",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lock",
+    "kind": "dictionary-entry"
+  },
+  "unlock": {
+    "us": "/ʌnˈlɑːk/",
+    "uk": "/ʌnˈlɒk/",
+    "headword": "unlock",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/unlock",
+    "kind": "dictionary-entry"
+  },
+  "switch": {
+    "us": "/swɪtʃ/",
+    "uk": "/swɪtʃ/",
+    "headword": "switch",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/switch",
+    "kind": "dictionary-entry"
+  },
+  "press": {
+    "us": "/pres/",
+    "uk": "/pres/",
+    "headword": "press",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/press",
+    "kind": "dictionary-entry"
+  },
+  "click": {
+    "us": "/klɪk/",
+    "uk": "/klɪk/",
+    "headword": "click",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/click",
+    "kind": "dictionary-entry"
+  },
+  "type": {
+    "us": "/taɪp/",
+    "uk": "/taɪp/",
+    "headword": "type",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/type",
+    "kind": "dictionary-entry"
+  },
+  "print": {
+    "us": "/prɪnt/",
+    "uk": "/prɪnt/",
+    "headword": "print",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/print",
+    "kind": "dictionary-entry"
+  },
+  "scan": {
+    "us": "/skæn/",
+    "uk": "/skæn/",
+    "headword": "scan",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scan",
+    "kind": "dictionary-entry"
+  },
+  "delete": {
+    "us": "/dɪˈliːt/",
+    "uk": "/dɪˈliːt/",
+    "headword": "delete",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/delete",
+    "kind": "dictionary-entry"
+  },
+  "upload": {
+    "us": "/ʌpˈloʊd/",
+    "uk": "/ʌpˈləʊd/",
+    "headword": "upload",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/upload",
+    "kind": "dictionary-entry"
+  },
+  "download": {
+    "us": "/ˈdaʊn.loʊd/",
+    "uk": "/ˌdaʊnˈləʊd/",
+    "headword": "download",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/download",
+    "kind": "dictionary-entry"
+  },
+  "attach": {
+    "us": "/əˈtætʃ/",
+    "uk": "/əˈtætʃ/",
+    "headword": "attach",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/attach",
+    "kind": "dictionary-entry"
+  },
+  "file": {
+    "us": "/faɪl/",
+    "uk": "/faɪl/",
+    "headword": "file",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/file",
+    "kind": "dictionary-entry"
+  },
+  "document": {
+    "us": "/ˈdɑː.kjə.mənt/",
+    "uk": "/ˈdɒk.jə.mənt/",
+    "headword": "document",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/document",
+    "kind": "dictionary-entry"
+  },
+  "icon": {
+    "us": "/ˈaɪ.kɑːn/",
+    "uk": "/ˈaɪ.kɒn/",
+    "headword": "icon",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/icon",
+    "kind": "dictionary-entry"
+  },
+  "volume": {
+    "us": "/ˈvɑːl.juːm/",
+    "uk": "/ˈvɒl.juːm/",
+    "headword": "volume",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/volume",
+    "kind": "dictionary-entry"
+  },
+  "silent": {
+    "us": "/ˈsaɪ.lənt/",
+    "uk": "/ˈsaɪ.lənt/",
+    "headword": "silent",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/silent",
+    "kind": "dictionary-entry"
+  },
+  "gently": {
+    "us": "/ˈdʒent.li/",
+    "uk": "/ˈdʒent.li/",
+    "headword": "gently",
+    "pos": "adverb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gently",
+    "kind": "dictionary-entry"
+  },
+  "careful": {
+    "us": "/ˈker.fəl/",
+    "uk": "/ˈkeə.fəl/",
+    "headword": "careful",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/careful",
+    "kind": "dictionary-entry"
+  },
+  "rude": {
+    "us": "/ruːd/",
+    "uk": "/ruːd/",
+    "headword": "rude",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rude",
+    "kind": "dictionary-entry"
+  },
+  "avoid": {
+    "us": "/əˈvɔɪd/",
+    "uk": "/əˈvɔɪd/",
+    "headword": "avoid",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/avoid",
+    "kind": "dictionary-entry"
+  },
+  "prevent": {
+    "us": "/prɪˈvent/",
+    "uk": "/prɪˈvent/",
+    "headword": "prevent",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/prevent",
+    "kind": "dictionary-entry"
+  },
+  "limit": {
+    "us": "/ˈlɪm.ɪt/",
+    "uk": "/ˈlɪm.ɪt/",
+    "headword": "limit",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/limit",
+    "kind": "dictionary-entry"
+  },
+  "warning": {
+    "us": "/ˈwɔːr.nɪŋ/",
+    "uk": "/ˈwɔː.nɪŋ/",
+    "headword": "warning",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/warning",
+    "kind": "dictionary-entry"
+  },
+  "attention": {
+    "us": "/əˈten.ʃən/",
+    "uk": "/əˈten.ʃən/",
+    "headword": "attention",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/attention",
+    "kind": "dictionary-entry"
+  },
+  "public": {
+    "us": "/ˈpʌb.lɪk/",
+    "uk": "/ˈpʌb.lɪk/",
+    "headword": "public",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/public",
+    "kind": "dictionary-entry"
+  },
+  "private": {
+    "us": "/ˈpraɪ.vət/",
+    "uk": "/ˈpraɪ.vət/",
+    "headword": "private",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/private",
+    "kind": "dictionary-entry"
+  },
+  "bank": {
+    "us": "/bæŋk/",
+    "uk": "/bæŋk/",
+    "headword": "bank",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bank",
+    "kind": "dictionary-entry"
+  },
+  "museum": {
+    "us": "/mjuːˈziː.əm/",
+    "uk": "/mjuːˈziː.əm/",
+    "headword": "museum",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/museum",
+    "kind": "dictionary-entry"
+  },
+  "restaurant": {
+    "us": "/ˈres.tə.rɑːnt/",
+    "uk": "/ˈres.tər.ɒnt/",
+    "headword": "restaurant",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/restaurant",
+    "kind": "dictionary-entry"
+  },
+  "cafe": {
+    "us": "/kæfˈeɪ/",
+    "uk": "/ˈkæf.eɪ/",
+    "headword": "café",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cafe",
+    "kind": "dictionary-entry"
+  },
+  "market": {
+    "us": "/ˈmɑːr.kɪt/",
+    "uk": "/ˈmɑː.kɪt/",
+    "headword": "market",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/market",
+    "kind": "dictionary-entry"
+  },
+  "bookshop": {
+    "us": "/ˈbʊk.ʃɑːp/",
+    "uk": "/ˈbʊk.ʃɒp/",
+    "headword": "bookshop",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bookshop",
+    "kind": "dictionary-entry"
+  },
+  "mall": {
+    "us": "/mɑːl/",
+    "uk": "/mɔːl/",
+    "headword": "mall",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mall",
+    "kind": "dictionary-entry"
+  },
+  "clinic": {
+    "us": "/ˈklɪn.ɪk/",
+    "uk": "/ˈklɪn.ɪk/",
+    "headword": "clinic",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/clinic",
+    "kind": "dictionary-entry"
+  },
+  "stadium": {
+    "us": "/ˈsteɪ.di.əm/",
+    "uk": "/ˈsteɪ.di.əm/",
+    "headword": "stadium",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stadium",
+    "kind": "dictionary-entry"
+  },
+  "theatre": {
+    "us": "/ˈθiː.ə.t̬ɚ/",
+    "uk": "/ˈθɪə.tər/",
+    "headword": "theatre",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/theatre",
+    "kind": "dictionary-entry"
+  },
+  "gallery": {
+    "us": "/ˈɡæl.ɚ.i/",
+    "uk": "/ˈɡæl.ər.i/",
+    "headword": "gallery",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gallery",
+    "kind": "dictionary-entry"
+  },
+  "zoo": {
+    "us": "/zuː/",
+    "uk": "/zuː/",
+    "headword": "zoo",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/zoo",
+    "kind": "dictionary-entry"
+  },
+  "aquarium": {
+    "us": "/əˈkwer.i.əm/",
+    "uk": "/əˈkweə.ri.əm/",
+    "headword": "aquarium",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/aquarium",
+    "kind": "dictionary-entry"
+  },
+  "factory": {
+    "us": "/ˈfæk.tɚ.i/",
+    "uk": "/ˈfæk.tər.i/",
+    "headword": "factory",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/factory",
+    "kind": "dictionary-entry"
+  },
+  "warehouse": {
+    "us": "/ˈwer.haʊs/",
+    "uk": "/ˈweə.haʊs/",
+    "headword": "warehouse",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/warehouse",
+    "kind": "dictionary-entry"
+  },
+  "garage": {
+    "us": "/ɡəˈrɑːʒ/",
+    "uk": "/ˈɡær.ɑːʒ/",
+    "headword": "garage",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/garage",
+    "kind": "dictionary-entry"
+  },
+  "carpenter": {
+    "us": "/ˈkɑːr.pɪn.t̬ɚ/",
+    "uk": "/ˈkɑː.pɪn.tər/",
+    "headword": "carpenter",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/carpenter",
+    "kind": "dictionary-entry"
+  },
+  "plumber": {
+    "us": "/ˈplʌm.ɚ/",
+    "uk": "/ˈplʌm.ər/",
+    "headword": "plumber",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/plumber",
+    "kind": "dictionary-entry"
+  },
+  "electrician": {
+    "us": "/ɪˌlekˈtrɪʃ.ən/",
+    "uk": "/ˌel.ɪkˈtrɪʃ.ən/",
+    "headword": "electrician",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/electrician",
+    "kind": "dictionary-entry"
+  },
+  "engineer": {
+    "us": "/ˌen.dʒɪˈnɪr/",
+    "uk": "/ˌen.dʒɪˈnɪər/",
+    "headword": "engineer",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/engineer",
+    "kind": "dictionary-entry"
+  },
+  "builder": {
+    "us": "/ˈbɪl.dɚ/",
+    "uk": "/ˈbɪl.dər/",
+    "headword": "builder",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/builder",
+    "kind": "dictionary-entry"
+  },
+  "gardener": {
+    "us": "/ˈɡɑːr.dən.ɚ/",
+    "uk": "/ˈɡɑː.dən.ər/",
+    "headword": "gardener",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gardener",
+    "kind": "dictionary-entry"
+  },
+  "receptionist": {
+    "us": "/rɪˈsep.ʃən.ɪst/",
+    "uk": "/rɪˈsep.ʃən.ɪst/",
+    "headword": "receptionist",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/receptionist",
+    "kind": "dictionary-entry"
+  },
+  "barber": {
+    "us": "/ˈbɑːr.bɚ/",
+    "uk": "/ˈbɑː.bər/",
+    "headword": "barber",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/barber",
+    "kind": "dictionary-entry"
+  },
+  "reporter": {
+    "us": "/rɪˈpɔːr.t̬ɚ/",
+    "uk": "/rɪˈpɔː.tər/",
+    "headword": "reporter",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/reporter",
+    "kind": "dictionary-entry"
+  },
+  "lifeguard": {
+    "us": "/ˈlaɪf.ɡɑːrd/",
+    "uk": "/ˈlaɪf.ɡɑːd/",
+    "headword": "lifeguard",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lifeguard",
+    "kind": "dictionary-entry"
+  },
+  "crosswalk": {
+    "us": "/ˈkrɑːs.wɑːk/",
+    "uk": "/ˈkrɒs.wɔːk/",
+    "headword": "crosswalk",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/crosswalk",
+    "kind": "dictionary-entry"
+  },
+  "pavement": {
+    "us": "/ˈpeɪv.mənt/",
+    "uk": "/ˈpeɪv.mənt/",
+    "headword": "pavement",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pavement",
+    "kind": "dictionary-entry"
+  },
+  "roundabout": {
+    "us": "/ˈraʊnd.ə.baʊt/",
+    "uk": "/ˈraʊnd.ə.baʊt/",
+    "headword": "roundabout",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/roundabout",
+    "kind": "dictionary-entry"
+  },
+  "avenue": {
+    "us": "/ˈæv.ə.nuː/",
+    "uk": "/ˈæv.ə.njuː/",
+    "headword": "avenue",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/avenue",
+    "kind": "dictionary-entry"
+  },
+  "alley": {
+    "us": "/ˈæl.i/",
+    "uk": "/ˈæl.i/",
+    "headword": "alley",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/alley",
+    "kind": "dictionary-entry"
+  },
+  "district": {
+    "us": "/ˈdɪs.trɪkt/",
+    "uk": "/ˈdɪs.trɪkt/",
+    "headword": "district",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/district",
+    "kind": "dictionary-entry"
+  },
+  "festival": {
+    "us": "/ˈfes.tə.vəl/",
+    "uk": "/ˈfes.tɪ.vəl/",
+    "headword": "festival",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/festival",
+    "kind": "dictionary-entry"
+  },
+  "tradition": {
+    "us": "/trəˈdɪʃ.ən/",
+    "uk": "/trəˈdɪʃ.ən/",
+    "headword": "tradition",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tradition",
+    "kind": "dictionary-entry"
+  },
+  "traditional": {
+    "us": "/trəˈdɪʃ.ən.əl/",
+    "uk": "/trəˈdɪʃ.ən.əl/",
+    "headword": "traditional",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/traditional",
+    "kind": "dictionary-entry"
+  },
+  "lantern": {
+    "us": "/ˈlæn.tɚn/",
+    "uk": "/ˈlæn.tən/",
+    "headword": "lantern",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lantern",
+    "kind": "dictionary-entry"
+  },
+  "firework": {
+    "us": "/ˈfaɪr.wɝːk/",
+    "uk": "/ˈfaɪə.wɜːk/",
+    "headword": "firework",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/firework",
+    "kind": "dictionary-entry"
+  },
+  "parade": {
+    "us": "/pəˈreɪd/",
+    "uk": "/pəˈreɪd/",
+    "headword": "parade",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/parade",
+    "kind": "dictionary-entry"
+  },
+  "costume": {
+    "us": "/ˈkɑː.stuːm/",
+    "uk": "/ˈkɒs.tʃuːm/",
+    "headword": "costume",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/costume",
+    "kind": "dictionary-entry"
+  },
+  "dragon": {
+    "us": "/ˈdræɡ.ən/",
+    "uk": "/ˈdræɡ.ən/",
+    "headword": "dragon",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dragon",
+    "kind": "dictionary-entry"
+  },
+  "lunar": {
+    "us": "/ˈluː.nɚ/",
+    "uk": "/ˈluː.nər/",
+    "headword": "lunar",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lunar",
+    "kind": "dictionary-entry"
+  },
+  "solar": {
+    "us": "/ˈsoʊ.lɚ/",
+    "uk": "/ˈsəʊ.lər/",
+    "headword": "solar",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/solar",
+    "kind": "dictionary-entry"
+  },
+  "birthday": {
+    "us": "/ˈbɝːθ.deɪ/",
+    "uk": "/ˈbɜːθ.deɪ/",
+    "headword": "birthday",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/birthday",
+    "kind": "dictionary-entry"
+  },
+  "invitation": {
+    "us": "/ˌɪn.vəˈteɪ.ʃən/",
+    "uk": "/ˌɪn.vɪˈteɪ.ʃən/",
+    "headword": "invitation",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/invitation",
+    "kind": "dictionary-entry"
+  },
+  "guest": {
+    "us": "/ɡest/",
+    "uk": "/ɡest/",
+    "headword": "guest",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/guest",
+    "kind": "dictionary-entry"
+  },
+  "host": {
+    "us": "/hoʊst/",
+    "uk": "/həʊst/",
+    "headword": "host",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/host",
+    "kind": "dictionary-entry"
+  },
+  "greeting": {
+    "us": "/ˈɡriː.t̬ɪŋ/",
+    "uk": "/ˈɡriː.tɪŋ/",
+    "headword": "greeting",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/greeting",
+    "kind": "dictionary-entry"
+  },
+  "greet": {
+    "us": "/ɡriːt/",
+    "uk": "/ɡriːt/",
+    "headword": "greet",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/greet",
+    "kind": "dictionary-entry"
+  },
+  "decoration": {
+    "us": "/ˌdek.ərˈeɪ.ʃən/",
+    "uk": "/ˌdek.əˈreɪ.ʃən/",
+    "headword": "decoration",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/decoration",
+    "kind": "dictionary-entry"
+  },
+  "decorate": {
+    "us": "/ˈdek.ər.eɪt/",
+    "uk": "/ˈdek.ə.reɪt/",
+    "headword": "decorate",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/decorate",
+    "kind": "dictionary-entry"
+  },
+  "candle": {
+    "us": "/ˈkæn.dəl/",
+    "uk": "/ˈkæn.dəl/",
+    "headword": "candle",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/candle",
+    "kind": "dictionary-entry"
+  },
+  "balloon": {
+    "us": "/bəˈluːn/",
+    "uk": "/bəˈluːn/",
+    "headword": "balloon",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/balloon",
+    "kind": "dictionary-entry"
+  },
+  "confetti": {
+    "us": "/kənˈfet̬.i/",
+    "uk": "/kənˈfet.i/",
+    "headword": "confetti",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/confetti",
+    "kind": "dictionary-entry"
+  },
+  "seasonal": {
+    "us": "/ˈsiː.zən.əl/",
+    "uk": "/ˈsiː.zən.əl/",
+    "headword": "seasonal",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/seasonal",
+    "kind": "dictionary-entry"
+  },
+  "icy": {
+    "us": "/ˈaɪ.si/",
+    "uk": "/ˈaɪ.si/",
+    "headword": "icy",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/icy",
+    "kind": "dictionary-entry"
+  },
+  "frozen": {
+    "us": "/ˈfroʊ.zən/",
+    "uk": "/ˈfrəʊ.zən/",
+    "headword": "frozen",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/frozen",
+    "kind": "dictionary-entry"
+  },
+  "snowflake": {
+    "us": "/ˈsnoʊ.fleɪk/",
+    "uk": "/ˈsnəʊ.fleɪk/",
+    "headword": "snowflake",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/snowflake",
+    "kind": "dictionary-entry"
+  },
+  "snowball": {
+    "us": "/ˈsnoʊ.bɑːl/",
+    "uk": "/ˈsnəʊ.bɔːl/",
+    "headword": "snowball",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/snowball",
+    "kind": "dictionary-entry"
+  },
+  "sledge": {
+    "us": "/sledʒ/",
+    "uk": "/sledʒ/",
+    "headword": "sledge",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sledge",
+    "kind": "dictionary-entry"
+  },
+  "ski": {
+    "us": "/skiː/",
+    "uk": "/skiː/",
+    "headword": "ski",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ski",
+    "kind": "dictionary-entry"
+  },
+  "snowboard": {
+    "us": "/ˈsnoʊ.bɔːrd/",
+    "uk": "/ˈsnəʊ.bɔːd/",
+    "headword": "snowboard",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/snowboard",
+    "kind": "dictionary-entry"
+  },
+  "suncream": {
+    "us": "/ˈsʌn ˌkriːm/",
+    "uk": "/ˈsʌn ˌkriːm/",
+    "headword": "sun cream",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/suncream",
+    "kind": "dictionary-entry"
+  },
+  "swimsuit": {
+    "us": "/ˈswɪm.suːt/",
+    "uk": "/ˈswɪm.suːt/",
+    "headword": "swimsuit",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/swimsuit",
+    "kind": "dictionary-entry"
+  },
+  "sandcastle": {
+    "us": "/ˈsændˌkæs.əl/",
+    "uk": "/ˈsændˌkɑː.səl/",
+    "headword": "sandcastle",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sandcastle",
+    "kind": "dictionary-entry"
+  },
+  "shell": {
+    "us": "/ʃel/",
+    "uk": "/ʃel/",
+    "headword": "shell",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shell",
+    "kind": "dictionary-entry"
+  },
+  "tide": {
+    "us": "/taɪd/",
+    "uk": "/taɪd/",
+    "headword": "tide",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tide",
+    "kind": "dictionary-entry"
+  },
+  "village": {
+    "us": "/ˈvɪl.ɪdʒ/",
+    "uk": "/ˈvɪl.ɪdʒ/",
+    "headword": "village",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/village",
+    "kind": "dictionary-entry"
+  },
+  "town": {
+    "us": "/taʊn/",
+    "uk": "/taʊn/",
+    "headword": "town",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/town",
+    "kind": "dictionary-entry"
+  },
+  "province": {
+    "us": "/ˈprɑː.vɪns/",
+    "uk": "/ˈprɒv.ɪns/",
+    "headword": "province",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/province",
+    "kind": "dictionary-entry"
+  },
+  "region": {
+    "us": "/ˈriː.dʒən/",
+    "uk": "/ˈriː.dʒən/",
+    "headword": "region",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/region",
+    "kind": "dictionary-entry"
+  },
+  "area": {
+    "us": "/ˈer.i.ə/",
+    "uk": "/ˈeə.ri.ə/",
+    "headword": "area",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/area",
+    "kind": "dictionary-entry"
+  },
+  "population": {
+    "us": "/ˌpɑː.pjəˈleɪ.ʃən/",
+    "uk": "/ˌpɒp.jəˈleɪ.ʃən/",
+    "headword": "population",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/population",
+    "kind": "dictionary-entry"
+  },
+  "language": {
+    "us": "/ˈlæŋ.ɡwɪdʒ/",
+    "uk": "/ˈlæŋ.ɡwɪdʒ/",
+    "headword": "language",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/language",
+    "kind": "dictionary-entry"
+  },
+  "custom": {
+    "us": "/ˈkʌs.təm/",
+    "uk": "/ˈkʌs.təm/",
+    "headword": "custom",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/custom",
+    "kind": "dictionary-entry"
+  },
+  "ancient": {
+    "us": "/ˈeɪn.ʃənt/",
+    "uk": "/ˈeɪn.ʃənt/",
+    "headword": "ancient",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ancient",
+    "kind": "dictionary-entry"
+  },
+  "modern": {
+    "us": "/ˈmɑː.dɚn/",
+    "uk": "/ˈmɒd.ən/",
+    "headword": "modern",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/modern",
+    "kind": "dictionary-entry"
+  },
+  "historic": {
+    "us": "/hɪˈstɔːr.ɪk/",
+    "uk": "/hɪˈstɒr.ɪk/",
+    "headword": "historic",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/historic",
+    "kind": "dictionary-entry"
+  },
+  "castle": {
+    "us": "/ˈkæs.əl/",
+    "uk": "/ˈkɑː.səl/",
+    "headword": "castle",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/castle",
+    "kind": "dictionary-entry"
+  },
+  "palace": {
+    "us": "/ˈpæl.ɪs/",
+    "uk": "/ˈpæl.ɪs/",
+    "headword": "palace",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/palace",
+    "kind": "dictionary-entry"
+  },
+  "temple": {
+    "us": "/ˈtem.pəl/",
+    "uk": "/ˈtem.pəl/",
+    "headword": "temple",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/temple",
+    "kind": "dictionary-entry"
+  },
+  "tower": {
+    "us": "/ˈtaʊ.ɚ/",
+    "uk": "/taʊər/",
+    "headword": "tower",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tower",
+    "kind": "dictionary-entry"
+  },
+  "statue": {
+    "us": "/ˈstætʃ.uː/",
+    "uk": "/ˈstætʃ.uː/",
+    "headword": "statue",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/statue",
+    "kind": "dictionary-entry"
+  },
+  "monument": {
+    "us": "/ˈmɑːn.jə.mənt/",
+    "uk": "/ˈmɒn.jə.mənt/",
+    "headword": "monument",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/monument",
+    "kind": "dictionary-entry"
+  },
+  "roof": {
+    "us": "/ruːf/",
+    "uk": "/ruːf/",
+    "headword": "roof",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/roof",
+    "kind": "dictionary-entry"
+  },
+  "brick": {
+    "us": "/brɪk/",
+    "uk": "/brɪk/",
+    "headword": "brick",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/brick",
+    "kind": "dictionary-entry"
+  },
+  "tile": {
+    "us": "/taɪl/",
+    "uk": "/taɪl/",
+    "headword": "tile",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tile",
+    "kind": "dictionary-entry"
+  },
+  "courtyard": {
+    "us": "/ˈkɔːrt.jɑːrd/",
+    "uk": "/ˈkɔːt.jɑːd/",
+    "headword": "courtyard",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/courtyard",
+    "kind": "dictionary-entry"
+  },
+  "fountain": {
+    "us": "/ˈfaʊn.tən/",
+    "uk": "/ˈfaʊn.tɪn/",
+    "headword": "fountain",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fountain",
+    "kind": "dictionary-entry"
+  },
+  "arch": {
+    "us": "/ɑːrtʃ/",
+    "uk": "/ɑːtʃ/",
+    "headword": "arch",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/arch",
+    "kind": "dictionary-entry"
+  },
+  "symbol": {
+    "us": "/ˈsɪm.bəl/",
+    "uk": "/ˈsɪm.bəl/",
+    "headword": "symbol",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/symbol",
+    "kind": "dictionary-entry"
+  },
+  "pattern": {
+    "us": "/ˈpæt̬.ɚn/",
+    "uk": "/ˈpæt.ən/",
+    "headword": "pattern",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pattern",
+    "kind": "dictionary-entry"
+  },
+  "design": {
+    "us": "/dɪˈzaɪn/",
+    "uk": "/dɪˈzaɪn/",
+    "headword": "design",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/design",
+    "kind": "dictionary-entry"
+  },
+  "silk": {
+    "us": "/sɪlk/",
+    "uk": "/sɪlk/",
+    "headword": "silk",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/silk",
+    "kind": "dictionary-entry"
+  },
+  "bamboo": {
+    "us": "/bæmˈbuː/",
+    "uk": "/bæmˈbuː/",
+    "headword": "bamboo",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bamboo",
+    "kind": "dictionary-entry"
+  },
+  "porcelain": {
+    "us": "/ˈpɔːr.səl.ɪn/",
+    "uk": "/ˈpɔː.səl.ɪn/",
+    "headword": "porcelain",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/porcelain",
+    "kind": "dictionary-entry"
+  },
+  "pottery": {
+    "us": "/ˈpɑː.t̬ɚ.i/",
+    "uk": "/ˈpɒt.ər.i/",
+    "headword": "pottery",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pottery",
+    "kind": "dictionary-entry"
+  },
+  "folk": {
+    "us": "/foʊk/",
+    "uk": "/fəʊk/",
+    "headword": "folk",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/folk",
+    "kind": "dictionary-entry"
+  },
+  "legend": {
+    "us": "/ˈledʒ.ənd/",
+    "uk": "/ˈledʒ.ənd/",
+    "headword": "legend",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/legend",
+    "kind": "dictionary-entry"
+  },
+  "airport": {
+    "us": "/ˈer.pɔːrt/",
+    "uk": "/ˈeə.pɔːt/",
+    "headword": "airport",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/airport",
+    "kind": "dictionary-entry"
+  },
+  "platform": {
+    "us": "/ˈplæt.fɔːrm/",
+    "uk": "/ˈplæt.fɔːm/",
+    "headword": "platform",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/platform",
+    "kind": "dictionary-entry"
+  },
+  "passenger": {
+    "us": "/ˈpæs.ən.dʒɚ/",
+    "uk": "/ˈpæs.ən.dʒər/",
+    "headword": "passenger",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/passenger",
+    "kind": "dictionary-entry"
+  },
+  "luggage": {
+    "us": "/ˈlʌɡ.ɪdʒ/",
+    "uk": "/ˈlʌɡ.ɪdʒ/",
+    "headword": "luggage",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/luggage",
+    "kind": "dictionary-entry"
+  },
+  "suitcase": {
+    "us": "/ˈsuːt.keɪs/",
+    "uk": "/ˈsuːt.keɪs/",
+    "headword": "suitcase",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/suitcase",
+    "kind": "dictionary-entry"
+  },
+  "passport": {
+    "us": "/ˈpæs.pɔːrt/",
+    "uk": "/ˈpɑːs.pɔːt/",
+    "headword": "passport",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/passport",
+    "kind": "dictionary-entry"
+  },
+  "flight": {
+    "us": "/flaɪt/",
+    "uk": "/flaɪt/",
+    "headword": "flight",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flight",
+    "kind": "dictionary-entry"
+  },
+  "ferry": {
+    "us": "/ˈfer.i/",
+    "uk": "/ˈfer.i/",
+    "headword": "ferry",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ferry",
+    "kind": "dictionary-entry"
+  },
+  "tram": {
+    "us": "/træm/",
+    "uk": "/træm/",
+    "headword": "tram",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tram",
+    "kind": "dictionary-entry"
+  },
+  "motorbike": {
+    "us": "/ˈmoʊ.t̬ɚ.baɪk/",
+    "uk": "/ˈməʊ.tə.baɪk/",
+    "headword": "motorbike",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/motorbike",
+    "kind": "dictionary-entry"
+  },
+  "scooter": {
+    "us": "/ˈskuː.t̬ɚ/",
+    "uk": "/ˈskuː.tər/",
+    "headword": "scooter",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scooter",
+    "kind": "dictionary-entry"
+  },
+  "van": {
+    "us": "/væn/",
+    "uk": "/væn/",
+    "headword": "van",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/van",
+    "kind": "dictionary-entry"
+  },
+  "truck": {
+    "us": "/trʌk/",
+    "uk": "/trʌk/",
+    "headword": "truck",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/truck",
+    "kind": "dictionary-entry"
+  },
+  "ambulance": {
+    "us": "/ˈæm.bjə.ləns/",
+    "uk": "/ˈæm.bjə.ləns/",
+    "headword": "ambulance",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ambulance",
+    "kind": "dictionary-entry"
+  },
+  "helicopter": {
+    "us": "/ˈhel.əˌkɑːp.tɚ/",
+    "uk": "/ˈhel.ɪˌkɒp.tər/",
+    "headword": "helicopter",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/helicopter",
+    "kind": "dictionary-entry"
+  },
+  "rocket": {
+    "us": "/ˈrɑː.kɪt/",
+    "uk": "/ˈrɒk.ɪt/",
+    "headword": "rocket",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rocket",
+    "kind": "dictionary-entry"
+  },
+  "wheel": {
+    "us": "/wiːl/",
+    "uk": "/wiːl/",
+    "headword": "wheel",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wheel",
+    "kind": "dictionary-entry"
+  },
+  "engine": {
+    "us": "/ˈen.dʒɪn/",
+    "uk": "/ˈen.dʒɪn/",
+    "headword": "engine",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/engine",
+    "kind": "dictionary-entry"
+  },
+  "pedal": {
+    "us": "/ˈped.əl/",
+    "uk": "/ˈped.əl/",
+    "headword": "pedal",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pedal",
+    "kind": "dictionary-entry"
+  },
+  "brake": {
+    "us": "/breɪk/",
+    "uk": "/breɪk/",
+    "headword": "brake",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/brake",
+    "kind": "dictionary-entry"
+  },
+  "belt": {
+    "us": "/belt/",
+    "uk": "/belt/",
+    "headword": "belt",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/belt",
+    "kind": "dictionary-entry"
+  },
+  "safety": {
+    "us": "/ˈseɪf.ti/",
+    "uk": "/ˈseɪf.ti/",
+    "headword": "safety",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/safety",
+    "kind": "dictionary-entry"
+  },
+  "speed": {
+    "us": "/spiːd/",
+    "uk": "/spiːd/",
+    "headword": "speed",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/speed",
+    "kind": "dictionary-entry"
+  },
+  "distance": {
+    "us": "/ˈdɪs.təns/",
+    "uk": "/ˈdɪs.təns/",
+    "headword": "distance",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/distance",
+    "kind": "dictionary-entry"
+  },
+  "route": {
+    "us": "/ruːt/",
+    "uk": "/ruːt/",
+    "headword": "route",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/route",
+    "kind": "dictionary-entry"
+  },
+  "direction": {
+    "us": "/dɪˈrek.ʃən/",
+    "uk": "/daɪˈrek.ʃən/",
+    "headword": "direction",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/direction",
+    "kind": "dictionary-entry"
+  },
+  "compass": {
+    "us": "/ˈkʌm.pəs/",
+    "uk": "/ˈkʌm.pəs/",
+    "headword": "compass",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/compass",
+    "kind": "dictionary-entry"
+  },
+  "north": {
+    "us": "/nɔːrθ/",
+    "uk": "/nɔːθ/",
+    "headword": "north",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/north",
+    "kind": "dictionary-entry"
+  },
+  "south": {
+    "us": "/saʊθ/",
+    "uk": "/saʊθ/",
+    "headword": "south",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/south",
+    "kind": "dictionary-entry"
+  },
+  "east": {
+    "us": "/iːst/",
+    "uk": "/iːst/",
+    "headword": "east",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/east",
+    "kind": "dictionary-entry"
+  },
+  "seatbelt": {
+    "us": "/ˈsiːt ˌbelt/",
+    "uk": "/ˈsiːt ˌbelt/",
+    "headword": "seat belt",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/seatbelt",
+    "kind": "dictionary-entry"
+  },
+  "delay": {
+    "us": "/dɪˈleɪ/",
+    "uk": "/dɪˈleɪ/",
+    "headword": "delay",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/delay",
+    "kind": "dictionary-entry"
+  },
+  "departure": {
+    "us": "/dɪˈpɑːr.tʃɚ/",
+    "uk": "/dɪˈpɑː.tʃər/",
+    "headword": "departure",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/departure",
+    "kind": "dictionary-entry"
+  },
+  "arrival": {
+    "us": "/əˈraɪ.vəl/",
+    "uk": "/əˈraɪ.vəl/",
+    "headword": "arrival",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/arrival",
+    "kind": "dictionary-entry"
+  },
+  "destination": {
+    "us": "/ˌdes.təˈneɪ.ʃən/",
+    "uk": "/ˌdes.tɪˈneɪ.ʃən/",
+    "headword": "destination",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/destination",
+    "kind": "dictionary-entry"
+  },
+  "guide": {
+    "us": "/ɡaɪd/",
+    "uk": "/ɡaɪd/",
+    "headword": "guide",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/guide",
+    "kind": "dictionary-entry"
+  },
+  "guidebook": {
+    "us": "/ˈɡaɪd.bʊk/",
+    "uk": "/ˈɡaɪd.bʊk/",
+    "headword": "guidebook",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/guidebook",
+    "kind": "dictionary-entry"
+  },
+  "brochure": {
+    "us": "/broʊˈʃʊr/",
+    "uk": "/ˈbrəʊ.ʃər/",
+    "headword": "brochure",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/brochure",
+    "kind": "dictionary-entry"
+  },
+  "booking": {
+    "us": "/ˈbʊk.ɪŋ/",
+    "uk": "/ˈbʊk.ɪŋ/",
+    "headword": "booking",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/booking",
+    "kind": "dictionary-entry"
+  },
+  "booklet": {
+    "us": "/ˈbʊk.lət/",
+    "uk": "/ˈbʊk.lət/",
+    "headword": "booklet",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/booklet",
+    "kind": "dictionary-entry"
+  },
+  "souvenir": {
+    "us": "/ˌsuː.vəˈnɪr/",
+    "uk": "/ˌsuː.vənˈɪər/",
+    "headword": "souvenir",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/souvenir",
+    "kind": "dictionary-entry"
+  },
+  "postcard": {
+    "us": "/ˈpoʊst.kɑːrd/",
+    "uk": "/ˈpəʊst.kɑːd/",
+    "headword": "postcard",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/postcard",
+    "kind": "dictionary-entry"
+  },
+  "stamp": {
+    "us": "/stæmp/",
+    "uk": "/stæmp/",
+    "headword": "stamp",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stamp",
+    "kind": "dictionary-entry"
+  },
+  "envelope": {
+    "us": "/ˈɑːn.və.loʊp/",
+    "uk": "/ˈen.və.ləʊp/",
+    "headword": "envelope",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/envelope",
+    "kind": "dictionary-entry"
+  },
+  "photography": {
+    "us": "/fəˈtɑː.ɡrə.fi/",
+    "uk": "/fəˈtɒɡ.rə.fi/",
+    "headword": "photography",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/photography",
+    "kind": "dictionary-entry"
+  },
+  "landscape": {
+    "us": "/ˈlænd.skeɪp/",
+    "uk": "/ˈlænd.skeɪp/",
+    "headword": "landscape",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/landscape",
+    "kind": "dictionary-entry"
+  },
+  "memory": {
+    "us": "/ˈmem.ər.i/",
+    "uk": "/ˈmem.ər.i/",
+    "headword": "memory",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/memory",
+    "kind": "dictionary-entry"
+  },
+  "experience": {
+    "us": "/ɪkˈspɪr.i.əns/",
+    "uk": "/ɪkˈspɪə.ri.əns/",
+    "headword": "experience",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/experience",
+    "kind": "dictionary-entry"
+  },
+  "adventure": {
+    "us": "/ədˈven.tʃɚ/",
+    "uk": "/ədˈven.tʃər/",
+    "headword": "adventure",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/adventure",
+    "kind": "dictionary-entry"
+  },
+  "discovery": {
+    "us": "/dɪˈskʌv.ɚ.i/",
+    "uk": "/dɪˈskʌv.ər.i/",
+    "headword": "discovery",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/discovery",
+    "kind": "dictionary-entry"
+  },
+  "pack": {
+    "us": "/pæk/",
+    "uk": "/pæk/",
+    "headword": "pack",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pack",
+    "kind": "dictionary-entry"
+  },
+  "unpack": {
+    "us": "/ʌnˈpæk/",
+    "uk": "/ʌnˈpæk/",
+    "headword": "unpack",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/unpack",
+    "kind": "dictionary-entry"
+  },
+  "prepare": {
+    "us": "/prɪˈper/",
+    "uk": "/prɪˈpeər/",
+    "headword": "prepare",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/prepare",
+    "kind": "dictionary-entry"
+  },
+  "arrange": {
+    "us": "/əˈreɪndʒ/",
+    "uk": "/əˈreɪndʒ/",
+    "headword": "arrange",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/arrange",
+    "kind": "dictionary-entry"
+  },
+  "choice": {
+    "us": "/tʃɔɪs/",
+    "uk": "/tʃɔɪs/",
+    "headword": "choice",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/choice",
+    "kind": "dictionary-entry"
+  },
+  "option": {
+    "us": "/ˈɑːp.ʃən/",
+    "uk": "/ˈɒp.ʃən/",
+    "headword": "option",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/option",
+    "kind": "dictionary-entry"
+  },
+  "detail": {
+    "us": "/dɪˈteɪl/",
+    "uk": "/ˈdiː.teɪl/",
+    "headword": "detail",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/detail",
+    "kind": "dictionary-entry"
+  },
+  "fee": {
+    "us": "/fiː/",
+    "uk": "/fiː/",
+    "headword": "fee",
+    "pos": "noun",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fee",
+    "kind": "dictionary-entry"
+  },
+  "include": {
+    "us": "/ɪnˈkluːd/",
+    "uk": "/ɪnˈkluːd/",
+    "headword": "include",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/include",
+    "kind": "dictionary-entry"
+  },
+  "cancel": {
+    "us": "/ˈkæn.səl/",
+    "uk": "/ˈkæn.səl/",
+    "headword": "cancel",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cancel",
+    "kind": "dictionary-entry"
+  },
+  "confirm": {
+    "us": "/kənˈfɝːm/",
+    "uk": "/kənˈfɜːm/",
+    "headword": "confirm",
+    "pos": "verb",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/confirm",
+    "kind": "dictionary-entry"
+  },
+  "available": {
+    "us": "/əˈveɪ.lə.bəl/",
+    "uk": "/əˈveɪ.lə.bəl/",
+    "headword": "available",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/available",
+    "kind": "dictionary-entry"
+  },
+  "suitable": {
+    "us": "/ˈsuː.t̬ə.bəl/",
+    "uk": "/ˈsuː.tə.bəl/",
+    "headword": "suitable",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/suitable",
+    "kind": "dictionary-entry"
+  },
+  "simple": {
+    "us": "/ˈsɪm.pəl/",
+    "uk": "/ˈsɪm.pəl/",
+    "headword": "simple",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/simple",
+    "kind": "dictionary-entry"
+  },
+  "useful": {
+    "us": "/ˈjuːs.fəl/",
+    "uk": "/ˈjuːs.fəl/",
+    "headword": "useful",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/useful",
+    "kind": "dictionary-entry"
+  },
+  "extra": {
+    "us": "/ˈek.strə/",
+    "uk": "/ˈek.strə/",
+    "headword": "extra",
+    "pos": "adjective",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/extra",
+    "kind": "dictionary-entry"
+  },
+  "oats": {
+    "uk": "/əʊts/",
+    "us": "/oʊts/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/oats",
+    "pos": "plural noun",
+    "headword": "oats",
+    "kind": "dictionary-entry"
+  }
+}

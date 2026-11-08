@@ -1,0 +1,26 @@
+{
+  "course": "english-2027-grade5-autumn",
+  "start": "2027-09-01",
+  "end": "2028-01-15",
+  "reviewStart": "2027-12-16",
+  "coreCompletionDate": "2027-12-15",
+  "calendarDays": 137,
+  "calendarWeeks": 20,
+  "learningDays": 76,
+  "learningSlots": 380,
+  "coreSlots": 228,
+  "uniqueCore": 120,
+  "uniqueExtension": 152,
+  "distinctEntries": 272,
+  "reviewWeekdays": 22,
+  "stories": 12,
+  "storyFrequency": [
+    2,
+    3,
+    2,
+    3,
+    2
+  ],
+  "maxReviewWords": 13,
+  "dataSha256": "99afaa4cf9d94e9283ad4d54f2c75e77f0f8654d3d4e4a0f7def737b81e44abd"
+}
