@@ -1,10 +1,12 @@
 """Readable A4 learner books and separate companion answers from the website data."""
 import argparse, collections, html, json, math, re, shutil, sys
 from pathlib import Path
+from build_grade6 import TERMS as GRADE6_TERMS
 
 ap=argparse.ArgumentParser()
 ap.add_argument('--out',required=True)
 ap.add_argument('--vendor',default=r'D:\Codex\2026-09-06\ban\work\vendor')
+ap.add_argument('--grade',type=int,choices=[5,6],default=5)
 args=ap.parse_args()
 sys.path.insert(0,args.vendor)
 from reportlab.pdfgen import canvas
@@ -116,9 +118,14 @@ def title_pages(book,data,companion=False):
     book.draw(str(len(data['entries']))+' 个不同词条 · '+str(len(data['entries'])*2)+' 句例句 · '+str(len(data['stories']))+' 篇原创短文',size=12,leading=18,gap=24)
     book.draw('陪读版：短文中文、理解题答案与词汇回顾参考。' if companion else 'A4打印版：每日词卡、周月回顾、短文与练习。',size=12,leading=18,gap=15)
     book.draw('网页可听单词、两句例句、整篇短文及逐句音频，支持英式与美式。',size=12,leading=18,gap=15)
-    book.draw('https://www.study4better.cloud-ip.cc/?local=1#/library','EN',10,15,gap=20)
+    route=data['id'].split('-',2)[-1]+'/english' if args.grade==6 else 'library'
+    book.draw('https://www.study4better.cloud-ip.cc/?local=1#/'+route,'EN',10,15,gap=20)
     book.draw('姓名：____________________　班级：____________________',size=12,leading=18,gap=20)
-    book.draw('教材依据：当前人教社公开新版PEP五年级教材。2027-2028新印次尚未核实。',size=10,leading=15,color=MUTED)
+    if args.grade==6:
+        book.draw(data['textbook'],size=11,leading=16,color=MUTED)
+        book.draw(data['editionNote'],size=10,leading=15,color=MUTED)
+    else:
+        book.draw('教材依据：当前人教社公开新版PEP五年级教材。2027-2028新印次尚未核实。',size=10,leading=15,color=MUTED)
     book.new('怎样使用这本手册')
     tips=['周一至周五：听单词，读音标，再读两句不同场景的例句。每天可分两小段完成。',
           '教材词会有计划地复现。标注“本学期复现”的词是再次练习，不是新的不同词条。',
@@ -127,6 +134,8 @@ def title_pages(book,data,companion=False):
           '复习阶段：每天先回顾一小组词；完整学习周每周读2-3篇短文，其他学习日重读与表达。短周按实际天数安排。',
           '短文练习先口答或写关键词，再核对陪读版。表达题是开放题，不必逐字背参考答案。',
           '单词给出美式US和英式UK音标。词组特别标注分词音标，连读听音频；Taishan保留教材的汉语拼音专名，不另造整词音标。']
+    if args.grade==6:
+        tips[-1]='词卡列出美式 US 和英式 UK 音标。标注分词音标的词组可以逐词认读，再听完整词组；个别地名采用教材读法或汉语拼音。'
     for i,tip in enumerate(tips,1):book.draw(f'{i}. {tip}',size=12,leading=19,gap=15)
     book.draw('打印建议：A4纵向，100%或实际大小；可双面打印。每天对应同一日期和Day，按自己的进度学习。',size=10.5,leading=16,color=MUTED)
 
@@ -155,11 +164,13 @@ def story_page(book,story,companion=False,entries=None):
         book.draw('复述线索：'+' -> '.join(story['retell']),'ZH',10.5,15,color=MUTED)
 
 def make(term):
-    data=json.loads((ROOT/f'dist/grade5-{term}-data.json').read_text('utf-8'))
-    label='五年级'+('上学期' if term=='autumn' else '下学期')
+    data=json.loads((ROOT/f'dist/grade{args.grade}-{term}-data.json').read_text('utf-8'))
+    config=GRADE6_TERMS[term] if args.grade==6 else None
+    label=config['label'] if config else '五年级'+('上学期' if term=='autumn' else '下学期')
+    page_label=label+('（旧版过渡）' if data.get('editionLabel') else '')
     byid={e['id']:e for e in data['entries']};reports=[]
-    learner=Book(OUT/(label+'_每日英语词汇_A4打印版.pdf'),label,'A4打印版')
-    parent=Book(OUT/(label+'_每日英语词汇_陪读版.pdf'),label,'陪读版')
+    learner=Book(OUT/(label+'_每日英语词汇_A4打印版.pdf'),page_label,'A4打印版')
+    parent=Book(OUT/(label+'_每日英语词汇_陪读版.pdf'),page_label,'陪读版')
     title_pages(learner,data);title_pages(parent,data,True)
     for book in [learner,parent]:
         book.new('学期日历与学习安排')
@@ -206,15 +217,24 @@ def make(term):
     for book in [learner,parent]:
         book.new('词汇来源与使用说明')
         book.draw(data['textbook'],size=12,leading=18,gap=13)
-        book.draw('词表：人教社公开电子教材，单元词表逐项核对，词卡保留原课本单元和首次出现页码。五上另纳入附录词汇表中的 everything。',size=11,leading=17,gap=12)
-        book.draw('https://book.pep.com.cn/'+('1212001501255' if term=='autumn' else '1212001502255')+'/','EN',10,15,gap=12)
-        book.draw('人教社官方配套目录与词表音频：',size=11,leading=16,gap=5)
-        book.draw('https://www.pep.com.cn/zslth/yyptzy/xypep/'+('5s' if term=='autumn' else '5x')+'/','EN',9.5,14,gap=14)
-        book.draw('音标：Cambridge Dictionary；词性与同形词另参考Oxford Learner’s Dictionaries。词组采用已核验的分词音标；专名Taishan沿用汉语拼音。每个词的具体链接保存在配套可编辑词库中。',size=11,leading=17,gap=13)
+        if config:
+            first=next(e for e in data['entries'] if e['category']=='core')['source']
+            pages='81-84' if term=='autumn' else '54-56'
+            book.draw('教材词来自附录2单元词汇表（课本第'+pages+'页）。词卡保留各词的单元及在课文中出现的页码。',size=11,leading=17,gap=12)
+            book.draw(first['reference'],'EN',10,15,gap=12)
+            book.draw('人教社配套目录与词表音频',size=11,leading=16,gap=5)
+            book.draw(first['supporting_reference'],'EN',9.5,14,gap=14)
+            book.draw('英美读音主要参考 Cambridge Dictionary。词组的分词音标、变形和少数专名均有对应来源，详见配套可编辑词库。',size=11,leading=17,gap=13)
+        else:
+            book.draw('词表：人教社公开电子教材，单元词表逐项核对，词卡保留原课本单元和首次出现页码。五上另纳入附录词汇表中的 everything。',size=11,leading=17,gap=12)
+            book.draw('https://book.pep.com.cn/'+('1212001501255' if term=='autumn' else '1212001502255')+'/','EN',10,15,gap=12)
+            book.draw('人教社官方配套目录与词表音频：',size=11,leading=16,gap=5)
+            book.draw('https://www.pep.com.cn/zslth/yyptzy/xypep/'+('5s' if term=='autumn' else '5x')+'/','EN',9.5,14,gap=14)
+            book.draw('音标：Cambridge Dictionary；词性与同形词另参考Oxford Learner’s Dictionaries。词组采用已核验的分词音标；专名Taishan沿用汉语拼音。每个词的具体链接保存在配套可编辑词库中。',size=11,leading=17,gap=13)
         book.draw('例句、短文与练习均为本计划原创。故事中的人物和活动为学习情境。译文和答案单独收在陪读版。',size=11,leading=17,gap=13)
         book.draw(data['editionNote']+' 若实际课本有调整，可按单元和页码对照更新。',size=11,leading=17,color=MUTED)
         reports.append(book.finish())
-    folder=ROOT/f'dist/materials/grade5-{term}';folder.mkdir(parents=True,exist_ok=True)
+    folder=ROOT/f'dist/materials/grade{args.grade}-{term}';folder.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(learner.path,folder/'a4.pdf');shutil.copyfile(parent.path,folder/'companion.pdf')
     return reports
 

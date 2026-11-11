@@ -1,5 +1,5 @@
-const CACHE='listening-station-v10-grade5';
-const CORE=['./','./index.html','./styles.css','./app.js','./progress-sync.js','./courses.js','./course-schema.js','./grade5-autumn-data.json','./grade5-spring-data.json','./grade5-autumn-audio-manifest.json','./grade5-spring-audio-manifest.json','./feedback.js','./feedback-auth.js','./checkins.js','./spring-data.json','./spring-audio-manifest.json','./data.json','./audio-manifest.json','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
+const CACHE='listening-station-v11-grade6';
+const CORE=['./','./index.html','./styles.css','./app.js','./progress-sync.js','./courses.js','./course-schema.js','./grade5-autumn-data.json','./grade5-spring-data.json','./grade5-autumn-audio-manifest.json','./grade5-spring-audio-manifest.json','./grade6-autumn-data.json','./grade6-spring-data.json','./grade6-autumn-audio-manifest.json','./grade6-spring-audio-manifest.json','./feedback.js','./feedback-auth.js','./checkins.js','./spring-data.json','./spring-audio-manifest.json','./data.json','./audio-manifest.json','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{
