@@ -1,0 +1,26 @@
+{
+  "course": "english-2028-grade6-autumn",
+  "start": "2028-09-01",
+  "end": "2029-01-15",
+  "reviewStart": "2028-12-16",
+  "coreCompletionDate": "2028-12-15",
+  "calendarDays": 137,
+  "calendarWeeks": 21,
+  "learningDays": 76,
+  "learningSlots": 380,
+  "coreSlots": 228,
+  "uniqueCore": 144,
+  "uniqueExtension": 152,
+  "distinctEntries": 296,
+  "reviewWeekdays": 21,
+  "stories": 11,
+  "storyFrequency": [
+    2,
+    3,
+    2,
+    3,
+    1
+  ],
+  "maxReviewWords": 15,
+  "dataSha256": "b24ec5388c9a74e42539ceec533f24691def025d59e199d1c285993a157923bf"
+}

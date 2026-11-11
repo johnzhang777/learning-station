@@ -1,0 +1,26 @@
+{
+  "course": "english-2029-grade6-spring",
+  "start": "2029-02-15",
+  "end": "2029-07-31",
+  "reviewStart": "2029-07-01",
+  "coreCompletionDate": "2029-06-29",
+  "calendarDays": 167,
+  "calendarWeeks": 25,
+  "learningDays": 97,
+  "learningSlots": 485,
+  "coreSlots": 291,
+  "uniqueCore": 91,
+  "uniqueExtension": 194,
+  "distinctEntries": 285,
+  "reviewWeekdays": 22,
+  "stories": 12,
+  "storyFrequency": [
+    2,
+    3,
+    2,
+    3,
+    2
+  ],
+  "maxReviewWords": 13,
+  "dataSha256": "1736d83eabdad180afb55e88987e8949901292a8ddb5ae7898ce61893e24628b"
+}

@@ -17,14 +17,14 @@ TERMS = {
                'themes':['规则与公共场所','社区与助人','月份与节日','家乡与文化','交通与出行','计划与旅行']}
 }
 
-def rows(name):
-    return [line.split('|') for line in (SRC/name).read_text('utf-8').splitlines() if line and not line.startswith('#')]
+def rows(name, source=SRC):
+    return [line.split('|') for line in (source/name).read_text('utf-8').splitlines() if line and not line.startswith('#')]
 
 def unique(xs): return list(dict.fromkeys(xs))
 
-def parse_stories():
+def parse_stories(source=SRC):
     result=[]; story=None
-    for line in (SRC/'stories.txt').read_text('utf-8').splitlines():
+    for line in (source/'stories.txt').read_text('utf-8').splitlines():
         if line.startswith('# '):
             term,title,title_en,focus=line[2:].split('|')
             story={'term':term,'title':title,'titleEn':title_en,'focus':focus.split(','),
@@ -48,35 +48,41 @@ def sentences(paragraphs):
     assert ' '.join(result)==' '.join(' '.join(paragraphs).split())
     return result
 
-def build(term, config, pronunciations, old, all_stories):
+def build(term, config, pronunciations, old, all_stories, source_dir=SRC):
     entries=[]; cores=collections.defaultdict(list); extensions=collections.defaultdict(list)
-    ex={p[0]:p[1:] for p in rows('core-examples.tsv')}
+    grade=config.get('grade',5)
+    example_file=source_dir/'core-examples.tsv'
+    ex={p[0]:p[1:] for p in rows(example_file.name,source_dir)} if example_file.exists() else {}
     def make_entry(word,pos,meaning,unit,category,examples,source):
-        phon=pronunciations[word]
+        phon=pronunciations.get(f'{term}:{word}') or pronunciations[word]
+        tag=config.get('sourceTag','五上' if term=='autumn' else '五下')
         e={'id':config['prefix']+f'{len(entries)+1:03d}','word':word,'pos':pos,'meaning':meaning,
-           'category':category,'sourceTag':('五上' if term=='autumn' else '五下')+str(unit) if category=='core' else '拓',
+           'category':category,'sourceTag':tag+str(unit) if category=='core' else '拓',
            'ipaUS':phon['us'],'ipaUK':phon['uk'],'examples':examples,'unit':unit,'theme':config['themes'][unit-1],
            'source':source,'pronunciationReference':phon['reference'],
            'previousCourses':[e['courseId'] for e in old.get(word.casefold(),[])]}
         if phon.get('note'): e['ipaNote']=phon['note']
+        if phon.get('audioContext'): e['wordAudioContext']=phon['audioContext']
         assert len(examples)==2 and examples[0]['en']!=examples[1]['en']
         entries.append(e)
         return e['id']
-    for t,unit,page,word,pos,meaning in rows('textbook.tsv'):
+    for t,unit,page,word,pos,meaning,*example_fields in rows('textbook.tsv',source_dir):
         if t!=term: continue
-        if word in ex:
-            p=ex[word]; examples=[dict(zip(['en','zh','scene'],p[i:i+3])) for i in [0,3]]
+        p=example_fields or ex.get(word)
+        if p:
+            assert len(p)==6 and all(p), (term,word)
+            examples=[dict(zip(['en','zh','scene'],p[i:i+3])) for i in [0,3]]
         else:
             assert word.casefold() in old,word
             examples=old[word.casefold()][-1]['examples']
         unit=int(unit)
-        appendix='Appendix 3 Vocabulary (p.83)' if term=='autumn' and word=='everything' else ('Appendix 2 Words in each unit (pp.80–82)' if term=='autumn' else 'Appendix 2 Words in each unit (pp.81–83)')
+        appendix=config.get('appendix') or ('Appendix 3 Vocabulary (p.83)' if term=='autumn' and word=='everything' else ('Appendix 2 Words in each unit (pp.80–82)' if term=='autumn' else 'Appendix 2 Words in each unit (pp.81–83)'))
         source={'reference':f'https://book.pep.com.cn/{config["book"]}/',
-                'location':f'新版人教PEP{config["label"]} Unit {unit} {config["units"][unit-1]}，课本p.{page}；{appendix}',
-                'supporting_reference':f'https://www.pep.com.cn/zslth/yyptzy/xypep/{config["support"]}/',
+                'location':f'{config.get("sourceEdition","新版人教PEP")}{config["label"]} Unit {unit} {config["units"][unit-1]}，课本p.{page}；{appendix}',
+                'supporting_reference':f'https://www.pep.com.cn/zslth/{config.get("supportPath","yyptzy")}/xypep/{config["support"]}/',
                 'textbookPage':int(page),'appendix':appendix}
         cores[unit].append(make_entry(word,pos,meaning,unit,'core',examples,source))
-    for t,unit,word,pos,meaning,en,zh,scene,en2,zh2,scene2 in rows('extensions.tsv'):
+    for t,unit,word,pos,meaning,en,zh,scene,en2,zh2,scene2 in rows('extensions.tsv',source_dir):
         if t!=term: continue
         unit=int(unit)
         assert word.casefold() not in old,word
@@ -179,15 +185,16 @@ def build(term, config, pronunciations, old, all_stories):
           'subtitle':'每日3个教材词＋2个适龄拓展词；学期末词汇与短文复习',
           'startDate':config['start'],'endDate':config['end'],'reviewStart':config['review'],
           'coreCompletionDate':max(e['date'] for e in entries if e['category']=='core'),
-          'sourceRevision':1,'textbook':'新版人教PEP英语'+config['label']+'（当前公开版）',
+          'sourceRevision':1,'textbook':config.get('textbook','新版人教PEP英语'+config['label']+'（当前公开版）'),
           'dailyMix':{'core':3,'extension':2},'learningSlots':len(learning)*5,
           'entries':entries,'days':days,'weeks':weeks,'monthlyReviews':monthly,'stories':stories,
           'reviewDescription':'词汇回顾＋短文理解＋重读表达；完整学习周每周2–3篇，不足一周按实际天数安排。',
-          'editionNote':'依据当前人教社公开教材核对；尚未核实2027—2028新印次。',
+          'editionNote':config.get('editionNote','依据当前人教社公开教材核对；尚未核实2027—2028新印次。'),
           'audioSource':'预先保存的英式、美式MP3'}
+    if config.get('editionLabel'):data['editionLabel']=config['editionLabel']
     assert len({eid for d in days if d['kind']=='recall' for eid in d['entryIds']})==len(entries)
     assert max(e['date'] for e in entries)<config['review']
-    filename=f'grade5-{term}-data.json'
+    filename=f'grade{grade}-{term}-data.json'
     (ROOT/'dist'/filename).write_text(json.dumps(data,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     report={'course':data['id'],'start':config['start'],'end':config['end'],'reviewStart':config['review'],
             'coreCompletionDate':data['coreCompletionDate'],'calendarDays':len(days),'calendarWeeks':len(weeks),
@@ -197,7 +204,7 @@ def build(term, config, pronunciations, old, all_stories):
             'storyFrequency':[len([s for s in stories if (dt.date.fromisoformat(s['date'])-monday).days//7+1==w]) for w in story_groups],
             'maxReviewWords':max(len(d['entryIds']) for d in days if d['kind']=='recall'),
             'dataSha256':hashlib.sha256((ROOT/'dist'/filename).read_bytes()).hexdigest()}
-    (SRC/f'{term}-checks.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (source_dir/f'{term}-checks.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False))
     return data
 

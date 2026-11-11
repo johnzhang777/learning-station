@@ -2,18 +2,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,stat,readdir} from 'node:fs/promises';
 import {createHash,pbkdf2Sync} from 'node:crypto';
-import {COURSE_INFO,GRADE5_AUTUMN,GRADE5_SPRING,AUTUMN,SPRING,courseForPath,courseHref,isCoursePrefix} from '../dist/courses.js';
+import {COURSE_INFO,GRADE5_AUTUMN,GRADE5_SPRING,GRADE6_AUTUMN,GRADE6_SPRING,AUTUMN,SPRING,courseForPath,courseHref,isCoursePrefix} from '../dist/courses.js';
 import {COURSE_LIMITS,MAX_PROGRESS_FIELDS,validWordId,positionField} from '../dist/course-schema.js';
 import {ProgressSync} from '../dist/progress-sync.js';
 import {handle,validateFields} from '../server/learning-api.js';
 const hash=text=>createHash('sha256').update(text).digest('hex');
 const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 const all=await Promise.all(COURSE_INFO.map(async info=>({info,data:JSON.parse(await read('dist/'+info.data)),audio:JSON.parse(await read('dist/'+info.audio))})));
-const grade5=all.slice(2);
+const grade5=all.filter(({info})=>info.prefix.startsWith('grade5-'));
 const textbook=(await read('source/grade5/textbook.tsv')).split(/\r?\n/).filter(l=>l&&!l.startsWith('#')).map(l=>l.split('|'));
 const phon=JSON.parse(await read('source/grade5/pronunciations.json'));
 
-for(const [i,{info,data,audio}] of grade5.entries()){
+for(const [i,{info,data}] of grade5.entries()){
   const term=i?'spring':'autumn',entries=new Map(data.entries.map(e=>[e.id,e]));
   test(`${term}: real calendar, leap day, 3+2 mix, paced complete textbook and explicit recurrences`,()=>{
     assert.equal(data.id,info.id);assert.equal(data.days.length,i?168:137);assert.equal(data.weeks.length,i?25:20);
@@ -57,7 +57,10 @@ for(const [i,{info,data,audio}] of grade5.entries()){
     for(const day of data.days.filter(d=>d.activity)){const story=data.stories.find(s=>s.number===day.activity.story);assert.ok(story.date<day.date);assert.equal(day.kind,'recall');}
     const ordered=data.days.map(d=>d.id);assert.deepEqual(data.weeks.flatMap(w=>w.dayIds),ordered);
   });
-  test(`${term}: saved UK/US audio matches current text, including full passages and sentences`,async()=>{
+}
+
+for(const {info,data,audio} of all.filter(({data})=>data.sourceRevision===1&&data.coreCompletionDate)){
+  test(`${info.prefix}: saved UK/US audio matches current text, including full passages and sentences`,async()=>{
     const texts=new Map();
     for(const e of data.entries){texts.set(e.id,{word:e.word,ex1:e.examples[0].en,ex2:e.examples[1].en});}
     for(const s of data.stories){texts.set(s.id,{passage:s.paragraphs.join(' ')});for(const sentence of s.sentences)texts.set(sentence.id,{sentence:sentence.text});}
@@ -70,6 +73,8 @@ for(const [i,{info,data,audio}] of grade5.entries()){
       }
     }
     for(const file of files)assert.ok((await stat(new URL('../dist/'+file,import.meta.url))).size>1000,file);
+    const contexts=data.entries.filter(e=>e.wordAudioContext).map(e=>[e.id+'/word',hash(e.wordAudioContext)]);
+    assert.deepEqual(audio.wordContextHashes||{},Object.fromEntries(contexts));
     assert.deepEqual(info.materials.map(m=>m.label),['A4打印版','陪读版']);
     for(const m of info.materials){const bytes=await readFile(new URL('../dist/'+m.href,import.meta.url));assert.equal(bytes.subarray(0,5).toString(),'%PDF-');assert.ok(bytes.length>100000);}
   });
@@ -80,42 +85,44 @@ test('new extensions do not duplicate older books or either semester textbook li
   const core=new Set(grade5.flatMap(c=>c.data.entries.filter(e=>e.category==='core').map(e=>e.word.toLowerCase())));
   const ext=grade5.flatMap(c=>c.data.entries.filter(e=>e.category==='extension').map(e=>e.word.toLowerCase()));
   assert.equal(ext.length,350);assert.equal(new Set(ext).size,350);assert.ok(ext.every(w=>!old.has(w)&&!core.has(w)));
-  const ids=all.flatMap(c=>c.data.entries.map(e=>e.id));assert.equal(new Set(ids).size,1455);
+  const ids=all.flatMap(c=>c.data.entries.map(e=>e.id));assert.equal(new Set(ids).size,ids.length);assert.equal(ids.length,2036);
 });
 
-test('four-term routing retains old deep links and selects new stories and words independently',()=>{
+test('six-term routing retains old deep links and selects stories and words independently',()=>{
   for(const {id,prefix} of COURSE_INFO){assert.equal(isCoursePrefix(prefix),true);assert.equal(courseForPath([prefix,'english']),id);assert.equal(courseForPath(['settings'],id),id);}
   for(const route of ['day','english','review','practice'])assert.equal(courseForPath([route,'1'],GRADE5_SPRING),AUTUMN);
   assert.equal(courseForPath(['word','f272']),GRADE5_AUTUMN);assert.equal(courseForPath(['word','g333']),GRADE5_SPRING);
   assert.equal(courseHref('story/t01',GRADE5_AUTUMN),'#/grade5-autumn/story/t01');assert.equal(courseHref('day/1',SPRING),'#/spring/day/1');
-  for(const id of ['f000','f273','g000','g334','f001x','t01','v01s01'])assert.equal(validWordId(id),false);
+  assert.equal(courseForPath(['word','h296']),GRADE6_AUTUMN);assert.equal(courseForPath(['word','j285']),GRADE6_SPRING);
+  assert.equal(courseHref('story/y01',GRADE6_SPRING),'#/grade6-spring/story/y01');
+  for(const id of ['f000','f273','g000','g334','h297','j286','f001x','t01','v01s01','y01s01'])assert.equal(validWordId(id),false);
 });
 
-test('four resume positions and tombstones survive offline refresh and subsequent cloud upload',async()=>{
+test('six resume positions and tombstones survive offline refresh and subsequent cloud upload',async()=>{
   const saved=new Map(),storage={getItem:k=>saved.get(k),setItem:(k,v)=>saved.set(k,v)};let applied;
   const options={storage,localOnly:true,api:()=>assert.fail('local mode cannot call cloud'),apply:f=>applied=f,notify:()=>{}};
   let sync=new ProgressSync(options);const positions=Object.fromEntries(Object.entries(COURSE_LIMITS).map(([id,r])=>[id,{lastDay:r.days,lastIndex:r.index}]));
-  await sync.start({courseId:GRADE5_SPRING,positions,status:{w001:'learned',s325:'practice',f272:'learned',g333:'practice'}});
-  sync.change('f272',null);sync.stop();sync=new ProgressSync(options);await sync.start();
+  await sync.start({courseId:GRADE6_SPRING,positions,status:{w001:'learned',s325:'practice',f272:'learned',g333:'practice',h296:'learned',j285:'practice'}});
+  sync.change('f272',null);sync.change('j285',null);sync.stop();sync=new ProgressSync(options);await sync.start();
   for(const [id,p]of Object.entries(positions))assert.deepEqual(applied[positionField(id)].value,p);
   assert.equal(applied.w001.value,'learned');assert.equal(applied.g333.value,'practice');assert.equal(applied.f272.value,null);sync.stop();
-  let uploaded;sync=new ProgressSync({...options,localOnly:false,api:async(_url,o)=>o?.method?(uploaded=JSON.parse(o.body),{ok:true}):{fields:{}}});await sync.start();assert.equal(uploaded.fields.g333.value,'practice');assert.equal(uploaded.fields.f272.value,null);assert.equal(sync.pending,null);sync.stop();
+  let uploaded;sync=new ProgressSync({...options,localOnly:false,api:async(_url,o)=>o?.method?(uploaded=JSON.parse(o.body),{ok:true}):{fields:{}}});await sync.start();assert.equal(uploaded.fields.g333.value,'practice');assert.equal(uploaded.fields.f272.value,null);assert.equal(uploaded.fields.h296.value,'learned');assert.equal(uploaded.fields.j285.value,null);assert.equal(sync.pending,null);sync.stop();
 });
 
-test('progress API round trips a full four-course record and merges a second device without losing older terms',async()=>{
+test('progress API round trips all six courses and merges a second device without losing older terms',async()=>{
   const actor='a'.repeat(32),field=value=>({value,clock:1,actor}),fields={};
   for(const r of Object.values(COURSE_LIMITS)){
     fields[r.position]=field({lastDay:r.days,lastIndex:r.index});
     for(let n=1;n<=r.words;n++)fields[r.prefix+String(n).padStart(3,'0')]=field(n%2?'learned':'practice');
   }
-  assert.equal(Object.keys(fields).length,1459);assert.equal(MAX_PROGRESS_FIELDS,1459);assert.deepEqual(validateFields(fields),fields);
-  for(const [name,value] of [['f273','learned'],['g334','learned'],['grade5AutumnPosition',{lastDay:138,lastIndex:0}],['grade5SpringPosition',{lastDay:168,lastIndex:16}]])assert.throws(()=>validateFields({[name]:field(value)}));
+  assert.equal(Object.keys(fields).length,2042);assert.equal(MAX_PROGRESS_FIELDS,2042);assert.deepEqual(validateFields(fields),fields);
+  for(const [name,value] of [['f273','learned'],['g334','learned'],['h297','learned'],['j286','learned'],['grade5AutumnPosition',{lastDay:138,lastIndex:0}],['grade5SpringPosition',{lastDay:168,lastIndex:16}],['grade6AutumnPosition',{lastDay:138,lastIndex:0}],['grade6SpringPosition',{lastDay:167,lastIndex:13}]])assert.throws(()=>validateFields({[name]:field(value)}));
   const origin='https://grade5.example',env={ACCOUNT_USERNAME:'testchild',ACCOUNT_PASSWORD_SALT:'ab'.repeat(16),ACCOUNT_PASSWORD_HASH:pbkdf2Sync('synthetic-grade5',Buffer.from('ab'.repeat(16),'hex'),120000,32,'sha256').toString('hex'),SESSION_SECRET:'cd'.repeat(32)};
   const map=new Map(),kv={get:async k=>map.get(k)||null,put:async(k,v)=>map.set(k,v),list:async({prefix})=>({keys:map.size?[...map.keys()].filter(k=>k.startsWith(prefix)).map(key=>({key})):null,complete:true})};
   const request=(path,method='GET',data,auth={})=>new Request(origin+path,{method,headers:{...(method==='POST'?{Origin:origin,'Content-Type':'application/json'}:{}),...auth},...(data?{body:JSON.stringify(data)}:{})});
   const login=await handle(request('/api/login','POST',{username:env.ACCOUNT_USERNAME,password:'synthetic-grade5'}),env,kv);assert.equal(login.status,200);const session=await login.json(),auth={Cookie:login.headers.get('set-cookie').split(';')[0],'X-CSRF-Token':session.csrf};
   assert.equal((await handle(request('/api/progress','POST',{writer:actor,sequence:1,fields},auth),env,kv)).status,200);
-  const remoteActor='b'.repeat(32),patch={g333:{value:null,clock:2,actor:remoteActor}};
+  const remoteActor='b'.repeat(32),patch={g333:{value:null,clock:2,actor:remoteActor},j285:{value:'learned',clock:2,actor:remoteActor}};
   assert.equal((await handle(request('/api/progress','POST',{writer:remoteActor,sequence:1,fields:patch},auth),env,kv)).status,200);
   const restored=await (await handle(request('/api/progress','GET',null,auth),env,kv)).json();assert.deepEqual(restored.fields,{...fields,...patch});
 });

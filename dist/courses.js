@@ -4,6 +4,8 @@ export const AUTUMN = 'english-2026';
 export const SPRING = 'english-2027-spring';
 export const GRADE5_AUTUMN = 'english-2027-grade5-autumn';
 export const GRADE5_SPRING = 'english-2028-grade5-spring';
+export const GRADE6_AUTUMN = 'english-2028-grade6-autumn';
+export const GRADE6_SPRING = 'english-2029-grade6-spring';
 export const COURSE_TITLE = '每日英语词汇';
 export const COURSE_INFO = [
   { id:AUTUMN, prefix:'autumn', label:'四年级上学期', period:'2026.09 - 2027.01', description:'原21周手册，继续使用已有学习记录。', data:'data.json', audio:'audio-manifest.json', materials:[
@@ -21,6 +23,14 @@ export const COURSE_INFO = [
   { id:GRADE5_SPRING, prefix:'grade5-spring', label:'五年级下学期', period:'2028.02.15 - 2028.07.31', description:'2月15日-6月30日积累；7月词汇与短文复习。', reviewPeriod:'7月', data:'grade5-spring-data.json', audio:'grade5-spring-audio-manifest.json', materials:[
     {label:'A4打印版',href:'materials/grade5-spring/a4.pdf'},
     {label:'陪读版',href:'materials/grade5-spring/companion.pdf'}
+  ] },
+  { id:GRADE6_AUTUMN, prefix:'grade6-autumn', label:'六年级上学期', period:'2028.09.01 - 2029.01.15', description:'新版人教PEP。积累至12月15日，12月16日起复习。', reviewPeriod:'12月16日-1月15日', data:'grade6-autumn-data.json', audio:'grade6-autumn-audio-manifest.json', materials:[
+    {label:'A4打印版',href:'materials/grade6-autumn/a4.pdf'},
+    {label:'陪读版',href:'materials/grade6-autumn/companion.pdf'}
+  ] },
+  { id:GRADE6_SPRING, prefix:'grade6-spring', label:'六年级下学期', period:'2029.02.15 - 2029.07.31', description:'人教PEP旧版过渡资料。积累至6月29日，7月复习。', reviewPeriod:'7月', data:'grade6-spring-data.json', audio:'grade6-spring-audio-manifest.json', materials:[
+    {label:'A4打印版',href:'materials/grade6-spring/a4.pdf'},
+    {label:'陪读版',href:'materials/grade6-spring/companion.pdf'}
   ] }
 ];
 export function courseForPath(path, selected=AUTUMN) {

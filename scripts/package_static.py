@@ -20,7 +20,9 @@ assert (DIST / 'cloud-functions/auth/feedback-login.js').is_file()
 audio_paths = set()
 for data_file, audio_file in [('data.json', 'audio-manifest.json'), ('spring-data.json', 'spring-audio-manifest.json'),
                               ('grade5-autumn-data.json', 'grade5-autumn-audio-manifest.json'),
-                              ('grade5-spring-data.json', 'grade5-spring-audio-manifest.json')]:
+                              ('grade5-spring-data.json', 'grade5-spring-audio-manifest.json'),
+                              ('grade6-autumn-data.json', 'grade6-autumn-audio-manifest.json'),
+                              ('grade6-spring-data.json', 'grade6-spring-audio-manifest.json')]:
     data = json.loads((DIST / data_file).read_text(encoding='utf-8'))
     audio = json.loads((DIST / audio_file).read_text(encoding='utf-8'))
     expected = {e['id']: {'word', 'ex1', 'ex2'} for e in data['entries']}

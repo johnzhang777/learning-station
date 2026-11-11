@@ -1,0 +1,2962 @@
+{
+  "accuracy": {
+    "uk": "/ˈæk.jə.rə.si/",
+    "us": "/ˈæk.jɚ.ə.si/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/accuracy"
+  },
+  "achievement": {
+    "uk": "/əˈtʃiːv.mənt/",
+    "us": "/əˈtʃiːv.mənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/achievement"
+  },
+  "active": {
+    "uk": "/ˈæk.tɪv/",
+    "us": "/ˈæk.tɪv/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/active"
+  },
+  "add": {
+    "uk": "/æd/",
+    "us": "/æd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/add"
+  },
+  "adjust": {
+    "uk": "/əˈdʒʌst/",
+    "us": "/əˈdʒʌst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/adjust"
+  },
+  "afford": {
+    "uk": "/əˈfɔːd/",
+    "us": "/əˈfɔːrd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/afford"
+  },
+  "ago": {
+    "uk": "/əˈɡəʊ/",
+    "us": "/əˈɡoʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ago"
+  },
+  "air conditioner": {
+    "uk": "/ˈeə kənˌdɪʃ.ən.ər/",
+    "us": "/ˈer kənˌdɪʃ.ən.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/air-conditioner"
+  },
+  "airport": {
+    "uk": "/ˈeə.pɔːt/",
+    "us": "/ˈer.pɔːrt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/airport"
+  },
+  "alarm clock": {
+    "uk": "/əˈlɑːm ˌklɒk/",
+    "us": "/əˈlɑːrm ˌklɑːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/alarm-clock"
+  },
+  "alien": {
+    "uk": "/ˈeɪ.li.ən/",
+    "us": "/ˈeɪ.li.ən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/alien"
+  },
+  "align": {
+    "uk": "/əˈlaɪn/",
+    "us": "/əˈlaɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/align"
+  },
+  "allergy": {
+    "uk": "/ˈæl.ə.dʒi/",
+    "us": "/ˈæl.ɚ.dʒi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/allergy"
+  },
+  "angle": {
+    "uk": "/ˈæŋ.ɡəl/",
+    "us": "/ˈæŋ.ɡəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/angle"
+  },
+  "another": {
+    "uk": "/əˈnʌð.ər/",
+    "us": "/əˈnʌð.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/another"
+  },
+  "appetite": {
+    "uk": "/ˈæp.ə.taɪt/",
+    "us": "/ˈæp.ə.taɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/appetite"
+  },
+  "applause": {
+    "uk": "/əˈplɔːz/",
+    "us": "/əˈplɑːz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/applause"
+  },
+  "appliance": {
+    "uk": "/əˈplaɪ.əns/",
+    "us": "/əˈplaɪ.əns/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/appliance"
+  },
+  "appointment": {
+    "uk": "/əˈpɔɪnt.mənt/",
+    "us": "/əˈpɔɪnt.mənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/appointment"
+  },
+  "approximate": {
+    "uk": "/əˈprɒk.sɪ.mət/",
+    "us": "/əˈprɑːk.sə.mət/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/approximate",
+    "audioContext": "The approximate size is ten."
+  },
+  "archive": {
+    "uk": "/ˈɑː.kaɪv/",
+    "us": "/ˈɑːr.kaɪv/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/archive"
+  },
+  "archway": {
+    "uk": "/ˈɑːtʃ.weɪ/",
+    "us": "/ˈɑːrtʃ.weɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/archway"
+  },
+  "as": {
+    "uk": "/æz/",
+    "us": "/æz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/as"
+  },
+  "astronaut": {
+    "uk": "/ˈæs.trə.nɔːt/",
+    "us": "/ˈæs.trə.nɑːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/astronaut"
+  },
+  "astronomy": {
+    "uk": "/əˈstrɒn.ə.mi/",
+    "us": "/əˈstrɑː.nə.mi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/astronomy"
+  },
+  "ate": {
+    "uk": "/et/",
+    "us": "/eɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ate"
+  },
+  "atmosphere": {
+    "uk": "/ˈæt.mə.sfɪər/",
+    "us": "/ˈæt.mə.sfɪr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/atmosphere"
+  },
+  "attic": {
+    "uk": "/ˈæt.ɪk/",
+    "us": "/ˈæt̬.ɪk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/attic"
+  },
+  "audience": {
+    "uk": "/ˈɔː.di.əns/",
+    "us": "/ˈɑː.di.əns/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/audience"
+  },
+  "average": {
+    "uk": "/ˈæv.ər.ɪdʒ/",
+    "us": "/ˈæv.ɚ.ɪdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/average"
+  },
+  "award": {
+    "uk": "/əˈwɔːd/",
+    "us": "/əˈwɔːrd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/award"
+  },
+  "axis": {
+    "uk": "/ˈæk.sɪs/",
+    "us": "/ˈæk.sɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/axis"
+  },
+  "badminton": {
+    "uk": "/ˈbæd.mɪn.tən/",
+    "us": "/ˈbæd.mɪn.tən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/badminton"
+  },
+  "balanced": {
+    "uk": "/ˈbæl.ənst/",
+    "us": "/ˈbæl.ənst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/balanced"
+  },
+  "bamboo": {
+    "uk": "/bæmˈbuː/",
+    "us": "/bæmˈbuː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bamboo"
+  },
+  "banner": {
+    "uk": "/ˈbæn.ər/",
+    "us": "/ˈbæn.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/banner"
+  },
+  "bar chart": {
+    "uk": "/ˈbɑː ˌtʃɑːt/",
+    "us": "/ˈbɑːr ˌtʃɑːrt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bar-chart"
+  },
+  "barbecue": {
+    "uk": "/ˈbɑː.bɪ.kjuː/",
+    "us": "/ˈbɑːr.bə.kjuː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/barbecue"
+  },
+  "bargain": {
+    "uk": "/ˈbɑː.ɡɪn/",
+    "us": "/ˈbɑːr.ɡɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bargain"
+  },
+  "basket": {
+    "uk": "/ˈbɑː.skɪt/",
+    "us": "/ˈbæs.kət/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/basket"
+  },
+  "battery": {
+    "uk": "/ˈbæt.ər.i/",
+    "us": "/ˈbæt̬.ɚ.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/battery"
+  },
+  "bay": {
+    "uk": "/beɪ/",
+    "us": "/beɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bay"
+  },
+  "beach": {
+    "uk": "/biːtʃ/",
+    "us": "/biːtʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/beach"
+  },
+  "beam": {
+    "uk": "/biːm/",
+    "us": "/biːm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/beam"
+  },
+  "become": {
+    "uk": "/bɪˈkʌm/",
+    "us": "/bɪˈkʌm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/become"
+  },
+  "bedtime": {
+    "uk": "/ˈbed.taɪm/",
+    "us": "/ˈbed.taɪm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bedtime"
+  },
+  "before": {
+    "uk": "/bɪˈfɔːr/",
+    "us": "/bɪˈfɔːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/before"
+  },
+  "begin": {
+    "uk": "/bɪˈɡɪn/",
+    "us": "/bɪˈɡɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/begin"
+  },
+  "belongings": {
+    "uk": "/bɪˈlɒŋ.ɪŋz/",
+    "us": "/bɪˈlɑːŋ.ɪŋz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/belongings"
+  },
+  "bench": {
+    "uk": "/bentʃ/",
+    "us": "/bentʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bench"
+  },
+  "bend": {
+    "uk": "/bend/",
+    "us": "/bend/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bend"
+  },
+  "better": {
+    "uk": "/ˈbet.ər/",
+    "us": "/ˈbet̬.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/better"
+  },
+  "bigger": {
+    "uk": "/bɪɡər/",
+    "us": "/bɪɡɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/big · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "birdwatching": {
+    "uk": "/ˈbɜːdˌwɒtʃ.ɪŋ/",
+    "us": "/ˈbɝːdˌwɑː.tʃɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/birdwatching"
+  },
+  "black hole": {
+    "uk": "/ˌblæk ˈhəʊl/",
+    "us": "/ˌblæk ˈhoʊl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/black-hole"
+  },
+  "blade": {
+    "uk": "/bleɪd/",
+    "us": "/bleɪd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/blade"
+  },
+  "blanket": {
+    "uk": "/ˈblæŋ.kɪt/",
+    "us": "/ˈblæŋ.kɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/blanket"
+  },
+  "blink": {
+    "uk": "/blɪŋk/",
+    "us": "/blɪŋk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/blink"
+  },
+  "blister": {
+    "uk": "/ˈblɪs.tər/",
+    "us": "/ˈblɪs.tɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/blister"
+  },
+  "boardwalk": {
+    "uk": "/ˈbɔːd.wɔːk/",
+    "us": "/ˈbɔːrd.wɑːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/boardwalk"
+  },
+  "boil": {
+    "uk": "/bɔɪl/",
+    "us": "/bɔɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/boil"
+  },
+  "book fair": {
+    "uk": "/bʊk feər/",
+    "us": "/bʊk fer/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/book · https://dictionary.cambridge.org/dictionary/english/fair",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "bookshelf": {
+    "uk": "/ˈbʊk.ʃelf/",
+    "us": "/ˈbʊk.ʃelf/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bookshelf"
+  },
+  "booth": {
+    "uk": "/buːð/",
+    "us": "/buːθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/booth"
+  },
+  "boots": {
+    "uk": "/buːts/",
+    "us": "/buːts/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/boot",
+    "kind": "inflected-form"
+  },
+  "both": {
+    "uk": "/bəʊθ/",
+    "us": "/boʊθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/both"
+  },
+  "bottle": {
+    "uk": "/ˈbɒt.əl/",
+    "us": "/ˈbɑː.t̬əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bottle"
+  },
+  "bought": {
+    "uk": "/bɔːt/",
+    "us": "/bɑːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bought"
+  },
+  "broad": {
+    "uk": "/brɔːd/",
+    "us": "/brɑːd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/broad"
+  },
+  "broken": {
+    "uk": "/ˈbrəʊ.kən/",
+    "us": "/ˈbroʊ.kən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/broken"
+  },
+  "bruise": {
+    "uk": "/bruːz/",
+    "us": "/bruːz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bruise"
+  },
+  "bug": {
+    "uk": "/bʌɡ/",
+    "us": "/bʌɡ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bug"
+  },
+  "bulb": {
+    "uk": "/bʌlb/",
+    "us": "/bʌlb/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/bulb"
+  },
+  "cabin": {
+    "uk": "/ˈkæb.ɪn/",
+    "us": "/ˈkæb.ɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cabin"
+  },
+  "call": {
+    "uk": "/kɔːl/",
+    "us": "/kɑːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/call"
+  },
+  "camp": {
+    "uk": "/kæmp/",
+    "us": "/kæmp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/camp"
+  },
+  "camper": {
+    "uk": "/ˈkæm.pər/",
+    "us": "/ˈkæm.pɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/camper"
+  },
+  "campsite": {
+    "uk": "/ˈkæmp.saɪt/",
+    "us": "/ˈkæmp.saɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/campsite"
+  },
+  "canopy": {
+    "uk": "/ˈkæn.ə.pi/",
+    "us": "/ˈkæn.ə.pi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/canopy"
+  },
+  "canteen": {
+    "uk": "/kænˈtiːn/",
+    "us": "/kænˈtiːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/canteen"
+  },
+  "capacity": {
+    "uk": "/kəˈpæs.ə.ti/",
+    "us": "/kəˈpæs.ə.t̬i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/capacity"
+  },
+  "capsule": {
+    "uk": "/ˈkæp.sjuːl/",
+    "us": "/ˈkæp.səl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/capsule"
+  },
+  "carriage": {
+    "uk": "/ˈkær.ɪdʒ/",
+    "us": "/ˈker.ɪdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/carriage"
+  },
+  "cartoon": {
+    "uk": "/kɑːˈtuːn/",
+    "us": "/kɑːrˈtuːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cartoon"
+  },
+  "ceiling": {
+    "uk": "/ˈsiː.lɪŋ/",
+    "us": "/ˈsiː.lɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ceiling"
+  },
+  "celebration": {
+    "uk": "/ˌsel.əˈbreɪ.ʃən/",
+    "us": "/ˌsel.əˈbreɪ.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/celebration"
+  },
+  "centimetre": {
+    "uk": "/ˈsen.tɪˌmiː.tər/",
+    "us": "/ˈsen.t̬əˌmiː.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/centimetre"
+  },
+  "ceremony": {
+    "uk": "/ˈser.ɪ.mə.ni/",
+    "us": "/ˈser.ə.moʊ.ni/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ceremony"
+  },
+  "change": {
+    "uk": "/tʃeɪndʒ/",
+    "us": "/tʃeɪndʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/change"
+  },
+  "channel": {
+    "uk": "/ˈtʃæn.əl/",
+    "us": "/ˈtʃæn.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/channel"
+  },
+  "chant": {
+    "uk": "/tʃɑːnt/",
+    "us": "/tʃænt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chant"
+  },
+  "charge": {
+    "uk": "/tʃɑːdʒ/",
+    "us": "/tʃɑːrdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/charge"
+  },
+  "charger": {
+    "uk": "/ˈtʃɑː.dʒər/",
+    "us": "/ˈtʃɑːr.dʒɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/charger"
+  },
+  "chase": {
+    "uk": "/tʃeɪs/",
+    "us": "/tʃeɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chase"
+  },
+  "chat": {
+    "uk": "/tʃæt/",
+    "us": "/tʃæt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chat"
+  },
+  "check in": {
+    "uk": "/tʃek ɪn/",
+    "us": "/tʃek ɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/check · https://dictionary.cambridge.org/dictionary/english/in",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "checkout": {
+    "uk": "/ˈtʃek.aʊt/",
+    "us": "/ˈtʃek.aʊt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/checkout"
+  },
+  "checkup": {
+    "uk": "/ˈtʃek.ʌp/",
+    "us": "/ˈtʃek.ʌp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/checkup"
+  },
+  "cheer": {
+    "uk": "/tʃɪər/",
+    "us": "/tʃɪr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cheer"
+  },
+  "cheetah": {
+    "uk": "/ˈtʃiː.tə/",
+    "us": "/ˈtʃiː.t̬ə/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cheetah"
+  },
+  "chimney": {
+    "uk": "/ˈtʃɪm.ni/",
+    "us": "/ˈtʃɪm.ni/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chimney"
+  },
+  "chorus": {
+    "uk": "/ˈkɔː.rəs/",
+    "us": "/ˈkɔːr.əs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/chorus"
+  },
+  "circuit": {
+    "uk": "/ˈsɜː.kɪt/",
+    "us": "/ˈsɝː.kɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/circuit"
+  },
+  "circumference": {
+    "uk": "/səˈkʌm.fər.əns/",
+    "us": "/sɚˈkʌm.fɚ.əns/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/circumference"
+  },
+  "clay": {
+    "uk": "/kleɪ/",
+    "us": "/kleɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/clay"
+  },
+  "cleaned": {
+    "uk": "/kliːnd/",
+    "us": "/kliːnd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/clean · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "clear away": {
+    "uk": "/klɪər əˈweɪ/",
+    "us": "/klɪr əˈweɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/clear · https://dictionary.cambridge.org/dictionary/english/away",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "climb": {
+    "uk": "/klaɪm/",
+    "us": "/klaɪm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/climb"
+  },
+  "closet": {
+    "uk": "/ˈklɒz.ɪt/",
+    "us": "/ˈklɑː.zət/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/closet"
+  },
+  "cloth": {
+    "uk": "/klɒθ/",
+    "us": "/klɑːθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cloth"
+  },
+  "cloud": {
+    "uk": "/klaʊd/",
+    "us": "/klaʊd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cloud"
+  },
+  "coastline": {
+    "uk": "/ˈkəʊst.laɪn/",
+    "us": "/ˈkoʊst.laɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/coastline"
+  },
+  "cold": {
+    "uk": "/kəʊld/",
+    "us": "/koʊld/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cold"
+  },
+  "comet": {
+    "uk": "/ˈkɒm.ɪt/",
+    "us": "/ˈkɑː.mɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/comet"
+  },
+  "comic strip": {
+    "uk": "/ˈkɒm.ɪk ˌstrɪp/",
+    "us": "/ˈkɑː.mɪk ˌstrɪp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/comic-strip"
+  },
+  "community centre": {
+    "uk": "/kəˈmjuː.nə.ti ˌsen.tər/",
+    "us": "/kəˈmjuː.nə.t̬i ˌsen.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/community-centre"
+  },
+  "comparison": {
+    "uk": "/kəmˈpær.ɪ.sən/",
+    "us": "/kəmˈper.ɪ.sən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/comparison"
+  },
+  "compost": {
+    "uk": "/ˈkɒm.pɒst/",
+    "us": "/ˈkɑːm.poʊst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/compost"
+  },
+  "constellation": {
+    "uk": "/ˌkɒn.stəˈleɪ.ʃən/",
+    "us": "/ˌkɑːn.stəˈleɪ.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/constellation"
+  },
+  "container": {
+    "uk": "/kənˈteɪ.nər/",
+    "us": "/kənˈteɪ.nɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/container"
+  },
+  "contest": {
+    "uk": "/ˈkɒn.test/",
+    "us": "/ˈkɑːn.test/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/contest",
+    "audioContext": "We joined a drawing contest."
+  },
+  "convert": {
+    "uk": "/kənˈvɜːt/",
+    "us": "/kənˈvɝːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/convert"
+  },
+  "cool": {
+    "uk": "/kuːl/",
+    "us": "/kuːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cool"
+  },
+  "couch": {
+    "uk": "/kaʊtʃ/",
+    "us": "/kaʊtʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/couch"
+  },
+  "cough": {
+    "uk": "/kɒf/",
+    "us": "/kɑːf/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cough"
+  },
+  "could": {
+    "uk": "/kʊd/",
+    "us": "/kʊd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/could"
+  },
+  "count down": {
+    "uk": "/kaʊnt daʊn/",
+    "us": "/kaʊnt daʊn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/count · https://dictionary.cambridge.org/dictionary/english/down",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "countryside": {
+    "uk": "/ˈkʌn.tri.saɪd/",
+    "us": "/ˈkʌn.tri.saɪd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/countryside"
+  },
+  "coupon": {
+    "uk": "/ˈkuː.pɒn/",
+    "us": "/ˈkuː.pɑːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/coupon"
+  },
+  "court": {
+    "uk": "/kɔːt/",
+    "us": "/kɔːrt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/court"
+  },
+  "crab": {
+    "uk": "/kræb/",
+    "us": "/kræb/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/crab"
+  },
+  "cramp": {
+    "uk": "/kræmp/",
+    "us": "/kræmp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cramp"
+  },
+  "crater": {
+    "uk": "/ˈkreɪ.tər/",
+    "us": "/ˈkreɪ.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/crater"
+  },
+  "creek": {
+    "uk": "/kriːk/",
+    "us": "/kriːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/creek"
+  },
+  "crescent": {
+    "uk": "/ˈkres.ənt/",
+    "us": "/ˈkres.ənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/crescent"
+  },
+  "crew": {
+    "uk": "/kruː/",
+    "us": "/kruː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/crew"
+  },
+  "cricket": {
+    "uk": "/ˈkrɪk.ɪt/",
+    "us": "/ˈkrɪk.ɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cricket"
+  },
+  "crossword": {
+    "uk": "/ˈkrɒs.wɜːd/",
+    "us": "/ˈkrɑːs.wɝːd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/crossword"
+  },
+  "crumb": {
+    "uk": "/krʌm/",
+    "us": "/krʌm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/crumb"
+  },
+  "cry": {
+    "uk": "/kraɪ/",
+    "us": "/kraɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cry"
+  },
+  "currency": {
+    "uk": "/ˈkʌr.ən.si/",
+    "us": "/ˈkɝː.ən.si/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/currency"
+  },
+  "current": {
+    "uk": "/ˈkʌr.ənt/",
+    "us": "/ˈkɝː.ənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/current"
+  },
+  "curtain": {
+    "uk": "/ˈkɜː.tən/",
+    "us": "/ˈkɝː.tən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/curtain"
+  },
+  "curve": {
+    "uk": "/kɜːv/",
+    "us": "/kɝːv/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/curve"
+  },
+  "cycling": {
+    "uk": "/ˈsaɪ.klɪŋ/",
+    "us": "/ˈsaɪ.klɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/cycling"
+  },
+  "damage": {
+    "uk": "/ˈdæm.ɪdʒ/",
+    "us": "/ˈdæm.ɪdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/damage"
+  },
+  "damp": {
+    "uk": "/dæmp/",
+    "us": "/dæmp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/damp"
+  },
+  "daytime": {
+    "uk": "/ˈdeɪ.taɪm/",
+    "us": "/ˈdeɪ.taɪm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/daytime"
+  },
+  "deal": {
+    "uk": "/diːl/",
+    "us": "/diːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/deal"
+  },
+  "debate": {
+    "uk": "/dɪˈbeɪt/",
+    "us": "/dɪˈbeɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/debate"
+  },
+  "decimal": {
+    "uk": "/ˈdes.ɪ.məl/",
+    "us": "/ˈdes.ə.məl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/decimal"
+  },
+  "deck": {
+    "uk": "/dek/",
+    "us": "/dek/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/deck"
+  },
+  "degree": {
+    "uk": "/dɪˈɡriː/",
+    "us": "/dɪˈɡriː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/degree"
+  },
+  "depth": {
+    "uk": "/depθ/",
+    "us": "/depθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/depth"
+  },
+  "detour": {
+    "uk": "/ˈdiː.tɔːr/",
+    "us": "/ˈdiː.tʊr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/detour"
+  },
+  "device": {
+    "uk": "/dɪˈvaɪs/",
+    "us": "/dɪˈvaɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/device"
+  },
+  "diameter": {
+    "uk": "/daɪˈæm.ɪ.tər/",
+    "us": "/daɪˈæm.ə.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/diameter"
+  },
+  "diet": {
+    "uk": "/ˈdaɪ.ət/",
+    "us": "/ˈdaɪ.ət/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/diet"
+  },
+  "difference": {
+    "uk": "/ˈdɪf.ər.əns/",
+    "us": "/ˈdɪf.ɚ.əns/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/difference"
+  },
+  "different": {
+    "uk": "/ˈdɪf.ər.ənt/",
+    "us": "/ˈdɪf.ɚ.ənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/different"
+  },
+  "dining hall": {
+    "uk": "/ˈdaɪ.nɪŋ ˌhɔːl/",
+    "us": "/ˈdaɪ.nɪŋ ˌhɑːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dining-hall"
+  },
+  "dinosaur": {
+    "uk": "/ˈdaɪ.nə.sɔːr/",
+    "us": "/ˈdaɪ.nə.sɔːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dinosaur"
+  },
+  "dirty": {
+    "uk": "/ˈdɜː.ti/",
+    "us": "/ˈdɝː.t̬i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dirty"
+  },
+  "discuss": {
+    "uk": "/dɪˈskʌs/",
+    "us": "/dɪˈskʌs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/discuss"
+  },
+  "dishcloth": {
+    "uk": "/ˈdɪʃ.klɒθ/",
+    "us": "/ˈdɪʃ.klɑːθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dishcloth"
+  },
+  "dishwasher": {
+    "uk": "/ˈdɪʃˌwɒʃ.ər/",
+    "us": "/ˈdɪʃˌwɑː.ʃɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dishwasher"
+  },
+  "distant": {
+    "uk": "/ˈdɪs.tənt/",
+    "us": "/ˈdɪs.tənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/distant"
+  },
+  "dizzy": {
+    "uk": "/ˈdɪz.i/",
+    "us": "/ˈdɪz.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dizzy"
+  },
+  "dock": {
+    "uk": "/dɒk/",
+    "us": "/dɑːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dock"
+  },
+  "drain": {
+    "uk": "/dreɪn/",
+    "us": "/dreɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drain"
+  },
+  "drank": {
+    "uk": "/dræŋk/",
+    "us": "/dræŋk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drank"
+  },
+  "dream": {
+    "uk": "/driːm/",
+    "us": "/driːm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dream"
+  },
+  "dress": {
+    "uk": "/dres/",
+    "us": "/dres/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dress"
+  },
+  "drink": {
+    "uk": "/drɪŋk/",
+    "us": "/drɪŋk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drink"
+  },
+  "drive": {
+    "uk": "/draɪv/",
+    "us": "/draɪv/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drive"
+  },
+  "drowsy": {
+    "uk": "/ˈdraʊ.zi/",
+    "us": "/ˈdraʊ.zi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drowsy"
+  },
+  "drumbeat": {
+    "uk": "/ˈdrʌm.biːt/",
+    "us": "/ˈdrʌm.biːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/drumbeat"
+  },
+  "dry": {
+    "uk": "/draɪ/",
+    "us": "/draɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dry"
+  },
+  "dune": {
+    "uk": "/djuːn/",
+    "us": "/duːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dune"
+  },
+  "dust": {
+    "uk": "/dʌst/",
+    "us": "/dʌst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dust"
+  },
+  "dustpan": {
+    "uk": "/ˈdʌst.pæn/",
+    "us": "/ˈdʌst.pæn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dustpan"
+  },
+  "dusty": {
+    "uk": "/ˈdʌs.ti/",
+    "us": "/ˈdʌs.ti/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/dusty"
+  },
+  "earn": {
+    "uk": "/ɜːn/",
+    "us": "/ɝːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/earn"
+  },
+  "earth": {
+    "uk": "/ɜːθ/",
+    "us": "/ɝːθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/earth"
+  },
+  "easy": {
+    "uk": "/ˈiː.zi/",
+    "us": "/ˈiː.zi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/easy"
+  },
+  "eat": {
+    "uk": "/iːt/",
+    "us": "/iːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/eat"
+  },
+  "eclipse": {
+    "uk": "/ɪˈklɪps/",
+    "us": "/ɪˈklɪps/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/eclipse"
+  },
+  "efficient": {
+    "uk": "/ɪˈfɪʃ.ənt/",
+    "us": "/ɪˈfɪʃ.ənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/efficient"
+  },
+  "Eiffel Tower": {
+    "uk": "/ˌaɪ.fəl ˈtaʊər/",
+    "us": "/ˌaɪ.fəl ˈtaʊ.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/eiffel-tower"
+  },
+  "electricity": {
+    "uk": "/ˌel.ɪkˈtrɪs.ə.ti/",
+    "us": "/ɪˌlekˈtrɪs.ə.t̬i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/electricity"
+  },
+  "email": {
+    "uk": "/ˈiː.meɪl/",
+    "us": "/ˈiː.meɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/email"
+  },
+  "energy": {
+    "uk": "/ˈen.ə.dʒi/",
+    "us": "/ˈen.ɚ.dʒi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/energy"
+  },
+  "enjoy": {
+    "uk": "/ɪnˈdʒɔɪ/",
+    "us": "/ɪnˈdʒɔɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/enjoy"
+  },
+  "entry fee": {
+    "uk": "/ˈen.tri fiː/",
+    "us": "/ˈen.tri fiː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/entry · https://dictionary.cambridge.org/dictionary/english/fee",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "equipment": {
+    "uk": "/ɪˈkwɪp.mənt/",
+    "us": "/ɪˈkwɪp.mənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/equipment"
+  },
+  "errand": {
+    "uk": "/ˈer.ənd/",
+    "us": "/ˈer.ənd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/errand"
+  },
+  "estimate": {
+    "uk": "/ˈes.tɪ.meɪt/",
+    "us": "/ˈes.tə.meɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/estimate",
+    "audioContext": "We can estimate the cost."
+  },
+  "ever": {
+    "uk": "/ˈev.ər/",
+    "us": "/ˈev.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ever"
+  },
+  "exact": {
+    "uk": "/ɪɡˈzækt/",
+    "us": "/ɪɡˈzækt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/exact"
+  },
+  "examine": {
+    "uk": "/ɪɡˈzæm.ɪn/",
+    "us": "/ɪɡˈzæm.ɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/examine"
+  },
+  "exchange": {
+    "uk": "/ɪksˈtʃeɪndʒ/",
+    "us": "/ɪksˈtʃeɪndʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/exchange"
+  },
+  "exciting": {
+    "uk": "/ɪkˈsaɪ.tɪŋ/",
+    "us": "/ɪkˈsaɪ.t̬ɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/exciting"
+  },
+  "exhibit": {
+    "uk": "/ɪɡˈzɪb.ɪt/",
+    "us": "/ɪɡˈzɪb.ɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/exhibit"
+  },
+  "exhibition": {
+    "uk": "/ˌek.sɪˈbɪʃ.ən/",
+    "us": "/ˌek.səˈbɪʃ.ən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/exhibition"
+  },
+  "fare": {
+    "uk": "/feər/",
+    "us": "/fer/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fare"
+  },
+  "farewell": {
+    "uk": "/ˌfeəˈwel/",
+    "us": "/ˌferˈwel/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/farewell"
+  },
+  "faster": {
+    "uk": "/fɑːstər/",
+    "us": "/fæstɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fast · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "fell": {
+    "uk": "/fel/",
+    "us": "/fel/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fell"
+  },
+  "felt": {
+    "uk": "/felt/",
+    "us": "/felt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/felt"
+  },
+  "fern": {
+    "uk": "/fɜːn/",
+    "us": "/fɝːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fern"
+  },
+  "fetch": {
+    "uk": "/fetʃ/",
+    "us": "/fetʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fetch"
+  },
+  "fever": {
+    "uk": "/ˈfiː.vər/",
+    "us": "/ˈfiː.vɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fever"
+  },
+  "field trip": {
+    "uk": "/ˈfiːld ˌtrɪp/",
+    "us": "/ˈfiːld ˌtrɪp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/field-trip"
+  },
+  "filter": {
+    "uk": "/ˈfɪl.tər/",
+    "us": "/ˈfɪl.tɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/filter"
+  },
+  "finish line": {
+    "uk": "/ˈfɪn.ɪʃ ˌlaɪn/",
+    "us": "/ˈfɪn.ɪʃ ˌlaɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/finish-line"
+  },
+  "fireworks": {
+    "uk": "/ˈfaɪə.wɜːks/",
+    "us": "/ˈfaɪr.wɝːks/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/firework",
+    "kind": "inflected-form"
+  },
+  "fish": {
+    "uk": "/fɪʃ/",
+    "us": "/fɪʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fish"
+  },
+  "fishing rod": {
+    "uk": "/ˈfɪʃ.ɪŋ ˌrɒd/",
+    "us": "/ˈfɪʃ.ɪŋ ˌrɑːd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fishing-rod"
+  },
+  "fixed": {
+    "uk": "/fɪkst/",
+    "us": "/fɪkst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fixed"
+  },
+  "flashlight": {
+    "uk": "/ˈflæʃ.laɪt/",
+    "us": "/ˈflæʃ.laɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flashlight"
+  },
+  "flexible": {
+    "uk": "/ˈflek.sə.bəl/",
+    "us": "/ˈflek.sə.bəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flexible"
+  },
+  "flock": {
+    "uk": "/flɒk/",
+    "us": "/flɑːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flock"
+  },
+  "floss": {
+    "uk": "/flɒs/",
+    "us": "/flɑːs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/floss"
+  },
+  "flyer": {
+    "uk": "/ˈflaɪ.ər/",
+    "us": "/ˈflaɪ.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/flyer"
+  },
+  "footpath": {
+    "uk": "/ˈfʊt.pɑːθ/",
+    "us": "/ˈfʊt.pæθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/footpath"
+  },
+  "for example": {
+    "uk": "/fər ɪɡˈzɑːm.pəl/",
+    "us": "/fɚ ɪɡˈzæm.pəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/for · https://dictionary.cambridge.org/dictionary/english/example",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "former": {
+    "uk": "/ˈfɔː.mər/",
+    "us": "/ˈfɔːr.mɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/former"
+  },
+  "fort": {
+    "uk": "/fɔːt/",
+    "us": "/fɔːrt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fort"
+  },
+  "fraction": {
+    "uk": "/ˈfræk.ʃən/",
+    "us": "/ˈfræk.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fraction"
+  },
+  "frame": {
+    "uk": "/freɪm/",
+    "us": "/freɪm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/frame"
+  },
+  "fuel": {
+    "uk": "/ˈfjuː.əl/",
+    "us": "/ˈfjuː.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fuel"
+  },
+  "fund": {
+    "uk": "/fʌnd/",
+    "us": "/fʌnd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/fund"
+  },
+  "gala": {
+    "uk": "/ˈɡɑː.lə/",
+    "us": "/ˈɡeɪ.lə/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gala"
+  },
+  "galaxy": {
+    "uk": "/ˈɡæl.ək.si/",
+    "us": "/ˈɡæl.ək.si/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/galaxy"
+  },
+  "gatehouse": {
+    "uk": "/ˈɡeɪt.haʊs/",
+    "us": "/ˈɡeɪt.haʊs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gatehouse"
+  },
+  "gear": {
+    "uk": "/ɡɪər/",
+    "us": "/ɡɪr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gear"
+  },
+  "gift": {
+    "uk": "/ɡɪft/",
+    "us": "/ɡɪft/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gift"
+  },
+  "gingerbread house": {
+    "uk": "/ˈdʒɪn.dʒə.bred ˌhaʊs/",
+    "us": "/ˈdʒɪn.dʒɚ.bred ˌhaʊs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gingerbread-house"
+  },
+  "glass": {
+    "uk": "/ɡlɑːs/",
+    "us": "/ɡlæs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/glass"
+  },
+  "globe": {
+    "uk": "/ɡləʊb/",
+    "us": "/ɡloʊb/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/globe"
+  },
+  "go": {
+    "uk": "/ɡəʊ/",
+    "us": "/ɡoʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/go"
+  },
+  "go cycling": {
+    "uk": "/ɡəʊ ˈsaɪ.klɪŋ/",
+    "us": "/ɡoʊ ˈsaɪ.klɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/go · https://dictionary.cambridge.org/dictionary/english/cycling",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "goods": {
+    "uk": "/ɡʊdz/",
+    "us": "/ɡʊdz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/good",
+    "kind": "inflected-form"
+  },
+  "graduation": {
+    "uk": "/ˌɡrædʒ.uˈeɪ.ʃən/",
+    "us": "/ˌɡrædʒ.uˈeɪ.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/graduation"
+  },
+  "graph": {
+    "uk": "/ɡrɑːf/",
+    "us": "/ɡræf/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/graph"
+  },
+  "grass": {
+    "uk": "/ɡrɑːs/",
+    "us": "/ɡræs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/grass"
+  },
+  "gravel": {
+    "uk": "/ˈɡræv.əl/",
+    "us": "/ˈɡræv.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gravel"
+  },
+  "gravity": {
+    "uk": "/ˈɡræv.ə.ti/",
+    "us": "/ˈɡræv.ə.t̬i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gravity"
+  },
+  "gust": {
+    "uk": "/ɡʌst/",
+    "us": "/ɡʌst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gust"
+  },
+  "gym": {
+    "uk": "/dʒɪm/",
+    "us": "/dʒɪm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/gym"
+  },
+  "had": {
+    "uk": "/hæd/",
+    "us": "/hæd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/had"
+  },
+  "had a cold": {
+    "uk": "/hæd ə kəʊld/",
+    "us": "/hæd ə koʊld/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/had · https://dictionary.cambridge.org/dictionary/english/a · https://dictionary.cambridge.org/dictionary/english/cold",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "haircut": {
+    "uk": "/ˈheə.kʌt/",
+    "us": "/ˈher.kʌt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/haircut"
+  },
+  "half": {
+    "uk": "/hɑːf/",
+    "us": "/hæf/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/half"
+  },
+  "halfway": {
+    "uk": "/ˌhɑːfˈweɪ/",
+    "us": "/ˌhæfˈweɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/halfway"
+  },
+  "hall": {
+    "uk": "/hɔːl/",
+    "us": "/hɑːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hall"
+  },
+  "hammock": {
+    "uk": "/ˈhæm.ək/",
+    "us": "/ˈhæm.ək/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hammock"
+  },
+  "handy": {
+    "uk": "/ˈhæn.di/",
+    "us": "/ˈhæn.di/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/handy"
+  },
+  "hang up": {
+    "uk": "/hæŋ ʌp/",
+    "us": "/hæŋ ʌp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hang · https://dictionary.cambridge.org/dictionary/english/up",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "hanger": {
+    "uk": "/ˈhæŋ.ər/",
+    "us": "/ˈhæŋ.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hanger"
+  },
+  "harbour": {
+    "uk": "/ˈhɑː.bər/",
+    "us": "/ˈhɑːr.bɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/harbour"
+  },
+  "head": {
+    "uk": "/hed/",
+    "us": "/hed/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/head"
+  },
+  "heat": {
+    "uk": "/hiːt/",
+    "us": "/hiːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/heat"
+  },
+  "heavier": {
+    "uk": "/ˈhev.iər/",
+    "us": "/ˈhev.iɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/heavy · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "heel": {
+    "uk": "/hiːl/",
+    "us": "/hiːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/heel"
+  },
+  "height": {
+    "uk": "/haɪt/",
+    "us": "/haɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/height"
+  },
+  "heritage": {
+    "uk": "/ˈher.ɪ.tɪdʒ/",
+    "us": "/ˈher.ɪ.t̬ɪdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/heritage"
+  },
+  "hiccup": {
+    "uk": "/ˈhɪk.ʌp/",
+    "us": "/ˈhɪk.ʌp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hiccup"
+  },
+  "hiker": {
+    "uk": "/ˈhaɪ.kər/",
+    "us": "/ˈhaɪ.kɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hiker"
+  },
+  "hillside": {
+    "uk": "/ˈhɪl.saɪd/",
+    "us": "/ˈhɪl.saɪd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hillside"
+  },
+  "Hong Kong-Zhuhai-Macao Bridge": {
+    "uk": "/ˌhɒŋ ˈkɒŋ məˈkaʊ brɪdʒ/",
+    "us": "/ˈhɑːŋ ˌkɑːŋ məˈkaʊ brɪdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hong-kong · https://dictionary.cambridge.org/dictionary/english/macau · https://dictionary.cambridge.org/dictionary/english/bridge",
+    "note": "分词音标按 Hong Kong、Macao、Bridge 排列，Zhuhai 沿用拼音 Zhūhǎi。全称听音频。",
+    "kind": "component-ipa"
+  },
+  "hook": {
+    "uk": "/hʊk/",
+    "us": "/hʊk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hook"
+  },
+  "hoop": {
+    "uk": "/huːp/",
+    "us": "/huːp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hoop"
+  },
+  "horizon": {
+    "uk": "/həˈraɪ.zən/",
+    "us": "/həˈraɪ.zən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/horizon"
+  },
+  "horizontal": {
+    "uk": "/ˌhɒr.ɪˈzɒn.təl/",
+    "us": "/ˌhɔːr.ɪˈzɑːn.t̬əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/horizontal"
+  },
+  "hotel": {
+    "uk": "/həʊˈtel/",
+    "us": "/hoʊˈtel/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hotel"
+  },
+  "hurt": {
+    "uk": "/hɜːt/",
+    "us": "/hɝːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hurt"
+  },
+  "hut": {
+    "uk": "/hʌt/",
+    "us": "/hʌt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hut"
+  },
+  "hygiene": {
+    "uk": "/ˈhaɪ.dʒiːn/",
+    "us": "/ˈhaɪ.dʒiːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/hygiene"
+  },
+  "ice-skate": {
+    "uk": "/ˈaɪs.skeɪt/",
+    "us": "/ˈaɪs.skeɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ice-skate"
+  },
+  "ill": {
+    "uk": "/ɪl/",
+    "us": "/ɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ill"
+  },
+  "improvement": {
+    "uk": "/ɪmˈpruːv.mənt/",
+    "us": "/ɪmˈpruːv.mənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/improvement"
+  },
+  "inch": {
+    "uk": "/ɪntʃ/",
+    "us": "/ɪntʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/inch"
+  },
+  "indoor": {
+    "uk": "/ˌɪnˈdɔːr/",
+    "us": "/ˌɪnˈdɔːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/indoor"
+  },
+  "indoors": {
+    "uk": "/ˌɪnˈdɔːz/",
+    "us": "/ˌɪnˈdɔːrz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/indoors"
+  },
+  "insect": {
+    "uk": "/ˈɪn.sekt/",
+    "us": "/ˈɪn.sekt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/insect"
+  },
+  "inspiring": {
+    "uk": "/ɪnˈspaɪə.rɪŋ/",
+    "us": "/ɪnˈspaɪr.ɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/inspiring"
+  },
+  "instead": {
+    "uk": "/ɪnˈsted/",
+    "us": "/ɪnˈsted/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/instead"
+  },
+  "Internet": {
+    "uk": "/ˈɪn.tə.net/",
+    "us": "/ˈɪn.t̬ɚ.net/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/internet"
+  },
+  "interview": {
+    "uk": "/ˈɪn.tə.vjuː/",
+    "us": "/ˈɪn.t̬ɚ.vjuː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/interview"
+  },
+  "into": {
+    "uk": "/ˈɪn.tuː/",
+    "us": "/ˈɪn.tuː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/into"
+  },
+  "itch": {
+    "uk": "/ɪtʃ/",
+    "us": "/ɪtʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/itch"
+  },
+  "item": {
+    "uk": "/ˈaɪ.təm/",
+    "us": "/ˈaɪ.t̬əm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/item"
+  },
+  "jar": {
+    "uk": "/dʒɑːr/",
+    "us": "/dʒɑːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/jar"
+  },
+  "jersey": {
+    "uk": "/ˈdʒɜː.zi/",
+    "us": "/ˈdʒɝː.zi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/jersey"
+  },
+  "Jinggangshan Revolution Museum": {
+    "uk": "/ˌrev.əˈluː.ʃən mjuːˈziː.əm/",
+    "us": "/ˌrev.əˈluː.ʃən mjuːˈziː.əm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/revolution · https://dictionary.cambridge.org/dictionary/english/museum",
+    "note": "音标对应 Revolution Museum，Jinggangshan 沿用拼音 Jǐnggāngshān。全称听音频。",
+    "kind": "component-ipa"
+  },
+  "jog": {
+    "uk": "/dʒɒɡ/",
+    "us": "/dʒɑːɡ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/jog"
+  },
+  "judge": {
+    "uk": "/dʒʌdʒ/",
+    "us": "/dʒʌdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/judge"
+  },
+  "juggle": {
+    "uk": "/ˈdʒʌɡ.əl/",
+    "us": "/ˈdʒʌɡ.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/juggle"
+  },
+  "kayak": {
+    "uk": "/ˈkaɪ.æk/",
+    "us": "/ˈkaɪ.æk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/kayak"
+  },
+  "keepsake": {
+    "uk": "/ˈkiːp.seɪk/",
+    "us": "/ˈkiːp.seɪk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/keepsake"
+  },
+  "kettle": {
+    "uk": "/ˈket.əl/",
+    "us": "/ˈket̬.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/kettle"
+  },
+  "kilogram": {
+    "uk": "/ˈkɪl.ə.ɡræm/",
+    "us": "/ˈkɪl.ə.ɡræm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/kilogram"
+  },
+  "kilometre": {
+    "uk": "/ˈkɪl.əˌmiː.tər/",
+    "us": "/kɪˈlɑː.mə.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/kilometre"
+  },
+  "Labour Day": {
+    "uk": "/ˈleɪ.bə ˌdeɪ/",
+    "us": "/ˈleɪ.bɚ ˌdeɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/labour-day"
+  },
+  "ladder": {
+    "uk": "/ˈlæd.ər/",
+    "us": "/ˈlæd.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ladder"
+  },
+  "lamp": {
+    "uk": "/læmp/",
+    "us": "/læmp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lamp"
+  },
+  "landmark": {
+    "uk": "/ˈlænd.mɑːk/",
+    "us": "/ˈlænd.mɑːrk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/landmark"
+  },
+  "lane": {
+    "uk": "/leɪn/",
+    "us": "/leɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lane"
+  },
+  "last": {
+    "uk": "/lɑːst/",
+    "us": "/læst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/last"
+  },
+  "later": {
+    "uk": "/ˈleɪ.tər/",
+    "us": "/ˈleɪ.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/later"
+  },
+  "laughed": {
+    "uk": "/lɑːft/",
+    "us": "/læft/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/laugh · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "launch": {
+    "uk": "/lɔːntʃ/",
+    "us": "/lɑːntʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/launch"
+  },
+  "laundry": {
+    "uk": "/ˈlɔːn.dri/",
+    "us": "/ˈlɑːn.dri/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/laundry"
+  },
+  "leak": {
+    "uk": "/liːk/",
+    "us": "/liːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/leak"
+  },
+  "leisure": {
+    "uk": "/ˈleʒ.ər/",
+    "us": "/ˈliː.ʒɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/leisure"
+  },
+  "lend": {
+    "uk": "/lend/",
+    "us": "/lend/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lend"
+  },
+  "length": {
+    "uk": "/leŋθ/",
+    "us": "/leŋθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/length"
+  },
+  "lens": {
+    "uk": "/lenz/",
+    "us": "/lenz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lens"
+  },
+  "level": {
+    "uk": "/ˈlev.əl/",
+    "us": "/ˈlev.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/level"
+  },
+  "licked": {
+    "uk": "/lɪkt/",
+    "us": "/lɪkt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lick · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "lid": {
+    "uk": "/lɪd/",
+    "us": "/lɪd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lid"
+  },
+  "life jacket": {
+    "uk": "/ˈlaɪf ˌdʒæk.ɪt/",
+    "us": "/ˈlaɪf ˌdʒæk.ɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/life-jacket"
+  },
+  "light": {
+    "uk": "/laɪt/",
+    "us": "/laɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/light"
+  },
+  "light switch": {
+    "uk": "/ˈlaɪt ˌswɪtʃ/",
+    "us": "/ˈlaɪt ˌswɪtʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/light-switch"
+  },
+  "lighthouse": {
+    "uk": "/ˈlaɪt.haʊs/",
+    "us": "/ˈlaɪt.haʊs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lighthouse"
+  },
+  "lightweight": {
+    "uk": "/ˈlaɪt.weɪt/",
+    "us": "/ˈlaɪt.weɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lightweight"
+  },
+  "litre": {
+    "uk": "/ˈliː.tər/",
+    "us": "/ˈliː.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/litre"
+  },
+  "lizard": {
+    "uk": "/ˈlɪz.əd/",
+    "us": "/ˈlɪz.ɚd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lizard"
+  },
+  "locker": {
+    "uk": "/ˈlɒk.ər/",
+    "us": "/ˈlɑː.kɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/locker"
+  },
+  "longer": {
+    "uk": "/lɒŋɡər/",
+    "us": "/lɑːŋɡɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/long · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "look up": {
+    "uk": "/lʊk ʌp/",
+    "us": "/lʊk ʌp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/look · https://dictionary.cambridge.org/dictionary/english/up",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "loud": {
+    "uk": "/laʊd/",
+    "us": "/laʊd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/loud"
+  },
+  "lower": {
+    "uk": "/ˈləʊ.ər/",
+    "us": "/ˈloʊ.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lower"
+  },
+  "lucky": {
+    "uk": "/ˈlʌk.i/",
+    "us": "/ˈlʌk.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/lucky"
+  },
+  "magazine": {
+    "uk": "/ˌmæɡ.əˈziːn/",
+    "us": "/ˌmæɡ.əˈziːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/magazine"
+  },
+  "make": {
+    "uk": "/meɪk/",
+    "us": "/meɪk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/make"
+  },
+  "manage": {
+    "uk": "/ˈmæn.ɪdʒ/",
+    "us": "/ˈmæn.ədʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/manage"
+  },
+  "marathon": {
+    "uk": "/ˈmær.ə.θən/",
+    "us": "/ˈmer.ə.θɑːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/marathon"
+  },
+  "marble": {
+    "uk": "/ˈmɑː.bəl/",
+    "us": "/ˈmɑːr.bəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/marble"
+  },
+  "market": {
+    "uk": "/ˈmɑː.kɪt/",
+    "us": "/ˈmɑːr.kɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/market"
+  },
+  "Mars": {
+    "uk": "/mɑːz/",
+    "us": "/mɑːrz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mars"
+  },
+  "mat": {
+    "uk": "/mæt/",
+    "us": "/mæt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mat"
+  },
+  "match": {
+    "uk": "/mætʃ/",
+    "us": "/mætʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/match"
+  },
+  "may": {
+    "uk": "/meɪ/",
+    "us": "/meɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/may"
+  },
+  "measurement": {
+    "uk": "/ˈmeʒ.ə.mənt/",
+    "us": "/ˈmeʒ.ɚ.mənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/measurement"
+  },
+  "measuring tape": {
+    "uk": "/ˈmeʒ.ər.ɪŋ teɪp/",
+    "us": "/ˈmeʒ.ɚ.ɪŋ teɪp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/measure · https://dictionary.cambridge.org/dictionary/english/tape",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "medal": {
+    "uk": "/ˈmed.əl/",
+    "us": "/ˈmed.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/medal"
+  },
+  "meteor": {
+    "uk": "/ˈmiː.ti.ɔːr/",
+    "us": "/ˈmiː.t̬i.ɔːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/meteor"
+  },
+  "metre": {
+    "uk": "/ˈmiː.tər/",
+    "us": "/ˈmiː.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/metre"
+  },
+  "microphone": {
+    "uk": "/ˈmaɪ.krə.fəʊn/",
+    "us": "/ˈmaɪ.krə.foʊn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/microphone"
+  },
+  "microscope": {
+    "uk": "/ˈmaɪ.krə.skəʊp/",
+    "us": "/ˈmaɪ.krə.skoʊp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/microscope"
+  },
+  "milestone": {
+    "uk": "/ˈmaɪl.stəʊn/",
+    "us": "/ˈmaɪl.stoʊn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/milestone"
+  },
+  "millimetre": {
+    "uk": "/ˈmɪl.ɪˌmiː.tər/",
+    "us": "/ˈmɪl.əˌmiː.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/millimetre"
+  },
+  "mission": {
+    "uk": "/ˈmɪʃ.ən/",
+    "us": "/ˈmɪʃ.ən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mission"
+  },
+  "money": {
+    "uk": "/ˈmʌn.i/",
+    "us": "/ˈmʌn.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/money"
+  },
+  "month": {
+    "uk": "/mʌnθ/",
+    "us": "/mʌnθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/month"
+  },
+  "moon": {
+    "uk": "/muːn/",
+    "us": "/muːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/moon"
+  },
+  "mosaic": {
+    "uk": "/məʊˈzeɪ.ɪk/",
+    "us": "/moʊˈzeɪ.ɪk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mosaic"
+  },
+  "mosquito": {
+    "uk": "/mɒsˈkiː.təʊ/",
+    "us": "/məˈskiː.t̬oʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mosquito"
+  },
+  "motor": {
+    "uk": "/ˈməʊ.tər/",
+    "us": "/ˈmoʊ.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/motor"
+  },
+  "mud": {
+    "uk": "/mʌd/",
+    "us": "/mʌd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mud"
+  },
+  "muddy": {
+    "uk": "/ˈmʌd.i/",
+    "us": "/ˈmʌd.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/muddy"
+  },
+  "mule": {
+    "uk": "/mjuːl/",
+    "us": "/mjuːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mule"
+  },
+  "mural": {
+    "uk": "/ˈmjʊə.rəl/",
+    "us": "/ˈmjʊr.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/mural"
+  },
+  "muscle": {
+    "uk": "/ˈmʌs.əl/",
+    "us": "/ˈmʌs.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/muscle"
+  },
+  "nap": {
+    "uk": "/næp/",
+    "us": "/næp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/nap"
+  },
+  "narrow": {
+    "uk": "/ˈnær.əʊ/",
+    "us": "/ˈner.oʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/narrow"
+  },
+  "nearly": {
+    "uk": "/ˈnɪə.li/",
+    "us": "/ˈnɪr.li/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/nearly"
+  },
+  "neighbourhood": {
+    "uk": "/ˈneɪ.bə.hʊd/",
+    "us": "/ˈneɪ.bɚ.hʊd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/neighbourhood"
+  },
+  "net": {
+    "uk": "/net/",
+    "us": "/net/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/net"
+  },
+  "New Zealand": {
+    "uk": "/ˌnjuː ˈziː.lənd/",
+    "us": "/ˌnuː ˈziː.lənd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/new-zealand · https://dictionary.cambridge.org/dictionary/english/new"
+  },
+  "notepad": {
+    "uk": "/ˈnəʊt.pæd/",
+    "us": "/ˈnoʊt.pæd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/notepad"
+  },
+  "nothing": {
+    "uk": "/ˈnʌθ.ɪŋ/",
+    "us": "/ˈnʌθ.ɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/nothing"
+  },
+  "notice": {
+    "uk": "/ˈnəʊ.tɪs/",
+    "us": "/ˈnoʊ.t̬ɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/notice"
+  },
+  "observatory": {
+    "uk": "/əbˈzɜː.və.tər.i/",
+    "us": "/əbˈzɝː.və.tɔːr.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/observatory"
+  },
+  "occasion": {
+    "uk": "/əˈkeɪ.ʒən/",
+    "us": "/əˈkeɪ.ʒən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/occasion"
+  },
+  "ocean": {
+    "uk": "/ˈəʊ.ʃən/",
+    "us": "/ˈoʊ.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ocean"
+  },
+  "odd": {
+    "uk": "/ɒd/",
+    "us": "/ɑːd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/odd"
+  },
+  "off": {
+    "uk": "/ɒf/",
+    "us": "/ɑːf/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/off"
+  },
+  "older": {
+    "uk": "/əʊldər/",
+    "us": "/oʊldɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/old · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "opening": {
+    "uk": "/ˈəʊ.pən.ɪŋ/",
+    "us": "/ˈoʊp.nɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/opening"
+  },
+  "opponent": {
+    "uk": "/əˈpəʊ.nənt/",
+    "us": "/əˈpoʊ.nənt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/opponent"
+  },
+  "orbit": {
+    "uk": "/ˈɔː.bɪt/",
+    "us": "/ˈɔːr.bɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/orbit"
+  },
+  "organise": {
+    "uk": "/ˈɔː.ɡən.aɪz/",
+    "us": "/ˈɔːr.ɡən.aɪz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/organise"
+  },
+  "outdoor": {
+    "uk": "/ˈaʊtˌdɔːr/",
+    "us": "/ˈaʊtˌdɔːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/outdoor"
+  },
+  "outer space": {
+    "uk": "/ˌaʊ.tə ˈspeɪs/",
+    "us": "/ˌaʊ.t̬ɚ ˈspeɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/outer-space"
+  },
+  "overlap": {
+    "uk": "/ˌəʊ.vəˈlæp/",
+    "us": "/ˌoʊ.vɚˈlæp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/overlap",
+    "audioContext": "The two circles overlap here."
+  },
+  "overnight": {
+    "uk": "/ˌəʊ.vəˈnaɪt/",
+    "us": "/ˌoʊ.vɚˈnaɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/overnight"
+  },
+  "owe": {
+    "uk": "/əʊ/",
+    "us": "/oʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/owe"
+  },
+  "own": {
+    "uk": "/əʊn/",
+    "us": "/oʊn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/own"
+  },
+  "oxygen": {
+    "uk": "/ˈɒk.sɪ.dʒən/",
+    "us": "/ˈɑːk.sɪ.dʒən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/oxygen"
+  },
+  "packaging": {
+    "uk": "/ˈpæk.ɪ.dʒɪŋ/",
+    "us": "/ˈpæk.ɪ.dʒɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/packaging"
+  },
+  "paddle": {
+    "uk": "/ˈpæd.əl/",
+    "us": "/ˈpæd.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/paddle"
+  },
+  "parallel": {
+    "uk": "/ˈpær.ə.lel/",
+    "us": "/ˈper.ə.lel/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/parallel"
+  },
+  "Paris": {
+    "uk": "/ˈpær.ɪs/",
+    "us": "/ˈper.ɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/paris"
+  },
+  "part": {
+    "uk": "/pɑːt/",
+    "us": "/pɑːrt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/part"
+  },
+  "paste": {
+    "uk": "/peɪst/",
+    "us": "/peɪst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/paste"
+  },
+  "patch": {
+    "uk": "/pætʃ/",
+    "us": "/pætʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/patch"
+  },
+  "peninsula": {
+    "uk": "/pəˈnɪn.sjə.lə/",
+    "us": "/pəˈnɪn.sə.lə/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/peninsula"
+  },
+  "percent": {
+    "uk": "/pəˈsent/",
+    "us": "/pɚˈsent/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/percent"
+  },
+  "performer": {
+    "uk": "/pəˈfɔː.mər/",
+    "us": "/pɚˈfɔːr.mɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/performer"
+  },
+  "photograph": {
+    "uk": "/ˈfəʊ.tə.ɡrɑːf/",
+    "us": "/ˈfoʊ.t̬oʊ.ɡræf/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/photograph"
+  },
+  "photographer": {
+    "uk": "/fəˈtɒɡ.rə.fər/",
+    "us": "/fəˈtɑː.ɡrə.fɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/photographer"
+  },
+  "pillar": {
+    "uk": "/ˈpɪl.ər/",
+    "us": "/ˈpɪl.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pillar"
+  },
+  "planet": {
+    "uk": "/ˈplæn.ɪt/",
+    "us": "/ˈplæn.ɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/planet"
+  },
+  "plug": {
+    "uk": "/plʌɡ/",
+    "us": "/plʌɡ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/plug"
+  },
+  "pocket money": {
+    "uk": "/ˈpɒk.ɪt ˌmʌn.i/",
+    "us": "/ˈpɑː.kɪt ˌmʌn.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pocket-money"
+  },
+  "pollution": {
+    "uk": "/pəˈluː.ʃən/",
+    "us": "/pəˈluː.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pollution"
+  },
+  "poncho": {
+    "uk": "/ˈpɒn.tʃəʊ/",
+    "us": "/ˈpɑːn.tʃoʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/poncho"
+  },
+  "portrait": {
+    "uk": "/ˈpɔː.trət/",
+    "us": "/ˈpɔːr.trɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/portrait"
+  },
+  "power": {
+    "uk": "/paʊər/",
+    "us": "/ˈpaʊ.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/power"
+  },
+  "prize": {
+    "uk": "/praɪz/",
+    "us": "/praɪz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/prize"
+  },
+  "programme": {
+    "uk": "/ˈprəʊ.ɡræm/",
+    "us": "/ˈproʊ.ɡræm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/programme"
+  },
+  "prop": {
+    "uk": "/prɒp/",
+    "us": "/prɑːp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/prop"
+  },
+  "pumpkin": {
+    "uk": "/ˈpʌmp.kɪn/",
+    "us": "/ˈpʌmp.kɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pumpkin"
+  },
+  "put away": {
+    "uk": "/pʊt əˈweɪ/",
+    "us": "/pʊt əˈweɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/put · https://dictionary.cambridge.org/dictionary/english/away",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "question": {
+    "uk": "/ˈkwes.tʃən/",
+    "us": "/ˈkwes.tʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/question"
+  },
+  "quick": {
+    "uk": "/kwɪk/",
+    "us": "/kwɪk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/quick"
+  },
+  "race": {
+    "uk": "/reɪs/",
+    "us": "/reɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/race"
+  },
+  "racket": {
+    "uk": "/ˈræk.ɪt/",
+    "us": "/ˈræk.ɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/racket"
+  },
+  "raft": {
+    "uk": "/rɑːft/",
+    "us": "/ræft/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/raft"
+  },
+  "railway": {
+    "uk": "/ˈreɪl.weɪ/",
+    "us": "/ˈreɪl.weɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/railway"
+  },
+  "range": {
+    "uk": "/reɪndʒ/",
+    "us": "/reɪndʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/range"
+  },
+  "read": {
+    "uk": "/riːd/",
+    "us": "/riːd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/read",
+    "audioContext": "I read books every evening."
+  },
+  "reception": {
+    "uk": "/rɪˈsep.ʃən/",
+    "us": "/rɪˈsep.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/reception"
+  },
+  "recharge": {
+    "uk": "/ˌriːˈtʃɑːdʒ/",
+    "us": "/ˌriːˈtʃɑːrdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/recharge"
+  },
+  "recover": {
+    "uk": "/rɪˈkʌv.ər/",
+    "us": "/rɪˈkʌv.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/recover"
+  },
+  "recyclable": {
+    "uk": "/ˌriːˈsaɪ.klə.bəl/",
+    "us": "/ˌriːˈsaɪ.klə.bəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/recyclable"
+  },
+  "reduce": {
+    "uk": "/rɪˈdjuːs/",
+    "us": "/rɪˈduːs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/reduce"
+  },
+  "referee": {
+    "uk": "/ˌref.əˈriː/",
+    "us": "/ˌref.əˈriː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/referee"
+  },
+  "refill": {
+    "uk": "/ˌriːˈfɪl/",
+    "us": "/ˌriːˈfɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/refill",
+    "audioContext": "Please refill the bottle."
+  },
+  "refund": {
+    "uk": "/ˈriː.fʌnd/",
+    "us": "/ˈriː.fʌnd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/refund",
+    "audioContext": "We got a refund for the ticket."
+  },
+  "rehearse": {
+    "uk": "/rəˈhɜːs/",
+    "us": "/rəˈhɝːs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rehearse"
+  },
+  "relay": {
+    "uk": "/ˈriː.leɪ/",
+    "us": "/ˈriː.leɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/relay"
+  },
+  "remote control": {
+    "uk": "/rɪˌməʊt kənˈtrəʊl/",
+    "us": "/rɪˌmoʊt kənˈtroʊl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/remote-control"
+  },
+  "renewable": {
+    "uk": "/rɪˈnjuː.ə.bəl/",
+    "us": "/rɪˈnuː.ə.bəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/renewable"
+  },
+  "rent": {
+    "uk": "/rent/",
+    "us": "/rent/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rent"
+  },
+  "reopen": {
+    "uk": "/ˌriːˈəʊ.pən/",
+    "us": "/ˌriːˈoʊ.pən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/reopen"
+  },
+  "resource": {
+    "uk": "/rɪˈzɔːs/",
+    "us": "/ˈriː.sɔːrs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/resource"
+  },
+  "restaurant": {
+    "uk": "/ˈres.tər.ɒnt/",
+    "us": "/ˈres.tə.rɑːnt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/restaurant"
+  },
+  "restore": {
+    "uk": "/rɪˈstɔːr/",
+    "us": "/rɪˈstɔːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/restore"
+  },
+  "reuse": {
+    "uk": "/ˌriːˈjuːz/",
+    "us": "/ˌriːˈjuːz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/reuse",
+    "audioContext": "We can reuse the jar."
+  },
+  "riverside": {
+    "uk": "/ˈrɪv.ə.saɪd/",
+    "us": "/ˈrɪv.ɚ.saɪd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/riverside"
+  },
+  "rode": {
+    "uk": "/rəʊd/",
+    "us": "/roʊd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rode"
+  },
+  "rover": {
+    "uk": "/ˈrəʊ.vər/",
+    "us": "/ˈroʊ.vɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rover"
+  },
+  "rug": {
+    "uk": "/rʌɡ/",
+    "us": "/rʌɡ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/rug"
+  },
+  "ruin": {
+    "uk": "/ˈruː.ɪn/",
+    "us": "/ˈruː.ɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ruin"
+  },
+  "run": {
+    "uk": "/rʌn/",
+    "us": "/rʌn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/run"
+  },
+  "run out": {
+    "uk": "/rʌn aʊt/",
+    "us": "/rʌn aʊt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/run · https://dictionary.cambridge.org/dictionary/english/out",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "runny nose": {
+    "uk": "/ˈrʌn.i nəʊz/",
+    "us": "/ˈrʌn.i noʊz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/runny · https://dictionary.cambridge.org/dictionary/english/nose",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "sale": {
+    "uk": "/seɪl/",
+    "us": "/seɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sale"
+  },
+  "satellite": {
+    "uk": "/ˈsæt.əl.aɪt/",
+    "us": "/ˈsæt̬.əl.aɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/satellite"
+  },
+  "save up": {
+    "uk": "/seɪv ʌp/",
+    "us": "/seɪv ʌp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/save · https://dictionary.cambridge.org/dictionary/english/up",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "saw": {
+    "uk": "/sɔː/",
+    "us": "/sɑː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/saw"
+  },
+  "scale": {
+    "uk": "/skeɪl/",
+    "us": "/skeɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scale"
+  },
+  "schoolbag": {
+    "uk": "/ˈskuːl.bæɡ/",
+    "us": "/ˈskuːl.bæɡ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/schoolbag"
+  },
+  "scoreboard": {
+    "uk": "/ˈskɔː.bɔːd/",
+    "us": "/ˈskɔːr.bɔːrd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scoreboard"
+  },
+  "scratch": {
+    "uk": "/skrætʃ/",
+    "us": "/skrætʃ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scratch"
+  },
+  "script": {
+    "uk": "/skrɪpt/",
+    "us": "/skrɪpt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/script"
+  },
+  "scrub": {
+    "uk": "/skrʌb/",
+    "us": "/skrʌb/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/scrub"
+  },
+  "seagull": {
+    "uk": "/ˈsiː.ɡʌl/",
+    "us": "/ˈsiː.ɡʌl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/seagull"
+  },
+  "seaweed": {
+    "uk": "/ˈsiː.wiːd/",
+    "us": "/ˈsiː.wiːd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/seaweed"
+  },
+  "second-hand": {
+    "uk": "/ˌsek.əndˈhænd/",
+    "us": "/ˌsek.əndˈhænd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/second-hand",
+    "audioContext": "This is a second-hand bike."
+  },
+  "see": {
+    "uk": "/siː/",
+    "us": "/siː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/see"
+  },
+  "sell": {
+    "uk": "/sel/",
+    "us": "/sel/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sell"
+  },
+  "send": {
+    "uk": "/send/",
+    "us": "/send/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/send"
+  },
+  "service": {
+    "uk": "/ˈsɜː.vɪs/",
+    "us": "/ˈsɝː.vɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/service"
+  },
+  "shadow": {
+    "uk": "/ˈʃæd.əʊ/",
+    "us": "/ˈʃæd.oʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shadow"
+  },
+  "shallow": {
+    "uk": "/ˈʃæl.əʊ/",
+    "us": "/ˈʃæl.oʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shallow"
+  },
+  "shampoo": {
+    "uk": "/ʃæmˈpuː/",
+    "us": "/ʃæmˈpuː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shampoo"
+  },
+  "shorter": {
+    "uk": "/ʃɔːtər/",
+    "us": "/ʃɔːrtɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/short · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "show": {
+    "uk": "/ʃəʊ/",
+    "us": "/ʃoʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/show"
+  },
+  "shower": {
+    "uk": "/ʃaʊər/",
+    "us": "/ˈʃaʊ.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shower"
+  },
+  "shuttlecock": {
+    "uk": "/ˈʃʌt.əl.kɒk/",
+    "us": "/ˈʃʌt̬.əl.kɑːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/shuttlecock"
+  },
+  "side": {
+    "uk": "/saɪd/",
+    "us": "/saɪd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/side"
+  },
+  "sing": {
+    "uk": "/sɪŋ/",
+    "us": "/sɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sing"
+  },
+  "skateboard": {
+    "uk": "/ˈskeɪt.bɔːd/",
+    "us": "/ˈskeɪt.bɔːrd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/skateboard"
+  },
+  "sky": {
+    "uk": "/skaɪ/",
+    "us": "/skaɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sky"
+  },
+  "slept": {
+    "uk": "/slept/",
+    "us": "/slept/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/slept"
+  },
+  "slogan": {
+    "uk": "/ˈsləʊ.ɡən/",
+    "us": "/ˈsloʊ.ɡən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/slogan"
+  },
+  "slope": {
+    "uk": "/sləʊp/",
+    "us": "/sloʊp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/slope"
+  },
+  "smaller": {
+    "uk": "/smɔːlər/",
+    "us": "/smɑːlɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/small · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "smarter": {
+    "uk": "/smɑːtər/",
+    "us": "/smɑːrtɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/smart · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "soil": {
+    "uk": "/sɔɪl/",
+    "us": "/sɔɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/soil"
+  },
+  "solar": {
+    "uk": "/ˈsəʊ.lər/",
+    "us": "/ˈsoʊ.lɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/solar"
+  },
+  "solar system": {
+    "uk": "/ˈsəʊ.lə ˌsɪs.təm/",
+    "us": "/ˈsoʊ.lɚ ˌsɪs.təm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/solar-system"
+  },
+  "soon": {
+    "uk": "/suːn/",
+    "us": "/suːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/soon"
+  },
+  "sort": {
+    "uk": "/sɔːt/",
+    "us": "/sɔːrt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sort"
+  },
+  "space": {
+    "uk": "/speɪs/",
+    "us": "/speɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/space"
+  },
+  "space station": {
+    "uk": "/ˈspeɪs ˌsteɪ.ʃən/",
+    "us": "/ˈspeɪs ˌsteɪ.ʃən/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/space-station"
+  },
+  "spaceship": {
+    "uk": "/ˈspeɪs.ʃɪp/",
+    "us": "/ˈspeɪs.ʃɪp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/spaceship"
+  },
+  "spacesuit": {
+    "uk": "/ˈspeɪs.suːt/",
+    "us": "/ˈspeɪs.suːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/spacesuit"
+  },
+  "spectator": {
+    "uk": "/spekˈteɪ.tər/",
+    "us": "/spekˈteɪ.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/spectator"
+  },
+  "spotlight": {
+    "uk": "/ˈspɒt.laɪt/",
+    "us": "/ˈspɑːt.laɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/spotlight"
+  },
+  "sprint": {
+    "uk": "/sprɪnt/",
+    "us": "/sprɪnt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sprint"
+  },
+  "stage": {
+    "uk": "/steɪdʒ/",
+    "us": "/steɪdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stage"
+  },
+  "stain": {
+    "uk": "/steɪn/",
+    "us": "/steɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stain"
+  },
+  "staircase": {
+    "uk": "/ˈsteə.keɪs/",
+    "us": "/ˈster.keɪs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/staircase"
+  },
+  "stall": {
+    "uk": "/stɔːl/",
+    "us": "/stɑːl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stall"
+  },
+  "star": {
+    "uk": "/stɑːr/",
+    "us": "/stɑːr/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/star"
+  },
+  "stay": {
+    "uk": "/steɪ/",
+    "us": "/steɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stay"
+  },
+  "stay up": {
+    "uk": "/steɪ ʌp/",
+    "us": "/steɪ ʌp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stay · https://dictionary.cambridge.org/dictionary/english/up",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "stayed": {
+    "uk": "/steɪd/",
+    "us": "/steɪd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/stay · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "steep": {
+    "uk": "/stiːp/",
+    "us": "/stiːp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/steep"
+  },
+  "stronger": {
+    "uk": "/strɒŋɡər/",
+    "us": "/strɑːŋɡɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/strong · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "sunrise": {
+    "uk": "/ˈsʌn.raɪz/",
+    "us": "/ˈsʌn.raɪz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sunrise"
+  },
+  "sunscreen": {
+    "uk": "/ˈsʌn.skriːn/",
+    "us": "/ˈsʌn.skriːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sunscreen"
+  },
+  "sunset": {
+    "uk": "/ˈsʌn.set/",
+    "us": "/ˈsʌn.set/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/sunset"
+  },
+  "taikonaut": {
+    "uk": "/ˈtaɪkəʊˌnɔːt/",
+    "us": "/ˈtaɪkəˌnɑt/",
+    "reference": "https://www.collinsdictionary.com/dictionary/english/taikonaut · https://doi.org/10.1093/OED/6001344269"
+  },
+  "take": {
+    "uk": "/teɪk/",
+    "us": "/teɪk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/take"
+  },
+  "taller": {
+    "uk": "/tɔːlər/",
+    "us": "/tɑːlɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tall · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "teammate": {
+    "uk": "/ˈtiːm.meɪt/",
+    "us": "/ˈtiːm.meɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/teammate"
+  },
+  "teamwork": {
+    "uk": "/ˈtiːm.wɜːk/",
+    "us": "/ˈtiːm.wɝːk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/teamwork"
+  },
+  "telescope": {
+    "uk": "/ˈtel.ɪ.skəʊp/",
+    "us": "/ˈtel.ə.skoʊp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/telescope"
+  },
+  "terrace": {
+    "uk": "/ˈter.əs/",
+    "us": "/ˈter.əs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/terrace"
+  },
+  "Terracotta Warriors": {
+    "uk": "/ˌter.əˈkɒt.ə ˈwɒr.i.əz/",
+    "us": "/ˌter.əˈkɑː.t̬ə ˈwɔːr.i.ɚz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/terracotta · https://dictionary.cambridge.org/dictionary/english/warrior",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "than": {
+    "uk": "/ðæn/",
+    "us": "/ðæn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/than"
+  },
+  "the Red Army": {
+    "uk": "/ðə red ˈɑː.mi/",
+    "us": "/ðə red ˈɑːr.mi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/the · https://dictionary.cambridge.org/dictionary/english/red · https://dictionary.cambridge.org/dictionary/english/army",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "thickness": {
+    "uk": "/ˈθɪk.nəs/",
+    "us": "/ˈθɪk.nəs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/thickness"
+  },
+  "thinner": {
+    "uk": "/θɪnər/",
+    "us": "/θɪnɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/thin · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "thought": {
+    "uk": "/θɔːt/",
+    "us": "/θɑːt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/thought"
+  },
+  "thousand": {
+    "uk": "/ˈθaʊ.zənd/",
+    "us": "/ˈθaʊ.zənd/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/thousand"
+  },
+  "throat": {
+    "uk": "/θrəʊt/",
+    "us": "/θroʊt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/throat"
+  },
+  "thunderstorm": {
+    "uk": "/ˈθʌn.də.stɔːm/",
+    "us": "/ˈθʌn.dɚ.stɔːrm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/thunderstorm"
+  },
+  "ticket": {
+    "uk": "/ˈtɪk.ɪt/",
+    "us": "/ˈtɪk.ɪt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/ticket"
+  },
+  "till": {
+    "uk": "/tɪl/",
+    "us": "/tɪl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/till"
+  },
+  "time": {
+    "uk": "/taɪm/",
+    "us": "/taɪm/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/time"
+  },
+  "timeline": {
+    "uk": "/ˈtaɪm.laɪn/",
+    "us": "/ˈtaɪm.laɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/timeline"
+  },
+  "tissue": {
+    "uk": "/ˈtɪʃ.uː/",
+    "us": "/ˈtɪʃ.uː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tissue"
+  },
+  "took": {
+    "uk": "/tʊk/",
+    "us": "/tʊk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/took"
+  },
+  "took pictures": {
+    "uk": "/tʊk ˈpɪk.tʃəz/",
+    "us": "/tʊk ˈpɪk.tʃɚz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/took · https://dictionary.cambridge.org/dictionary/english/picture",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "toolbox": {
+    "uk": "/ˈtuːl.bɒks/",
+    "us": "/ˈtuːl.bɑːks/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/toolbox"
+  },
+  "toothpaste": {
+    "uk": "/ˈtuːθ.peɪst/",
+    "us": "/ˈtuːθ.peɪst/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/toothpaste"
+  },
+  "top": {
+    "uk": "/tɒp/",
+    "us": "/tɑːp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/top"
+  },
+  "track": {
+    "uk": "/træk/",
+    "us": "/træk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/track"
+  },
+  "transfer": {
+    "uk": "/trænsˈfɜːr/",
+    "us": "/ˈtræns.fɝː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/transfer",
+    "audioContext": "Please transfer to the next bus."
+  },
+  "tray": {
+    "uk": "/treɪ/",
+    "us": "/treɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tray"
+  },
+  "trip": {
+    "uk": "/trɪp/",
+    "us": "/trɪp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/trip"
+  },
+  "trophy": {
+    "uk": "/ˈtrəʊ.fi/",
+    "us": "/ˈtroʊ.fi/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/trophy"
+  },
+  "tunnel": {
+    "uk": "/ˈtʌn.əl/",
+    "us": "/ˈtʌn.əl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/tunnel"
+  },
+  "Turpan": {
+    "uk": "/ˈtʊəˈpɑːn/",
+    "us": "/ˈtʊəˈpɑːn/",
+    "reference": "https://book.pep.com.cn/1212001602145/",
+    "note": "地名沿用旧版教材 p.55 的读音标注，两栏相同。"
+  },
+  "type": {
+    "uk": "/taɪp/",
+    "us": "/taɪp/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/type"
+  },
+  "unhappy": {
+    "uk": "/ʌnˈhæp.i/",
+    "us": "/ʌnˈhæp.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/unhappy"
+  },
+  "universe": {
+    "uk": "/ˈjuː.nɪ.vɜːs/",
+    "us": "/ˈjuː.nə.vɝːs/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/universe"
+  },
+  "unplug": {
+    "uk": "/ʌnˈplʌɡ/",
+    "us": "/ʌnˈplʌɡ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/unplug"
+  },
+  "useful": {
+    "uk": "/ˈjuːs.fəl/",
+    "us": "/ˈjuːs.fəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/useful"
+  },
+  "vertical": {
+    "uk": "/ˈvɜː.tɪ.kəl/",
+    "us": "/ˈvɝː.t̬ə.kəl/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/vertical"
+  },
+  "victory": {
+    "uk": "/ˈvɪk.tər.i/",
+    "us": "/ˈvɪk.tɚ.i/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/victory"
+  },
+  "video": {
+    "uk": "/ˈvɪd.i.əʊ/",
+    "us": "/ˈvɪd.i.oʊ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/video"
+  },
+  "view": {
+    "uk": "/vjuː/",
+    "us": "/vjuː/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/view"
+  },
+  "village": {
+    "uk": "/ˈvɪl.ɪdʒ/",
+    "us": "/ˈvɪl.ɪdʒ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/village"
+  },
+  "wake": {
+    "uk": "/weɪk/",
+    "us": "/weɪk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wake"
+  },
+  "wardrobe": {
+    "uk": "/ˈwɔː.drəʊb/",
+    "us": "/ˈwɔːr.droʊb/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wardrobe"
+  },
+  "was": {
+    "uk": "/wɒz/",
+    "us": "/wɑːz/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/was"
+  },
+  "washed": {
+    "uk": "/wɒʃt/",
+    "us": "/wɑːʃt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wash · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "washing machine": {
+    "uk": "/ˈwɒʃ.ɪŋ məˌʃiːn/",
+    "us": "/ˈwɑː.ʃɪŋ məˌʃiːn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/washing-machine"
+  },
+  "watched": {
+    "uk": "/wɒtʃt/",
+    "us": "/wɑːtʃt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/watch · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "waterfront": {
+    "uk": "/ˈwɔː.tə.frʌnt/",
+    "us": "/ˈwɑː.t̬ɚ.frʌnt/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/waterfront"
+  },
+  "wear": {
+    "uk": "/weər/",
+    "us": "/wer/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/wear"
+  },
+  "weigh": {
+    "uk": "/weɪ/",
+    "us": "/weɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/weigh"
+  },
+  "went": {
+    "uk": "/went/",
+    "us": "/went/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/went"
+  },
+  "went camping": {
+    "uk": "/went ˈkæm.pɪŋ/",
+    "us": "/went ˈkæm.pɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/went · https://dictionary.cambridge.org/dictionary/english/camping",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "went fishing": {
+    "uk": "/went ˈfɪʃ.ɪŋ/",
+    "us": "/went ˈfɪʃ.ɪŋ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/went · https://dictionary.cambridge.org/dictionary/english/fishing",
+    "note": "分词音标，连读听音频。",
+    "kind": "component-ipa"
+  },
+  "width": {
+    "uk": "/wɪtθ/",
+    "us": "/wɪtθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/width"
+  },
+  "win": {
+    "uk": "/wɪn/",
+    "us": "/wɪn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/win"
+  },
+  "winner": {
+    "uk": "/ˈwɪn.ər/",
+    "us": "/ˈwɪn.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/winner"
+  },
+  "woke": {
+    "uk": "/wəʊk/",
+    "us": "/woʊk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/woke"
+  },
+  "worth": {
+    "uk": "/wɜːθ/",
+    "us": "/wɝːθ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/worth"
+  },
+  "writer": {
+    "uk": "/ˈraɪ.tər/",
+    "us": "/ˈraɪ.t̬ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/writer"
+  },
+  "yearbook": {
+    "uk": "/ˈjɪə.bʊk/",
+    "us": "/ˈjɪr.bʊk/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/yearbook"
+  },
+  "yesterday": {
+    "uk": "/ˈjes.tə.deɪ/",
+    "us": "/ˈjes.tɚ.deɪ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/yesterday"
+  },
+  "younger": {
+    "uk": "/jʌŋɡər/",
+    "us": "/jʌŋɡɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/young · https://book.pep.com.cn/1212001602145/",
+    "kind": "inflected-form"
+  },
+  "zipper": {
+    "uk": "/ˈzɪp.ər/",
+    "us": "/ˈzɪp.ɚ/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/zipper"
+  },
+  "pinecone": {
+    "uk": "/ˈpaɪn ˌkəʊn/",
+    "us": "/ˈpaɪn ˌkoʊn/",
+    "reference": "https://dictionary.cambridge.org/dictionary/english/pine-cone"
+  },
+  "spring:read": {
+    "uk": "/red/",
+    "us": "/red/",
+    "reference": "https://dictionary.cambridge.org/pronunciation/english/read",
+    "audioContext": "Yesterday I read a story.",
+    "note": "这里读过去式 /red/。"
+  }
+}

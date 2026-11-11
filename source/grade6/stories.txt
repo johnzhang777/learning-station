@@ -1,0 +1,355 @@
+# autumn|一张老桥的照片|A Photo of the Old Bridge|village,view,landmark,footpath,bamboo
+EN Last Saturday, Mei visited a village beside a river. Her uncle took her along a footpath through tall bamboo. At the end of the path, they reached a stone bridge. Her uncle said that people in the village had used the bridge for many years.
+EN Mei wanted to take a photo for her class. She walked a little farther to get a clear view of the bridge. On Monday, she put the photo on a map of the village. She drew a star beside it so her classmates could find the landmark.
+ZH 上周六，梅去了河边的一个村子。叔叔带她沿着穿过高高竹林的小路走。在小路尽头，他们来到一座石桥。叔叔说，村里的人用了这座桥很多年。
+ZH 梅想拍张照片带到班里。她又走了一小段，好把桥看清楚。周一，她把照片贴在村庄地图上，并在旁边画了一颗星，方便同学们找到这个地标。
+Q Where was the village?|村子在哪里？|It was beside a river.
+Q What did Mei walk through on the way to the bridge?|去桥边的路上，梅穿过了什么？|She walked through tall bamboo.
+Q Why did Mei draw a star on the map?|梅为什么在地图上画星星？|She wanted her classmates to find the landmark.
+C A ____ leads from the village to the bridge.|footpath
+C Mei wanted a clear ____ of the bridge.|view
+O 用两句话介绍家乡的一处地标，再说一说怎样找到它。
+M The old clock tower is a landmark in my town. Follow the footpath by the river to get there.
+R 到村庄|走竹林小路|把桥标在地图上
+G beside|在……旁边
+
+# autumn|会漏水的陶碗|The Bowl That Leaked|clay,exhibit,exhibition,ceiling,dry
+EN During a visit to an exhibition, Yun saw a clay bowl under a glass cover. The exhibit was small, so she bent down to see the lines on its side. She also looked up at the painted ceiling. Its blue birds gave her an idea.
+EN At home, Yun made her own bowl and drew a bird on it. When the clay was dry, she put a little water inside. Water came out through a tiny hole. Yun smiled and put a plant in the bowl. She set it by the window with a plate under it.
+ZH 参观展览时，芸看到了玻璃罩下的一只陶碗。展品很小，她弯腰看碗边的线条。她还抬头看了有彩绘的天花板。上面的蓝色小鸟给了她一个主意。
+ZH 回到家，芸自己做了一只碗，在上面画了一只鸟。陶土干后，她往里倒了一点水。水从一个小孔里漏了出来。芸笑了，把一株植物种进碗里，再把碗放在窗边，下面垫了一个盘子。
+Q Why did Yun bend down?|芸为什么弯下腰？|She wanted to see the lines on the side of the small bowl.
+Q What gave Yun an idea for her own bowl?|什么给了芸做碗的灵感？|The blue birds on the ceiling gave her an idea.
+Q What did Yun put in the bowl at the end?|最后芸把什么放进碗里？|She put a plant in it.
+C The bowl at the exhibition was made of ____.|clay
+C Yun waited until the bowl was ____ before adding water.|dry
+O 说一说你做过的一件手工作品。它用什么做成？能用来做什么？
+M I made a box from old paper. I use it to keep my pencils.
+R 观察陶碗和彩绘|制作小碗|改作花盆
+G leak|漏水
+G glass cover|玻璃罩
+
+# autumn|没有价签的书|A Book Without a Price Tag|book fair,booth,writer,flyer,notice
+EN At the school book fair, Tao helped at a booth for used books. He found a storybook with a drawing inside. The book had no price tag. Tao asked his teacher what to do with it.
+EN The teacher saw the drawing and remembered that a young writer had left the book there after a talk. It was her own copy. Tao made a notice for the booth. He also gave a flyer to the librarian, who knew the writer. The next day, the writer came back for the book and thanked Tao for keeping it safe.
+ZH 在学校书展上，涛帮忙照看二手书摊位。他发现一本故事书里夹着一张画。书上没有价签。涛问老师该怎么处理。
+ZH 老师看到画，想起一位年轻作家做完分享后把书留在了那里。那是作家自己的书。涛给摊位写了一张告示，还给认识那位作家的图书管理员送去一张宣传单。第二天，作家回来拿书，感谢涛帮她保管。
+Q What did Tao find inside the storybook?|涛在故事书里发现了什么？|He found a drawing inside it.
+Q Whose book was it?|这本书是谁的？|It was the writer's own copy.
+Q Who knew the writer?|谁认识那位作家？|The librarian knew her.
+C Tao helped at a ____ for used books.|booth
+C The ____ came back for her book the next day.|writer
+O 在书展捡到一本书时，你会向谁求助？试着用两句英文说明你发现了什么。
+M I found a book under our table. Can you help me find its owner?
+R 发现没有价签的书|向老师和管理员求助|作家回来取书
+G price tag|价签
+G copy|一册书
+
+# autumn|纸锅的把手|The Handle of the Paper Pot|gala,stage,prop,teamwork,applause
+EN Our class practised a short play for the school gala. I played a cook and carried a paper pot onto the stage. Just before our turn, I saw that the handle of the pot had come off. We had only a minute to fix the prop.
+EN Lin found some tape. I held the handle while she put the tape around it. Then we walked out and began the play. At the end, we heard loud applause. After the show, our teacher asked how we had fixed the pot so quickly. We told her it was teamwork.
+ZH 我们班为学校联欢会排练了一个短剧。我扮演厨师，要拿着一口纸锅上台。快轮到我们时，我发现锅柄掉了。我们只有一分钟来修这个道具。
+ZH 林找来了一些胶带。我扶住锅柄，她把胶带绕上去。然后我们走上舞台，开始演戏。结束时，我们听到了响亮的掌声。演出结束后，老师问我们怎么这么快就修好了锅。我们说是靠团队合作。
+Q What part did the speaker play?|讲故事的人扮演什么角色？|The speaker played a cook.
+Q What was wrong with the paper pot?|纸锅出了什么问题？|Its handle had come off.
+Q How did Lin help fix the pot?|林怎样帮忙修锅？|She found some tape and put it around the handle.
+C The paper pot was a ____ for the play.|prop
+C The class heard loud ____ after the play.|applause
+O 讲一次你和同学分工解决小问题的经历。
+M I held the paper while my friend cut it. We finished the sign together.
+R 演出前发现道具坏了|分工修好纸锅|完成演出
+G come off|脱落
+
+# autumn|午后的问候|A Message After Lunch|cold,runny nose,tissue,better,email
+EN Bo stayed home on Tuesday because he had a cold. He had a runny nose, and he kept a tissue beside his bed. His class was preparing a song, so Bo worried that he would miss the practice.
+EN After lunch, his friend Jia sent him an email. She told him the class had practised the first part of the song. She also told him to rest and learn it when he felt better. On Thursday, Bo was back at school. Jia sang the first part slowly, and Bo joined in the second time.
+ZH 博周二因为感冒待在家里。他流鼻涕，就在床边放了一张纸巾。他们班正在准备一首歌，所以博担心自己会错过练习。
+ZH 午饭后，朋友佳给他发了一封电子邮件。她说全班练了歌曲的第一段，也让他先休息，好些了再学。周四，博回到了学校。佳慢慢唱了一遍第一段，第二遍博就跟着唱了。
+Q Why did Bo stay home on Tuesday?|博周二为什么待在家里？|He had a cold.
+Q Which part of the song did the class practise?|全班练习了歌曲的哪一段？|They practised the first part.
+Q How did Jia help Bo on Thursday?|周四佳是怎么帮博的？|She sang the first part slowly so he could join in.
+C Bo had a ____ and stayed home.|cold
+C Jia sent Bo an ____ after lunch.|email
+O 试着用两句英文给请病假的同学留言，问候他并告诉他一件课堂上的事。
+M I hope you feel better soon. We made a new poster in class today.
+R 感冒请假|收到同学邮件|回校一起练歌
+G join in|加入；一起做
+
+# autumn|把书留到明天|One More Chapter Tomorrow|stay up,drowsy,nap,discuss,balanced
+EN Nina loved reading under her lamp after dinner. On Friday, she wanted to finish her book, so she decided to stay up. The next morning, Nina felt drowsy at the breakfast table. She missed part of a game because she took a long nap.
+EN At dinner, Nina and Dad sat down to discuss a new plan. They chose an earlier reading time and left ten minutes for getting ready for bed. Nina put a paper star between the pages. Now she could stop at a good place and look forward to the next chapter. Her evenings felt more balanced.
+ZH 妮娜喜欢晚饭后在台灯下读书。周五她想把书读完，就决定晚睡。第二天早晨，她在餐桌边困得直打瞌睡。因为午睡睡了很久，她错过了一部分游戏。
+ZH 晚饭时，妮娜和爸爸坐下来商量新计划。他们把阅读时间提前，并留出十分钟准备睡觉。妮娜把一颗纸星星夹在书页之间。现在她能读到合适的地方就停下来，期待明天读下一章。晚上的安排更均衡了。
+Q Why did Nina stay up on Friday?|妮娜周五为什么晚睡？|She wanted to finish her book.
+Q What did Nina and Dad change about reading time?|妮娜和爸爸怎样调整了阅读时间？|They chose an earlier reading time.
+Q What did Nina put between the pages?|妮娜在书页间夹了什么？|She put a paper star there.
+C Nina felt ____ at breakfast the next morning.|drowsy
+C Nina and Dad sat down to ____ a plan.|discuss
+O 说一说你晚上读书和睡觉前通常怎样安排时间。
+M I read before I get ready for bed. I use a bookmark when it is time to stop.
+R 晚睡读书|白天犯困|调整阅读时间
+G look forward to|期待
+
+# autumn|罐子里的旅行计划|A Trip Plan in a Jar|pocket money,jar,save up,ticket,afford
+EN Jun wanted to visit the science museum with his cousin. A ticket cost twenty yuan. Jun had twelve yuan in his jar, so he decided to save up. Each week he put part of his pocket money into the jar and wrote the amount on a small card.
+EN After three weeks, Jun counted twenty-one yuan. He could afford his ticket, with one yuan left. His cousin found a free show at the museum. They planned to see the show after lunch. Jun put the card in his bag to remind himself how he had reached his goal.
+ZH 俊想和表姐一起去科学博物馆。一张票要二十元。俊的罐子里有十二元，所以他决定攒钱。每周他都把一部分零花钱放进罐子，再把金额写在一张小卡片上。
+ZH 三周后，俊数了数，一共有二十一元。他买得起门票，还能剩下一元。表姐发现博物馆有一场免费的表演。他们打算午饭后去看。俊把小卡片放进包里，好记住自己是怎样实现目标的。
+Q How much did the ticket cost?|一张票多少钱？|It cost twenty yuan.
+Q Where did Jun write down the amount each week?|俊每周把金额写在哪里？|He wrote it on a small card.
+Q What did they plan to do after lunch?|他们打算午饭后做什么？|They planned to see a free show.
+C Jun used part of his ____ to save for the trip.|pocket money
+C After three weeks, he could ____ his ticket.|afford
+O 选一件想买的小物品，说说它多少钱，你打算怎么攒钱。
+M I want a notebook that costs ten yuan. I can save two yuan each week.
+R 查门票价格|逐周存钱记账|攒够钱安排参观
+G amount|金额
+G reach a goal|实现目标
+
+# autumn|纸盒里的火星|Mars in a Cardboard Box|Mars,rover,soil,crater,mission
+EN On science day, our group made a model of Mars in a cardboard box. We used red sand for the soil. Nina pressed a ball into the sand to make a crater. I made a rover with bottle tops for wheels.
+EN Our mission was to move the rover from one side of the box to the other. It rolled well until a wheel fell into the crater. We moved some sand to make a road around the hole. This time the rover reached the other side. We drew both routes on our poster to show what we had learned.
+ZH 科学活动日，我们小组在纸盒里做了一个火星模型。我们用红沙来表示土壤。妮娜把一个球按进沙子里，做出了一个环形坑。我用瓶盖当轮子做了一辆探测车。
+ZH 我们的任务是让探测车从盒子的一边到达另一边。起初车滚得挺顺，后来一个轮子掉进了坑里。我们挪了些沙子，铺出一条绕过坑的路。这次车到达了另一边。我们把两条路线都画在海报上，展示学到的东西。
+Q What did the group use for the soil?|小组用什么表示土壤？|They used red sand.
+Q Why did the rover stop on the first route?|探测车在第一条路线上为什么停了？|One wheel fell into the crater.
+Q What did the group draw on its poster?|小组在海报上画了什么？|They drew both routes.
+C Nina used a ball to make a ____ in the sand.|crater
+C The group built a small ____ with bottle tops for wheels.|rover
+O 用三句话介绍一个你做过或想做的科学模型，说说材料和用途。
+M I want to make a moon model. I can use a ball and paper. I will show the craters on it.
+R 布置火星模型|车轮陷进坑|改道后完成任务
+G route|路线
+
+# autumn|云散以后|When the Clouds Moved|moon,sky,telescope,horizon,crescent
+EN On a cool evening, Wei and her aunt took a small telescope to the roof. They wanted to see the moon. At first a cloud covered most of the sky. Wei drew the roof and the trees in her notebook while they waited.
+EN After a few minutes, the cloud moved away. A thin crescent appeared above the horizon. Her aunt helped her point the telescope at the moon. Wei could see the bright edge much more clearly. She added the shape to her drawing. She planned to come back a few days later to see how it had changed.
+ZH 一个凉爽的傍晚，薇和姨妈带着一架小望远镜上了屋顶。她们想看月亮。一开始，一片云遮住了大半天空。等候时，薇在本子上画了屋顶和树。
+ZH 几分钟后，云飘开了。地平线上方出现了一弯细细的月亮。姨妈帮她把望远镜对准月亮。薇把明亮的月边看得更清楚了。她把月亮的形状添到画里，打算过几天再来看看它有什么变化。
+Q Where did Wei and her aunt go?|薇和姨妈去了哪里？|They went to the roof.
+Q What did Wei do while she waited?|等候时薇做了什么？|She drew the roof and the trees.
+Q Why did Wei want to come back later?|薇为什么想过几天再来？|She wanted to see how the moon's shape had changed.
+C A thin ____ appeared after the cloud moved away.|crescent
+C Wei used a ____ to see the moon more clearly.|telescope
+O 描述你有一次看到的夜空，用上月亮、星星或云中的至少两个词。
+M I saw the moon above the trees. A small cloud moved across the sky.
+R 带望远镜等云散|看见弯月|把月相画进本子
+G edge|边缘
+
+# autumn|花园里的太阳能灯|The Solar Lamp in the Garden|solar,energy,battery,light
+EN Our garden path was dark in the evening. Dad bought a small solar lamp to light the way. We put it beside a flowerpot under a tree. The lamp was bright on the first night and very weak on the second.
+EN In the morning, I noticed that the tree kept the lamp in shade for most of the day. Dad and I moved it to a sunny spot. There, light from the sun could charge its battery. That evening, the lamp shone again. I drew two pictures to explain where the lamp got its energy.
+ZH 我们花园的小路到了傍晚就很暗。爸爸买了一盏小太阳能灯照路。我们把它放在树下一个花盆旁。第一晚灯很亮，第二晚却很暗。
+ZH 早上，我注意到那棵树一天的大部分时间都把灯遮在阴影里。我和爸爸把灯移到有太阳的地方。到了那里，太阳光能给它的电池充电。当天晚上，灯又亮了。我画了两幅画解释灯从哪里获得能量。
+Q Where did they put the lamp at first?|他们最初把灯放在哪里？|They put it beside a flowerpot under a tree.
+Q Why did they move the lamp?|他们为什么移动灯？|The tree kept it in shade for most of the day.
+Q What charged the lamp's battery?|什么给灯的电池充电？|Light from the sun charged it.
+C Dad bought a ____ lamp for the garden path.|solar
+C Sunlight helped charge the lamp's ____.|battery
+O 找一件会用电的小物品，说说它做什么和电从哪里来。
+M My clock tells me the time. It gets its power from a battery.
+R 灯光变弱|发现树挡住阳光|把灯移到阳光下
+G charge|充电
+G shade|阴凉处
+
+# autumn|旧瓶的新用途|A New Job for Old Bottles|reuse,reduce,bottle,container,refill
+EN The art club wanted to grow beans by the classroom window. We had seeds and soil. We looked around for a small container for each plant. Jia brought two empty bottles from home, and our teacher helped us cut them in half.
+EN We put soil in the bottom of each bottle and planted the seeds. We used another bottle to carry water. After a week, tiny leaves appeared. Now we refill the water bottle at the tap when it is empty. Our class wrote a sign to show how we can reuse things and reduce waste.
+ZH 美术社想在教室窗边种豆子。我们有种子和土，四处找能装每株植物的小容器。佳从家里带来两个空瓶，老师帮我们把它们切成两半。
+ZH 我们把土放进瓶底，种下种子，再用另一个瓶子装水。一个星期后，小叶子长了出来。现在水瓶空了，我们就在水龙头接满。我们班写了块牌子，告诉大家怎样重复使用物品、减少浪费。
+Q What did the art club want to grow?|美术社想种什么？|It wanted to grow beans.
+Q Who helped cut the bottles?|谁帮忙把瓶子切开？|The teacher helped cut them.
+Q What happened after a week?|一周后发生了什么？|Tiny leaves appeared.
+C The class looked for a ____ for each plant.|container
+C They used the old bottles again to ____ waste.|reduce
+O 说说你能给一个旧物品找到什么新用途。
+M I can reuse an old jar. I will put my paintbrushes in it.
+R 寻找容器|用旧瓶种豆|长出叶子并分享做法
+G tap|水龙头
+
+# spring|哪座纸桥更牢固|Which Paper Bridge Is Stronger?|stronger,heavier,both,width
+EN In science class, we built two paper bridges. Both bridges had the same width and crossed the same gap between two books. One bridge was flat. My partner folded the other bridge back and forth before we set it in place.
+EN We put a small weight in the middle of the flat bridge. It bent right away. Then we put a heavier weight on the folded bridge. It held. We had built a stronger bridge with one sheet of paper. We measured the span between the books and wrote down our results so another group could try.
+ZH 科学课上，我们搭了两座纸桥。两座桥一样宽，都跨在两本书之间。第一座桥是平的。同桌把另一座桥来回折叠后，我们把它放到了原位。
+ZH 我们在平纸桥中间放了个小砝码。它立刻弯了。接着，我们把更重的砝码放在折叠的桥上。它撑住了。我们用一张纸搭了一座更牢固的桥。我们量了两本书之间的跨度，记下结果，让另一组也能试一试。
+Q What was the same about the two bridges?|两座桥有什么相同之处？|They had the same width and crossed the same gap.
+Q What happened to the flat bridge?|平纸桥发生了什么？|It bent when the group put a small weight on it.
+Q Why did the group write down its results?|小组为什么记下结果？|They wanted another group to be able to try the experiment.
+C The folded bridge held a ____ weight.|heavier
+C ____ bridges crossed the same gap.|Both
+O 用两句英文比较两个文具，试着用一个比较级和一个测量词。
+M My blue ruler is longer than my green ruler. Its length is thirty centimetres.
+R 做两座纸桥|先试平桥再试折叠桥|测量并记录
+G weight|砝码
+G span|跨度
+
+# spring|我和影子谁更长|My Shadow and Me|shadow,longer,lower,length,metre
+EN In the morning, our class went outside to measure shadows. I stood by a line on the ground. My partner marked the end of my shadow with a piece of chalk. We used a metre stick to measure its length.
+EN At noon, I stood on the same line. My shadow was shorter. Our teacher asked us to try again later in the day. When the sun hung lower in the sky, my shadow grew longer again. I drew three pictures of the same spot and labelled them morning, noon and afternoon.
+ZH 早上，我们班到室外量影子。我站在地上的一条线旁，同桌用粉笔标出影子的末端。我们用一米长的尺子量影子的长度。
+ZH 中午，我又站在同一条线上。这次影子短了。老师请我们晚一点再量一次。太阳在天上的位置更低时，我的影子又变长了。我画了同一个地方的三幅图，分别标上早晨、中午和下午。
+Q What did the partner use to mark the end of the shadow?|同桌用什么标出了影子的末端？|The partner used a piece of chalk.
+Q When was the shadow shorter?|什么时候影子较短？|It was shorter at noon.
+Q What did the speaker draw at the end?|最后讲述者画了什么？|The speaker drew three pictures of the same spot.
+C We used a metre stick to measure the ____ of the shadow.|length
+C The shadow grew ____ again in the afternoon.|longer
+O 用两句话描述在同一地方早上和中午看到的影子。
+M The shadow of the tree is long in the morning. It is shorter at noon.
+R 早晨测影长|中午再测|下午画图比较
+G chalk|粉笔
+G metre stick|一米长的尺子
+
+# spring|给盒子留一点位置|Room for One More Book|smaller,bigger,centimetre,measurement
+EN On Friday, our teacher asked us to pack books for the reading corner. I chose a small box for the thin books and a bigger one for the thick books. Ben tried to put the last book in the bigger box. The book was too wide.
+EN We took a measurement of the book and wrote it down. I found a box one centimetre wider than the book. It was also shorter than our first box. We put the wide book flat inside it and filled the space above it with smaller books. We carried both boxes to the library.
+ZH 周五，老师让我们给阅读角打包图书。我选一个小盒子放薄书，一个大一点的盒子放厚书。本试着把最后一本书放进大盒子，可那本书太宽了。
+ZH 我们量了书，把测量结果记了下来。我找到了一个比书宽一厘米的盒子，它也比原先的大盒子矮。我们把宽书平放进去，再在上面放几本小一点的书。我们把两个盒子搬去了图书馆。
+Q Why did the last book fail to fit in the first big box?|为什么最后一本书放不进原来的大盒子？|It was too wide.
+Q How much wider was the new box than the book?|新盒子比书宽多少？|It was one centimetre wider.
+Q Where did the children take the boxes?|孩子们把盒子搬到了哪里？|They took them to the library.
+C The children took a ____ of the book before choosing a new box.|measurement
+C They put ____ books above the wide book.|smaller
+O 比较两件你用过的收纳物品，说明哪件适合放一本宽书。
+M The green box is wider than the blue box. I can put the wide book in the green box.
+R 图书太宽|测量并换盒|打包送到图书馆
+G thin / thick|薄的／厚的
+
+# spring|阳光照进来以前|Before the Light Came In|stayed,read,lamp,curtain,indoors
+EN Last Saturday, the rain hit the windows all morning. I stayed indoors and read a magazine by the window. The room grew dark, so I switched on the lamp. A few minutes later, the lights went out.
+EN My sister opened the curtain to let in more light. Then we sat closer to the window and took turns reading a story. After lunch, the power came back and the rain stopped. We finished the story before we went outside. On Sunday, I drew a picture of the two of us reading by the window.
+ZH 上周六，雨点一上午都打在窗户上。我待在屋里，在窗边读了一本杂志。房间暗了下来，我就打开了台灯。几分钟后，停电了。
+ZH 姐姐拉开窗帘，让更多光进来。然后我们坐得离窗户近一点，轮流读一个故事。午饭后，电来了，雨也停了。我们读完故事才出去。周日，我画了一张我们俩在窗边看书的画。
+Q Why did the speaker stay indoors?|讲述者为什么待在屋里？|It was raining.
+Q What did the sister open when the lights went out?|停电后姐姐打开了什么？|She opened the curtain.
+Q What did the speaker draw on Sunday?|讲述者周日画了什么？|The speaker drew the two children reading by the window.
+C The speaker switched on the ____ when the room grew dark.|lamp
+C Last Saturday, the speaker ____ a magazine by the window.|read
+O 用过去式说说一个雨天你在家做了什么，试着读准 read 的过去式。
+M I stayed indoors last Sunday. I read a comic with my sister.
+R 雨天读杂志|停电后靠窗轮读|画下周末回忆
+G take turns|轮流
+G power|电力
+
+# spring|阁楼里的照片|The Photo in the Attic|cleaned,attic,dusty,belongings,yesterday
+EN Yesterday, Mum and I cleaned the attic. We found a dusty box under a chair. Mum opened it and took out a photo of a girl with a bicycle. I looked closely and saw that the girl was my mum.
+EN The photo showed her first bike. She told me she had learned to ride it in a park near our home. We sorted the rest of the belongings in the box. Mum kept the old photo on her desk. I wrote the date on the back after she told me the year.
+ZH 昨天，妈妈和我打扫了阁楼。我们在椅子下面找到一个落满灰尘的盒子。妈妈打开盒子，拿出一张女孩和自行车的照片。我仔细一看，女孩就是妈妈。
+ZH 照片上是她的第一辆自行车。她告诉我，她是在家附近的公园学会骑这辆车的。我们整理了盒子里其他的物品。妈妈把老照片留在书桌上。她告诉我是哪一年之后，我在照片背面写下了日期。
+Q Where did they find the dusty box?|他们在哪儿找到落满灰尘的盒子？|They found it under a chair in the attic.
+Q Who was the girl in the photo?|照片里的女孩是谁？|She was the speaker's mum.
+Q What did the speaker write on the photo?|讲述者在照片上写了什么？|The speaker wrote the date on the back.
+C They ____ the attic yesterday.|cleaned
+C The box was ____ when they found it.|dusty
+O 选一张家里的旧照片，用两句话说说照片里的人物和当时做的事。
+M This is my dad. He rode his bike to school when he was young.
+R 打扫阁楼发现盒子|认出照片里的妈妈|整理物品并标日期
+G closely|仔细地
+
+# spring|周末的小修理|A Small Weekend Repair|broken,fixed,toolbox,ladder,stay
+EN Last Sunday, I helped Dad in the living room. The handle on our window was broken, so Dad fetched a new one from the toolbox. He asked me to stay on the floor while he used a ladder to reach the window.
+EN I put the little parts on a tray in the order Dad needed them. He fixed the handle and asked me to try it from the floor once he had moved the ladder away. The window opened easily. After we finished, we put away the tools and wrote a note about which parts we had used.
+ZH 上周日，我在客厅帮爸爸。窗把手坏了，爸爸从工具箱里拿出一个新的。他站上梯子够窗子时，让我待在地面上。
+ZH 我按照爸爸使用的顺序把小零件摆在托盘上。他修好把手，搬开梯子后，让我站在地面上试一试。窗户一下就打开了。完工后，我们收好工具，记下用过哪些零件。
+Q What was broken?|什么东西坏了？|The window handle was broken.
+Q Where did the speaker put the little parts?|讲述者把小零件放在哪里？|The speaker put them on a tray.
+Q What did they write down at the end?|最后他们记下了什么？|They wrote down which parts they had used.
+C Dad fetched a new handle from the ____.|toolbox
+C Dad ____ the handle.|fixed
+O 说说周末你和家人一起做的一件小事，讲清你的分工。
+M Mum fixed my pencil box. I held it while she put the new part on.
+R 找到坏把手|按顺序递零件|试开窗并收工具
+G in order|按顺序
+
+# spring|一夜雷雨|A Storm at the Campsite|went camping,campsite,thunderstorm,flashlight,muddy
+EN My family went camping near a lake. In the afternoon, we walked around the campsite and set up our tent. A worker showed us a building where campers could go in bad weather. That evening, a thunderstorm came.
+EN Dad turned on a flashlight, and we walked with him to the building. We played a game there while we waited for the storm to pass. The next morning, the path was muddy, so we wore our boots to pack the tent. We came home with wet bags and a story to tell.
+ZH 我家去湖边露营。下午，我们在营地四处走了走，然后搭好帐篷。工作人员指给我们看一栋楼，天气不好时露营者可以去那里。傍晚下起了雷雨。
+ZH 爸爸打开手电筒，我们跟着他走进那栋楼。等雷雨过去时，我们在那里玩了个游戏。第二天早上路上全是泥，我们穿着靴子收帐篷。我们带着湿漉漉的包回家，也带回了一个能讲给别人听的故事。
+Q Where did the family go camping?|一家人到哪里露营？|They went camping near a lake.
+Q What did they do while they waited inside?|在楼里等雨停时，他们做了什么？|They played a game.
+Q Why did they wear boots the next morning?|第二天早上他们为什么穿靴子？|The path was muddy.
+C A ____ came that evening.|thunderstorm
+C Dad used a ____ to light the way.|flashlight
+O 试着用三句话讲一次旅行计划因天气变化而调整的经历。
+M We went to the park. It began to rain. We went inside a cafe and played a game.
+R 到营地搭帐篷|雷雨时进屋|第二天收拾回家
+G set up|搭起；装好
+
+# spring|桥边的钓鱼竿|The Fishing Rod by the Bridge|went fishing,fishing rod,creek,took pictures,basket
+EN Grandpa and I went fishing by a creek on Sunday. He showed me how to hold a fishing rod. We waited beside a wooden bridge. A small bird came close to the water, and I took pictures of it from the bank.
+EN When we packed up, we found a basket beside the bridge. It had an apple and a bottle of water inside. We took it to the park desk. A girl came to look for her lunch, and the worker gave the basket back to her. She thanked us and offered to share the apple.
+ZH 周日，我和爷爷去小溪边钓鱼。他教我怎么拿钓鱼竿。我们在木桥旁等着。一只小鸟来到水边，我从岸上给它拍了照片。
+ZH 收拾东西时，我们在桥边发现一个篮子。里面有一个苹果和一瓶水。我们把篮子送到公园服务台。一个女孩来找自己的午饭，工作人员把篮子还给了她。她谢了我们，还提出和我们分享苹果。
+Q Where did Grandpa and the speaker wait?|爷爷和讲述者在哪里等鱼？|They waited beside a wooden bridge.
+Q What did the speaker take pictures of?|讲述者给什么拍了照片？|The speaker took pictures of a small bird.
+Q Why did the girl go to the park desk?|女孩为什么去公园服务台？|She was looking for her lunch.
+C Grandpa showed the speaker how to hold a ____.|fishing rod
+C They took the ____ to the park desk.|basket
+O 用两个过去式讲一讲你在公园或河边做过的事。
+M I went to a river with Grandpa. I took pictures of a small bird.
+R 学拿鱼竿|拍小鸟|把遗失的篮子交到服务台
+G bank|河岸
+G pack up|收拾东西
+
+# spring|海湾上的第一程|The First Trip Across the Bay|bay,kayak,life jacket,paddle,beach
+EN Last summer, my cousin and I visited a small bay with our aunt. We wanted to try a kayak. A guide gave each of us a life jacket and showed us how to sit. We practised moving our paddles while the boat was still by the beach.
+EN At first, we turned in a circle. Our guide told us to paddle on opposite sides. We tried again and went straight towards a red marker. On the way back, we saw a crab on a rock. I drew it in my notebook after we got out of the boat.
+ZH 去年夏天，我和表弟跟姨妈去了一个小海湾。我们想试试皮划艇。向导给我们每人一件救生衣，告诉我们该怎么坐。小船还在沙滩边时，我们练习划桨。
+ZH 刚开始我们转了个圈。向导让我们分别在两边划桨。我们再试一次，船就直直朝红色标记划去。回程时，我们看到岩石上有只螃蟹。下船后，我把它画在了本子里。
+Q What did the guide give each child?|向导给每个孩子什么？|The guide gave each child a life jacket.
+Q How did the children make the kayak go straight?|孩子们怎样让皮划艇直着走？|They paddled on opposite sides.
+Q What did the speaker draw after the trip?|划完船后讲述者画了什么？|The speaker drew a crab.
+C They practised near the ____ before going out.|beach
+C They learned how to ____ on opposite sides.|paddle
+O 用英语介绍一项你想尝试的户外活动，再说说需要准备哪件物品。
+M I want to try a kayak. I will wear a life jacket in the boat.
+R 穿救生衣并练习|两边划桨向前|记录回程见闻
+G opposite sides|相对的两边
+G marker|标记物
+
+# spring|操场过去的样子|The Playground Long Ago|different,grass,gym,former,timeline
+EN Our class made a timeline of changes at school. A former pupil brought a photo from twenty years ago. The playground looked different in her photo. The gym was a small room, and there was grass where our running track is now.
+EN We took a new photo from the same place. Two students drew arrows between the photos to show the changes. The former pupil helped us add the year to each picture. At the school show, younger children used the timeline to find the oldest photo and ask questions about it.
+ZH 我们班做了一条记录学校变化的时间线。一位校友带来一张二十年前的照片。她照片里的操场和现在不一样。那时体育馆只是个小房间，现在是跑道的地方以前是一片草地。
+ZH 我们站在同一个位置拍了一张新照片。两个同学在照片之间画了箭头，标出变化。校友帮我们在每张照片上写了年份。学校展示时，低年级的孩子顺着时间线找到了最早的照片，还问了几个问题。
+Q Who brought the old photo?|谁带来了老照片？|A former pupil brought it.
+Q What was there before the running track?|现在跑道的位置以前是什么？|There was grass there.
+Q Why did two students draw arrows between the photos?|为什么两个同学在照片之间画箭头？|They wanted to show the changes.
+C Our class made a ____ of changes at school.|timeline
+C The old photo showed a small ____.|gym
+O 比较一个你熟悉的地方过去和现在的样子，用 There was 和 There is 各说一句。
+M There was a small reading room here. Now there is a big library.
+R 找到老照片|在同一地点拍新照|用时间线展示变化
+G arrow|箭头
+
+# spring|记分牌翻过来|Turning the Scoreboard|badminton,match,racket,scoreboard,teammate
+EN I played a badminton match with my teammate Mei on Friday. At first I held my racket too tightly, and the shuttlecock went into the net. Mei told me to take a breath before I tried again.
+EN After a few turns, our score began to rise. I could see the new number on the scoreboard. We lost the match by one point, but I was pleased that I had learned to move my feet more quickly. After the game, we shook hands with the other team and wrote down one thing to practise next week.
+ZH 周五，我和队友梅打了一场羽毛球比赛。一开始我把球拍握得太紧，羽毛球打在了网上。梅让我先吸口气再试。
+ZH 打了几轮后，我们开始得分。我能看见记分牌上的新数字。我们差一分输了比赛，可我很高兴自己学会了更快地移动脚步。赛后我们和对方队伍握手，记下下周要练的一件事。
+Q What went wrong at the start?|开始时出了什么问题？|The speaker held the racket too tightly and hit the shuttlecock into the net.
+Q How many points did they lose by?|他们差几分输掉比赛？|They lost by one point.
+Q What did they write after the game?|赛后他们写下了什么？|They wrote down one thing to practise next week.
+C The speaker played with a ____ named Mei.|teammate
+C The new score appeared on the ____.|scoreboard
+O 用两句话讲述一次运动中的小进步。你练了什么，后来做得怎么样？
+M I practised hitting the ball. Now I can hit it over the net more often.
+R 开局碰网|队友鼓励后调整|赛后记录练习目标
+G tightly|紧紧地
+G lose by one point|以一分之差落败
+
+# spring|纪念册最后一页|The Last Page of the Yearbook|yearbook,dining hall,farewell,graduation,thought
+EN On the day before graduation, our teacher gave us time to sign each other's yearbook. I thought about what to write on the last page. My friend Rui and I had shared many ordinary school days. I chose one memory from our first week.
+EN Rui had helped me find the dining hall when I was new. We had walked there together every day that week. I wrote about that small act on the page and thanked him for it. At our farewell party, Rui showed me his note. He had written about the same week.
+ZH 毕业前一天，老师留出时间让我们互相在纪念册上签名。我想了想最后一页要写什么。朋友睿和我一起度过了许多普通的上学日。我选了刚入学第一周的一件回忆。
+ZH 我刚来时，睿帮我找到了食堂。那一周，我们每天都一起走去那里。我在纪念册上写下这件小事，向他道谢。告别聚会上，睿给我看他写的留言。原来他也写了同一周的事。
+Q When did the class sign the yearbooks?|全班什么时候给纪念册签名？|They signed them on the day before graduation.
+Q What did Rui help the speaker find?|睿帮讲述者找到了什么？|He helped the speaker find the dining hall.
+Q What was special about Rui's note?|睿的留言有什么特别之处？|He wrote about the same week.
+C Rui helped the speaker find the ____ in the first week.|dining hall
+C Rui showed his note at the ____ party.|farewell
+O 给一个小学同学写两句英文留言。先写一件你们一起做过的事，再表达感谢。
+M We made a model together in science class. Thank you for helping me with the wheels.
+R 想毕业留言|记起一起找食堂|发现彼此记得同一件事
+G ordinary|普通的
+G act|举动
